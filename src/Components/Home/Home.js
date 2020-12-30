@@ -3,13 +3,13 @@ import styled from "styled-components";
 import BannerImage from "../../assets/BannerImg.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
-import RealEstate from "../../assets/RealEstate.png";
+import RealEstate from "../../assets/Estate.png";
 import FinancialPlan from "../../assets/FinancialPlan.png";
 import BeachImage from "../../assets/beachImage2.png";
-import Divider from '../Snippets/Divider';
-import Posts from './HomePost';
-import Form from './ContactForm';
-
+import LogoWhite from '../../assets/icon.svg';
+import Divider from "../Snippets/Divider";
+import Posts from "./HomePost";
+import Form from "./ContactForm";
 
 export default function Home() {
   return (
@@ -40,51 +40,51 @@ export default function Home() {
             くのお客様の「のどまる人生」の実現に貢献致します。
           </ServiceBody>
         </Container>
-
       </Service>
       <Container>
-      <ServiceTypes>
-      
-      <RealEstateWrapper>
-       
-        </RealEstateWrapper>
-        <FinancialPlanWrapper>
-            
-        </FinancialPlanWrapper>
-    
-    
-      </ServiceTypes>
+        <ServiceTypes>
+          <RealEstateWrapper>
+            <RealEstateDivider>
+            <LeftDivider>
+            <img src={LogoWhite} alt="Nodomaru Logo"/>
+            </LeftDivider>
+            <RightDivider>
+            Real Estate <br/>
+            不動産
+            </RightDivider>
+            </RealEstateDivider>
+          </RealEstateWrapper>
+          <FinancialPlanWrapper>
+          <FinancialPlanDivider>
+          <LeftDivider>
+            <img src={LogoWhite} alt="Nodomaru Logo"/>
+            </LeftDivider>
+            <RightDivider>
+            Financial Planning & Consulting FP コンサルティング
+            </RightDivider>
+              </FinancialPlanDivider>
+          </FinancialPlanWrapper>
+        </ServiceTypes>
       </Container>
       <HomeNews>
-      <Container>
-      
-       
-        <BetterServiceHeading>
-      BUILDING BUSINESS FOR A BETTER SOCIETY
-      </BetterServiceHeading>
-      <BetterServiceSubText>
-      私はほか今にその安心人という事のために弱らますた。
-      </BetterServiceSubText>
-      <Divider/>
-      <NewsHeading>
-      Company News
-      </NewsHeading>
-        <Posts/>
-      </Container>
-      <ContactUsSection>
-      <ContactHeading>
-      お問い合わせ
-      </ContactHeading>
-      <ContactTel>
-      Tel : 03-6456-4538
-      </ContactTel>
-      <ContactInfo>
-      問い合わせメールアドレス：info@ndmr.co.jp
-      </ContactInfo>
-      <Form/>
-      </ContactUsSection>
+        <Container>
+          <BetterServiceHeading>
+            BUILDING BUSINESS FOR A BETTER SOCIETY
+          </BetterServiceHeading>
+          <BetterServiceSubText>
+            私はほか今にその安心人という事のために弱らますた。
+          </BetterServiceSubText>
+          <Divider />
+          <NewsHeading>Company News</NewsHeading>
+          <Posts />
+        </Container>
+        <ContactUsSection>
+          <ContactHeading>お問い合わせ</ContactHeading>
+          <ContactTel>Tel : 03-6456-4538</ContactTel>
+          <ContactInfo>問い合わせメールアドレス：info@ndmr.co.jp</ContactInfo>
+          <Form />
+        </ContactUsSection>
       </HomeNews>
-      
     </React.Fragment>
   );
 }
@@ -137,7 +137,7 @@ const PalmContainer = styled.div`
   img {
     height: 728px;
     width: 320px;
-    margin-right:126px;
+    margin-right: 126px;
   }
   @media (min-width: 1200px) {
     width: 1200px;
@@ -151,19 +151,19 @@ const Service = styled.div`
   padding: 39px 32px;
 `;
 const ServiceHeading = styled.div`
-width: 465px;
-height:54px;
-font-size: 48px;
-line-height: 56px;
-font-weight:bold;
-color:white;
+  width: 465px;
+  height: 54px;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: bold;
+  color: white;
 `;
 const NodomaruHeading = styled.div`
   font-size: 48px;
   line-height: 56px;
   color: #ffffff;
   font-weight: 400;
-  height:54px;
+  height: 54px;
 `;
 const HeadingUnderline = styled.div`
   width: 120px;
@@ -173,91 +173,118 @@ const HeadingUnderline = styled.div`
   margin-bottom: 31px;
 `;
 const ServiceBody = styled.div`
-width: 486px;
-font-size: 18px;
-line-height: 21px;
-color:white;
-margin-top:5px;
-height:136px;
-font-weight:400;
+  width: 486px;
+  font-size: 18px;
+  line-height: 21px;
+  color: white;
+  margin-top: 5px;
+  height: 136px;
+  font-weight: 400;
 `;
 
-const ServiceTypes = styled.div `
+const ServiceTypes = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`;
+const RealEstateWrapper = styled.div`
+  background: url(${RealEstate});
+  height: 430px;
+  width: 50%;
+  background-size: cover;
+  border: 11px solid white;
+  border-top-width: 0px !important;
+  border-right-width: 0px !important;
+  padding-top:312px;
+`;
+const RealEstateDivider = styled.div `
+background-color:var(--mainYellow);
 display:flex;
-flex-direction:row;
-width:100%;
+align-items:center;
+height:78px;
+width:385px;
+padding:18px 15px 18px 15px;
 `
-const RealEstateWrapper = styled.div `
-background: url(${RealEstate});
-height:430px;
-width:50%;
-background-size:cover;
-border:11px solid white;
-border-top-width:0px!important;
-border-right-width:0px!important;
+const LeftDivider = styled.div `
+padding-right:16px;
+padding-left:15px;
+img{
+  width:35px;
+}
 `
-const FinancialPlanWrapper = styled.div `
-background: url(${FinancialPlan});
-background-size:cover;
-height:430px;
-width:50%;
-border:11px solid white;
-border-top-width:0px!important;
-`
-const BetterServiceHeading = styled.div `
-width: 761px;
-margin:auto;
-font-weight: 300;
-font-size: 36px;
-line-height: 42px;
-font-weight: 300;
-padding-top:50px;
-
-`
-const BetterServiceSubText = styled.div `
-width: 620px;
-margin:auto;
-font-size: 24px;
-line-height: 33px;
-font-weight:400;
-`
-const HomeNews = styled.div `
-background: url(${BeachImage});
-background-size:cover;
-height:100%;
-background-repeat:no-repeat;
-
-`
-const NewsHeading = styled.div `
-width: 222px;
-height: 50px;
-font-size: 24px;
-line-height: 28px;
-foint-weight:400;
-margin:auto;
-text-align:center;
-`
-const ContactUsSection = styled.div `
-
-`
-const ContactHeading = styled.div `
+const RightDivider = styled.div `
 font-weight: bold;
-font-size: 36px;
-line-height: 42px;
-text-align:center;
-margin-top:47px;
+font-size: 20px;
+line-height: 23px;
+font-weight:bold;
 `
-const ContactTel = styled.div `
-font-weight: 400;
-font-size: 18px;
-line-height: 21px;
-text-align:center;
-margin-top:22px;
+const FinancialPlanWrapper = styled.div`
+  background: url(${FinancialPlan});
+  background-size: cover;
+  height: 430px;
+  width: 50%;
+  border: 11px solid white;
+  border-top-width: 0px !important;
+  padding-top:312px;
+`;
+const FinancialPlanDivider = styled.div `
+background-color:var(--mainYellow);
+display:flex;
+height:78px;
+width:385px;
+padding:18px 15px 18px 15px;
 `
-const ContactInfo = styled.div `
-font-weight: 400;
-font-size: 18px;
-line-height: 21px;
-text-align:center;
-padding-bottom:22px;
-`
+const BetterServiceHeading = styled.div`
+  width: 761px;
+  margin: auto;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 300;
+  padding-top: 50px;
+`;
+const BetterServiceSubText = styled.div`
+  width: 620px;
+  margin: auto;
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 400;
+`;
+const HomeNews = styled.div`
+  background: url(${BeachImage});
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+`;
+const NewsHeading = styled.div`
+  width: 222px;
+  height: 50px;
+  font-size: 24px;
+  line-height: 28px;
+  foint-weight: 400;
+  margin: auto;
+  text-align: center;
+`;
+const ContactUsSection = styled.div``;
+const ContactHeading = styled.div`
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  margin-top: 47px;
+`;
+const ContactTel = styled.div`
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  margin-top: 22px;
+`;
+const ContactInfo = styled.div`
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  padding-bottom: 22px;
+`;
+
