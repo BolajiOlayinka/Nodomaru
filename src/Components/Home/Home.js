@@ -5,6 +5,10 @@ import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/RealEstate.png";
 import FinancialPlan from "../../assets/FinancialPlan.png";
+import BeachImage from "../../assets/beachImage.png";
+import Divider from '../Snippets/Divider';
+import Posts from './HomePost';
+
 
 export default function Home() {
   return (
@@ -35,15 +39,38 @@ export default function Home() {
             くのお客様の「のどまる人生」の実現に貢献致します。
           </ServiceBody>
         </Container>
+
       </Service>
+      <Container>
       <ServiceTypes>
-    <RealEstateWrapper>
-        
-    </RealEstateWrapper>
-    <FinancialPlanWrapper>
-        
-    </FinancialPlanWrapper>
+      
+      <RealEstateWrapper>
+       
+        </RealEstateWrapper>
+        <FinancialPlanWrapper>
+            
+        </FinancialPlanWrapper>
+    
+    
       </ServiceTypes>
+      </Container>
+      <HomeNews>
+      <Container>
+      
+       
+        <BetterServiceHeading>
+      BUILDING BUSINESS FOR A BETTER SOCIETY
+      </BetterServiceHeading>
+      <BetterServiceSubText>
+      私はほか今にその安心人という事のために弱らますた。
+      </BetterServiceSubText>
+      <Divider/>
+      <NewsHeading>
+      Company News
+      </NewsHeading>
+        <Posts/>
+      </Container>
+      </HomeNews>
     </React.Fragment>
   );
 }
@@ -162,4 +189,37 @@ height:430px;
 width:50%;
 border:11px solid white;
 border-top-width:0px!important;
+`
+const BetterServiceHeading = styled.div `
+width: 761px;
+margin:auto;
+font-weight: 300;
+font-size: 36px;
+line-height: 42px;
+font-weight: 300;
+padding-top:50px;
+
+`
+const BetterServiceSubText = styled.div `
+width: 620px;
+margin:auto;
+font-size: 24px;
+line-height: 33px;
+font-weight:400;
+`
+const HomeNews = styled.div `
+background: url(${BeachImage});
+background-size:cover;
+height:100%;
+background-repeat:no-repeat;
+
+`
+const NewsHeading = styled.div `
+width: 222px;
+height: 50px;
+font-size: 24px;
+line-height: 28px;
+foint-weight:400;
+margin:auto;
+text-align:center;
 `
