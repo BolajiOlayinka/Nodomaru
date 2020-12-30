@@ -74,6 +74,7 @@ export default function HomePost(props) {
           
         </Container>
         <ReadMoreButton>Read More Posts</ReadMoreButton>
+        
       
     </React.Fragment>
   );
@@ -146,7 +147,7 @@ color:var(--lightBlue);
 display:flex;
 align-items:center;
 text-align:center;
-backround-color:white;
+background-color:white;
 margin-top:12px;
 margin:auto;
 justify-content:center;

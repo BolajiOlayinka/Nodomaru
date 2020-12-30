@@ -5,9 +5,10 @@ import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/RealEstate.png";
 import FinancialPlan from "../../assets/FinancialPlan.png";
-import BeachImage from "../../assets/beachImage.png";
+import BeachImage from "../../assets/beachImage2.png";
 import Divider from '../Snippets/Divider';
 import Posts from './HomePost';
+import Form from './ContactForm';
 
 
 export default function Home() {
@@ -70,7 +71,20 @@ export default function Home() {
       </NewsHeading>
         <Posts/>
       </Container>
+      <ContactUsSection>
+      <ContactHeading>
+      お問い合わせ
+      </ContactHeading>
+      <ContactTel>
+      Tel : 03-6456-4538
+      </ContactTel>
+      <ContactInfo>
+      問い合わせメールアドレス：info@ndmr.co.jp
+      </ContactInfo>
+      <Form/>
+      </ContactUsSection>
       </HomeNews>
+      
     </React.Fragment>
   );
 }
@@ -222,4 +236,28 @@ line-height: 28px;
 foint-weight:400;
 margin:auto;
 text-align:center;
+`
+const ContactUsSection = styled.div `
+
+`
+const ContactHeading = styled.div `
+font-weight: bold;
+font-size: 36px;
+line-height: 42px;
+text-align:center;
+margin-top:47px;
+`
+const ContactTel = styled.div `
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+text-align:center;
+margin-top:22px;
+`
+const ContactInfo = styled.div `
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+text-align:center;
+padding-bottom:22px;
 `

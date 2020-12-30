@@ -4,6 +4,7 @@ import Home from './Components/Home/Home';
 // import Header from './Components/Header'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
+import Footer from './Footer'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
      <Switch>
       <Route component ={Home} exact path ="/"/>
      </Switch>
+     <Footer/>
     </div>
   );
 }
