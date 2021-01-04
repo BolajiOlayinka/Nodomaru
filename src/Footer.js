@@ -33,6 +33,8 @@ background-color:var(--deepBlue);
 height:60px;
 `
 const Container = styled.div `
+width:90%;
+margin:auto;
 @media(min-width:1200px){
     width:1200px;
     margin:auto;

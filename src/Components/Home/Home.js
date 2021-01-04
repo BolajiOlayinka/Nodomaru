@@ -6,7 +6,7 @@ import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/Estate.png";
 import FinancialPlan from "../../assets/FinancialPlan.png";
 import BeachImage from "../../assets/beachImage2.png";
-import LogoWhite from '../../assets/icon.svg';
+import LogoWhite from "../../assets/icon.svg";
 import Divider from "../Snippets/Divider";
 import Posts from "./HomePost";
 import Form from "./ContactForm";
@@ -45,24 +45,24 @@ export default function Home() {
         <ServiceTypes>
           <RealEstateWrapper>
             <RealEstateDivider>
-            <LeftDivider>
-            <img src={LogoWhite} alt="Nodomaru Logo"/>
-            </LeftDivider>
-            <RightDivider>
-            Real Estate <br/>
-            不動産
-            </RightDivider>
+              <LeftDivider>
+                <img src={LogoWhite} alt="Nodomaru Logo" />
+              </LeftDivider>
+              <RightDivider>
+                Real Estate <br />
+                不動産
+              </RightDivider>
             </RealEstateDivider>
           </RealEstateWrapper>
           <FinancialPlanWrapper>
-          <FinancialPlanDivider>
-          <LeftDivider>
-            <img src={LogoWhite} alt="Nodomaru Logo"/>
-            </LeftDivider>
-            <RightDivider>
-            Financial Planning & Consulting FP コンサルティング
-            </RightDivider>
-              </FinancialPlanDivider>
+            <FinancialPlanDivider>
+              <LeftDivider>
+                <img src={LogoWhite} alt="Nodomaru Logo" />
+              </LeftDivider>
+              <RightDivider>
+                Financial Planning & Consulting FP コンサルティング
+              </RightDivider>
+            </FinancialPlanDivider>
           </FinancialPlanWrapper>
         </ServiceTypes>
       </Container>
@@ -89,6 +89,8 @@ export default function Home() {
   );
 }
 const Container = styled.div`
+ width:100%;
+ margin:auto;
   @media (min-width: 1200px) {
     width: 1200px;
     margin: auto;
@@ -104,6 +106,9 @@ const Banner = styled.div`
   align-items: center;
   text-align: center;
   border: 11px solid white;
+  @media(min-width:991px) and (max-width:1199.9px){
+
+  }
 `;
 const LogoContainer = styled.div`
   img {
@@ -134,6 +139,7 @@ const PalmContainer = styled.div`
   text-align: right;
   top: 0;
   margin-top: 296px;
+  width:95%;
   img {
     height: 728px;
     width: 320px;
@@ -195,29 +201,29 @@ const RealEstateWrapper = styled.div`
   border: 11px solid white;
   border-top-width: 0px !important;
   border-right-width: 0px !important;
-  padding-top:312px;
+  padding-top: 312px;
 `;
-const RealEstateDivider = styled.div `
-background-color:var(--mainYellow);
-display:flex;
-align-items:center;
-height:78px;
-width:385px;
-padding:18px 15px 18px 15px;
-`
-const LeftDivider = styled.div `
-padding-right:16px;
-padding-left:15px;
-img{
-  width:35px;
-}
-`
-const RightDivider = styled.div `
-font-weight: bold;
-font-size: 20px;
-line-height: 23px;
-font-weight:bold;
-`
+const RealEstateDivider = styled.div`
+  background-color: var(--mainYellow);
+  display: flex;
+  align-items: center;
+  height: 78px;
+  width: 385px;
+  padding: 18px 15px 18px 15px;
+`;
+const LeftDivider = styled.div`
+  padding-right: 16px;
+  padding-left: 15px;
+  img {
+    width: 35px;
+  }
+`;
+const RightDivider = styled.div`
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: bold;
+`;
 const FinancialPlanWrapper = styled.div`
   background: url(${FinancialPlan});
   background-size: cover;
@@ -225,15 +231,15 @@ const FinancialPlanWrapper = styled.div`
   width: 50%;
   border: 11px solid white;
   border-top-width: 0px !important;
-  padding-top:312px;
+  padding-top: 312px;
 `;
-const FinancialPlanDivider = styled.div `
-background-color:var(--mainYellow);
-display:flex;
-height:78px;
-width:385px;
-padding:18px 15px 18px 15px;
-`
+const FinancialPlanDivider = styled.div`
+  background-color: var(--mainYellow);
+  display: flex;
+  height: 78px;
+  width: 385px;
+  padding: 18px 15px 18px 15px;
+`;
 const BetterServiceHeading = styled.div`
   width: 761px;
   margin: auto;
@@ -287,4 +293,3 @@ const ContactInfo = styled.div`
   text-align: center;
   padding-bottom: 22px;
 `;
-
