@@ -101,7 +101,7 @@ export default function Home() {
           </BetterServiceSubText>
           <Divider />
           <NewsHeading>Company News</NewsHeading>
-          {/* <Posts /> */}
+          <Posts />
         </Container>
         <ContactUsSection>
           <ContactHeading>お問い合わせ</ContactHeading>
