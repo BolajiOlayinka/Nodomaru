@@ -25,9 +25,20 @@ padding-bottom:15px;
 img{
     width:35px;
 }
+@media(max-width:768px){
+    width:85%;
+}
 `
 const Line = styled.hr `
 border:1px solid black;
 width:300px;
-
+@media(max-width:768px){
+    width:200px;
+}
+@media(max-width:576px){
+    width:150px;
+}
+@media(max-width:425px){
+    width:120px;
+}
 `

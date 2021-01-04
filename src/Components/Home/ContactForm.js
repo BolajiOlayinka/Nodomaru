@@ -22,6 +22,10 @@ const Wrapper = styled.div`
   width: 778px;
   margin: auto;
   padding-bottom:131px;
+  @media(max-width:991px){
+    width:80%;
+    margin:auto;
+  }
 `;
 const StyledForm = styled.form`
 text-align:center;
@@ -30,6 +34,11 @@ const StyledInput = styled.input`
  width: 778px;
  height:47px;
  margin-bottom:22px;
+ @media(max-width:991px){
+    width:90%;
+    margin:auto;
+    margin-bottom:22px;
+  }
  :active{
      border:1px solid black;
      outline:0;
@@ -42,6 +51,10 @@ const StyledInput = styled.input`
 const StyledTextArea = styled.textarea `
  width: 778px;
  height:150px;
+ @media(max-width:991px){
+    width:90%;
+    margin:auto;
+  }
 `
 const Submit = styled.input `
 background-color:var(--lightBlue);
