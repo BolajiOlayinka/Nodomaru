@@ -183,7 +183,8 @@ const LogoButton = styled.a`
   background-color: var(--mainYellow);
   color: white;
   text-decoration: none;
-  
+  position:relative;
+  z-index:20;
 `;
 const PalmContainer = styled.div`
   position: absolute;
@@ -251,7 +252,9 @@ const ServiceHeading = styled.div`
     width: 192px;
     height: 20px;
     font-size: 24px;
-    lineheight: 29px;
+    line-height: 29px;
+    margin-bottom:12px;
+
   }
 `;
 const NodomaruHeading = styled.div`
@@ -267,6 +270,8 @@ line-height:42px
  }
  @media(max-width:426px){
    width:150px;
+   ${'' /* padding-bottom:16px; */}
+  
  }
 `;
 const HeadingUnderline = styled.div`
@@ -275,6 +280,10 @@ const HeadingUnderline = styled.div`
   background-color: var(--mainYellow);
   margin-top: 31px;
   margin-bottom: 31px;
+  @media(max-width:426px){
+   margin-bottom:10px;
+   ${'' /* margin-top:16px; */}
+ }
 `;
 const ServiceBody = styled.div`
   width: 486px;
