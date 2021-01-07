@@ -28,6 +28,10 @@ img{
 @media(max-width:768px){
     width:85%;
 }
+@media(max-width:425px){
+    padding-top:0px;
+    padding-bottom:0px;
+}
 `
 const Line = styled.hr `
 border:1px solid black;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BannerImage from "../../assets/BannerImg.png";
+import SmallBannerImage from "../../assets/SmallBannerImg.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/Estate.png";
@@ -74,18 +75,18 @@ export default function Home() {
             <RightEstate>
               Real Estate <br />
               不動産
-              <SmallLogo>
+              <SmallLogoRight>
                 <img src={LogoWhite} alt="Nodomaru Logo Icon" />
-              </SmallLogo>
+              </SmallLogoRight>
             </RightEstate>
           </SmallEstateWrapper>
           <SmallFinancialWrapper>
             <LeftFinance>
               Financial Planning & Consulting <br />
-              コンサルティング
-              <SmallLogo>
+              <h3>コンサルティング</h3>
+              <SmallLogoLeft>
                 <img src={LogoWhite} alt="Nodomaru Logo Icon" />
-              </SmallLogo>
+              </SmallLogoLeft>
             </LeftFinance>
             <RightFinance></RightFinance>
           </SmallFinancialWrapper>
@@ -136,6 +137,9 @@ const Banner = styled.div`
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
+  @media (max-width: 576px) {
+   height:558px;
+  }
 `;
 const LogoContainer = styled.div`
 width:90%;
@@ -168,7 +172,9 @@ const LogoSubText = styled.div`
     height: 20px;
     font-size: 14px;
     line-height: 20px;
+    margin-bottom:177px;
   }
+  
 `;
 const LogoButton = styled.a`
   width: 104px;
@@ -177,6 +183,7 @@ const LogoButton = styled.a`
   background-color: var(--mainYellow);
   color: white;
   text-decoration: none;
+  
 `;
 const PalmContainer = styled.div`
   position: absolute;
@@ -208,6 +215,16 @@ const PalmContainer = styled.div`
       width:260px;
       height:598px;
     }
+  }
+  @media(max-width:425px){
+    width:100%;
+    margin-top:385px;
+    img{
+      width:226px;
+    height:444px;
+    margin-right:0px;
+    }
+    
   }
 `;
 const Service = styled.div`
@@ -248,6 +265,9 @@ width:260px;
 font-size:36px;
 line-height:42px
  }
+ @media(max-width:426px){
+   width:150px;
+ }
 `;
 const HeadingUnderline = styled.div`
   width: 120px;
@@ -262,7 +282,6 @@ const ServiceBody = styled.div`
   line-height: 21px;
   color: white;
   margin-top: 5px;
-  height: 136px;
   font-weight: 400;
   @media(max-width:768px){
     font-size:15px;
@@ -291,7 +310,7 @@ const RealEstateWrapper = styled.div`
   height: 430px;
   width: 50%;
   background-size: cover;
-  border: 11px solid white;
+  border: 10px solid white;
   border-top-width: 0px !important;
   border-right-width: 0px !important;
   padding-top: 312px;
@@ -301,21 +320,23 @@ const RealEstateWrapper = styled.div`
 `;
 const LeftEstate = styled.div`
   width: 50%;
-  height: 320px;
+  height: 260px;
   background: url(${SmallRightEstate});
   background-size: cover;
   border-left: 11px solid white;
   @media (max-width: 768px) {
+    height:220px;
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
-  @media (max-width: 425px) {
-    height: 200px;
+  @media (max-width:576px) {
+    height: 160px;
   }
 `;
 const RightEstate = styled.div`
   width: 50%;
   background-color: var(--mainYellow);
+  height:260px;
   padding: 20px;
   font-size: 32px;
   line-height: 38px;
@@ -325,14 +346,33 @@ const RightEstate = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 768px) {
+    height:220px;
+    font-size:24px;
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
+  @media (max-width:576px) {
+    height: 160px;
+    font-size:20px;
+    line-height:23px;
+  }
+  @media(max-width:374.9px){
+    font-size:16px;
+    line-height:19px;
+  }
+
 `;
-const SmallLogo = styled.div`
+const SmallLogoRight = styled.div`
   text-align: right;
   position: relative;
-  ${"" /* margin-top:150px; */}
+  img {
+    width: 35px;
+    height: 35px;
+  }
+`;
+const SmallLogoLeft = styled.div`
+  text-align: left;
+  position: relative;
   img {
     width: 35px;
     height: 35px;
@@ -346,21 +386,23 @@ const SmallFinancialWrapper = styled.div`
 `;
 const RightFinance = styled.div`
   width: 50%;
-  height: 320px;
+  height: 260px;
   background: url(${SmallFinance});
   background-size: cover;
   border-right: 11px solid white;
   @media (max-width: 768px) {
+    height:220px;
     border-top: 11px solid white;
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
-  @media (max-width: 425px) {
-    height: 200px;
+  @media (max-width: 576px) {
+    height: 160px;
   }
 `;
 const LeftFinance = styled.div`
   width: 50%;
+  ${'' /* height:260px; */}
   background-color: var(--mainYellow);
   padding: 20px;
   font-size: 32px;
@@ -370,10 +412,28 @@ const LeftFinance = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
   @media (max-width: 768px) {
+    height:220px;
+    font-size:24px;
+    line-height:28px;
     border-top: 11px solid white;
     border-right: 0px solid white;
     border-left: 0px solid white;
+  }
+  @media(max-width:576px){
+    font-size:20px;
+    line-height:23px;
+    height:160px;
+    padding-right:0px;
+    h3{
+      font-size:18px;
+      margin-bottom:0px;
+      line-height:21px;
+    }
+  }
+  @media(max-width:374.9px){
+    font-size:16px;
   }
 `;
 
@@ -434,6 +494,15 @@ const BetterServiceHeading = styled.div`
     width: 80%;
     text-align: center;
   }
+  @media(max-width:576px){
+    padding-top:35px;
+    width:90%;
+    font-size:16px;
+    line-height:19px;
+  }
+  @media(max-width:425px){
+    padding-top: 17px;
+  }
 `;
 const BetterServiceSubText = styled.div`
   width: 620px;
@@ -444,6 +513,16 @@ const BetterServiceSubText = styled.div`
   @media (max-width: 768px) {
     width: 80%;
     text-align: center;
+  }
+  @media(max-width:576px){
+    width:100%;
+    font-size:16px;
+    line-height:19px;
+  }
+  @media(max-width:576px){
+    width:100%;
+    font-size:14px;
+    line-height:19px;
   }
 `;
 const HomeNews = styled.div`
