@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BannerImage from "../../assets/BannerImg.png";
-import SmallBannerImage from "../../assets/SmallBannerImg.png";
+// import SmallBannerImage from "../../assets/SmallBannerImg.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/Estate.png";
