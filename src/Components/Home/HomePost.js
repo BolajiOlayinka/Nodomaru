@@ -32,8 +32,8 @@ export default function HomePost(props) {
           <PostCard to="/">
           
             <NewsWrapper>
-              <New className="col-xl-2 col-lg-2 col-md-2">New</New>
-              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10">
+              <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
+              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
               Nodomaru, Inc. announces new partnership with local...
               </NewsPostHeading>
               </NewsWrapper>
@@ -47,8 +47,8 @@ export default function HomePost(props) {
           <PostCard to="/">
             
             <NewsWrapper>
-              <New className="col-xl-2 col-lg-2 col-md-2">New</New>
-              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10">
+              <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
+              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
               Update to Nodomaru, Inc. Website and Blog Channel
               </NewsPostHeading>
               </NewsWrapper>
@@ -62,8 +62,8 @@ export default function HomePost(props) {
           <PostCard to="/">
             
             <NewsWrapper>
-              <New className="col-xl-2 col-lg-2 col-md-2">New</New>
-              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10">
+              <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
+              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
               NHK Product Feature - “New Business in Post-COVID Economy”
               </NewsPostHeading>
               </NewsWrapper>
@@ -99,6 +99,20 @@ const Card =styled.div `
    color:white;
    text-decoration:none;
     }
+    @media(max-width:1199px){
+      width:80%;
+      
+    }
+    @media(max-width:576px){
+      width:80%;
+      ${'' /* height:40px; */}
+      font-weight: bold;
+font-size: 14px;
+margin-bottom:17px!important;
+${'' /* line-height: 20px; */}
+      ${'' /* margin:auto; */}
+
+    }
 
 `
 const PostCard = styled(Link)`
@@ -106,6 +120,15 @@ const PostCard = styled(Link)`
   width:950px;
     :hover{
       text-decoration:none;
+    }
+    @media(max-width:576px){
+      width:300px;
+      height:40px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      margin:auto;
+      
     }
 ` 
 
@@ -126,6 +149,17 @@ const NewsPostHeading = styled.div`
   color:white;
   text-decoration:none;
 }
+@media(max-width:1199px){
+  line-height:40px;
+}
+@media(max-width:991px){
+  font-size:18px;
+  line-height:30px;
+}
+@media(max-width:576px){
+  font-size:14px;
+  line-height:20px;
+}
 `;
 
 const New = styled.div`
@@ -138,6 +172,10 @@ const New = styled.div`
   :hover{
     text-decoration:none;
   }
+  @media(max-width:576px){
+    text-align:left;
+  font-size:14px;
+}
 `;
 
 const ReadMoreButton = styled(Link) `
@@ -155,4 +193,13 @@ font-weight: bold;
 font-size: 20px;
 line-height: 28px;
 font-family: 'Open Sans', sans-serif;
+@media(max-width:576px){
+      width:151px;
+      height:40px;
+      font-weight: bold;
+font-size: 14px;
+line-height: 22px;
+      margin:auto;
+
+    }
 `

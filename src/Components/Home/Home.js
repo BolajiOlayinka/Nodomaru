@@ -138,6 +138,8 @@ const Banner = styled.div`
   }
 `;
 const LogoContainer = styled.div`
+width:90%;
+margin:auto;
   img {
     width: 700px;
   }
@@ -157,6 +159,10 @@ const LogoSubText = styled.div`
   margin: auto;
   color: white;
   margin-bottom: 39px;
+  @media(max-width:768px){
+    width:400px;
+    font-size:24px;
+  }
   @media (max-width: 576px) {
     width: 220px;
     height: 20px;
@@ -186,6 +192,23 @@ const PalmContainer = styled.div`
   @media (min-width: 1200px) {
     width: 1200px;
   }
+  @media(min-width:991px) and (max-width:1199px){
+    img{
+      margin-right:36px;
+    }
+  }
+  @media(max-width:990.9px){
+    
+    img{
+      margin-right:0px;
+    }
+  }
+  @media(max-width:768px){
+    img{
+      width:260px;
+      height:598px;
+    }
+  }
 `;
 const Service = styled.div`
   background-color: var(--lightBlue);
@@ -204,6 +227,9 @@ const ServiceHeading = styled.div`
   line-height: 56px;
   font-weight: bold;
   color: white;
+  @media(max-width:768px){
+    font-size:36px;
+  }
   @media (max-width: 576px) {
     width: 192px;
     height: 20px;
@@ -217,6 +243,11 @@ const NodomaruHeading = styled.div`
   color: #ffffff;
   font-weight: 400;
   height: 54px;
+ @media(max-width:576px){
+width:260px;
+font-size:36px;
+line-height:42px
+ }
 `;
 const HeadingUnderline = styled.div`
   width: 120px;
@@ -233,6 +264,11 @@ const ServiceBody = styled.div`
   margin-top: 5px;
   height: 136px;
   font-weight: 400;
+  @media(max-width:768px){
+    font-size:15px;
+    line-height:18px;
+    width:360px;
+  }
   @media (max-width: 576px) {
     width: 262px;
     height: 103px;
