@@ -5,7 +5,7 @@ import BannerImage from "../../assets/BannerImg.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/Estate.png";
-import FinancialPlan from "../../assets/FinancialPlan.png";
+import FinancialPlan from "../../assets/Finance.png";
 import BeachImage from "../../assets/beachImage2.png";
 import SmallRightEstate from "../../assets/SmallRightEstate.png";
 import SmallFinance from "../../assets/SmallFinance.png";
@@ -184,7 +184,7 @@ const LogoButton = styled.a`
   color: white;
   text-decoration: none;
   position:relative;
-  z-index:20;
+  z-index:1;
 `;
 const PalmContainer = styled.div`
   position: absolute;
@@ -400,6 +400,7 @@ const RightFinance = styled.div`
   background: url(${SmallFinance});
   background-size: cover;
   border-right: 11px solid white;
+  border-top: 11px solid white;
   @media (max-width: 768px) {
     height:220px;
     border-top: 11px solid white;
@@ -419,6 +420,7 @@ const LeftFinance = styled.div`
   line-height: 38px;
   font-weight: bold;
   border-left: 11px solid white;
+  border-top: 11px solid white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

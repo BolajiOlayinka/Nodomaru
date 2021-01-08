@@ -112,8 +112,7 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  min-width: 100%;
-  min-width: fill-available;
+  
   ${
     "" /* @media (max-width: 767.9px) {
     background-color: rgba(0, 0, 0, 0.8)!important;
@@ -202,6 +201,9 @@ const StyledLink = styled.a`
     font-size: 13px;
     line-height: 32px;
     padding-left: 0.5em;
+    position:relative;
+z-index: 10;
+color:white;
     :hover {
       border-bottom: 0px;
     }
@@ -227,10 +229,10 @@ const StyledFontAwesome = styled(FontAwesomeIcon)`
   }
 `;
 const StyledFontCancel = styled(FontAwesomeIcon)`
-  z-index: 2;
+  z-index: 10;
   position: absolute;
   top: 0;
-  color: black;
+  color: white;
   margin-top: 14px;
   ${"" /* margin-left: -2px; */}
   font-size: 20px;
