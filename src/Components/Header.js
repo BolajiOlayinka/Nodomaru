@@ -1,33 +1,35 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
-import Logo from "../assets/LogoWhite.png";
-// import { HashLink as Link } from "react-router-hash-link";
-// import translate from "../Providers/i18n/translate";
-// import LanguageSwitcher from "./LanguageSwitcher";
+import Logo from "../assets/icon.svg";
+import BlackLogo from "../assets/icon-black.png";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-
-
+// import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const [background, setBackground] = useState("black");
-  const [fixed, setFixed] = useState("initial");
+  const [background, setBackground] = useState("transparent");
+  const [boxshadow, setBoxShadow] = useState("transparent");
+  const [fixed, setFixed] = useState("fixed");
+  const [logo, setLogo] = useState(Logo);
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
   // const [SmallBackground, setSmallBackground]=useState("black")
 
   const handleScroll = () => {
-    
     if (window.pageYOffset > 0) {
-      setBackground("rgba(0, 0, 0, 0.8)");
+      setBackground("white");
+      setLogo(BlackLogo);
+      setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
     } else {
-      setBackground("black");
+      setLogo(Logo);
+      setBackground("transparent");
+      setBoxShadow("transparent");
     }
   };
   const fixedScroll = () => {
-    if (window.pageYOffset >= 180) {
+    if (window.pageYOffset >= 0) {
       setFixed("fixed");
     } else {
       setFixed("initial");
@@ -40,132 +42,58 @@ export default function Header() {
     setShowItem(!showItem, e);
     setShowIcon(!showIcon, e);
   };
-  
 
   return (
-    <NavWrapper background={background} fixed={fixed}>
-      <StyledNavbar expand="sm">
-        <div onClick={toggle} style={{ marginRight: "38px" }}>
+    <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
+      <StyledNavbar expand="md">
+        <div onClick={toggle}>
           {showIcon ? (
             <StyledFontAwesome icon={faBars} />
           ) : (
-            <StyledFontCancel icon={faTimesCircle} />
+            <StyledFontCancel icon={faBars} />
           )}
         </div>
         <LogoContainer>
           <Link to="/">
-            <img src={Logo} alt="Standage Logo" />
+            <img src={logo} alt="Digitrad Logo" />
           </Link>
         </LogoContainer>
         {showItem && (
           <StyledNav navbar>
             <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/ja"
-                onClick={toggle}
-              >
-                {translate("Home")}
-              </StyledLink>
+              <StyledLink to="/">ニュース</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/news"
-                onClick={toggle}
-              >
-                {translate("News")}
-              </StyledLink>
+              <StyledLink>お問い合わせ</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink to="/news" onClick={toggle}>
-                {translate("Service")}
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/about"
-                onClick={toggle}
-              >
-                {translate("About Us")}
-              </StyledLink>
+              <StyledLink>ABOUT</StyledLink>
             </NavItem>
           </StyledNav>
         )}
-        <LargeNav className="mx-auto">
+        <LargeNav className="ml-auto">
           <StyledNav navbar>
             <NavItem>
-              <StyledLink to="/">{translate("Home")}</StyledLink>
+              <StyledLink href="" rel="noreferrer" target="_blank">
+                ニュース
+              </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink
-                activeclassname="selected"
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/news"
-              >
-                {translate("News")}
+              <StyledLink href="" rel="noreferrer" target="_blank">
+                お問い合わせ
               </StyledLink>
             </NavItem>
             <NavItem>
               <StyledLink
-                activeclassname="selected"
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/#digitrad"
+                href="https://standage.co.jp/"
+                rel="noreferrer"
+                target="_blank"
               >
-                {translate("Service")}
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
-                }}
-                to="/about"
-              >
-                {translate("About Us")}
+                ABOUT
               </StyledLink>
             </NavItem>
           </StyledNav>
         </LargeNav>
-
-        <div className="ml-auto">
-          <LanguageSwitcher />
-        </div>
       </StyledNavbar>
     </NavWrapper>
   );
@@ -181,21 +109,29 @@ const NavWrapper = styled.div`
   padding-bottom: 1em;
   color: #373737;
   background: ${(props) => props.background} !important;
-  transition: 0.4s all;
+  box-shadow: ${(props) => props.boxshadow} !important;
+  transition: 0.5s all;
   width: -webkit-fill-available;
-  @media (max-width: 576px) {
-    background-color: rgba(0, 0, 0, 0.8);
+  min-width: 100%;
+  min-width: fill-available;
+  ${
+    "" /* @media (max-width: 767.9px) {
+    background-color: rgba(0, 0, 0, 0.8)!important;
+  } */
   }
 `;
 const LogoContainer = styled.div`
   img {
-    width: 150px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
+  }
+  @media (max-width: 576px) {
+    z-index: 2;
   }
 `;
 const StyledNav = styled(Nav)`
   margin: auto;
-  @media (max-width: 576px) {
+  @media (max-width: 767.9px) {
     position: fixed;
     padding-top: 60px;
     top: 0;
@@ -205,40 +141,56 @@ const StyledNav = styled(Nav)`
     background: rgb(0, 0, 0, 0.9);
     z-index: 1;
     width: 100%;
+    padding-top: 80px;
     li {
-      padding: 10px;
+      padding: 4px;
+      padding-left: 20px;
       a {
-        font-size: 20px !important;
+        font-size: 14px !important;
       }
     }
   }
 `;
 const StyledNavbar = styled(Navbar)`
   flex: auto;
-  @media (min-width: 1201px) {
+  @media (min-width: 1200px) {
     flex: none;
     width: 1200px;
     margin: auto;
+    padding-left: 0px;
+    ${"" /* -ms-ime-width:1200px; */}
+  }
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media (min-width: 768px) and (max-width: 1023.9px) {
+    padding-left: 50px;
+    padding-right: 30px;
+  }
+  @media (max-width: 767.9px) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
-const StyledLink = styled(Link)`
-  color: white;
+const StyledLink = styled.a`
+  color: var(--mainGreen);
   line-height: 24px;
   margin-right: 33px;
   padding-bottom: 8px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
 
   :hover {
-    color: #f8951d;
+    color: var(--mainGreen);
     cursor: pointer;
     text-decoration: none;
 
-    border-bottom: 7px solid #f8951d;
+    border-bottom: 2px solid var(--mainGreen);
   }
   :active {
-    color: #f8951d;
-    border-bottom: 7px solid #f8951d;
+    color: var(--mainGreen);
+    border-bottom: 2px solid var(--mainGreen);
     transition: border-bottom 0.5s ease-in;
   }
 
@@ -246,7 +198,7 @@ const StyledLink = styled(Link)`
     font-size: 12px;
     margin-right: 40px;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 767.9px) {
     font-size: 13px;
     line-height: 32px;
     padding-left: 0.5em;
@@ -262,18 +214,15 @@ const StyledLink = styled(Link)`
 `;
 
 const LargeNav = styled.div`
-  @media (min-width: 768px) {
-    display: block;
-  }
   @media (max-width: 767.9px) {
     display: none;
   }
 `;
 const StyledFontAwesome = styled(FontAwesomeIcon)`
-  color: white;
+  color: black;
   font-size: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767.9px) {
     display: none;
   }
 `;
@@ -281,8 +230,8 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
   z-index: 2;
   position: absolute;
   top: 0;
-  color: white;
-  margin-top: 9px;
-  margin-left: -2px;
-  font-size: 24px;
+  color: black;
+  margin-top: 14px;
+  ${"" /* margin-left: -2px; */}
+  font-size: 20px;
 `;

@@ -132,7 +132,7 @@ const Banner = styled.div`
   align-items: center;
   text-align: center;
   border: 11px solid white;
-
+  
   @media (max-width: 768px) {
     border-right: 0px solid white;
     border-left: 0px solid white;
@@ -233,6 +233,7 @@ const Service = styled.div`
   border-top-width: 0px !important;
   border: 11px solid white;
   padding: 39px 32px;
+  
   @media (max-width: 768px) {
     border-right: 0px solid white;
     border-left: 0px solid white;
