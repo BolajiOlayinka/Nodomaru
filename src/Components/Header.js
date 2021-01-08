@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import Logo from "../assets/icon.svg";
-import BlackLogo from "../assets/icon-black.png";
+import BlackLogo from "../assets/icon-black.svg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +15,7 @@ export default function Header() {
   const [logo, setLogo] = useState(Logo);
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
+  const [navcolor, setNavColor] =useState('white');
   // const [SmallBackground, setSmallBackground]=useState("black")
 
   const handleScroll = () => {
@@ -22,10 +23,12 @@ export default function Header() {
       setBackground("white");
       setLogo(BlackLogo);
       setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
+      setNavColor('black')
     } else {
       setLogo(Logo);
       setBackground("transparent");
       setBoxShadow("transparent");
+      setNavColor('white')
     }
   };
   const fixedScroll = () => {
@@ -74,20 +77,20 @@ export default function Header() {
         <LargeNav className="ml-auto">
           <StyledNav navbar>
             <NavItem>
-              <StyledLink href="" rel="noreferrer" target="_blank">
+              <StyledLink navcolor={navcolor} to="/" >
                 ニュース
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink href="" rel="noreferrer" target="_blank">
+              <StyledLink  navcolor={navcolor} to="/">
                 お問い合わせ
               </StyledLink>
             </NavItem>
             <NavItem>
               <StyledLink
-                href="https://standage.co.jp/"
-                rel="noreferrer"
-                target="_blank"
+               
+               to="/about"
+               navcolor={navcolor}
               >
                 ABOUT
               </StyledLink>
@@ -113,11 +116,7 @@ const NavWrapper = styled.div`
   transition: 0.5s all;
   width: -webkit-fill-available;
   
-  ${
-    "" /* @media (max-width: 767.9px) {
-    background-color: rgba(0, 0, 0, 0.8)!important;
-  } */
-  }
+ 
 `;
 const LogoContainer = styled.div`
   img {
@@ -154,9 +153,11 @@ const StyledNavbar = styled(Navbar)`
   flex: auto;
   @media (min-width: 1200px) {
     flex: none;
-    width: 1200px;
+    width: 1117px;
     margin: auto;
-    padding-left: 0px;
+    padding-left: 20px;
+    padding-right:20px;
+
     ${"" /* -ms-ime-width:1200px; */}
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
@@ -172,8 +173,8 @@ const StyledNavbar = styled(Navbar)`
     padding-right: 30px;
   }
 `;
-const StyledLink = styled.a`
-  color: var(--mainGreen);
+const StyledLink = styled(Link)`
+  color: ${(props) => props.navcolor} !important;
   line-height: 24px;
   margin-right: 33px;
   padding-bottom: 8px;
