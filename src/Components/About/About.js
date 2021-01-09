@@ -1,6 +1,8 @@
 import React,{useState} from "react";
 import styled from "styled-components";
 import BannerImage from "../../assets/AboutBanner.png";
+import AdoptBanner from "../../assets/AdoptBanner.png";
+import YelloLogo from "../../assets/YellowLogo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlayCircle,
@@ -16,7 +18,11 @@ export default function About() {
         <Container>
             <AboutArea>
                 <Left>
-
+                <img src={YelloLogo} alt="YellowLogo" />
+                <LeftText>事業を通じてのどまる社会を創る</LeftText>
+                <SectionConnector> 
+                
+                </SectionConnector>
                 </Left>
                 <Right>
                     <AboutBody>
@@ -29,11 +35,13 @@ export default function About() {
                     私はほか今にその安心人という事のために弱らますた。
                     ついに昨日に自覚国もはたしてその品評ですないまでを
                     </AboutBody>
-                   
-            <PlayButton onClick={toggle}>
+              <PlaySection>
+<PlayButton onClick={toggle}>
               CEOからのメッセージ
               
-            </PlayButton><FontAwesomeIcon className="ml-4" icon={faPlayCircle} />
+            </PlayButton><StyledPlayIcon icon={faPlayCircle} onClick={toggle} />
+              </PlaySection>
+            
             
                 </Right>
                 <Modal isOpen={modal} toggle={toggle}>
@@ -67,6 +75,9 @@ export default function About() {
             </AboutArea>
         </Container>
       </Banner>
+      <AdoptSection>
+
+      </AdoptSection>
     </React.Fragment>
   );
 }
@@ -91,17 +102,30 @@ display:flex;
 align-items:center;
 `
 const Left = styled.div `
-
+margin-left:116px;
 
 `
+const LeftText =styled.div `
+font-size: 24px;
+line-height: 33px;
+color:white;
+`
 const Right = styled.div `
-background-color:white;
+background-color:rgba(255, 255, 255, 0.75);
 padding:10px 20px 20px 20px;
-opacity:0.75;
 width: 332px;
 height: 288px;
 margin-left:auto;
+margin-right:65px;
 
+
+`
+const SectionConnector =styled.div `
+background-color:var(--mainYellow);
+width:20px;
+height:311px;
+position:absolute;
+margin-top:30px;
 `
 const AboutHead = styled.div `
 font-weight: bold;
@@ -116,9 +140,13 @@ font-size: 18px;
 line-height: 21px;
 font-weight:bold;
 `
+const PlaySection = styled.div `
+display:flex;
+align-items:center;
+margin-top:21px
+`
 const PlayButton = styled.button`
   color: black;
- ${'' /* padding:9px 16px 9px 16px; */}
  outline:0;
  border:transparent;
   font-size: 18px;
@@ -128,6 +156,7 @@ line-height: 21px;
 height: 39px;
 border-radius: 4px;
 background-color:var(--mainYellow);
+opacity:1!important;
   :active {
     outline: 0;
     border: none;
@@ -140,9 +169,9 @@ background-color:var(--mainYellow);
   }
   @media (min-width: 1200px) {
     margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 55px;
-    padding: 8px 28px;
+    
+    
+   
   }
   @media (min-width: 991px) and (max-width: 1199.9px) {
     margin-bottom: 25px;
@@ -156,3 +185,16 @@ background-color:var(--mainYellow);
     display: none;
   }
 `;
+const StyledPlayIcon = styled(FontAwesomeIcon)`
+font-size:37.5px;
+color:var(--mainYellow);
+margin-left:12.75px;
+cursor:pointer;
+
+
+`
+const AdoptSection =styled.div `
+background: url(${AdoptBanner});
+height:400px;
+
+`
