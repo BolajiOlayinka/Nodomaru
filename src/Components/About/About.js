@@ -2,7 +2,9 @@ import React,{useState} from "react";
 import styled from "styled-components";
 import BannerImage from "../../assets/AboutBanner.png";
 import AdoptBanner from "../../assets/AdoptBanner.png";
+import GeneralBanner from "../../assets/GeneralBackground.png";
 import YelloLogo from "../../assets/YellowLogo.svg";
+import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlayCircle,
@@ -75,9 +77,12 @@ export default function About() {
             </AboutArea>
         </Container>
       </Banner>
-      <AdoptSection>
-
+      <GenBackground>
+ <AdoptSection>
+<AdoptButton>現在採用中</AdoptButton>
       </AdoptSection>
+      </GenBackground>
+     
     </React.Fragment>
   );
 }
@@ -196,5 +201,30 @@ cursor:pointer;
 const AdoptSection =styled.div `
 background: url(${AdoptBanner});
 height:400px;
+text-align:center;
+padding-top:333px;
+@media(min-width:1200px){
+  width:1200px;
+  margin:auto;
+}
+
+`
+const GenBackground = styled.div `
+background: url(${GeneralBanner});
+width:100%;
+background-size:cover;
+padding-top:11px;
+
+`
+const AdoptButton = styled(Link) `
+${'' /* width:140px;
+height:39px; */}
+background-color:var(--mainYellow);
+padding:9px 25px;
+font-size:18px;
+color:black;
+:hover{
+  text-decoration:none;
+}
 
 `
