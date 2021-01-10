@@ -4,6 +4,8 @@ import BannerImage from "../../assets/AboutBanner.png";
 import AdoptBanner from "../../assets/AdoptBanner.png";
 import GeneralBanner from "../../assets/GeneralBackground.png";
 import YelloLogo from "../../assets/YellowLogo.svg";
+import BannerThree from "../../assets/Banner_3.png";
+import Map from "../../assets/Map.png";
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -81,6 +83,26 @@ export default function About() {
  <AdoptSection>
 <AdoptButton>現在採用中</AdoptButton>
       </AdoptSection>
+      <SectionThree>
+  <LeftSectionThree>
+
+  </LeftSectionThree>
+  <RightSectionThree>
+
+  </RightSectionThree>
+      </SectionThree>
+      <MapSection>
+      <MapContainer>
+        <img src={Map} alt="Nodomaru Map"/>
+      </MapContainer>
+      <AddressContainer>
+
+      </AddressContainer>
+
+      </MapSection>
+      <Divider>
+
+      </Divider>
       </GenBackground>
      
     </React.Fragment>
@@ -214,7 +236,7 @@ background: url(${GeneralBanner});
 width:100%;
 background-size:cover;
 padding-top:11px;
-
+padding-bottom:92px;
 `
 const AdoptButton = styled(Link) `
 ${'' /* width:140px;
@@ -227,4 +249,51 @@ color:black;
   text-decoration:none;
 }
 
+`
+const SectionThree = styled.div `
+ background: url(${BannerThree});
+ margin-top:10px!important;
+display:flex;
+width:100%;
+@media(min-width:1200px){
+  width:1200px;
+  margin:auto;
+}
+`
+const LeftSectionThree = styled.div `
+width:50%;
+margin-right:38px;
+`
+const RightSectionThree = styled.div `
+width:50%;
+background-color:var(--mainYellow);
+height:400px;
+`
+const MapSection = styled.div `
+background-color:white;
+width:1110px;
+margin:auto;
+margin-top:98px;
+padding:33px 26px;
+display:flex
+`
+const MapContainer =styled.div `
+width:548px;
+
+img{
+width:100%;;
+height:391px;
+}
+`
+const AddressContainer = styled.div `
+width:465px;
+padding:33px 26px;
+`
+const Divider = styled.div `
+background-color:var(--mainYellow);
+margin-top:20px!important;
+height:27px;
+width:1111px;
+
+margin:auto;
 `
