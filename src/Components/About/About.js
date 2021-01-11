@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import BannerImage from "../../assets/AboutBanner.png";
 import AdoptBanner from "../../assets/AdoptBanner.png";
@@ -6,49 +6,38 @@ import GeneralBanner from "../../assets/GeneralBackground.png";
 import YelloLogo from "../../assets/YellowLogo.svg";
 import BannerThree from "../../assets/Banner_3.png";
 import Map from "../../assets/Map.png";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Slider from "../Snippets/Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlayCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 export default function About() {
-    const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
   return (
     <React.Fragment>
       <Banner>
         <Container>
-            <AboutArea>
-                <Left>
-                <img src={YelloLogo} alt="YellowLogo" />
-                <LeftText>事業を通じてのどまる社会を創る</LeftText>
-                <SectionConnector> 
-                
-                </SectionConnector>
-                </Left>
-                <Right>
-                    <AboutBody>
-                    About Our Company
-                    </AboutBody>
-                    <AboutHead>
-                    会社について
-                    </AboutHead>
-                    <AboutBody>
-                    私はほか今にその安心人という事のために弱らますた。
-                    ついに昨日に自覚国もはたしてその品評ですないまでを
-                    </AboutBody>
+          <AboutArea>
+            <Left>
+              <img src={YelloLogo} alt="YellowLogo" />
+              <LeftText>事業を通じてのどまる社会を創る</LeftText>
+              <SectionConnector></SectionConnector>
+            </Left>
+            <Right>
+              <AboutBody>About Our Company</AboutBody>
+              <AboutHead>会社について</AboutHead>
+              <AboutBody>
+                私はほか今にその安心人という事のために弱らますた。
+                ついに昨日に自覚国もはたしてその品評ですないまでを
+              </AboutBody>
               <PlaySection>
-<PlayButton onClick={toggle}>
-              CEOからのメッセージ
-              
-            </PlayButton><StyledPlayIcon icon={faPlayCircle} onClick={toggle} />
+                <PlayButton onClick={toggle}>CEOからのメッセージ</PlayButton>
+                <StyledPlayIcon icon={faPlayCircle} onClick={toggle} />
               </PlaySection>
-            
-            
-                </Right>
-                <Modal isOpen={modal} toggle={toggle}>
+            </Right>
+            <Modal isOpen={modal} toggle={toggle}>
               <ModalHeader toggle={toggle}></ModalHeader>
               <ModalBody>
                 <div
@@ -75,36 +64,34 @@ export default function About() {
                 </div>
               </ModalBody>
             </Modal>
-
-            </AboutArea>
+          </AboutArea>
         </Container>
       </Banner>
       <GenBackground>
- <AdoptSection>
-<AdoptButton>現在採用中</AdoptButton>
-      </AdoptSection>
-      <SectionThree>
-  <LeftSectionThree>
-
-  </LeftSectionThree>
-  <RightSectionThree>
-
-  </RightSectionThree>
-      </SectionThree>
-      <MapSection>
-      <MapContainer>
-        <img src={Map} alt="Nodomaru Map"/>
-      </MapContainer>
-      <AddressContainer>
-
-      </AddressContainer>
-
-      </MapSection>
-      <Divider>
-
-      </Divider>
+        <AdoptSection>
+          <AdoptButton>現在採用中</AdoptButton>
+        </AdoptSection>
+        <SectionThree>
+          <LeftSectionThree></LeftSectionThree>
+          <RightSectionThree>
+            <ThreePreHeader>About Us</ThreePreHeader>
+            <ThreeHeader>
+              <span>OUR</span> WORKPLACE
+            </ThreeHeader>
+            <ThreeDivider></ThreeDivider>
+            <SectionThreeWrapper>
+              <Slider />
+            </SectionThreeWrapper>
+          </RightSectionThree>
+        </SectionThree>
+        <MapSection>
+          <MapContainer>
+            <img src={Map} alt="Nodomaru Map" />
+          </MapContainer>
+          <AddressContainer></AddressContainer>
+        </MapSection>
+        <Divider></Divider>
       </GenBackground>
-     
     </React.Fragment>
   );
 }
@@ -123,67 +110,64 @@ const Container = styled.div`
     margin: auto;
   }
 `;
-const AboutArea = styled.div `
-padding-top:478px;
-display:flex;
-align-items:center;
-`
-const Left = styled.div `
-margin-left:116px;
-
-`
-const LeftText =styled.div `
-font-size: 24px;
-line-height: 33px;
-color:white;
-`
-const Right = styled.div `
-background-color:rgba(255, 255, 255, 0.75);
-padding:10px 20px 20px 20px;
-width: 332px;
-height: 288px;
-margin-left:auto;
-margin-right:65px;
-
-
-`
-const SectionConnector =styled.div `
-background-color:var(--mainYellow);
-width:20px;
-height:311px;
-position:absolute;
-margin-top:30px;
-`
-const AboutHead = styled.div `
-font-weight: bold;
-font-size: 48px;
-line-height: 56px;
-margin-top:7px;
-margin-bottom:7px;
-`
-const AboutBody =styled.div `
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-font-weight:bold;
-`
-const PlaySection = styled.div `
-display:flex;
-align-items:center;
-margin-top:21px
-`
+const AboutArea = styled.div`
+  padding-top: 478px;
+  display: flex;
+  align-items: center;
+`;
+const Left = styled.div`
+  margin-left: 116px;
+`;
+const LeftText = styled.div`
+  font-size: 24px;
+  line-height: 33px;
+  color: white;
+`;
+const Right = styled.div`
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px 20px 20px 20px;
+  width: 332px;
+  height: 288px;
+  margin-left: auto;
+  margin-right: 65px;
+`;
+const SectionConnector = styled.div`
+  background-color: var(--mainYellow);
+  width: 20px;
+  height: 311px;
+  position: absolute;
+  margin-top: 30px;
+`;
+const AboutHead = styled.div`
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+`;
+const AboutBody = styled.div`
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+`;
+const PlaySection = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 21px;
+`;
 const PlayButton = styled.button`
   color: black;
- outline:0;
- border:transparent;
+  outline: 0;
+  border: transparent;
   font-size: 18px;
-line-height: 21px;
-  border-radius:5px;
+  line-height: 21px;
+  border-radius: 5px;
   width: 228px;
-height: 39px;
-border-radius: 4px;
-background-color:var(--mainYellow);
-opacity:1!important;
+  height: 39px;
+  border-radius: 4px;
+  background-color: var(--mainYellow);
+  opacity: 1 !important;
   :active {
     outline: 0;
     border: none;
@@ -196,9 +180,6 @@ opacity:1!important;
   }
   @media (min-width: 1200px) {
     margin-right: auto;
-    
-    
-   
   }
   @media (min-width: 991px) and (max-width: 1199.9px) {
     margin-bottom: 25px;
@@ -213,87 +194,109 @@ opacity:1!important;
   }
 `;
 const StyledPlayIcon = styled(FontAwesomeIcon)`
-font-size:37.5px;
-color:var(--mainYellow);
-margin-left:12.75px;
-cursor:pointer;
-
-
-`
-const AdoptSection =styled.div `
-background: url(${AdoptBanner});
-height:400px;
-text-align:center;
-padding-top:333px;
-@media(min-width:1200px){
-  width:1200px;
-  margin:auto;
-}
-
-`
-const GenBackground = styled.div `
-background: url(${GeneralBanner});
-width:100%;
-background-size:cover;
-padding-top:11px;
-padding-bottom:92px;
-`
-const AdoptButton = styled(Link) `
-${'' /* width:140px;
+  font-size: 37.5px;
+  color: var(--mainYellow);
+  margin-left: 12.75px;
+  cursor: pointer;
+`;
+const AdoptSection = styled.div`
+  background: url(${AdoptBanner});
+  height: 400px;
+  text-align: center;
+  padding-top: 333px;
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin: auto;
+  }
+`;
+const GenBackground = styled.div`
+  background: url(${GeneralBanner});
+  width: 100%;
+  background-size: cover;
+  padding-top: 11px;
+  padding-bottom: 92px;
+`;
+const AdoptButton = styled(Link)`
+  ${"" /* width:140px;
 height:39px; */}
-background-color:var(--mainYellow);
-padding:9px 25px;
-font-size:18px;
-color:black;
-:hover{
-  text-decoration:none;
-}
+  background-color:var(--mainYellow);
+  padding: 9px 25px;
+  font-size: 18px;
+  color: black;
+  :hover {
+    text-decoration: none;
+  }
+`;
+const SectionThree = styled.div`
+  background: url(${BannerThree});
+  margin-top: 10px !important;
+  display: flex;
+  width: 100%;
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin: auto;
+  }
+`;
+const LeftSectionThree = styled.div`
+  width: 50%;
+  margin-right: 38px;
+`;
+const RightSectionThree = styled.div`
+  width: 50%;
+  background-color: var(--mainYellow);
+  height: 400px;
+  padding: 27px 34px 27px 67px;
+`;
+const SectionThreeWrapper = styled.div`
+  width: 428px;
+`;
+const ThreePreHeader = styled.div`
+  font-size: 18px;
+  line-height: 21px;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 18px;
+`;
+const ThreeHeader = styled.div`
+  font-size: 48px;
+  line-height: 56px;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 18px;
+  span {
+    font-weight: 200;
+  }
+`;
+const ThreeDivider = styled.div`
+  width: 167px;
+  height: 5px;
+  background-color: white;
+  margin-bottom: 18px;
+`;
+const MapSection = styled.div`
+  background-color: white;
+  width: 1110px;
+  margin: auto;
+  margin-top: 98px;
+  padding: 33px 26px;
+  display: flex;
+`;
+const MapContainer = styled.div`
+  width: 548px;
 
-`
-const SectionThree = styled.div `
- background: url(${BannerThree});
- margin-top:10px!important;
-display:flex;
-width:100%;
-@media(min-width:1200px){
-  width:1200px;
-  margin:auto;
-}
-`
-const LeftSectionThree = styled.div `
-width:50%;
-margin-right:38px;
-`
-const RightSectionThree = styled.div `
-width:50%;
-background-color:var(--mainYellow);
-height:400px;
-`
-const MapSection = styled.div `
-background-color:white;
-width:1110px;
-margin:auto;
-margin-top:98px;
-padding:33px 26px;
-display:flex
-`
-const MapContainer =styled.div `
-width:548px;
-
-img{
-width:100%;;
-height:391px;
-}
-`
-const AddressContainer = styled.div `
-width:465px;
-padding:33px 26px;
-`
-const Divider = styled.div `
-background-color:var(--mainYellow);
-margin-top:20px!important;
-height:27px;
-width:1111px;
-
-margin:auto;
-`
+  img {
+    width: 100%;
+    height: 391px;
+  }
+`;
+const AddressContainer = styled.div`
+  width: 465px;
+  padding: 33px 26px;
+`;
+const Divider = styled.div`
+  background-color: var(--mainYellow);
+  margin-top: 20px !important;
+  height: 27px;
+  width: 1111px;
+  margin: auto;
+`;

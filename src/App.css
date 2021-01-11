@@ -7,3 +7,6 @@
   --lightBlue:#3CC8D5;
   --mainYellow:#FFC700;
 }
+.owl-dot.active{
+  background-color: black!important;
+}
