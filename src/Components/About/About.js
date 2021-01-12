@@ -4,10 +4,9 @@ import BannerImage from "../../assets/AboutBanner.png";
 import AdoptBanner from "../../assets/AdoptBanner.png";
 import GeneralBanner from "../../assets/GeneralBackground.png";
 import YelloLogo from "../../assets/YellowLogo.svg";
-import BannerThree from "../../assets/Banner_3.png";
 import Map from "../../assets/Map.png";
 import { Link } from "react-router-dom";
-import Slider from "../Snippets/Slider";
+import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
@@ -72,30 +71,30 @@ export default function About() {
           <AdoptButton>現在採用中</AdoptButton>
         </AdoptSection>
         <SectionThree>
-        
-          <LeftSectionThree>
-            <img src={BannerThree} alt="Nodomaru"/>
-          </LeftSectionThree>
-          <RightSectionThree>
-          <RightThreeContainer>            
-           <ThreePreHeader>About Us</ThreePreHeader>
-            <ThreeHeader>
-              <span>OUR</span> WORKPLACE
-            </ThreeHeader>
-            <ThreeDivider></ThreeDivider>
-            <SectionThreeWrapper>
-              <Slider />
-            </SectionThreeWrapper>
-            </RightThreeContainer>
-
-          </RightSectionThree>
-          
+          <Slider />
         </SectionThree>
         <MapSection>
           <MapContainer>
             <img src={Map} alt="Nodomaru Map" />
           </MapContainer>
-          <AddressContainer></AddressContainer>
+          <AddressContainer>
+          <AddressHeader>Company Information</AddressHeader>
+           <div>名称 - 株式会社Nodomaru (英語表記 Nodomaru Co.,Ltd)</div>
+           <div>設立 - 2019年1月18日</div>
+           <div>代表者 - 向仲 駿</div>
+           <div>所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
+           <div>Tel : 03-6456-4538</div>
+           <div>FAX : 03-6456-4537</div>
+           <Desc>
+           事業内容
+           <li>不動産事業</li>
+           <li>FPコンサルティング業</li>
+           <li>人材紹介業</li>
+           <li>クラウドファンディング事業</li>
+           </Desc>
+
+
+          </AddressContainer>
         </MapSection>
         <Divider></Divider>
       </GenBackground>
@@ -224,8 +223,7 @@ const GenBackground = styled.div`
   padding-bottom: 92px;
 `;
 const AdoptButton = styled(Link)`
-  ${"" /* width:140px;
-height:39px; */}
+ 
   background-color:var(--mainYellow);
   padding: 9px 25px;
   font-size: 18px;
@@ -235,91 +233,20 @@ height:39px; */}
   }
 `;
 const SectionThree = styled.div`
-  {/* background: url(${BannerThree}); */}
   margin-top: 10px !important;
-  display: flex;
+  height: 400px;
+
   width: 100%;
   @media (min-width: 1200px) {
     width: 1200px;
     margin: auto;
   }
-  @media(max-width:991px){
-    flex-direction:column;
-  }
-`;
-const LeftSectionThree = styled.div`
-  width: 50%;
-  margin-right: 38px;
-  @media(max-width:991px){
-    width:100%;
-    margin:auto;
+  @media (max-width: 991px) {
+    flex-direction: column;
     
-  }
-  img{
-    @media(max-width:991px){
-      width:100%;
-    }
-  }
-`;
-const RightSectionThree = styled.div`
-  width: 50%;
-  background-color: var(--mainYellow);
-  height: 400px;
-  padding: 27px 34px 27px 67px;
-  @media(max-width:991px){
-  ${'' /* width:100%; */}
-  padding: 27px 34px;
-}
-`;
-const SectionThreeWrapper = styled.div`
-  width: 428px;
-  @media(max-width:991px){
-    margin:auto;
   }
 `;
 
-const ThreePreHeader = styled.div`
-  font-size: 18px;
-  line-height: 21px;
-  color: black;
-  font-weight: bold;
-  padding-bottom: 18px;
-  width: 428px;
-  ${'' /* @media(max-width:991px){
-    margin:auto;
-  } */}
-`;
-const ThreeHeader = styled.div`
-  font-size: 48px;
-  line-height: 56px;
-  color: black;
-  font-weight: bold;
-  padding-bottom: 18px;
-  width: 428px;
-  span {
-    font-weight: 200;
-  }
-  ${'' /* @media(max-width:991px){
-    margin:auto;
-  } */}
-`;
-const ThreeDivider = styled.div`
-  width: 167px;
-  height: 5px;
-  background-color: white;
-  margin-bottom: 18px;
-  ${'' /* @media(max-width:991px){
-    width: 428px;
-    margin:auto;
-  } */}
-`;
-const RightThreeContainer = styled.div `
-width:100%;
-@media(max-width:991px){
-  width:428px;
-  margin:auto;
-}
-`
 const MapSection = styled.div`
   background-color: white;
   width: 1110px;
@@ -327,19 +254,19 @@ const MapSection = styled.div`
   margin-top: 98px;
   padding: 33px 26px;
   display: flex;
-  @media (min-width:1024px) and (max-width:1199px){
-    margin-top: 60px!important;
-    width:90%;
-    margin:auto;
-}
-@media(max-width:1023.9px){
-  width:90%;
-  margin:auto;
-}
-
-`
-;
-
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    margin-top: 60px !important;
+    width: 90%;
+    margin: auto;
+  }
+  @media (max-width: 1023.9px) {
+    width: 90%;
+    margin: auto;
+  }
+  @media(max-width:991px){
+    margin-top:480px;
+  }
+`;
 const MapContainer = styled.div`
   width: 548px;
 
@@ -349,23 +276,33 @@ const MapContainer = styled.div`
   }
 `;
 const AddressContainer = styled.div`
-  width: 465px;
-  padding: 33px 26px;
+  ${'' /* width: 465px; */}
+  padding-left:26px;
+  font-size: 18px;
+line-height: 21px;
 `;
+const AddressHeader = styled.div `
+font-weight: bold;
+font-size: 60px;
+line-height: 70px;
+`
+const Desc = styled.div `
+padding-top:14px;
+`
 const Divider = styled.div`
   background-color: var(--mainYellow);
   margin-top: 20px !important;
   height: 27px;
   width: 1111px;
   margin: auto;
-  @media(min-width:1024px) and(max-width:1199px){
+  @media (min-width: 1024px) and(max-width:1199px) {
     margin-top: 20px !important;
-    width:90%;
-    margin:auto;
+    width: 90%;
+    margin: auto;
   }
-  @media(max-width:1024px){
+  @media (max-width: 1024px) {
     margin-top: 20px !important;
-    width:90%;
-    margin:auto;
+    width: 90%;
+    margin: auto;
   }
 `;

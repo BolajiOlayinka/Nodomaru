@@ -24,13 +24,13 @@ export default function Client() {
           <SliderText>
             オフィスは広尾駅から徒歩5分の場所にあり、日当たりがよく、緑あふれる居心地のいい空間です。現在みんなで作っている会社であり、社長に対して新規事業の提案や相談ができるチャンスもあります。
           </SliderText>
-          <QuoteName>NODOMARU</QuoteName>
+          <QuoteName>SHINGO</QuoteName>
         </div>
         <div className="item">
           <SliderText>
             オフィスは広尾駅から徒歩5分の場所にあり、日当たりがよく、緑あふれる居心地のいい空間です。現在みんなで作っている会社であり、社長に対して新規事業の提案や相談ができるチャンスもあります。
           </SliderText>
-          <QuoteName>AKINA</QuoteName>
+          <QuoteName>SHUZO</QuoteName>
         </div>
       </OwlCarousel>
     </Wrapper>
