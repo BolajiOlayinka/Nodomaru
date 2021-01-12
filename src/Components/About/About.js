@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BannerImage from "../../assets/AboutBanner.png";
+import SmallBanner from "../../assets/SmallAbout.png";
 import AdoptBanner from "../../assets/AdoptBanner.png";
 import GeneralBanner from "../../assets/GeneralBackground.png";
 import YelloLogo from "../../assets/YellowLogo.svg";
@@ -66,6 +67,52 @@ export default function About() {
           </AboutArea>
         </Container>
       </Banner>
+      <SmallAboutDesc>
+            <DescWrapper>
+                <SmallHeading>
+                  Our Company
+                </SmallHeading>
+                <SmallDivider></SmallDivider>
+                <AboutHead>会社について</AboutHead>
+              <AboutBody>
+                私はほか今にその安心人という事のために弱らますた。
+                ついに昨日に自覚国もはたしてその品評ですないまでを
+              </AboutBody>
+              <PlaySection>
+                <PlayButton onClick={toggle}>CEOからのメッセージ</PlayButton>
+                
+              </PlaySection>
+            
+            <Modal isOpen={modal} toggle={toggle}>
+              <ModalHeader toggle={toggle}></ModalHeader>
+              <ModalBody>
+                <div
+                  className="video"
+                  style={{
+                    position: "relative",
+                    paddingBottom: "56.25%",
+                    paddingTop: 25,
+                    height: 0,
+                  }}
+                >
+                  <iframe
+                    title="youtube"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    src="https://www.youtube.com/embed/TnR9O-d8nhY?autoplay=1&mute=1"
+                    frameBorder="0"
+                  />
+                </div>
+              </ModalBody>
+            </Modal>
+            </DescWrapper>
+            
+      </SmallAboutDesc>
       <GenBackground>
         <AdoptSection>
           <AdoptButton>現在採用中</AdoptButton>
@@ -107,6 +154,14 @@ const Banner = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   height: 796px;
+  @media(max-width:991px){
+    height:618px;
+  }
+  @media(max-width:576px){
+    background:url(${SmallBanner});
+    background-size:cover;
+    height:796px;
+  }
 `;
 const Container = styled.div`
   width: 100%;
@@ -120,14 +175,45 @@ const AboutArea = styled.div`
   padding-top: 478px;
   display: flex;
   align-items: center;
+  @media(max-width:991px){
+    padding-top:300px;
+  }
+  @media(max-width:768px){
+   
+    justify-content:center;
+    height:71px;
+    align-items:center;
+    margin:auto;
+  }
 `;
 const Left = styled.div`
   margin-left: 116px;
+  @media(max-width:991px){
+    margin-left:26px;
+  }
+  @media(max-width:768px){
+  margin:auto;
+  
+  }
 `;
 const LeftText = styled.div`
   font-size: 24px;
   line-height: 33px;
   color: white;
+  ${'' /* @media(max-width:768px){
+    font-size:32px;
+    line-height:40px;
+    font-weight:bold;
+  }
+  @media(max-width:526px){
+    font-size:24px;
+    line-height:33px;
+  } */}
+  @media(max-width:426px){
+    font-size:18px;
+    line-height:25px;
+    font-weight:normal
+  }
 `;
 const Right = styled.div`
   background-color: rgba(255, 255, 255, 0.75);
@@ -136,13 +222,60 @@ const Right = styled.div`
   height: 288px;
   margin-left: auto;
   margin-right: 65px;
+  @media(max-width:991px){
+    margin-right:25px;
+  }
+  @media(max-width:768px){
+    display:none;
+  }
 `;
+const SmallAboutDesc =styled.div `
+background-color:var(--lightBlue);
+color:white;
+font-size:24px;
+padding:71px 56px;
+@media(max-width:426px){
+  font-size:18px;
+  line-height:25px;
+}
+@media(min-width:768.1px){
+  display:none;
+}
+
+`
+const DescWrapper =styled.div `
+width:400px;
+margin:auto;
+@media(max-width:425px){
+  width:270px;
+margin:auto;
+}
+`
+const SmallHeading =styled.div `
+font-size:48px;
+line-height:55px;
+font-weight:bold;
+@media(max-width:426px){
+  font-size:36px;
+  line-height:42px;
+}
+`
+const SmallDivider =styled.div `
+height:5px;
+width:120px;
+background-color:var(--mainYellow);
+margin-top:49px;
+margin-bottom:49px;
+`
 const SectionConnector = styled.div`
   background-color: var(--mainYellow);
   width: 20px;
   height: 311px;
   position: absolute;
   margin-top: 30px;
+  @media(max-width:768px){
+   display:none; 
+  }
 `;
 const AboutHead = styled.div`
   font-weight: bold;
@@ -150,6 +283,10 @@ const AboutHead = styled.div`
   line-height: 56px;
   margin-top: 7px;
   margin-bottom: 7px;
+  @media(max-width:426px){
+    font-size:36px;
+    line-height:42px;
+  }
 `;
 const AboutBody = styled.div`
   font-weight: normal;
@@ -161,6 +298,9 @@ const PlaySection = styled.div`
   display: flex;
   align-items: center;
   margin-top: 21px;
+  @media(max-width:426px){
+    margin-top:13px;
+  }
 `;
 const PlayButton = styled.button`
   color: black;
@@ -187,16 +327,13 @@ const PlayButton = styled.button`
   @media (min-width: 1200px) {
     margin-right: auto;
   }
-  @media (min-width: 991px) and (max-width: 1199.9px) {
-    margin-bottom: 25px;
-    padding: 10px 24px;
+  @media(max-width:1199px){
+    padding:10px 24px;
   }
-  @media (min-width: 576px) and (max-width: 990.9px) {
-    margin-bottom: 25px;
-    padding: 10px 24px;
-  }
-  @media (max-width: 576.1px) {
-    display: none;
+  @media (max-width: 425px) {
+   padding:9px 25px;
+   border-radius:4px;
+   background-color:var(--mainYellow);
   }
 `;
 const StyledPlayIcon = styled(FontAwesomeIcon)`
@@ -241,7 +378,11 @@ const SectionThree = styled.div`
     width: 1200px;
     margin: auto;
   }
+  @media(min-width:1024px)and(max-width:1199px){
+    width:90%;
+  }
   @media (max-width: 991px) {
+
     flex-direction: column;
     
   }
@@ -295,7 +436,7 @@ const Divider = styled.div`
   height: 27px;
   width: 1111px;
   margin: auto;
-  @media (min-width: 1024px) and(max-width:1199px) {
+  @media (max-width:1199px) {
     margin-top: 20px !important;
     width: 90%;
     margin: auto;
