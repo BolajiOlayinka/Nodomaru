@@ -17,7 +17,7 @@ import Form from "./ContactForm";
 
 export default function Home() {
   return (
-    <React.Fragment>
+    <Wrapper>
       <Banner>
         <Container>
           <LogoContainer>
@@ -111,9 +111,15 @@ export default function Home() {
           <Form />
         </ContactUsSection>
       </HomeNews>
-    </React.Fragment>
+    </Wrapper>
   );
 }
+const Wrapper =styled.div `
+  ${'' /* scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(300px);
+  scroll-snap-type: y mandatory; */}
+
+`
 const Container = styled.div`
   width: 100%;
   margin: auto;
@@ -132,7 +138,7 @@ const Banner = styled.div`
   align-items: center;
   text-align: center;
   border: 11px solid white;
-  
+ 
   @media (max-width: 768px) {
     border-right: 0px solid white;
     border-left: 0px solid white;
@@ -233,7 +239,9 @@ const Service = styled.div`
   border-top-width: 0px !important;
   border: 11px solid white;
   padding: 39px 32px;
-  
+  &.proximity {
+      scroll-snap-type: y proximity;
+  }
   @media (max-width: 768px) {
     border-right: 0px solid white;
     border-left: 0px solid white;

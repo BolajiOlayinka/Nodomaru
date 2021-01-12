@@ -44,7 +44,7 @@ export default function About() {
                   className="video"
                   style={{
                     position: "relative",
-                    paddingBottom: "56.25%" /* 16:9 */,
+                    paddingBottom: "56.25%",
                     paddingTop: 25,
                     height: 0,
                   }}
@@ -72,9 +72,13 @@ export default function About() {
           <AdoptButton>現在採用中</AdoptButton>
         </AdoptSection>
         <SectionThree>
-          <LeftSectionThree></LeftSectionThree>
+        
+          <LeftSectionThree>
+            <img src={BannerThree} alt="Nodomaru"/>
+          </LeftSectionThree>
           <RightSectionThree>
-            <ThreePreHeader>About Us</ThreePreHeader>
+          <RightThreeContainer>            
+           <ThreePreHeader>About Us</ThreePreHeader>
             <ThreeHeader>
               <span>OUR</span> WORKPLACE
             </ThreeHeader>
@@ -82,7 +86,10 @@ export default function About() {
             <SectionThreeWrapper>
               <Slider />
             </SectionThreeWrapper>
+            </RightThreeContainer>
+
           </RightSectionThree>
+          
         </SectionThree>
         <MapSection>
           <MapContainer>
@@ -228,7 +235,7 @@ height:39px; */}
   }
 `;
 const SectionThree = styled.div`
-  background: url(${BannerThree});
+  {/* background: url(${BannerThree}); */}
   margin-top: 10px !important;
   display: flex;
   width: 100%;
@@ -236,26 +243,51 @@ const SectionThree = styled.div`
     width: 1200px;
     margin: auto;
   }
+  @media(max-width:991px){
+    flex-direction:column;
+  }
 `;
 const LeftSectionThree = styled.div`
   width: 50%;
   margin-right: 38px;
+  @media(max-width:991px){
+    width:100%;
+    margin:auto;
+    
+  }
+  img{
+    @media(max-width:991px){
+      width:100%;
+    }
+  }
 `;
 const RightSectionThree = styled.div`
   width: 50%;
   background-color: var(--mainYellow);
   height: 400px;
   padding: 27px 34px 27px 67px;
+  @media(max-width:991px){
+  ${'' /* width:100%; */}
+  padding: 27px 34px;
+}
 `;
 const SectionThreeWrapper = styled.div`
   width: 428px;
+  @media(max-width:991px){
+    margin:auto;
+  }
 `;
+
 const ThreePreHeader = styled.div`
   font-size: 18px;
   line-height: 21px;
   color: black;
   font-weight: bold;
   padding-bottom: 18px;
+  width: 428px;
+  ${'' /* @media(max-width:991px){
+    margin:auto;
+  } */}
 `;
 const ThreeHeader = styled.div`
   font-size: 48px;
@@ -263,16 +295,31 @@ const ThreeHeader = styled.div`
   color: black;
   font-weight: bold;
   padding-bottom: 18px;
+  width: 428px;
   span {
     font-weight: 200;
   }
+  ${'' /* @media(max-width:991px){
+    margin:auto;
+  } */}
 `;
 const ThreeDivider = styled.div`
   width: 167px;
   height: 5px;
   background-color: white;
   margin-bottom: 18px;
+  ${'' /* @media(max-width:991px){
+    width: 428px;
+    margin:auto;
+  } */}
 `;
+const RightThreeContainer = styled.div `
+width:100%;
+@media(max-width:991px){
+  width:428px;
+  margin:auto;
+}
+`
 const MapSection = styled.div`
   background-color: white;
   width: 1110px;
@@ -280,7 +327,19 @@ const MapSection = styled.div`
   margin-top: 98px;
   padding: 33px 26px;
   display: flex;
-`;
+  @media (min-width:1024px) and (max-width:1199px){
+    margin-top: 60px!important;
+    width:90%;
+    margin:auto;
+}
+@media(max-width:1023.9px){
+  width:90%;
+  margin:auto;
+}
+
+`
+;
+
 const MapContainer = styled.div`
   width: 548px;
 
@@ -299,4 +358,14 @@ const Divider = styled.div`
   height: 27px;
   width: 1111px;
   margin: auto;
+  @media(min-width:1024px) and(max-width:1199px){
+    margin-top: 20px !important;
+    width:90%;
+    margin:auto;
+  }
+  @media(max-width:1024px){
+    margin-top: 20px !important;
+    width:90%;
+    margin:auto;
+  }
 `;

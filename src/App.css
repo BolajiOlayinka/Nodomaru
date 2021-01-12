@@ -7,6 +7,10 @@
   --lightBlue:#3CC8D5;
   --mainYellow:#FFC700;
 }
+.owl-dots{
+  margin-top:-15px;
+}
 .owl-dot.active{
   background-color: black!important;
+  outline:0;
 }
