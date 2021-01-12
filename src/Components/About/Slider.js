@@ -200,8 +200,13 @@ const SliderText = styled.div`
   line-height: 28px;
   text-align: justify;
   height:176px;
+  @media(max-width:576px){
+      font-size:20px;
+      line-height:27px;
+  }
   @media (max-width: 425px) {
-    font-size: 12px;
+    font-size: 16px;
+    line-height:19px;
   }
 `;
 const QuoteName = styled.div`
@@ -212,6 +217,11 @@ const QuoteName = styled.div`
   color: black;
   text-align: right;
   margin-top:-15px;
+  @media(max-width:426px){
+      font-size:24px;
+      line-height:28px;
+      margin-top:-70px;
+  }
 `;
 const ThreePreHeader = styled.div`
   font-size: 18px;
@@ -234,7 +244,16 @@ const ThreeHeader = styled.div`
   span {
     font-weight: 200;
   }
-  
+  @media(max-width:576px){
+      width:400px;
+  }
+  @media(max-width:426px){
+      font-size:36px;
+      line-height:42px;
+    width:292px;
+    font-weight:normal;
+    
+  }
 `;
 const ThreeDivider = styled.div`
   width: 167px;
@@ -267,12 +286,24 @@ padding: 27px 34px 27px 67px;
     padding-left:0px;
     padding-right:0px;
 }
+@media(max-width:426px){
+    height:308px;
+    ${'' /* padding:26px 54px 26px 54px; */}
+}
 `
 const ContentWrapper =styled.div `
 width:100%;
 @media(max-width:991px){
   width:428px;
   margin:auto;
+}
+@media(max-width:576px){
+    width:400px;
+    margin:auto;
+}
+@media(max-width:426px){
+    width:292px;
+    margin:auto;
 }
 `
 const SmallCarousel = styled.div `

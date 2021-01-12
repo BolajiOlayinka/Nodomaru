@@ -114,12 +114,13 @@ export default function Home() {
     </Wrapper>
   );
 }
-const Wrapper =styled.div `
-  ${'' /* scroll-snap-type: mandatory;
+const Wrapper = styled.div`
+  ${
+    "" /* scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(300px);
-  scroll-snap-type: y mandatory; */}
-
-`
+  scroll-snap-type: y mandatory; */
+  }
+`;
 const Container = styled.div`
   width: 100%;
   margin: auto;
@@ -138,18 +139,18 @@ const Banner = styled.div`
   align-items: center;
   text-align: center;
   border: 11px solid white;
- 
+
   @media (max-width: 768px) {
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
   @media (max-width: 576px) {
-   height:558px;
+    height: 558px;
   }
 `;
 const LogoContainer = styled.div`
-width:90%;
-margin:auto;
+  width: 90%;
+  margin: auto;
   img {
     width: 700px;
   }
@@ -169,18 +170,17 @@ const LogoSubText = styled.div`
   margin: auto;
   color: white;
   margin-bottom: 39px;
-  @media(max-width:768px){
-    width:400px;
-    font-size:24px;
+  @media (max-width: 768px) {
+    width: 400px;
+    font-size: 24px;
   }
   @media (max-width: 576px) {
     width: 220px;
     height: 20px;
     font-size: 14px;
     line-height: 20px;
-    margin-bottom:177px;
+    margin-bottom: 177px;
   }
-  
 `;
 const LogoButton = styled.a`
   width: 104px;
@@ -189,8 +189,8 @@ const LogoButton = styled.a`
   background-color: var(--mainYellow);
   color: white;
   text-decoration: none;
-  position:relative;
-  z-index:1;
+  position: relative;
+  z-index: 1;
 `;
 const PalmContainer = styled.div`
   position: absolute;
@@ -206,32 +206,30 @@ const PalmContainer = styled.div`
   @media (min-width: 1200px) {
     width: 1200px;
   }
-  @media(min-width:991px) and (max-width:1199px){
-    img{
-      margin-right:36px;
+  @media (min-width: 991px) and (max-width: 1199px) {
+    img {
+      margin-right: 36px;
     }
   }
-  @media(max-width:990.9px){
-    
-    img{
-      margin-right:0px;
+  @media (max-width: 990.9px) {
+    img {
+      margin-right: 0px;
     }
   }
-  @media(max-width:768px){
-    img{
-      width:260px;
-      height:598px;
+  @media (max-width: 768px) {
+    img {
+      width: 260px;
+      height: 598px;
     }
   }
-  @media(max-width:425px){
-    width:100%;
-    margin-top:385px;
-    img{
-      width:226px;
-    height:444px;
-    margin-right:0px;
+  @media (max-width: 425px) {
+    width: 100%;
+    margin-top: 385px;
+    img {
+      width: 226px;
+      height: 444px;
+      margin-right: 0px;
     }
-    
   }
 `;
 const Service = styled.div`
@@ -240,7 +238,7 @@ const Service = styled.div`
   border: 11px solid white;
   padding: 39px 32px;
   &.proximity {
-      scroll-snap-type: y proximity;
+    scroll-snap-type: y proximity;
   }
   @media (max-width: 768px) {
     border-right: 0px solid white;
@@ -254,16 +252,15 @@ const ServiceHeading = styled.div`
   line-height: 56px;
   font-weight: bold;
   color: white;
-  @media(max-width:768px){
-    font-size:36px;
+  @media (max-width: 768px) {
+    font-size: 36px;
   }
   @media (max-width: 576px) {
     width: 192px;
     height: 20px;
     font-size: 24px;
     line-height: 29px;
-    margin-bottom:12px;
-
+    margin-bottom: 12px;
   }
 `;
 const NodomaruHeading = styled.div`
@@ -272,16 +269,15 @@ const NodomaruHeading = styled.div`
   color: #ffffff;
   font-weight: 400;
   height: 54px;
- @media(max-width:576px){
-width:260px;
-font-size:36px;
-line-height:42px
- }
- @media(max-width:426px){
-   width:150px;
-   ${'' /* padding-bottom:16px; */}
-  
- }
+  @media (max-width: 576px) {
+    width: 260px;
+    font-size: 36px;
+    line-height: 42px;
+  }
+  @media (max-width: 426px) {
+    width: 150px;
+    ${"" /* padding-bottom:16px; */}
+  }
 `;
 const HeadingUnderline = styled.div`
   width: 120px;
@@ -289,10 +285,10 @@ const HeadingUnderline = styled.div`
   background-color: var(--mainYellow);
   margin-top: 31px;
   margin-bottom: 31px;
-  @media(max-width:426px){
-   margin-bottom:10px;
-   ${'' /* margin-top:16px; */}
- }
+  @media (max-width: 426px) {
+    margin-bottom: 10px;
+    ${"" /* margin-top:16px; */}
+  }
 `;
 const ServiceBody = styled.div`
   width: 486px;
@@ -301,10 +297,10 @@ const ServiceBody = styled.div`
   color: white;
   margin-top: 5px;
   font-weight: 400;
-  @media(max-width:768px){
-    font-size:15px;
-    line-height:18px;
-    width:360px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+    line-height: 18px;
+    width: 360px;
   }
   @media (max-width: 576px) {
     width: 262px;
@@ -343,18 +339,18 @@ const LeftEstate = styled.div`
   background-size: cover;
   border-left: 11px solid white;
   @media (max-width: 768px) {
-    height:220px;
+    height: 220px;
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
-  @media (max-width:576px) {
+  @media (max-width: 576px) {
     height: 160px;
   }
 `;
 const RightEstate = styled.div`
   width: 50%;
   background-color: var(--mainYellow);
-  height:260px;
+  height: 260px;
   padding: 20px;
   font-size: 32px;
   line-height: 38px;
@@ -364,21 +360,20 @@ const RightEstate = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 768px) {
-    height:220px;
-    font-size:24px;
+    height: 220px;
+    font-size: 24px;
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
-  @media (max-width:576px) {
+  @media (max-width: 576px) {
     height: 160px;
-    font-size:20px;
-    line-height:23px;
+    font-size: 20px;
+    line-height: 23px;
   }
-  @media(max-width:374.9px){
-    font-size:16px;
-    line-height:19px;
+  @media (max-width: 374.9px) {
+    font-size: 16px;
+    line-height: 19px;
   }
-
 `;
 const SmallLogoRight = styled.div`
   text-align: right;
@@ -410,7 +405,7 @@ const RightFinance = styled.div`
   border-right: 11px solid white;
   border-top: 11px solid white;
   @media (max-width: 768px) {
-    height:220px;
+    height: 220px;
     border-top: 11px solid white;
     border-right: 0px solid white;
     border-left: 0px solid white;
@@ -421,7 +416,7 @@ const RightFinance = styled.div`
 `;
 const LeftFinance = styled.div`
   width: 50%;
-  ${'' /* height:260px; */}
+  ${"" /* height:260px; */}
   background-color: var(--mainYellow);
   padding: 20px;
   font-size: 32px;
@@ -432,28 +427,28 @@ const LeftFinance = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   @media (max-width: 768px) {
-    height:220px;
-    font-size:24px;
-    line-height:28px;
+    height: 220px;
+    font-size: 24px;
+    line-height: 28px;
     border-top: 11px solid white;
     border-right: 0px solid white;
     border-left: 0px solid white;
   }
-  @media(max-width:576px){
-    font-size:20px;
-    line-height:23px;
-    height:160px;
-    padding-right:0px;
-    h3{
-      font-size:18px;
-      margin-bottom:0px;
-      line-height:21px;
+  @media (max-width: 576px) {
+    font-size: 20px;
+    line-height: 23px;
+    height: 160px;
+    padding-right: 0px;
+    h3 {
+      font-size: 18px;
+      margin-bottom: 0px;
+      line-height: 21px;
     }
   }
-  @media(max-width:374.9px){
-    font-size:16px;
+  @media (max-width: 374.9px) {
+    font-size: 16px;
   }
 `;
 
@@ -514,13 +509,13 @@ const BetterServiceHeading = styled.div`
     width: 80%;
     text-align: center;
   }
-  @media(max-width:576px){
-    padding-top:35px;
-    width:90%;
-    font-size:16px;
-    line-height:19px;
+  @media (max-width: 576px) {
+    padding-top: 35px;
+    width: 90%;
+    font-size: 16px;
+    line-height: 19px;
   }
-  @media(max-width:425px){
+  @media (max-width: 425px) {
     padding-top: 17px;
   }
 `;
@@ -534,15 +529,15 @@ const BetterServiceSubText = styled.div`
     width: 80%;
     text-align: center;
   }
-  @media(max-width:576px){
-    width:100%;
-    font-size:16px;
-    line-height:19px;
+  @media (max-width: 576px) {
+    width: 100%;
+    font-size: 16px;
+    line-height: 19px;
   }
-  @media(max-width:576px){
-    width:100%;
-    font-size:14px;
-    line-height:19px;
+  @media (max-width: 576px) {
+    width: 100%;
+    font-size: 14px;
+    line-height: 19px;
   }
 `;
 const HomeNews = styled.div`
