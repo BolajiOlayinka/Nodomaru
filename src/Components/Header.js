@@ -70,7 +70,7 @@ export default function Header() {
               <StyledLink>お問い合わせ</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink>ABOUT</StyledLink>
+              <StyledLink to ="/about">ABOUT</StyledLink>
             </NavItem>
           </StyledNav>
         )}
