@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BannerImage from "../../assets/ServiceBanner.png";
 import BannerImage2 from "../../assets/BannerConnector.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
+import ServiceIcon from "../../assets/ServiceIcon.svg";
 
 export default function Service() {
   return (
@@ -47,13 +48,33 @@ export default function Service() {
       </EstateServicePoint>
         <ServiceUse>
         <UseCase>
-
+        <img src={ServiceIcon} alt="Service Icon"/>
+        <UseButton>
+        賃貸仲介「いえどき」
+        </UseButton>
+        <UseCaseBody>
+        「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+        </UseCaseBody>
         </UseCase>
+        
         <UseCase>
-
+        <img src={ServiceIcon} alt="Service Icon"/>
+        <UseButton>
+        賃貸仲介「いえどき」
+        </UseButton>
+        <UseCaseBody>
+        「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+        </UseCaseBody>
         </UseCase>
+       
         <UseCase>
-
+        <img src={ServiceIcon} alt="Service Icon"/>
+        <UseButton>
+        賃貸仲介「いえどき」
+        </UseButton>
+        <UseCaseBody>
+        「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+        </UseCaseBody>
         </UseCase>
         </ServiceUse>
     </React.Fragment>
@@ -163,4 +184,26 @@ justify-content:space-between;
 `
 const UseCase =styled.div `
 width:230px;
+text-align:center;
+img{
+    width:100px;
+    margin-bottom:31px;
+}
+
+`
+const UseButton =styled.div `
+width:230px;
+color:#3CC5D1;
+border:1px solid #3CC5D1;
+border-radius: 4px;
+margin-bottom:31px;
+`
+const UseCaseBody = styled.div `
+width:184px;
+text-align:justify;
+margin:auto;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+color:black;
 `
