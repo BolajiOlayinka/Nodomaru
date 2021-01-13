@@ -230,9 +230,7 @@ const ThreePreHeader = styled.div`
   font-weight: bold;
   padding-bottom: 18px;
   width: 428px;
-  ${'' /* @media(max-width:991px){
-    margin:auto;
-  } */}
+  
 `;
 const ThreeHeader = styled.div`
   font-size: 48px;

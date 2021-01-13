@@ -116,6 +116,22 @@ export default function About() {
         <SectionThree>
           <Slider />
         </SectionThree>
+        <SmallCompanyInfo>
+          <AddressHeader>Company Information</AddressHeader>
+          <div>名称 - 株式会社Nodomaru (英語表記 Nodomaru Co.,Ltd)</div>
+          <div>設立 - 2019年1月18日</div>
+          <div>代表者 - 向仲 駿</div>
+          <div>所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
+          <div>Tel : 03-6456-4538</div>
+          <div>FAX : 03-6456-4537</div>
+          <Desc>
+            事業内容
+            <li>不動産事業</li>
+            <li>FPコンサルティング業</li>
+            <li>人材紹介業</li>
+            <li>クラウドファンディング事業</li>
+          </Desc>
+        </SmallCompanyInfo>
         <MapSection>
           <MapContainer>
             <img src={Map} alt="Nodomaru Map" />
@@ -192,18 +208,8 @@ const LeftText = styled.div`
   font-size: 24px;
   line-height: 33px;
   color: white;
-  ${
-    "" /* @media(max-width:768px){
-    font-size:32px;
-    line-height:40px;
-    font-weight:bold;
-  }
-  @media(max-width:526px){
-    font-size:24px;
-    line-height:33px;
-  } */
-  }
-  @media(max-width:426px) {
+
+  @media (max-width: 426px) {
     font-size: 18px;
     line-height: 25px;
     font-weight: normal;
@@ -377,7 +383,36 @@ const SectionThree = styled.div`
     flex-direction: column;
   }
 `;
-
+const SmallCompanyInfo = styled.div`
+  background-color: white;
+  margin-top: 350px;
+  width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 33px 26px;
+  @media (min-width: 991px) {
+    display: none;
+  }
+  @media (max-width: 991px) {
+    margin-top: 50%;
+  }
+  @media (max-width: 576px) {
+    width: 90%;
+    margin: auto;
+    margin-top:50%;
+    margin-bottom:10px;
+  }
+  @media (max-width: 425px) {
+    width: 320px;
+    margin-top:150px;
+    margin-bottom:20px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  @media(max-width:375px){
+margin-top:80px;
+  }
+`;
 const MapSection = styled.div`
   background-color: white;
   width: 1110px;
@@ -395,7 +430,17 @@ const MapSection = styled.div`
     margin: auto;
   }
   @media (max-width: 991px) {
-    margin-top: 480px;
+    width: 560px;
+    margin-top: 10px;
+  }
+  @media (max-width: 576px) {
+    width: 90%;
+    margin: auto;
+  }
+  @media (max-width: 425px) {
+    width: 320px;
+    margin: auto;
+    padding: 10px;
   }
 `;
 const MapContainer = styled.div`
@@ -403,7 +448,15 @@ const MapContainer = styled.div`
 
   img {
     width: 100%;
-    height: 391px;
+    ${'' /* height: 391px; */}
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+  @media(min-width:991px){
+    img{
+      height:391px;
+    }
   }
 `;
 const AddressContainer = styled.div`
@@ -411,11 +464,20 @@ const AddressContainer = styled.div`
   padding-left:26px;
   font-size: 18px;
   line-height: 21px;
+  @media (max-width: 991px) {
+    display: none;
+  }
 `;
 const AddressHeader = styled.div`
   font-weight: bold;
   font-size: 60px;
   line-height: 70px;
+  @media (max-width: 426px) {
+    width: 209px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+  }
 `;
 const Desc = styled.div`
   padding-top: 14px;
@@ -435,5 +497,19 @@ const Divider = styled.div`
     margin-top: 20px !important;
     width: 90%;
     margin: auto;
+  }
+  @media (max-width: 991px) {
+    width: 560px;
+    margin: auto;
+  }
+  @media (max-width: 576px) {
+    width: 90%;
+  }
+  @media (max-width: 426px) {
+    height:10px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:360px;
   }
 `;
