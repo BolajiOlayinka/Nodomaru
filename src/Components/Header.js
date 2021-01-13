@@ -72,6 +72,11 @@ export default function Header() {
             <NavItem>
               <StyledLink to ="/about">ABOUT</StyledLink>
             </NavItem>
+            <NavItem>
+              <StyledLink to ="/service">サービス</StyledLink>
+            </NavItem>
+            
+
           </StyledNav>
         )}
         <LargeNav className="ml-auto">
@@ -93,6 +98,15 @@ export default function Header() {
                navcolor={navcolor}
               >
                 ABOUT
+              </StyledLink>
+            </NavItem>
+            <NavItem>
+              <StyledLink
+               
+               to="/service"
+               navcolor={navcolor}
+              >
+                サービス
               </StyledLink>
             </NavItem>
           </StyledNav>
