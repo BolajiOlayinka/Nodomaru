@@ -2,8 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import BannerImage from "../../assets/ServiceBanner.png";
 import BannerImage2 from "../../assets/BannerConnector.png";
+import BannerImage3 from "../../assets/FinanceConnector.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import ServiceIcon from "../../assets/ServiceIcon.svg";
+import { Link } from "react-router-dom";
+import blueicon from "../../assets/icon-blue.svg";
+import yellowicon from "../../assets/icon-yellow.svg";
 
 export default function Service() {
   return (
@@ -34,55 +38,116 @@ export default function Service() {
         </RealEstateWrapper>
       </Container>
       <BannerConnector>
-      <Container>
-            <Connector>
-
-            </Connector>
-            </Container>
+        <Container>
+          <Connector></Connector>
+        </Container>
       </BannerConnector>
       <EstateServicePoint>
-      <Container>
+        <Container>
           <PreHeading>REAL ESTATE</PreHeading>
           <Heading>OUR KEY SERVICE POINTS</Heading>
-          </Container>
+        </Container>
       </EstateServicePoint>
-        <ServiceUse>
+      <ServiceUse>
         <UseCase>
-        <img src={ServiceIcon} alt="Service Icon"/>
-        <UseButton>
-        賃貸仲介「いえどき」
-        </UseButton>
-        <UseCaseBody>
-        「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
-        </UseCaseBody>
+          <img src={ServiceIcon} alt="Service Icon" />
+          <UseButton>賃貸仲介「いえどき」</UseButton>
+          <UseCaseBody>
+            「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+          </UseCaseBody>
         </UseCase>
-        
+
         <UseCase>
-        <img src={ServiceIcon} alt="Service Icon"/>
-        <UseButton>
-        賃貸仲介「いえどき」
-        </UseButton>
-        <UseCaseBody>
-        「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
-        </UseCaseBody>
+          <img src={ServiceIcon} alt="Service Icon" />
+          <UseButton>賃貸仲介「いえどき」</UseButton>
+          <UseCaseBody>
+            「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+          </UseCaseBody>
         </UseCase>
-       
+
         <UseCase>
-        <img src={ServiceIcon} alt="Service Icon"/>
-        <UseButton>
-        賃貸仲介「いえどき」
-        </UseButton>
-        <UseCaseBody>
-        「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
-        </UseCaseBody>
+          <img src={ServiceIcon} alt="Service Icon" />
+          <UseButton>賃貸仲介「いえどき」</UseButton>
+          <UseCaseBody>
+            「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+          </UseCaseBody>
         </UseCase>
-        </ServiceUse>
+      </ServiceUse>
+      <ButtonContainer>
+        <ServiceButton>取り合わせ</ServiceButton>
+      </ButtonContainer>
+      <LineWrapper>
+        <Line />
+        <img src={blueicon} alt="Nodomaru Icon" />
+        <Line />
+      </LineWrapper>
+
+      {/* Finance Section */}
+      <Container>
+        <FinanceWrapper>
+          <LeftFinance>FP コンサルティング</LeftFinance>
+          <RightFinance>
+            <RightFinanceHead>あなたにとって最適なプランを</RightFinanceHead>
+            <RightFinanceBody>
+              「十人十色」という言葉があるように幸せの定義は人それぞれ違います。
+              必要な事は、その幸せを実現するための情報です。
+              どんなところに資産をお使いかでその方の価値観がわかります。
+              弊社では、お客様にとっての「のどまる人生」をベースにひとりひとりのお話をよく聴き、生涯を通して最適なライフプランをご提案いたします。
+            </RightFinanceBody>
+          </RightFinance>
+        </FinanceWrapper>
+      </Container>
+      <FinanceBanner>
+        <Container>
+          <FinanceConnector></FinanceConnector>
+        </Container>
+      </FinanceBanner>
+      <FinanceServicePoint>
+        <Container>
+          <FinancePreHeading>FINANCIAL PLANNING & CONSULTING</FinancePreHeading>
+          <FinanceHeading>OUR KEY SERVICE POINTS</FinanceHeading>
+        </Container>
+      </FinanceServicePoint>
+      <ServiceUse>
+        <UseCase>
+          <img src={ServiceIcon} alt="Service Icon" />
+          <FinancialUseButton>保険見直し</FinancialUseButton>
+          <UseCaseBody>
+            本当に必要な保険は人によって違います。ファイナンシャルプランナーがフラットな立場から、最適なアドバイスをいたします。
+          </UseCaseBody>
+        </UseCase>
+
+        <UseCase>
+          <img src={ServiceIcon} alt="Service Icon" />
+          <FinancialUseButton>資産運用</FinancialUseButton>
+          <UseCaseBody>
+            老後資金、教育資金など「お金」にまつわる様々なお悩みについて、ファイナンシャルプランナーがご相談に応じます。
+          </UseCaseBody>
+        </UseCase>
+
+        <UseCase>
+          <img src={ServiceIcon} alt="Service Icon" />
+          <FinancialUseButton>各種セミナー</FinancialUseButton>
+          <UseCaseBody>
+            保険や不動産のセミナーだけでなく、経営者や営業職の方向けに売り上げを上げるセミナーも開催しております。
+          </UseCaseBody>
+        </UseCase>
+      </ServiceUse>
+      <ButtonContainer>
+        <FinanceButton>取り合わせ</FinanceButton>
+      </ButtonContainer>
+      <FinanceLineWrapper>
+        <FinanceLine />
+        <img src={yellowicon} alt="Nodomaru Icon" />
+        <FinanceLine />
+      </FinanceLineWrapper>
     </React.Fragment>
   );
 }
 const Container = styled.div`
   width: 100%;
   margin: auto;
+  position: relative;
   @media (min-width: 1200px) {
     width: 1200px;
     margin: auto;
@@ -125,6 +190,8 @@ const LeftEstate = styled.div`
   padding-right: 45px;
   font-size: 55px;
   line-height: 75px;
+ 
+  
 `;
 const RightEstate = styled.div`
   border-left: 1px solid #3cc5d1;
@@ -142,68 +209,241 @@ const RightEstateBody = styled.div`
   font-size: 18px;
   line-height: 25px;
 `;
-const BannerConnector =styled.div `
-background: url(${BannerImage2});
-background-size:cover;
-height:400px;
-`
-const Connector =styled.div `
-background-color:#3CC5D1;
-position:absolute;
-margin-top:173px;
-width: 20px;
-height: 311px;
-left:117px;
-`
-const EstateServicePoint = styled.div `
-padding-top:64px;
-text-align:center;
-margin:auto;
-`
-const PreHeading = styled.div `
-font-weight: bold;
-font-size: 24px;
-line-height: 28px;
-letter-spacing: 0.4em;
-height:46px;
-`
-const Heading =styled.div `
-font-weight: 300;
-font-size: 36px;
-line-height: 42px;
-letter-spacing: 0.4em;
-height:46px;
-`
-const ServiceUse =styled.div `
-margin-top:48px;
-display:flex;
-width:864px;
-margin-left:auto;
-margin-right:auto;
-justify-content:space-between;
-`
-const UseCase =styled.div `
-width:230px;
-text-align:center;
-img{
-    width:100px;
-    margin-bottom:31px;
-}
+const BannerConnector = styled.div`
+  background: url(${BannerImage2});
+  background-size: cover;
+  height: 400px;
+`;
+const Connector = styled.div`
+  background-color: #3cc5d1;
+  position: absolute;
+  margin-top: 173px;
+  width: 20px;
+  height: 311px;
+  left: 117px;
+`;
+const EstateServicePoint = styled.div`
+  padding-top: 64px;
+  text-align: center;
+  margin: auto;
+`;
+const PreHeading = styled.div`
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.4em;
+  height: 46px;
+`;
+const Heading = styled.div`
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.4em;
+  height: 46px;
+`;
+const ServiceUse = styled.div`
+  margin-top: 48px;
+  display: flex;
+  width: 864px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+`;
+const UseCase = styled.div`
+  width: 230px;
+  text-align: center;
+  img {
+    width: 100px;
+    margin-bottom: 31px;
+  }
+`;
+const UseButton = styled.div`
+  width: 230px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3cc5d1;
+  border: 1px solid #3cc5d1;
+  border-radius: 4px;
+  margin-bottom: 31px;
+`;
+const UseCaseBody = styled.div`
+  width: 184px;
+  text-align: justify;
+  margin: auto;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: black;
+`;
+const ButtonContainer = styled.div`
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+`;
+const ServiceButton = styled(Link)`
+  width: 140px;
+  height: 45px;
+  background-color: #3cc5d1;
+  color: white;
+  border-radius: 4px;
+  font-size: 18px;
 
-`
-const UseButton =styled.div `
-width:230px;
-color:#3CC5D1;
-border:1px solid #3CC5D1;
-border-radius: 4px;
-margin-bottom:31px;
-`
-const UseCaseBody = styled.div `
-width:184px;
-text-align:justify;
-margin:auto;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-color:black;
-`
+  padding: 12px 25px 12px 25px;
+`;
+const LineWrapper = styled.div`
+  width: 1094px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  img {
+    width: 35px;
+  }
+  @media (max-width: 768px) {
+    width: 85%;
+  }
+  @media (max-width: 425px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+`;
+const Line = styled.hr`
+  border: 1px solid #3cc5d1;
+  width: 508px;
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+  @media (max-width: 576px) {
+    width: 150px;
+  }
+  @media (max-width: 425px) {
+    width: 120px;
+  }
+`;
+
+// Finance Section
+
+const FinanceWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 1078px;
+  margin: auto;
+  padding-top: 47px;
+  padding-bottom: 47px;
+`;
+const LeftFinance = styled.div`
+  padding-right: 45px;
+  font-weight: bold;
+font-size: 35px;
+line-height: 48px;
+  width:190px;
+  
+`;
+const RightFinance = styled.div`
+  border-left: 1px solid var(--mainYellow);
+  padding-left: 45px;
+  width: 718px;
+`;
+const RightFinanceHead = styled.div`
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 49px;
+  height: 59px;
+`;
+const RightFinanceBody = styled.div`
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+`;
+const FinanceBanner = styled.div`
+  background: url(${BannerImage3});
+  background-size: cover;
+  height: 400px;
+`;
+const FinanceConnector = styled.div`
+  background-color: var(--mainYellow);
+  position: absolute;
+  margin-top: 173px;
+  width: 20px;
+  height: 311px;
+  left: 117px;
+`;
+const FinanceServicePoint = styled.div`
+  padding-top: 64px;
+  text-align: center;
+  margin: auto;
+`;
+const FinancePreHeading = styled.div`
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.4em;
+  height: 46px;
+`;
+const FinanceHeading = styled.div`
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.4em;
+  height: 46px;
+`;
+const FinanceButton = styled(Link)`
+  width: 140px;
+  height: 45px;
+  background-color: var(--mainYellow);
+  color: black;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 12px 25px 12px 25px;
+`;
+const FinancialUseButton = styled.div`
+  width: 230px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 1px solid var(--mainYellow);
+  border-radius: 4px;
+  margin-bottom: 31px;
+  font-weight: bold;
+`;
+const FinanceLineWrapper = styled.div`
+  width: 1094px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 62px;
+  img {
+    width: 35px;
+  }
+  @media (max-width: 768px) {
+    width: 85%;
+  }
+  @media (max-width: 425px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+`;
+const FinanceLine = styled.hr`
+  border: 1px solid var(--mainYellow);
+  width: 508px;
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+  @media (max-width: 576px) {
+    width: 150px;
+  }
+  @media (max-width: 425px) {
+    width: 120px;
+  }
+`;

@@ -10,7 +10,7 @@ import BeachImage from "../../assets/beachImage2.png";
 import SmallRightEstate from "../../assets/SmallRightEstate.png";
 import SmallFinance from "../../assets/SmallFinance.png";
 import LogoWhite from "../../assets/icon.svg";
-import Divider from "../Snippets/Divider";
+import Divider from "./Divider";
 import Posts from "./HomePost";
 import Form from "./ContactForm";
 // import { icon } from "@fortawesome/fontawesome-svg-core";
