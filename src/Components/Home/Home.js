@@ -140,10 +140,10 @@ const Banner = styled.div`
   text-align: center;
   border: 11px solid white;
 
-  @media (max-width: 768px) {
-    border-right: 0px solid white;
-    border-left: 0px solid white;
-  }
+  ${'' /* @media (max-width: 768px) {
+    border-right:11px solid white;
+    border-left:11px solid white;
+  } */}
   @media (max-width: 576px) {
     height: 558px;
   }
