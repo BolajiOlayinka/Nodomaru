@@ -129,7 +129,9 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  
+  @media(max-width:576px){
+    width:100%;
+  }
  
 `;
 const LogoContainer = styled.div`
@@ -139,6 +141,7 @@ const LogoContainer = styled.div`
   }
   @media (max-width: 576px) {
     z-index: 2;
+    ${'' /* padding-right:20px; */}
   }
 `;
 const StyledNav = styled(Nav)`
