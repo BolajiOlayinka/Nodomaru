@@ -18,7 +18,7 @@ import Form from "./ContactForm";
 export default function Home() {
   return (
     <Wrapper>
-      <Banner>
+      {/* <Banner>
         <Container>
           <LogoContainer>
             <img src={WhiteLogo} alt="Nodomaru Logo" />
@@ -31,7 +31,7 @@ export default function Home() {
             <img src={PalmTree} alt="Nodomaru PalmTree" />
           </PalmContainer>
         </Container>
-      </Banner>
+      </Banner> */}
       <Service>
         <Container>
           <NodomaruHeading>Nodomaruとは</NodomaruHeading>
