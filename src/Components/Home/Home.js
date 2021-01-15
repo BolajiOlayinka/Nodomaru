@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import BannerImage from "../../assets/BannerImg.png";
+// import BannerImage from "../../assets/BannerImg.png";
 // import SmallBannerImage from "../../assets/SmallBannerImg.png";
-import WhiteLogo from "../../assets/LogoWhite.png";
-import PalmTree from "../../assets/PalmTree.png";
+// import WhiteLogo from "../../assets/LogoWhite.png";
+// import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/Estate.png";
 import FinancialPlan from "../../assets/Finance.png";
 import BeachImage from "../../assets/beachImage2.png";
@@ -130,108 +130,105 @@ const Container = styled.div`
   }
 `;
 
-const Banner = styled.div`
-  background: url(${BannerImage});
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 592px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  border: 11px solid white;
+// const Banner = styled.div`
+//   background: url(${BannerImage});
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   height: 592px;
+//   display: flex;
+//   align-items: center;
+//   text-align: center;
+//   border: 11px solid white;
 
-  ${'' /* @media (max-width: 768px) {
-    border-right:11px solid white;
-    border-left:11px solid white;
-  } */}
-  @media (max-width: 576px) {
-    height: 558px;
-  }
-`;
-const LogoContainer = styled.div`
-  width: 90%;
-  margin: auto;
-  img {
-    width: 700px;
-  }
-  @media (max-width: 768px) {
-    img {
-      width: 90%;
-    }
-  }
-`;
-const LogoSubText = styled.div`
-  width: 583px;
-  height: 69px;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 49px;
-  text-align: center;
-  margin: auto;
-  color: white;
-  margin-bottom: 39px;
-  @media (max-width: 768px) {
-    width: 400px;
-    font-size: 24px;
-  }
-  @media (max-width: 576px) {
-    width: 220px;
-    height: 20px;
-    font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 177px;
-  }
-`;
-const LogoButton = styled.a`
-  width: 104px;
-  height: 30px;
-  padding: 9px 25px 9px 25px;
-  background-color: var(--mainYellow);
-  color: white;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-`;
-const PalmContainer = styled.div`
-  position: absolute;
-  text-align: right;
-  top: 0;
-  margin-top: 296px;
-  width: 95%;
-  img {
-    height: 728px;
-    width: 320px;
-    margin-right: 126px;
-  }
-  @media (min-width: 1200px) {
-    width: 1200px;
-  }
-  @media (min-width: 991px) and (max-width: 1199px) {
-    img {
-      margin-right: 36px;
-    }
-  }
-  @media (max-width: 990.9px) {
-    img {
-      margin-right: 0px;
-    }
-  }
-  @media (max-width: 768px) {
-    img {
-      width: 260px;
-      height: 598px;
-    }
-  }
-  @media (max-width: 425px) {
-    width: 100%;
-    margin-top: 385px;
-    img {
-      width: 226px;
-      height: 444px;
-      margin-right: 0px;
-    }
-  }
-`;
+  
+//   @media (max-width: 576px) {
+//     height: 558px;
+//   }
+// `;
+// const LogoContainer = styled.div`
+//   width: 90%;
+//   margin: auto;
+//   img {
+//     width: 700px;
+//   }
+//   @media (max-width: 768px) {
+//     img {
+//       width: 90%;
+//     }
+//   }
+// `;
+// const LogoSubText = styled.div`
+//   width: 583px;
+//   height: 69px;
+//   font-weight: normal;
+//   font-size: 36px;
+//   line-height: 49px;
+//   text-align: center;
+//   margin: auto;
+//   color: white;
+//   margin-bottom: 39px;
+//   @media (max-width: 768px) {
+//     width: 400px;
+//     font-size: 24px;
+//   }
+//   @media (max-width: 576px) {
+//     width: 220px;
+//     height: 20px;
+//     font-size: 14px;
+//     line-height: 20px;
+//     margin-bottom: 177px;
+//   }
+// `;
+// const LogoButton = styled.a`
+//   width: 104px;
+//   height: 30px;
+//   padding: 9px 25px 9px 25px;
+//   background-color: var(--mainYellow);
+//   color: white;
+//   text-decoration: none;
+//   position: relative;
+//   z-index: 1;
+// `;
+// const PalmContainer = styled.div`
+//   position: absolute;
+//   text-align: right;
+//   top: 0;
+//   margin-top: 296px;
+//   width: 95%;
+//   img {
+//     height: 728px;
+//     width: 320px;
+//     margin-right: 126px;
+//   }
+//   @media (min-width: 1200px) {
+//     width: 1200px;
+//   }
+//   @media (min-width: 991px) and (max-width: 1199px) {
+//     img {
+//       margin-right: 36px;
+//     }
+//   }
+//   @media (max-width: 990.9px) {
+//     img {
+//       margin-right: 0px;
+//     }
+//   }
+//   @media (max-width: 768px) {
+//     img {
+//       width: 260px;
+//       height: 598px;
+//     }
+//   }
+//   @media (max-width: 425px) {
+//     width: 100%;
+//     margin-top: 385px;
+//     img {
+//       width: 226px;
+//       height: 444px;
+//       margin-right: 0px;
+//     }
+//   }
+// `;
 const Service = styled.div`
   background-color: var(--lightBlue);
   border-top-width: 0px !important;
