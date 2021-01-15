@@ -129,9 +129,9 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  @media(max-width:576px){
-    width:100%;
-  }
+  ${'' /* @media(max-width:576px){
+    width:90%;
+  } */}
  
 `;
 const LogoContainer = styled.div`
