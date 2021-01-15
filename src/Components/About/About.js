@@ -330,7 +330,6 @@ const PlayButton = styled.button`
     padding: 10px 24px;
   }
   @media (max-width: 425px) {
-    padding: 9px 25px;
     border-radius: 4px;
     background-color: var(--mainYellow);
   }

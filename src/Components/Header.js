@@ -46,14 +46,17 @@ export default function Header() {
     setShowIcon(!showIcon, e);
   };
 
+  const closeModal = ()=>{
+    setShowItem(false)
+  }
   return (
     <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
       <StyledNavbar expand="md">
         <div onClick={toggle}>
           {showIcon ? (
-            <StyledFontAwesome icon={faBars} />
+            <StyledFontAwesome icon={faBars} navcolor={navcolor}/>
           ) : (
-            <StyledFontCancel icon={faBars} />
+            <StyledFontCancel icon={faBars} navcolor={navcolor}/>
           )}
         </div>
         <LogoContainer>
@@ -64,16 +67,16 @@ export default function Header() {
         {showItem && (
           <StyledNav navbar>
             <NavItem>
-              <StyledLink to="/">ニュース</StyledLink>
+              <StyledLink to="/" onClick={closeModal}>ニュース</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink>お問い合わせ</StyledLink>
+              <StyledLink onClick={closeModal}>お問い合わせ</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink to ="/about">ABOUT</StyledLink>
+              <StyledLink to ="/about" onClick={closeModal}>ABOUT</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink to ="/service">サービス</StyledLink>
+              <StyledLink to ="/service" onClick={closeModal}>サービス</StyledLink>
             </NavItem>
             
 
@@ -239,7 +242,7 @@ const LargeNav = styled.div`
   }
 `;
 const StyledFontAwesome = styled(FontAwesomeIcon)`
-  color: black;
+  color: ${(props) => props.navcolor} !important;
   font-size: 20px;
 
   @media (min-width: 767.9px) {
