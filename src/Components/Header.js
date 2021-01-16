@@ -52,13 +52,7 @@ export default function Header() {
   return (
     <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
       <StyledNavbar expand="md">
-        <div onClick={toggle}>
-          {showIcon ? (
-            <StyledFontAwesome icon={faBars} navcolor={navcolor}/>
-          ) : (
-            <StyledFontCancel icon={faBars} navcolor={navcolor}/>
-          )}
-        </div>
+        
         <LogoContainer>
           <Link to="/">
             <img src={logo} alt="Digitrad Logo" />
@@ -79,9 +73,17 @@ export default function Header() {
               <StyledLink to ="/service" onClick={closeModal}>サービス</StyledLink>
             </NavItem>
             
-
           </StyledNav>
         )}
+        <div onClick={toggle}>
+          {showIcon ? (
+            <StyledFontAwesome icon={faBars} navcolor={navcolor}/>
+          ) : (
+            <StyledFontCancel icon={faBars} navcolor={navcolor}/>
+          )}
+        </div>
+
+       
         <LargeNav className="ml-auto">
           <StyledNav navbar>
             <NavItem>

@@ -14,8 +14,28 @@ import Divider from "./Divider";
 import Posts from "./HomePost";
 import Form from "./ContactForm";
 // import { icon } from "@fortawesome/fontawesome-svg-core";
+// const useOnScreen=(options)=>{
+
+//   const [ref,setRef]=useState(null);
+//   const [visible, setVisible]=useState(false);
+// useEffect(()=>{
+// const observer = new IntersectionObserver(([entry])=>{
+//   setVisible(entry.isIntersecting);
+// },options);
+// if (ref){
+//   observer.unobserve(ref);
+// }
+// return()=>{
+//   if(ref){
+//     observer.unobserve(ref)
+//   };
+// }
+// },[ref,options]);
+// return [setRef,visible]
+// }
 
 export default function Home() {
+  // const [setRef,visible]=useOnScreen({threshold:0.2,rootMargin: '0px',})
   return (
     <Wrapper>
       <Banner>
@@ -139,7 +159,7 @@ const Banner = styled.div`
   align-items: center;
   text-align: center;
   border: 11px solid white;
-
+  
   @media (max-width: 576px) {
     height: 558px;
   }
@@ -233,6 +253,8 @@ const Service = styled.div`
   border-top-width: 0px !important;
   border: 11px solid white;
   padding: 39px 32px;
+  
+
   &.proximity {
     scroll-snap-type: y proximity;
   }

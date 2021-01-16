@@ -31,8 +31,12 @@ export default function Footer() {
 const Wrapper = styled.div `
 background-color:var(--deepBlue);
 height:60px;
+@media(max-width:576px){
+    height:105px;
+}
 @media(max-width:425px){
     height:105px;
+   
 }
 `
 const Container = styled.div `
@@ -76,6 +80,7 @@ height:60px;
 @media(max-width:576px){
     flex-direction:column;
     justify-content:center;
+    height:105px;
 }
 @media(max-width:425px){
     height:105px;

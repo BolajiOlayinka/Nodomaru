@@ -220,7 +220,7 @@ const QuoteName = styled.div`
   @media(max-width:426px){
       font-size:24px;
       line-height:28px;
-      margin-top:-70px;
+      margin-top:-65px;
   }
 `;
 const ThreePreHeader = styled.div`

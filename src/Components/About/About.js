@@ -172,6 +172,7 @@ const Banner = styled.div`
     background-size: cover;
     height: 796px;
   }
+ 
 `;
 const Container = styled.div`
   width: 100%;
@@ -203,6 +204,9 @@ const Left = styled.div`
   @media (max-width: 768px) {
     margin: auto;
   }
+  @media(max-width:426px){
+    padding-top:400px;
+  }
 `;
 const LeftText = styled.div`
   font-size: 24px;
@@ -213,6 +217,7 @@ const LeftText = styled.div`
     font-size: 18px;
     line-height: 25px;
     font-weight: normal;
+    
   }
 `;
 const Right = styled.div`
@@ -257,6 +262,7 @@ const SmallHeading = styled.div`
   @media (max-width: 426px) {
     font-size: 36px;
     line-height: 42px;
+    width:186px;
   }
 `;
 const SmallDivider = styled.div`
@@ -280,18 +286,37 @@ const AboutHead = styled.div`
   font-weight: bold;
   font-size: 48px;
   line-height: 56px;
+  height:56px;
   margin-top: 7px;
   margin-bottom: 7px;
   @media (max-width: 426px) {
     font-size: 36px;
     line-height: 42px;
+    height:42px;
+    font-weight:normal;
   }
 `;
 const AboutBody = styled.div`
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  font-weight: bold;
+
+  :first-child{
+    font-weight:bold;
+   
+  }
+  @media(max-width:576px){
+    
+      width:80%;
+    
+  }
+  @media(max-width:426px){
+    
+    width:262px;
+  
+}
+  
+ 
 `;
 const PlaySection = styled.div`
   display: flex;
@@ -306,11 +331,12 @@ const PlayButton = styled.button`
   outline: 0;
   border: transparent;
   font-size: 18px;
+  font-weight:normal;
   line-height: 21px;
   border-radius: 5px;
   width: 228px;
   height: 39px;
-  border-radius: 4px;
+  
   background-color: var(--mainYellow);
   opacity: 1 !important;
   :active {
@@ -324,7 +350,7 @@ const PlayButton = styled.button`
     -moz-outline-style: none;
   }
   @media (min-width: 1200px) {
-    margin-right: auto;
+    ${'' /* margin-right: auto; */}
   }
   @media (max-width: 1199px) {
     padding: 10px 24px;
@@ -336,8 +362,8 @@ const PlayButton = styled.button`
 `;
 const StyledPlayIcon = styled(FontAwesomeIcon)`
   font-size: 37.5px;
-  color: var(--mainYellow);
-  margin-left: 12.75px;
+  color: black;
+  margin-left: 9px;
   cursor: pointer;
 `;
 const AdoptSection = styled.div`
@@ -349,6 +375,9 @@ const AdoptSection = styled.div`
     width: 1200px;
     margin: auto;
   }
+  @media(max-width:576px){
+    display:none;
+  }
 `;
 const GenBackground = styled.div`
   background: url(${GeneralBanner});
@@ -356,6 +385,9 @@ const GenBackground = styled.div`
   background-size: cover;
   padding-top: 11px;
   padding-bottom: 92px;
+  @media(max-width:576px){
+    padding-top:0px;
+  }
 `;
 const AdoptButton = styled(Link)`
   background-color: var(--mainYellow);
@@ -380,6 +412,9 @@ const SectionThree = styled.div`
   }
   @media (max-width: 991px) {
     flex-direction: column;
+  }
+  @media(max-width:576px){
+    margin-top:0px!important;
   }
 `;
 const SmallCompanyInfo = styled.div`
@@ -461,8 +496,12 @@ const MapContainer = styled.div`
 const AddressContainer = styled.div`
   ${"" /* width: 465px; */}
   padding-left:26px;
+  
   font-size: 18px;
   line-height: 21px;
+  div{
+    padding-bottom:2px;
+  }
   @media (max-width: 991px) {
     display: none;
   }
