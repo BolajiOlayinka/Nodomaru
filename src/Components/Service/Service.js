@@ -159,6 +159,7 @@ const Banner = styled.div`
   background-repeat: no-repeat;
   height: 270px;
   display: flex;
+  
 `;
 const BannerContent = styled.div`
   display: flex;
@@ -176,6 +177,20 @@ const BannerContent = styled.div`
   img {
     width: 658px;
   }
+  @media(max-width:768px){
+   width:100%;
+   img{
+     width:400px;
+    
+   } 
+  }
+  @media(max-width:426px){
+   
+   img{
+     width:300px;
+    
+   } 
+  }
 `;
 const RealEstateWrapper = styled.div`
   display: flex;
@@ -184,35 +199,81 @@ const RealEstateWrapper = styled.div`
   margin: auto;
   padding-top: 47px;
   padding-bottom: 47px;
+  @media(max-width:1200px){
+    width:80%;
+    margin:auto;
+  }
+  @media(max-width:991px){
+    width:90%;
+  }
 `;
 const LeftEstate = styled.div`
   font-weight: 700;
   padding-right: 45px;
   font-size: 55px;
   line-height: 75px;
- 
-  
+  @media(max-width:1200px){
+    padding-right: 35px;
+  font-size: 40px;
+  line-height: 60px;
+  width:200px;
+  }
+  @media(max-width:991px){
+    width:250px;
+  }
+  @media(max-width:768px){
+    padding-right:25px;
+    font-size:24px;
+  }
 `;
 const RightEstate = styled.div`
   border-left: 1px solid #3cc5d1;
   padding-left: 45px;
   width: 718px;
+  @media(max-width:1200px){
+    padding-left:35px;
+  }
+  @media(max-width:991px){
+    width:760px
+    
+  }
+  @media(max-width:768px){
+    width:570px;
+    padding-left:25px;
+  }
 `;
 const RightEstateHead = styled.div`
   font-weight: 300;
   font-size: 36px;
   line-height: 49px;
   height: 59px;
+  @media(max-width:991px){
+    font-size:28px;
+  }
+  @media(max-width:768px){
+   font-size:24px;
+   line-height:32px;
+   text-align:center;
+   height:68px;
+
+  }
 `;
 const RightEstateBody = styled.div`
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
+  @media(max-width:768px){
+   font-size:16px;
+   line-height:22px;
+  }
 `;
 const BannerConnector = styled.div`
   background: url(${BannerImage2});
   background-size: cover;
   height: 400px;
+  @media(max-width:768px){
+  height:300px;
+  }
 `;
 const Connector = styled.div`
   background-color: #3cc5d1;
@@ -221,6 +282,10 @@ const Connector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
+  @media(max-width:768px){
+    height:210px;
+   left:10%;
+  }
 `;
 const EstateServicePoint = styled.div`
   padding-top: 64px;
@@ -233,6 +298,17 @@ const PreHeading = styled.div`
   line-height: 28px;
   letter-spacing: 0.4em;
   height: 46px;
+  @media(max-width:768px){
+    font-size:20px;
+    line-height:24px;
+    letter-spacing:0.3em;
+  }
+  @media(max-width:426px){
+    font-size: 24px;
+line-height: 28px;
+letter-spacing: 0.4em;
+height: 46px;
+  }
 `;
 const Heading = styled.div`
   font-weight: 300;
@@ -240,6 +316,18 @@ const Heading = styled.div`
   line-height: 42px;
   letter-spacing: 0.4em;
   height: 46px;
+  @media(max-width:768px){
+    font-size:30px;
+    line-height:32px;
+    letter-spacing:0.3em;
+  }
+  @media(max-width:426px){
+    font-size: 16px;
+line-height: 19px;
+letter-spacing: 0.425em;
+height: 46px;
+margin-bottom:20px;
+  }
 `;
 const ServiceUse = styled.div`
   margin-top: 48px;
@@ -248,6 +336,15 @@ const ServiceUse = styled.div`
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between;
+  @media(max-width:991px){
+    width:760px;
+  }
+  @media(max-width:768px){
+    width:400px;
+    margin:auto;
+    flex-direction:column;
+  }
+
 `;
 const UseCase = styled.div`
   width: 230px;
@@ -255,6 +352,17 @@ const UseCase = styled.div`
   img {
     width: 100px;
     margin-bottom: 31px;
+  }
+  @media(max-width:768px){
+    width:400px;
+    margin-bottom:20px;
+  }
+  @media(max-width:426px){
+    img{
+      margin:auto;
+   margin-bottom: 31px;
+    }
+  
   }
 `;
 const UseButton = styled.div`
@@ -267,6 +375,11 @@ const UseButton = styled.div`
   border: 1px solid #3cc5d1;
   border-radius: 4px;
   margin-bottom: 31px;
+  @media(max-width:768px){
+   margin:auto;
+   margin-bottom: 31px;
+  }
+  
 `;
 const UseCaseBody = styled.div`
   width: 184px;
@@ -335,6 +448,13 @@ const FinanceWrapper = styled.div`
   margin: auto;
   padding-top: 47px;
   padding-bottom: 47px;
+  @media(max-width:1200px){
+    width:80%;
+    margin:auto;
+  }
+  @media(max-width:991px){
+    width:90%;
+  }
 `;
 const LeftFinance = styled.div`
   padding-right: 45px;
@@ -342,28 +462,68 @@ const LeftFinance = styled.div`
 font-size: 35px;
 line-height: 48px;
   width:190px;
-  
+  @media(max-width:1200px){
+    padding-right: 35px;
+  font-size: 40px;
+  line-height: 60px;
+  width:200px;
+  }
+  @media(max-width:991px){
+    width:250px;
+  }
+  @media(max-width:768px){
+    padding-right:25px;
+    font-size:24px;
+    line-height:32px;
+  }
 `;
 const RightFinance = styled.div`
   border-left: 1px solid var(--mainYellow);
   padding-left: 45px;
   width: 718px;
+  @media(max-width:1200px){
+    padding-left:35px;
+  }
+  @media(max-width:991px){
+    width:760px
+    
+  }
+  @media(max-width:768px){
+    width:570px;
+    padding-left:25px;
+  }
 `;
 const RightFinanceHead = styled.div`
   font-weight: 300;
   font-size: 36px;
   line-height: 49px;
   height: 59px;
+  @media(max-width:991px){
+    font-size:28px;
+  }
+  @media(max-width:768px){
+   font-size:22px;
+   line-height:32px;
+    height:40px;
+
+  }
 `;
 const RightFinanceBody = styled.div`
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
+  @media(max-width:768px){
+   font-size:16px;
+   line-height:22px;
+  }
 `;
 const FinanceBanner = styled.div`
   background: url(${BannerImage3});
   background-size: cover;
   height: 400px;
+  @media(max-width:768px){
+  height:300px;
+  }
 `;
 const FinanceConnector = styled.div`
   background-color: var(--mainYellow);
@@ -372,6 +532,10 @@ const FinanceConnector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
+  @media(max-width:768px){
+    height:210px;
+   left:10%;
+  }
 `;
 const FinanceServicePoint = styled.div`
   padding-top: 64px;
@@ -384,6 +548,17 @@ const FinancePreHeading = styled.div`
   line-height: 28px;
   letter-spacing: 0.4em;
   height: 46px;
+  @media(max-width:768px){
+    font-size:20px;
+    line-height:24px;
+    letter-spacing:0.3em;
+  }
+  @media(max-width:426px){
+    font-size: 24px;
+line-height: 28px;
+letter-spacing: 0.4em;
+height: 96px;
+  }
 `;
 const FinanceHeading = styled.div`
   font-weight: 300;
@@ -391,6 +566,18 @@ const FinanceHeading = styled.div`
   line-height: 42px;
   letter-spacing: 0.4em;
   height: 46px;
+  @media(max-width:768px){
+    font-size:30px;
+    line-height:32px;
+    letter-spacing:0.3em;
+  }
+  @media(max-width:426px){
+    font-size: 16px;
+line-height: 19px;
+letter-spacing: 0.425em;
+height: 46px;
+margin-bottom:20px;
+  }
 `;
 const FinanceButton = styled(Link)`
   width: 140px;
@@ -412,6 +599,10 @@ const FinancialUseButton = styled.div`
   border-radius: 4px;
   margin-bottom: 31px;
   font-weight: bold;
+  @media(max-width:768px){
+   margin:auto;
+   margin-bottom: 31px;
+  }
 `;
 const FinanceLineWrapper = styled.div`
   width: 1094px;
