@@ -425,8 +425,8 @@ const LineWrapper = styled.div`
   img {
     width: 35px;
   }
-  @media (max-width: 768px) {
-    width: 85%;
+  @media (max-width:1200px) {
+    width: 90%;
   }
   @media (max-width: 425px) {
     padding-top: 0px;
@@ -436,9 +436,18 @@ const LineWrapper = styled.div`
 const Line = styled.hr`
   border: 1px solid #3cc5d1;
   width: 508px;
-  @media (max-width: 768px) {
-    width: 200px;
+  @media(max-width:1200px){
+   
+    width:400px;
   }
+  @media(max-width:991px){
+    
+    width:300px;
+  }
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+  
   @media (max-width: 576px) {
     width: 150px;
   }
@@ -624,6 +633,9 @@ const FinanceLineWrapper = styled.div`
   img {
     width: 35px;
   }
+  @media (max-width:1200px) {
+    width: 90%;
+  }
   @media (max-width: 768px) {
     width: 85%;
   }
@@ -635,9 +647,16 @@ const FinanceLineWrapper = styled.div`
 const FinanceLine = styled.hr`
   border: 1px solid var(--mainYellow);
   width: 508px;
-
+  @media(max-width:1200px){
+   
+   width:400px;
+ }
+ @media(max-width:991px){
+   
+   width:300px;
+ }
   @media (max-width: 768px) {
-    width: 200px;
+    width: 250px;
   }
   @media (max-width: 576px) {
     width: 150px;
