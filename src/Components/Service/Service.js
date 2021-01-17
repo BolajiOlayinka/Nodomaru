@@ -344,6 +344,10 @@ const ServiceUse = styled.div`
     margin:auto;
     flex-direction:column;
   }
+  @media(max-width:426px){
+    width:90%;
+    margin:auto;
+  }
 
 `;
 const UseCase = styled.div`
@@ -358,6 +362,10 @@ const UseCase = styled.div`
     margin-bottom:20px;
   }
   @media(max-width:426px){
+    margin-bottom:20px;
+    width:90%;
+    margin:auto;
+ 
     img{
       margin:auto;
    margin-bottom: 31px;
