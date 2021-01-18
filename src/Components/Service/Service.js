@@ -91,10 +91,7 @@ export default function Service() {
       {/* Finance Section */}
       <Container>
         <FinanceWrapper>
-          <LeftFinance>
-            FP <br />
-            コンサルティング
-          </LeftFinance>
+          <LeftFinance>FP <br/>コンサルティング</LeftFinance>
           <SmallDisplay>
             <img src={Smalldisplaytwo} alt="Nodomaru display" />
           </SmallDisplay>
@@ -273,7 +270,7 @@ const RightEstate = styled.div`
     padding-left: 25px;
   }
   @media (max-width: 576px) {
-    width: 100%;
+    width:100%;
     padding: 0px;
     border: transparent;
   }
@@ -554,7 +551,7 @@ const LeftFinance = styled.div`
     line-height: 75px;
     padding-top: 20px;
     padding-bottom: 20px;
-    text-align: center;
+    text-align:center;
   }
 `;
 const RightFinance = styled.div`
@@ -574,7 +571,7 @@ const RightFinance = styled.div`
   @media (max-width: 576px) {
     padding: 0px;
     border: transparent;
-    width: 100%;
+    width:100%;
   }
 `;
 const RightFinanceHead = styled.div`
@@ -597,7 +594,7 @@ const RightFinanceHead = styled.div`
     margin: auto;
     height: 100%;
     padding-top: 20px;
-    text-align: center;
+    text-align:center;
   }
 `;
 const RightFinanceBody = styled.div`
