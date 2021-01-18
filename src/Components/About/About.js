@@ -5,7 +5,7 @@ import SmallBanner from "../../assets/banner-3a.png";
 import AdoptBanner from "../../assets/banner-4.png";
 import GeneralBanner from "../../assets/banner-5.png";
 import YelloLogo from "../../assets/yellow-logo.svg";
-import Map from "../../assets/map.png";
+import Map from "../../assets/officemap.png"
 import { Link } from "react-router-dom";
 import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
