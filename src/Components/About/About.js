@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import BannerImage from "../../assets/AboutBanner.png";
-import SmallBanner from "../../assets/SmallAbout.png";
-import AdoptBanner from "../../assets/AdoptBanner.png";
-import GeneralBanner from "../../assets/GeneralBackground.png";
-import YelloLogo from "../../assets/YellowLogo.svg";
-import Map from "../../assets/Map.png";
+import BannerImage from "../../assets/banner-3.png";
+import SmallBanner from "../../assets/banner-3a.png";
+import AdoptBanner from "../../assets/banner-4.png";
+import GeneralBanner from "../../assets/banner-5.png";
+import YelloLogo from "../../assets/yellow-logo.svg";
+import Map from "../../assets/map.png";
 import { Link } from "react-router-dom";
 import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,7 +21,7 @@ export default function About() {
         <Container>
           <AboutArea>
             <Left>
-              <img src={YelloLogo} alt="YellowLogo" />
+              <img src={YelloLogo} alt="Nodomaru Yellow logo" />
               <LeftText>事業を通じてのどまる社会を創る</LeftText>
               <SectionConnector></SectionConnector>
             </Left>

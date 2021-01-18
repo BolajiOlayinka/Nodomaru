@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BannerThree from "../../assets/Banner_3.png";
+import BannerThree from "../../assets/AKINA.png";
 import SHINGO from "../../assets/SHINGO.png";
 import SHUZO from "../../assets/SHUZO.png";
 import OwlCarousel from "react-owl-carousel";

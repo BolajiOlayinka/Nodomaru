@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import BannerImage from "../../assets/ServiceBanner.png";
-import BannerImage2 from "../../assets/BannerConnector.png";
-import BannerImage3 from "../../assets/FinanceConnector.png";
+import BannerImage from "../../assets/banner-6.png";
+import SmallBannerImage from "../../assets/banner-6a.png";
+import BannerImage2 from "../../assets/banner-7.png";
+import BannerImage3 from "../../assets/banner-8.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
-import ServiceIcon from "../../assets/ServiceIcon.svg";
+import ServiceIcon from "../../assets/service-icon.svg";
 import { Link } from "react-router-dom";
 import blueicon from "../../assets/icon-blue.svg";
 import yellowicon from "../../assets/icon-yellow.svg";
+import Smalldisplay from "../../assets/banner-7a.png";
+import Smalldisplaytwo from "../../assets/banner-8a.png";
 
 export default function Service() {
   return (
@@ -25,6 +28,9 @@ export default function Service() {
       <Container>
         <RealEstateWrapper>
           <LeftEstate>不動産</LeftEstate>
+          <SmallDisplay>
+            <img src={Smalldisplay} alt="Nodomaru display" />
+          </SmallDisplay>
           <RightEstate>
             <RightEstateHead>
               人生にとって大切なお住まいと資産を
@@ -85,7 +91,13 @@ export default function Service() {
       {/* Finance Section */}
       <Container>
         <FinanceWrapper>
-          <LeftFinance>FP コンサルティング</LeftFinance>
+          <LeftFinance>
+            FP <br />
+            コンサルティング
+          </LeftFinance>
+          <SmallDisplay>
+            <img src={Smalldisplaytwo} alt="Nodomaru display" />
+          </SmallDisplay>
           <RightFinance>
             <RightFinanceHead>あなたにとって最適なプランを</RightFinanceHead>
             <RightFinanceBody>
@@ -159,7 +171,9 @@ const Banner = styled.div`
   background-repeat: no-repeat;
   height: 270px;
   display: flex;
-  
+  @media (max-width: 576px) {
+    background: url(${SmallBannerImage});
+  }
 `;
 const BannerContent = styled.div`
   display: flex;
@@ -177,19 +191,16 @@ const BannerContent = styled.div`
   img {
     width: 658px;
   }
-  @media(max-width:768px){
-   width:100%;
-   img{
-     width:400px;
-    
-   } 
+  @media (max-width: 768px) {
+    width: 100%;
+    img {
+      width: 400px;
+    }
   }
-  @media(max-width:426px){
-   
-   img{
-     width:300px;
-    
-   } 
+  @media (max-width: 426px) {
+    img {
+      width: 300px;
+    }
   }
 `;
 const RealEstateWrapper = styled.div`
@@ -199,12 +210,26 @@ const RealEstateWrapper = styled.div`
   margin: auto;
   padding-top: 47px;
   padding-bottom: 47px;
-  @media(max-width:1200px){
-    width:80%;
-    margin:auto;
+  @media (max-width: 1200px) {
+    width: 80%;
+    margin: auto;
   }
-  @media(max-width:991px){
-    width:90%;
+  @media (max-width: 991px) {
+    width: 90%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    flex-direction: column;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+`;
+const SmallDisplay = styled.div`
+  img {
+    width: 100%;
+  }
+  @media (min-width: 576.1px) {
+    display: none;
   }
 `;
 const LeftEstate = styled.div`
@@ -212,34 +237,45 @@ const LeftEstate = styled.div`
   padding-right: 45px;
   font-size: 55px;
   line-height: 75px;
-  @media(max-width:1200px){
+  @media (max-width: 1200px) {
     padding-right: 35px;
-  font-size: 40px;
-  line-height: 60px;
-  width:200px;
+    font-size: 40px;
+    line-height: 60px;
+    width: 200px;
+    text-align: center;
   }
-  @media(max-width:991px){
-    width:250px;
+  @media (max-width: 991px) {
+    width: 250px;
   }
-  @media(max-width:768px){
-    padding-right:25px;
-    font-size:24px;
+  @media (max-width: 768px) {
+    padding-right: 25px;
+    font-size: 24px;
+  }
+  @media (max-width: 576px) {
+    font-size: 55px;
+    line-height: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 `;
 const RightEstate = styled.div`
   border-left: 1px solid #3cc5d1;
   padding-left: 45px;
   width: 718px;
-  @media(max-width:1200px){
-    padding-left:35px;
+  @media (max-width: 1200px) {
+    padding-left: 35px;
   }
-  @media(max-width:991px){
-    width:760px
-    
+  @media (max-width: 991px) {
+    width: 760px;
   }
-  @media(max-width:768px){
-    width:570px;
-    padding-left:25px;
+  @media (max-width: 768px) {
+    width: 570px;
+    padding-left: 25px;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    padding: 0px;
+    border: transparent;
   }
 `;
 const RightEstateHead = styled.div`
@@ -247,32 +283,48 @@ const RightEstateHead = styled.div`
   font-size: 36px;
   line-height: 49px;
   height: 59px;
-  @media(max-width:991px){
-    font-size:28px;
+  @media (max-width: 991px) {
+    font-size: 28px;
   }
-  @media(max-width:768px){
-   font-size:24px;
-   line-height:32px;
-   text-align:center;
-   height:68px;
-
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    height: 68px;
+  }
+  @media (max-width: 576px) {
+    font-size: 32px;
+    line-height: 44px;
+    width: 289px;
+    margin: auto;
+    height: 100%;
+    padding-top: 20px;
   }
 `;
 const RightEstateBody = styled.div`
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  @media(max-width:768px){
-   font-size:16px;
-   line-height:22px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  @media (max-width: 576px) {
+    width: 289px;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    margin: auto;
   }
 `;
 const BannerConnector = styled.div`
   background: url(${BannerImage2});
   background-size: cover;
   height: 400px;
-  @media(max-width:768px){
-  height:300px;
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+  @media (max-width: 576px) {
+    display: none;
   }
 `;
 const Connector = styled.div`
@@ -282,15 +334,18 @@ const Connector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
-  @media(max-width:768px){
-    height:210px;
-   left:10%;
+  @media (max-width: 768px) {
+    height: 210px;
+    left: 10%;
   }
 `;
 const EstateServicePoint = styled.div`
   padding-top: 64px;
   text-align: center;
   margin: auto;
+  @media (max-width: 576px) {
+    padding-top: 0px;
+  }
 `;
 const PreHeading = styled.div`
   font-weight: bold;
@@ -298,16 +353,16 @@ const PreHeading = styled.div`
   line-height: 28px;
   letter-spacing: 0.4em;
   height: 46px;
-  @media(max-width:768px){
-    font-size:20px;
-    line-height:24px;
-    letter-spacing:0.3em;
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.3em;
   }
-  @media(max-width:426px){
+  @media (max-width: 426px) {
     font-size: 24px;
-line-height: 28px;
-letter-spacing: 0.4em;
-height: 46px;
+    line-height: 28px;
+    letter-spacing: 0.4em;
+    height: 46px;
   }
 `;
 const Heading = styled.div`
@@ -316,17 +371,17 @@ const Heading = styled.div`
   line-height: 42px;
   letter-spacing: 0.4em;
   height: 46px;
-  @media(max-width:768px){
-    font-size:30px;
-    line-height:32px;
-    letter-spacing:0.3em;
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 32px;
+    letter-spacing: 0.3em;
   }
-  @media(max-width:426px){
+  @media (max-width: 426px) {
     font-size: 16px;
-line-height: 19px;
-letter-spacing: 0.425em;
-height: 46px;
-margin-bottom:20px;
+    line-height: 19px;
+    letter-spacing: 0.425em;
+    height: 46px;
+    margin-bottom: 20px;
   }
 `;
 const ServiceUse = styled.div`
@@ -336,19 +391,18 @@ const ServiceUse = styled.div`
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between;
-  @media(max-width:991px){
-    width:760px;
+  @media (max-width: 991px) {
+    width: 760px;
   }
-  @media(max-width:768px){
-    width:400px;
-    margin:auto;
-    flex-direction:column;
+  @media (max-width: 768px) {
+    width: 400px;
+    margin: auto;
+    flex-direction: column;
   }
-  @media(max-width:426px){
-    width:90%;
-    margin:auto;
+  @media (max-width: 426px) {
+    width: 90%;
+    margin: auto;
   }
-
 `;
 const UseCase = styled.div`
   width: 230px;
@@ -357,20 +411,19 @@ const UseCase = styled.div`
     width: 100px;
     margin-bottom: 31px;
   }
-  @media(max-width:768px){
-    width:400px;
-    margin-bottom:20px;
+  @media (max-width: 768px) {
+    width: 400px;
+    margin-bottom: 20px;
   }
-  @media(max-width:426px){
-    margin-bottom:20px;
-    width:90%;
-    margin:auto;
- 
-    img{
-      margin:auto;
-   margin-bottom: 31px;
+  @media (max-width: 426px) {
+    margin-bottom: 20px;
+    width: 90%;
+    margin: auto;
+
+    img {
+      margin: auto;
+      margin-bottom: 31px;
     }
-  
   }
 `;
 const UseButton = styled.div`
@@ -383,11 +436,10 @@ const UseButton = styled.div`
   border: 1px solid #3cc5d1;
   border-radius: 4px;
   margin-bottom: 31px;
-  @media(max-width:768px){
-   margin:auto;
-   margin-bottom: 31px;
+  @media (max-width: 768px) {
+    margin: auto;
+    margin-bottom: 31px;
   }
-  
 `;
 const UseCaseBody = styled.div`
   width: 184px;
@@ -425,7 +477,7 @@ const LineWrapper = styled.div`
   img {
     width: 35px;
   }
-  @media (max-width:1200px) {
+  @media (max-width: 1200px) {
     width: 90%;
   }
   @media (max-width: 425px) {
@@ -436,18 +488,16 @@ const LineWrapper = styled.div`
 const Line = styled.hr`
   border: 1px solid #3cc5d1;
   width: 508px;
-  @media(max-width:1200px){
-   
-    width:400px;
+  @media (max-width: 1200px) {
+    width: 400px;
   }
-  @media(max-width:991px){
-    
-    width:300px;
+  @media (max-width: 991px) {
+    width: 300px;
   }
   @media (max-width: 768px) {
     width: 250px;
   }
-  
+
   @media (max-width: 576px) {
     width: 150px;
   }
@@ -465,49 +515,66 @@ const FinanceWrapper = styled.div`
   margin: auto;
   padding-top: 47px;
   padding-bottom: 47px;
-  @media(max-width:1200px){
-    width:80%;
-    margin:auto;
+  @media (max-width: 1200px) {
+    width: 80%;
+    margin: auto;
   }
-  @media(max-width:991px){
-    width:90%;
+  @media (max-width: 991px) {
+    width: 90%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    flex-direction: column;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 `;
 const LeftFinance = styled.div`
   padding-right: 45px;
   font-weight: bold;
-font-size: 35px;
-line-height: 48px;
-  width:190px;
-  @media(max-width:1200px){
+  font-size: 35px;
+  line-height: 48px;
+  width: 190px;
+  @media (max-width: 1200px) {
     padding-right: 35px;
-  font-size: 40px;
-  line-height: 60px;
-  width:200px;
+    font-size: 40px;
+    line-height: 60px;
+    width: 200px;
   }
-  @media(max-width:991px){
-    width:250px;
+  @media (max-width: 991px) {
+    width: 250px;
   }
-  @media(max-width:768px){
-    padding-right:25px;
-    font-size:24px;
-    line-height:32px;
+  @media (max-width: 768px) {
+    padding-right: 25px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @media (max-width: 576px) {
+    font-size: 55px;
+    line-height: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
   }
 `;
 const RightFinance = styled.div`
   border-left: 1px solid var(--mainYellow);
   padding-left: 45px;
   width: 718px;
-  @media(max-width:1200px){
-    padding-left:35px;
+  @media (max-width: 1200px) {
+    padding-left: 35px;
   }
-  @media(max-width:991px){
-    width:760px
-    
+  @media (max-width: 991px) {
+    width: 760px;
   }
-  @media(max-width:768px){
-    width:570px;
-    padding-left:25px;
+  @media (max-width: 768px) {
+    width: 570px;
+    padding-left: 25px;
+  }
+  @media (max-width: 576px) {
+    padding: 0px;
+    border: transparent;
+    width: 100%;
   }
 `;
 const RightFinanceHead = styled.div`
@@ -515,31 +582,48 @@ const RightFinanceHead = styled.div`
   font-size: 36px;
   line-height: 49px;
   height: 59px;
-  @media(max-width:991px){
-    font-size:28px;
+  @media (max-width: 991px) {
+    font-size: 28px;
   }
-  @media(max-width:768px){
-   font-size:22px;
-   line-height:32px;
-    height:40px;
-
+  @media (max-width: 768px) {
+    font-size: 22px;
+    line-height: 32px;
+    height: 40px;
+  }
+  @media (max-width: 576px) {
+    font-size: 35px;
+    line-height: 48px;
+    width: 289px;
+    margin: auto;
+    height: 100%;
+    padding-top: 20px;
+    text-align: center;
   }
 `;
 const RightFinanceBody = styled.div`
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  @media(max-width:768px){
-   font-size:16px;
-   line-height:22px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  @media (max-width: 576px) {
+    width: 289px;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    margin: auto;
   }
 `;
 const FinanceBanner = styled.div`
   background: url(${BannerImage3});
   background-size: cover;
   height: 400px;
-  @media(max-width:768px){
-  height:300px;
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+  @media (max-width: 576px) {
+    display: none;
   }
 `;
 const FinanceConnector = styled.div`
@@ -549,15 +633,18 @@ const FinanceConnector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
-  @media(max-width:768px){
-    height:210px;
-   left:10%;
+  @media (max-width: 768px) {
+    height: 210px;
+    left: 10%;
   }
 `;
 const FinanceServicePoint = styled.div`
   padding-top: 64px;
   text-align: center;
   margin: auto;
+  @media (max-width: 576px) {
+    padding-top: 0px;
+  }
 `;
 const FinancePreHeading = styled.div`
   font-weight: bold;
@@ -565,16 +652,16 @@ const FinancePreHeading = styled.div`
   line-height: 28px;
   letter-spacing: 0.4em;
   height: 46px;
-  @media(max-width:768px){
-    font-size:20px;
-    line-height:24px;
-    letter-spacing:0.3em;
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.3em;
   }
-  @media(max-width:426px){
+  @media (max-width: 426px) {
     font-size: 24px;
-line-height: 28px;
-letter-spacing: 0.4em;
-height: 96px;
+    line-height: 28px;
+    letter-spacing: 0.4em;
+    height: 96px;
   }
 `;
 const FinanceHeading = styled.div`
@@ -583,17 +670,17 @@ const FinanceHeading = styled.div`
   line-height: 42px;
   letter-spacing: 0.4em;
   height: 46px;
-  @media(max-width:768px){
-    font-size:30px;
-    line-height:32px;
-    letter-spacing:0.3em;
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 32px;
+    letter-spacing: 0.3em;
   }
-  @media(max-width:426px){
+  @media (max-width: 426px) {
     font-size: 16px;
-line-height: 19px;
-letter-spacing: 0.425em;
-height: 46px;
-margin-bottom:20px;
+    line-height: 19px;
+    letter-spacing: 0.425em;
+    height: 46px;
+    margin-bottom: 20px;
   }
 `;
 const FinanceButton = styled(Link)`
@@ -616,9 +703,9 @@ const FinancialUseButton = styled.div`
   border-radius: 4px;
   margin-bottom: 31px;
   font-weight: bold;
-  @media(max-width:768px){
-   margin:auto;
-   margin-bottom: 31px;
+  @media (max-width: 768px) {
+    margin: auto;
+    margin-bottom: 31px;
   }
 `;
 const FinanceLineWrapper = styled.div`
@@ -633,7 +720,7 @@ const FinanceLineWrapper = styled.div`
   img {
     width: 35px;
   }
-  @media (max-width:1200px) {
+  @media (max-width: 1200px) {
     width: 90%;
   }
   @media (max-width: 768px) {
@@ -647,14 +734,12 @@ const FinanceLineWrapper = styled.div`
 const FinanceLine = styled.hr`
   border: 1px solid var(--mainYellow);
   width: 508px;
-  @media(max-width:1200px){
-   
-   width:400px;
- }
- @media(max-width:991px){
-   
-   width:300px;
- }
+  @media (max-width: 1200px) {
+    width: 400px;
+  }
+  @media (max-width: 991px) {
+    width: 300px;
+  }
   @media (max-width: 768px) {
     width: 250px;
   }
