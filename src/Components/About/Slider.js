@@ -216,7 +216,7 @@ const QuoteName = styled.div`
   text-align: right;
   color: black;
   text-align: right;
-  margin-top:-15px;
+  ${'' /* margin-top:-15px; */}
   @media(max-width:426px){
       font-size:24px;
       line-height:28px;

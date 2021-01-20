@@ -6,6 +6,8 @@ import BlackLogo from "../assets/icon-black.svg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import animateScrollTo from "animated-scroll-to";
+
 // import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
@@ -17,7 +19,9 @@ export default function Header() {
   const [showItem, setShowItem] = useState(false);
   const [navcolor, setNavColor] =useState('white');
   // const [SmallBackground, setSmallBackground]=useState("black")
-
+  const ScrollToTop = () => {
+    animateScrollTo(0);
+  };
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
       setBackground("white");
@@ -67,7 +71,7 @@ export default function Header() {
               <StyledLink onClick={closeModal}>お問い合わせ</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink to ="/about" onClick={closeModal}>ABOUT</StyledLink>
+              <StyledLink to ="/about" onClick={() => {closeModal(); ScrollToTop()}}>ABOUT</StyledLink>
             </NavItem>
             <NavItem>
               <StyledLink to ="/service" onClick={closeModal}>サービス</StyledLink>
@@ -87,12 +91,12 @@ export default function Header() {
         <LargeNav className="ml-auto">
           <StyledNav navbar>
             <NavItem>
-              <StyledLink navcolor={navcolor} to="/" >
+              <StyledLink navcolor={navcolor} to="/" onClick={() => {ScrollToTop()}}>
                 ニュース
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink  navcolor={navcolor} to="/">
+              <StyledLink  navcolor={navcolor} to="/" onClick={() => {ScrollToTop()}}>
                 お問い合わせ
               </StyledLink>
             </NavItem>
@@ -101,6 +105,7 @@ export default function Header() {
                
                to="/about"
                navcolor={navcolor}
+               onClick={() => {ScrollToTop()}}
               >
                 ABOUT
               </StyledLink>
@@ -110,6 +115,7 @@ export default function Header() {
                
                to="/service"
                navcolor={navcolor}
+               onClick={() => {ScrollToTop()}}
               >
                 サービス
               </StyledLink>

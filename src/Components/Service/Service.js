@@ -1,8 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import styled from "styled-components";
 import BannerImage from "../../assets/banner-6.png";
 import SmallBannerImage from "../../assets/banner-6a.png";
 import BannerImage2 from "../../assets/banner-7.png";
+// import BannerImage4 from "../../assets/banner-8b.png";
 import BannerImage3 from "../../assets/banner-8.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import ServiceIcon from "../../assets/service-icon.svg";
@@ -13,6 +16,14 @@ import Smalldisplay from "../../assets/banner-7a.png";
 import Smalldisplaytwo from "../../assets/banner-8a.png";
 
 export default function Service() {
+  useEffect(() => {
+    Aos.init(
+      {
+        duration: 1200,
+      },
+      []
+    );
+  });
   return (
     <React.Fragment>
       <Banner>
@@ -45,7 +56,7 @@ export default function Service() {
       </Container>
       <BannerConnector>
         <Container>
-          <Connector></Connector>
+          <Connector data-aos="slide-up"></Connector>
         </Container>
       </BannerConnector>
       <EstateServicePoint>
@@ -108,7 +119,7 @@ export default function Service() {
       </Container>
       <FinanceBanner>
         <Container>
-          <FinanceConnector></FinanceConnector>
+          <FinanceConnector data-aos="slide-up"></FinanceConnector>
         </Container>
       </FinanceBanner>
       <FinanceServicePoint>
@@ -168,6 +179,9 @@ const Banner = styled.div`
   background-repeat: no-repeat;
   height: 270px;
   display: flex;
+  @media(min-width:2000px){
+    height:400px;
+  }
   @media (max-width: 576px) {
     background: url(${SmallBannerImage});
   }
@@ -317,12 +331,19 @@ const BannerConnector = styled.div`
   background: url(${BannerImage2});
   background-size: cover;
   height: 400px;
+  @media(min-width:2000px){
+    height:600px;
+  }
+  @media(min-width:2500px){
+    height:700px;
+  }
   @media (max-width: 768px) {
     height: 300px;
   }
   @media (max-width: 576px) {
     display: none;
   }
+
 `;
 const Connector = styled.div`
   background-color: #3cc5d1;
@@ -331,6 +352,13 @@ const Connector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
+  @media(min-width:2500px){
+    margin-top:580px;
+  }
+  @media(min-width:2000px){
+    margin-top:430px;
+  }
+
   @media (max-width: 768px) {
     height: 210px;
     left: 10%;
@@ -616,11 +644,18 @@ const FinanceBanner = styled.div`
   background: url(${BannerImage3});
   background-size: cover;
   height: 400px;
+ 
   @media (max-width: 768px) {
     height: 300px;
   }
   @media (max-width: 576px) {
     display: none;
+  }
+  @media(min-width:2000px){
+    height:600px;
+  }
+  @media(min-width:2500px){
+    height:700px;
   }
 `;
 const FinanceConnector = styled.div`
@@ -630,6 +665,12 @@ const FinanceConnector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
+  @media(min-width:2500px){
+    margin-top:580px;
+  }
+  @media(min-width:2000px){
+    margin-top:430px;
+  }
   @media (max-width: 768px) {
     height: 210px;
     left: 10%;

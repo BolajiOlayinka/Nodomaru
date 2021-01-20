@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useEffect} from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import styled from "styled-components";
 import BannerImage from "../../assets/banner-1.png";
+import LargeBannerImage from "../../assets/banner-1a.png";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/image-1.png";
@@ -35,6 +38,14 @@ import Form from "./ContactForm";
 
 export default function Home() {
   // const [setRef,visible]=useOnScreen({threshold:0.2,rootMargin: '0px',})
+  useEffect(() => {
+    Aos.init(
+      {
+        duration: 1200,
+      },
+      []
+    );
+  });
   return (
     <Wrapper>
       <Banner>
@@ -54,7 +65,7 @@ export default function Home() {
       <Service>
         <Container>
           <NodomaruHeading>Nodomaruとは</NodomaruHeading>
-          <HeadingUnderline></HeadingUnderline>
+          <HeadingUnderline data-aos="fade-right"></HeadingUnderline>
           <ServiceHeading>私たちのサービス</ServiceHeading>
           <ServiceBody>
             「のどまる」とは古語で「のどかになる」という意味です。現代では様々な生き方が提示されており、多様性の時代を迎えています。
@@ -158,9 +169,14 @@ const Banner = styled.div`
   align-items: center;
   text-align: center;
   border: 11px solid white;
-  
+  @media (min-width: 1600px) {
+    background: url(${LargeBannerImage});
+    background-size: cover;
+  background-repeat: no-repeat;
+  height: 592px;
+  }
   @media (max-width: 576px) {
-    height: 558px;
+    background: url(${BannerImage});
   }
 `;
 const LogoContainer = styled.div`

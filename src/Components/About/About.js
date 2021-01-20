@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import styled from "styled-components";
 import BannerImage from "../../assets/banner-3.png";
 import SmallBanner from "../../assets/banner-3a.png";
+import LargeBanner from "../../assets/banner-3b.png";
 import AdoptBanner from "../../assets/banner-4.png";
 import GeneralBanner from "../../assets/banner-5.png";
 import YelloLogo from "../../assets/yellow-logo.svg";
@@ -15,6 +18,14 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 export default function About() {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
+  useEffect(() => {
+    Aos.init(
+      {
+        duration: 1200,
+      },
+      []
+    );
+  });
   return (
     <React.Fragment>
       <Banner>
@@ -23,7 +34,7 @@ export default function About() {
             <Left>
               <img src={YelloLogo} alt="Nodomaru Yellow logo" />
               <LeftText>事業を通じてのどまる社会を創る</LeftText>
-              <SectionConnector></SectionConnector>
+              <SectionConnector data-aos="slide-up"></SectionConnector>
             </Left>
             <Right>
               <AboutBody>About Our Company</AboutBody>
@@ -164,6 +175,11 @@ const Banner = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   height: 796px;
+  @media (min-width: 2000px) {
+    background: url(${LargeBanner});
+  
+  }
+ 
   @media (max-width: 991px) {
     height: 618px;
   }
@@ -375,6 +391,9 @@ const AdoptSection = styled.div`
     width: 1200px;
     margin: auto;
   }
+  ${'' /* @media (min-width: 1600px) {
+    background: url(${LargeAdoptBanner});
+  } */}
   @media(max-width:576px){
     display:none;
   }
