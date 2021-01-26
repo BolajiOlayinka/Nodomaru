@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-// import Map from './Map';
+import Map from './MapContent';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
@@ -9,7 +9,7 @@ import LargeBanner from "../../assets/banner-3b.jpg";
 import AdoptBanner from "../../assets/banner-4.jpg";
 import GeneralBanner from "../../assets/banner-5.jpg";
 import YelloLogo from "../../assets/yellow-logo.svg";
-import Map from "../../assets/officemap.png"
+// import Map from "../../assets/officemap.png"
 import { Link } from "react-router-dom";
 import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -123,7 +123,7 @@ export default function About() {
       </SmallAboutDesc>
       <GenBackground>
         <AdoptSection>
-          <AdoptButton>現在採用中</AdoptButton>
+          <AdoptButton to="/#contactform">現在採用中</AdoptButton>
         </AdoptSection>
         <SectionThree>
           <Slider />
@@ -146,8 +146,8 @@ export default function About() {
         </SmallCompanyInfo>
         <MapSection>
           <MapContainer>
-          {/* <Map/> */}
-            <img src={Map} alt="Nodomaru Map" />
+          <Map/>
+            {/* <img src={Map} alt="Nodomaru Map" /> */}
           </MapContainer>
           <AddressContainer>
             <AddressHeader>Company Information</AddressHeader>
