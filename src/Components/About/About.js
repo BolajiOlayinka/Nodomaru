@@ -1,12 +1,13 @@
 import React, { useState,useEffect } from "react";
+// import Map from './Map';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
-import BannerImage from "../../assets/banner-3.png";
-import SmallBanner from "../../assets/banner-3a.png";
-import LargeBanner from "../../assets/banner-3b.png";
-import AdoptBanner from "../../assets/banner-4.png";
-import GeneralBanner from "../../assets/banner-5.png";
+import BannerImage from "../../assets/banner-3.jpg";
+import SmallBanner from "../../assets/banner-3a.jpg";
+import LargeBanner from "../../assets/banner-3b.jpg";
+import AdoptBanner from "../../assets/banner-4.jpg";
+import GeneralBanner from "../../assets/banner-5.jpg";
 import YelloLogo from "../../assets/yellow-logo.svg";
 import Map from "../../assets/officemap.png"
 import { Link } from "react-router-dom";
@@ -145,6 +146,7 @@ export default function About() {
         </SmallCompanyInfo>
         <MapSection>
           <MapContainer>
+          {/* <Map/> */}
             <img src={Map} alt="Nodomaru Map" />
           </MapContainer>
           <AddressContainer>

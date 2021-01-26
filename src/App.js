@@ -2,6 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
+import Map from './Components/About/Map';
 import Service from './Components/Service/Service';
 import Header from './Components/Header';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
       <Route component ={Home} exact path ="/"/>
       <Route component ={About} exact path ="/about"/>
       <Route component ={Service} exact path ="/service"/>
+      <Route component ={Map} exact path ="/test"/>
      </Switch>
      <Footer/>
     </div>

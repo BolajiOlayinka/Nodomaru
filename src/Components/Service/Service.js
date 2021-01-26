@@ -2,18 +2,18 @@ import React,{useEffect} from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
-import BannerImage from "../../assets/banner-6.png";
-import SmallBannerImage from "../../assets/banner-6a.png";
-import BannerImage2 from "../../assets/banner-7.png";
+import BannerImage from "../../assets/banner-6.jpg";
+import SmallBannerImage from "../../assets/banner-6a.jpg";
+import BannerImage2 from "../../assets/banner-7.jpg";
 // import BannerImage4 from "../../assets/banner-8b.png";
-import BannerImage3 from "../../assets/banner-8.png";
+import BannerImage3 from "../../assets/banner-8.jpg";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import ServiceIcon from "../../assets/service-icon.svg";
-import { Link } from "react-router-dom";
+import { HashLink as Linker } from "react-router-hash-link";
 import blueicon from "../../assets/icon-blue.svg";
 import yellowicon from "../../assets/icon-yellow.svg";
-import Smalldisplay from "../../assets/banner-7a.png";
-import Smalldisplaytwo from "../../assets/banner-8a.png";
+import Smalldisplay from "../../assets/banner-7a.jpg";
+import Smalldisplaytwo from "../../assets/banner-8a.jpg";
 
 export default function Service() {
   useEffect(() => {
@@ -54,11 +54,13 @@ export default function Service() {
           </RightEstate>
         </RealEstateWrapper>
       </Container>
-      <BannerConnector>
+      
         <Container>
+        <BannerConnector>
           <Connector data-aos="slide-up"></Connector>
+          </BannerConnector>
         </Container>
-      </BannerConnector>
+      
       <EstateServicePoint>
         <Container>
           <PreHeading>REAL ESTATE</PreHeading>
@@ -91,7 +93,7 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <ServiceButton>取り合わせ</ServiceButton>
+        <ServiceButton to="/#contactform">取り合わせ</ServiceButton>
       </ButtonContainer>
       <LineWrapper>
         <Line />
@@ -117,11 +119,13 @@ export default function Service() {
           </RightFinance>
         </FinanceWrapper>
       </Container>
-      <FinanceBanner>
+     
         <Container>
+        <FinanceBanner>
           <FinanceConnector data-aos="slide-up"></FinanceConnector>
+          </FinanceBanner>
         </Container>
-      </FinanceBanner>
+      
       <FinanceServicePoint>
         <Container>
           <FinancePreHeading>FINANCIAL PLANNING & CONSULTING</FinancePreHeading>
@@ -154,7 +158,7 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <FinanceButton>取り合わせ</FinanceButton>
+        <FinanceButton to="/#contactform">取り合わせ</FinanceButton>
       </ButtonContainer>
       <FinanceLineWrapper>
         <FinanceLine />
@@ -331,12 +335,12 @@ const BannerConnector = styled.div`
   background: url(${BannerImage2});
   background-size: cover;
   height: 400px;
-  @media(min-width:2000px){
+  ${'' /* @media(min-width:2000px){
     height:600px;
   }
   @media(min-width:2500px){
     height:700px;
-  }
+  } */}
   @media (max-width: 768px) {
     height: 300px;
   }
@@ -352,12 +356,12 @@ const Connector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
-  @media(min-width:2500px){
+  ${'' /* @media(min-width:2500px){
     margin-top:580px;
   }
   @media(min-width:2000px){
     margin-top:430px;
-  }
+  } */}
 
   @media (max-width: 768px) {
     height: 210px;
@@ -424,6 +428,9 @@ const ServiceUse = styled.div`
     margin: auto;
     flex-direction: column;
   }
+  @media(max-width:576px){
+    margin-top:30px;
+  }
   @media (max-width: 426px) {
     width: 90%;
     margin: auto;
@@ -481,7 +488,7 @@ const ButtonContainer = styled.div`
   margin-top: 30px;
   margin-bottom: 50px;
 `;
-const ServiceButton = styled(Link)`
+const ServiceButton = styled(Linker)`
   width: 140px;
   height: 45px;
   background-color: #3cc5d1;
@@ -651,12 +658,12 @@ const FinanceBanner = styled.div`
   @media (max-width: 576px) {
     display: none;
   }
-  @media(min-width:2000px){
+  ${'' /* @media(min-width:2000px){
     height:600px;
   }
   @media(min-width:2500px){
     height:700px;
-  }
+  } */}
 `;
 const FinanceConnector = styled.div`
   background-color: var(--mainYellow);
@@ -665,12 +672,12 @@ const FinanceConnector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
-  @media(min-width:2500px){
+  ${'' /* @media(min-width:2500px){
     margin-top:580px;
   }
   @media(min-width:2000px){
     margin-top:430px;
-  }
+  } */}
   @media (max-width: 768px) {
     height: 210px;
     left: 10%;
@@ -721,7 +728,7 @@ const FinanceHeading = styled.div`
     margin-bottom: 20px;
   }
 `;
-const FinanceButton = styled(Link)`
+const FinanceButton = styled(Linker)`
   width: 140px;
   height: 45px;
   background-color: var(--mainYellow);

@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import Logo from "../assets/icon.svg";
 import BlackLogo from "../assets/icon-black.svg";
 import { Link } from "react-router-dom";
+import { HashLink as Linker } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import animateScrollTo from "animated-scroll-to";
 
-// import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const [background, setBackground] = useState("transparent");
@@ -42,6 +43,8 @@ export default function Header() {
       setFixed("initial");
     }
   };
+ 
+  console.log(window.innerWidth)
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("scroll", fixedScroll);
 
@@ -63,12 +66,13 @@ export default function Header() {
           </Link>
         </LogoContainer>
         {showItem && (
+          <SmallNav>
           <StyledNav navbar>
             <NavItem>
               <StyledLink to="/" onClick={closeModal}>ニュース</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink onClick={closeModal}>お問い合わせ</StyledLink>
+              <StyledContactLink to="/#contactform" onClick={closeModal}>お問い合わせ</StyledContactLink>
             </NavItem>
             <NavItem>
               <StyledLink to ="/about" onClick={() => {closeModal(); ScrollToTop()}}>ABOUT</StyledLink>
@@ -78,12 +82,13 @@ export default function Header() {
             </NavItem>
             
           </StyledNav>
+          </SmallNav>
         )}
         <div onClick={toggle}>
           {showIcon ? (
             <StyledFontAwesome icon={faBars} navcolor={navcolor}/>
           ) : (
-            <StyledFontCancel icon={faBars} navcolor={navcolor}/>
+            <StyledFontCancel icon={faTimesCircle} navcolor={navcolor}/>
           )}
         </div>
 
@@ -96,9 +101,9 @@ export default function Header() {
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink  navcolor={navcolor} to="/" onClick={() => {ScrollToTop()}}>
+              <StyledContactLink  navcolor={navcolor} to ="/#contactform">
                 お問い合わせ
-              </StyledLink>
+              </StyledContactLink>
             </NavItem>
             <NavItem>
               <StyledLink
@@ -243,17 +248,64 @@ color:white;
     }
   }
 `;
+const StyledContactLink = styled(Linker)`
+  color: ${(props) => props.navcolor} !important;
+  line-height: 24px;
+  margin-right: 33px;
+  padding-bottom: 8px;
+  font-weight: 400;
+  font-size: 16px;
+
+  :hover {
+    color: var(--mainGreen);
+    cursor: pointer;
+    text-decoration: none;
+
+    border-bottom: 2px solid var(--mainGreen);
+  }
+  :active {
+    color: var(--mainGreen);
+    border-bottom: 2px solid var(--mainGreen);
+    transition: border-bottom 0.5s ease-in;
+  }
+
+  @media (max-width: 735px) {
+    font-size: 12px;
+    margin-right: 40px;
+  }
+  @media (max-width: 767.9px) {
+    font-size: 13px;
+    line-height: 32px;
+    padding-left: 0.5em;
+    position:relative;
+z-index: 10;
+color:white;
+    :hover {
+      border-bottom: 0px;
+    }
+    :active {
+      border-bottom-color: transparent !important;
+      border-bottom-style: none !important;
+      border-bottom-width: 0 !important;
+    }
+  }
+`;
 
 const LargeNav = styled.div`
   @media (max-width: 767.9px) {
     display: none;
   }
 `;
+const SmallNav = styled.div `
+@media(min-width:768px){
+  display:none;
+}
+`
 const StyledFontAwesome = styled(FontAwesomeIcon)`
   color: ${(props) => props.navcolor} !important;
   font-size: 20px;
 
-  @media (min-width: 767.9px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -262,7 +314,10 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
   position: absolute;
   top: 0;
   color: white;
-  margin-top: 14px;
-  ${"" /* margin-left: -2px; */}
-  font-size: 20px;
+  margin-top: 18px;
+  font-size: 24px;
+  right:28px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;

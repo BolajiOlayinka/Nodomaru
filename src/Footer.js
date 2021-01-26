@@ -77,6 +77,22 @@ const FooterContent = styled.div `
 display:flex;
 align-items:center;
 height:60px;
+@media(min-width:1200px){
+    padding-left:45px;
+    padding-right:45px;
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media (min-width: 768px) and (max-width: 1023.9px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media (max-width: 767.9px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 @media(max-width:576px){
     flex-direction:column;
     justify-content:center;
@@ -84,6 +100,7 @@ height:60px;
 }
 @media(max-width:425px){
     height:105px;
+
 }
 `
 const FooterRight = styled.div `
@@ -106,12 +123,13 @@ padding-left:64px;
     volor:var(--lightBlue);
 }
 @media(max-width:991px){
-    font-size:16px;
+    font-size:14px;
     padding-left:40px;
 }
 @media(max-width:768px){
     font-size:12px;
-    padding-left:30px;
+    padding-left:20px;
+    
 }
 @media(max-width:576px){
     font-size:18px;

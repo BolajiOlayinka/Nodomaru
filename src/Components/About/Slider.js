@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import BannerThree from "../../assets/AKINA.png";
-import SHINGO from "../../assets/SHINGO.png";
-import SHUZO from "../../assets/SHUZO.png";
+import BannerThree from "../../assets/AKINA.jpg";
+import SHINGO from "../../assets/SHINGO.jpg";
+import SHUZO from "../../assets/SHUZO.jpg";
 import OwlCarousel from "react-owl-carousel";
 import "../../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css";
 import "../../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css";
@@ -19,7 +19,7 @@ export default function Client() {
         className="d-lg-block d-lg-block d-lg-block d-lg-block"
       >
         <div className="item">
-        <Container style={{backgroundImage:`url(${BannerThree})`}}>
+        <Container style={{backgroundImage:`url(${BannerThree})`, backgroundSize:"contain"}}>
             {/* <LeftContainer>
             <img src={BannerThree} alt="Akina Nodomaru"/>
             </LeftContainer> */}
@@ -42,7 +42,7 @@ export default function Client() {
         </div>
         <div className="item">
        
-        <Container style={{backgroundImage:`url(${SHINGO})`}}>
+        <Container style={{backgroundImage:`url(${SHINGO})`, backgroundSize:"contain"}}>
             {/* <LeftContainer>
             <img src={SHINGO} alt="Shingo Nodomaru"/>
             </LeftContainer> */}
@@ -65,7 +65,7 @@ export default function Client() {
              
         </div>
         <div className="item">
-        <Container style={{backgroundImage:`url(${SHUZO})`}}>
+        <Container style={{backgroundImage:`url(${SHUZO})`, backgroundSize:"contain"}}>
             <RightContainer>
             <ContentWrapper>
             <ThreePreHeader>About Us</ThreePreHeader>

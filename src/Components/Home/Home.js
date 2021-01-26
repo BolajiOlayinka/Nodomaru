@@ -2,15 +2,15 @@ import React,{useEffect} from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
-import BannerImage from "../../assets/banner-1.png";
-import LargeBannerImage from "../../assets/banner-1a.png";
+import BannerImage from "../../assets/banner-1.jpg";
+import LargeBannerImage from "../../assets/banner-1a.jpg";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
-import RealEstate from "../../assets/image-1.png";
-import FinancialPlan from "../../assets/image-2.png";
+import RealEstate from "../../assets/image-1.jpg";
+import FinancialPlan from "../../assets/image-2.jpg";
 import BeachImage from "../../assets/banner-2.png";
-import SmallRightEstate from "../../assets/image-4.png";
-import SmallFinance from "../../assets/image-3.png";
+import SmallRightEstate from "../../assets/image-4.jpg";
+import SmallFinance from "../../assets/image-3.jpg";
 import LogoWhite from "../../assets/icon.svg";
 import Divider from "./Divider";
 import Posts from "./HomePost";
@@ -57,7 +57,7 @@ export default function Home() {
               詳しく
             </LogoButton>
           </LogoContainer>
-          <PalmContainer>
+          <PalmContainer data-aos="slide-up">
             <img src={PalmTree} alt="Nodomaru PalmTree" />
           </PalmContainer>
         </Container>
@@ -134,11 +134,11 @@ export default function Home() {
           <NewsHeading>Company News</NewsHeading>
           <Posts />
         </Container>
-        <ContactUsSection>
+        <ContactUsSection id="contactform">
           <ContactHeading>お問い合わせ</ContactHeading>
           <ContactTel>Tel : 03-6456-4538</ContactTel>
           <ContactInfo>問い合わせメールアドレス：info@ndmr.co.jp</ContactInfo>
-          <Form />
+          <Form/>
         </ContactUsSection>
       </HomeNews>
     </Wrapper>
@@ -177,6 +177,8 @@ const Banner = styled.div`
   }
   @media (max-width: 576px) {
     background: url(${BannerImage});
+    border-right:0px;
+    border-left:0px;
   }
 `;
 const LogoContainer = styled.div`
