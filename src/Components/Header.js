@@ -44,7 +44,7 @@ export default function Header() {
     }
   };
  
-  console.log(window.innerWidth)
+  // console.log(window.innerWidth)
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("scroll", fixedScroll);
 

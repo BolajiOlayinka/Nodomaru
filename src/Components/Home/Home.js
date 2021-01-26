@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
@@ -13,31 +13,12 @@ import SmallRightEstate from "../../assets/image-4.jpg";
 import SmallFinance from "../../assets/image-3.jpg";
 import LogoWhite from "../../assets/icon.svg";
 import Divider from "./Divider";
-import Posts from "./HomePost";
-import Form from "./ContactForm";
-// import { icon } from "@fortawesome/fontawesome-svg-core";
-// const useOnScreen=(options)=>{
+import { Link } from "react-router-dom";
 
-//   const [ref,setRef]=useState(null);
-//   const [visible, setVisible]=useState(false);
-// useEffect(()=>{
-// const observer = new IntersectionObserver(([entry])=>{
-//   setVisible(entry.isIntersecting);
-// },options);
-// if (ref){
-//   observer.unobserve(ref);
-// }
-// return()=>{
-//   if(ref){
-//     observer.unobserve(ref)
-//   };
-// }
-// },[ref,options]);
-// return [setRef,visible]
-// }
+import Posts from "./HomePostList";
+import Form from "./ContactForm";
 
 export default function Home() {
-  // const [setRef,visible]=useOnScreen({threshold:0.2,rootMargin: '0px',})
   useEffect(() => {
     Aos.init(
       {
@@ -133,24 +114,19 @@ export default function Home() {
           <Divider />
           <NewsHeading>Company News</NewsHeading>
           <Posts />
+          <ReadMoreButton to="/news">Read More Posts</ReadMoreButton>
         </Container>
         <ContactUsSection id="contactform">
           <ContactHeading>お問い合わせ</ContactHeading>
           <ContactTel>Tel : 03-6456-4538</ContactTel>
           <ContactInfo>問い合わせメールアドレス：info@ndmr.co.jp</ContactInfo>
-          <Form/>
+          <Form />
         </ContactUsSection>
       </HomeNews>
     </Wrapper>
   );
 }
-const Wrapper = styled.div`
-  ${
-    "" /* scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(300px);
-  scroll-snap-type: y mandatory; */
-  }
-`;
+const Wrapper = styled.div``;
 const Container = styled.div`
   width: 100%;
   margin: auto;
@@ -172,13 +148,13 @@ const Banner = styled.div`
   @media (min-width: 1600px) {
     background: url(${LargeBannerImage});
     background-size: cover;
-  background-repeat: no-repeat;
-  height: 592px;
+    background-repeat: no-repeat;
+    height: 592px;
   }
   @media (max-width: 576px) {
     background: url(${BannerImage});
-    border-right:0px;
-    border-left:0px;
+    border-right: 0px;
+    border-left: 0px;
   }
 `;
 const LogoContainer = styled.div`
@@ -270,7 +246,6 @@ const Service = styled.div`
   border-top-width: 0px !important;
   border: 11px solid white;
   padding: 39px 32px;
-  
 
   &.proximity {
     scroll-snap-type: y proximity;
@@ -589,6 +564,31 @@ const NewsHeading = styled.div`
   foint-weight: 400;
   margin: auto;
   text-align: center;
+`;
+
+const ReadMoreButton = styled(Link)`
+  width: 500px;
+  height: 60px;
+  color: var(--lightBlue);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  margin-top: 12px;
+  margin: auto;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Open Sans", sans-serif;
+  @media (max-width: 576px) {
+    width: 151px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    margin: auto;
+  }
 `;
 const ContactUsSection = styled.div``;
 const ContactHeading = styled.div`

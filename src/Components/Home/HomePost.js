@@ -1,70 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-// import ImgOne from '../../assets/PostImgOne.png';
-// import ImgTwo from '../../assets/PostImgTwo.png';
-// import ImgThree from '../../assets/PostImgThree.png';
-// import renderHTML from "react-render-html";
-// import { Col } from "reactstrap";
+import renderHTML from "react-render-html";
+
 
 export default function HomePost(props) {
-  // const currentPosts = { props };
-  // const truncate = (str, length, ending) => {
-  //   if (length == null) {
-  //     length = 30;
-  //   }
-  //   if (ending == null) {
-  //     ending = "...";
-  //   }
-  //   if (str.length > length) {
-  //     return str.substring(0, length - ending.length) + ending;
-  //   } else {
-  //     return str;
-  //   }
-  // };
-  // console.log(currentPosts.props.post)
+  const currentPosts = { props };
+  const truncate = (str, length, ending) => {
+    if (length == null) {
+      length = 30;
+    }
+    if (ending == null) {
+      ending = "...";
+    }
+    if (str.length > length) {
+      return str.substring(0, length - ending.length) + ending;
+    } else {
+      return str;
+    }
+  };
   return (
     <React.Fragment>
      
         <Container>
           
           <Card>
-          <PostCard to="/">
           
+          <PostCard to={`/news/${currentPosts.props.post.id}`}>
             <NewsWrapper>
               <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
               <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
-              Nodomaru, Inc. announces new partnership with local...
-              </NewsPostHeading>
-              </NewsWrapper>
-            
-            </PostCard>
-            </Card>
-          
-         
-          
-          <Card>
-          <PostCard to="/">
-            
-            <NewsWrapper>
-              <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
-              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
-              Update to Nodomaru, Inc. Website and Blog Channel
-              </NewsPostHeading>
-              </NewsWrapper>
-           
-            </PostCard>
-            </Card>
-          
-
-          
-          <Card>
-          <PostCard to="/">
-            
-            <NewsWrapper>
-              <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
-              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
-              NHK Product Feature - “New Business in Post-COVID Economy”
+              {truncate(renderHTML(currentPosts.props.post.title.rendered))}
+              HELLO HELLO 
               </NewsPostHeading>
               </NewsWrapper>
             
@@ -73,7 +40,7 @@ export default function HomePost(props) {
           
           
         </Container>
-        <ReadMoreButton>Read More Posts</ReadMoreButton>
+        
         
       
     </React.Fragment>
@@ -109,9 +76,6 @@ const Card =styled.div `
       font-weight: bold;
 font-size: 14px;
 margin-bottom:17px!important;
-${'' /* line-height: 20px; */}
-      ${'' /* margin:auto; */}
-
     }
 
 `
@@ -178,28 +142,3 @@ const New = styled.div`
 }
 `;
 
-const ReadMoreButton = styled(Link) `
-width: 500px;
-height: 60px;
-color:var(--lightBlue);
-display:flex;
-align-items:center;
-text-align:center;
-background-color:white;
-margin-top:12px;
-margin:auto;
-justify-content:center;
-font-weight: bold;
-font-size: 20px;
-line-height: 28px;
-font-family: 'Open Sans', sans-serif;
-@media(max-width:576px){
-      width:151px;
-      height:40px;
-      font-weight: bold;
-font-size: 14px;
-line-height: 22px;
-      margin:auto;
-
-    }
-`

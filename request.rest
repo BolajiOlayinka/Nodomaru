@@ -1,0 +1,3 @@
+# GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts
+
+GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts
