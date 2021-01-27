@@ -5,8 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarWeek } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../Spinner";
+import Logo from '../../assets/blue-logo.svg';
 import renderHTML from "react-render-html";
-// import DayJS from "react-dayjs";
+import DayJS from "react-dayjs";
+import BackgroundImage from '../../assets/bus.png';
 
 export default class News extends Component {
   state = {
@@ -20,6 +22,7 @@ export default class News extends Component {
     // console.log(this.props.match.params);
     axios.get(`http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts`)
       .then((responsee) => {
+        //   console.log(responsee)
         this.setState({AllIDs:responsee.data})
       }).catch((err)=>{
         console.log(err)
@@ -29,13 +32,13 @@ export default class News extends Component {
         `http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts/${this.props.match.params.id}`
       )
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         axios
           .get(
-            `https://standage.co.jp/wp-json/wp/v2/media/${res.data.featured_media}`
+            `http://ndmr.co.jp/blog/?rest_route=/wp/v2/media/${res.data.featured_media}`
           )
           .then((response) => {
-            // console.log(response.data.guid.rendered)
+            // console.log(response)
             this.setState({ media: response.data.guid.rendered });
           })
           .catch((response) => {
@@ -46,6 +49,7 @@ export default class News extends Component {
             `http://ndmr.co.jp/blog/?rest_route=/wp/v2/categories?post=${res.data.id}`
           )
           .then((resp) => {
+              console.log(resp)
             this.setState({ category: resp.data["0"] });
           })
           .catch((response) => {
@@ -71,6 +75,10 @@ export default class News extends Component {
     
     return (
       <React.Fragment>
+      <LogoSection>
+        <img src={Logo} alt="Nodomaru Logo"/>
+        <LogoText>ニュース</LogoText>
+      </LogoSection>
         {postDetails.length === 0 || postDetails === undefined ? (
           <div style={{ marginBottom: "15em", marginTop: "15em" }}>
             <Spinner />
@@ -83,7 +91,7 @@ export default class News extends Component {
               <DisplayLeft>
                 <p>
                   <StyledFontAwesome icon={faCalendarWeek} />
-                  {/* <DayJS format="YYYY-MM-DD">{postDetails.date}</DayJS> */}
+                  <DayJS format="YYYY-MM-DD">{postDetails.date}</DayJS>
                 </p>
 
                 <p>
@@ -97,25 +105,47 @@ export default class News extends Component {
               </DisplayRight>
             </ImageSub>
             <ArticleHead>{renderHTML(postDetails.title.rendered)}</ArticleHead>
+            <UnderLine/>
             <ArticleBody>
               {renderHTML(postDetails.content.rendered)}
             </ArticleBody>
            
           </Content>
         )}
+        <Background>
+
+        </Background>
       </React.Fragment>
     );
   }
 }
 
+const LogoSection = styled.div `
+width: 658px;
+text-align:center;
+margin:auto;
+img{
+    margin-top:79px;
+}
+@media(max-width:768px){
+    width:90%;
+}
+`
+const LogoText = styled.div `
+font-weight: bold;
+font-size: 36px;
+line-height: 42px;
+margin-bottom:79px;
+color:#3CC5D1;
+`
 const Content = styled.div`
 padding-bottom:40px;
   @media (min-width: 1200px) {
-    width: 720px;
+    width: 752px;
     margin: auto;
   }
   @media only screen and (max-width: 1199.9px) and (min-width: 769px) {
-    width: 720px;
+    width: 752px;
     margin: auto;
   }
   @media only screen and (max-width: 768.9px) and (min-width: 576px) {
@@ -168,38 +198,51 @@ const DisplayRight = styled.div`
   margin-left: auto;
 `;
 const CeoBtn = styled.div`
-  color: white;
-  background-color: #f8951d;
+  color: black;
+  border:1px solid black;
+  background-color: transparent;
   font-size: 12px;
-  padding: 0px 10px;
-  border-radius: 4px;
+  font-weight:700;
+  padding: 0px 12px;
   margin-right: 11px;
   @media (max-width: 576px) {
     display: none;
   }
 `;
 const EventsBtn = styled.div`
-  color: white;
-  background-color: #f8951d;
+  color: black;
+  border:1px solid black;
+  background-color: transparent;
   font-size: 12px;
-  padding: 0px 10px;
-  border-radius: 4px;
+  font-weight:700;
+  padding: 0px 12px;
   @media (max-width: 576px) {
     display: none;
   }
 `;
 const ArticleHead = styled.h3`
   font-weight: bold;
-  font-size: 38px;
-  line-height: 46px;
+  font-size: 35px;
+line-height: 48px;
   font-style: normal;
-  padding-top: 10px;
-  padding-bottom: 22px;
+  padding-top: 20px;
+
   @media (max-width: 576px) {
     font-size: 16px;
     line-height: 24px;
   }
 `;
+const UnderLine =styled.hr `
+width:307px;
+margin-top:40px;
+margin-bottom:40px;
+border-top:5px solid #3CC5D1;
+color:#3CC5D1;
+background-color:#3CC5D1;
+margin-left:0px;
+text-align:left;
+
+`
 const ArticleBody = styled.div`
   font-size: 16px;
   line-height: 28px;
@@ -217,3 +260,8 @@ const ArticleBody = styled.div`
     line-height: 20px;
   }
 `;
+const Background = styled.div `
+background:url(${BackgroundImage});
+height:600px;
+background-size:cover;
+`
