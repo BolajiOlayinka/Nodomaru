@@ -22,7 +22,7 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     setLoadingPosts(true);
     axios
-      .get("http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts", {
+      .get("http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&_embed", {
         params: { page: page.page },
       })
       .then((res) => {

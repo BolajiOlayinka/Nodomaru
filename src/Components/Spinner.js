@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default function Spinner() {
     return (
         <Wrapper>
-            <img src={Loader} alt="Loader" style={{width:"40px", margin:"auto"}} />
+            <img src={Loader} alt="Loader" style={{width:"60px", margin:"auto"}} />
         </Wrapper>
     )
 }
