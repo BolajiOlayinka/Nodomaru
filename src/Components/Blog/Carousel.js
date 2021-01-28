@@ -31,15 +31,15 @@ export default function Carousel(props) {
             return <Spinner />;
           } else {
             AllPost.AllPost.slice(0, 3).map((carouselImage) => {
-              return( image.push(
+              return (
+                image.push(
                   carouselImage["_embedded"]["wp:featuredmedia"]["0"][
                     "source_url"
                   ]
                 ),
-                header.push(carouselImage["title"]["rendered"]))
-               
-              }
-            );
+                header.push(carouselImage["title"]["rendered"])
+              );
+            });
           }
 
           const items = [
@@ -87,14 +87,21 @@ const Wrapper = styled.div`
   }
   .carousel-item {
     z-index: 0;
-    height:400px!important;
+    height: 400px !important;
   }
   .carousel-item .active {
     z-index: 0;
-    height:400px!important;
+    height: 400px !important;
   }
   .carousel-indicators {
-    top:430px;
+    top: 430px;
+    z-index: 2 !important;
+    @media (max-width: 576px) {
+      top: 320px;
+    }
+    @media (max-width: 426px) {
+      top: 215px;
+    }
   }
   .carousel-indicators li {
     width: 10px !important;
@@ -103,7 +110,6 @@ const Wrapper = styled.div`
     border-style: none;
     border: 1px solid black;
     background: transparent;
-    
   }
   .carousel-indicators li.active {
     background-color: black;
@@ -135,25 +141,27 @@ const Wrapper = styled.div`
   }
   @media (min-width: 1200px) {
     .carousel-item img {
-     
-      overflow:hidden;
+      height: 400px;
+      overflow: hidden;
     }
   }
   @media (max-width: 1199px) {
-    .carousel-item{
+    .carousel-item {
       height: 400px !important;
     }
     .carousel-item img {
-      
-      overflow:hidden;
+      height: 300px;
+      overflow: hidden;
     }
   }
   @media (max-width: 426px) {
-    .carousel-item{
+    .carousel-item {
       height: 200px !important;
     }
     .carousel-item img {
-      overflow:hidden;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
     }
   }
 `;

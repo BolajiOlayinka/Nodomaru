@@ -33,7 +33,19 @@ img{
     margin-top:150px;
 }
 @media(max-width:768px){
-    width:90%;
+    width:70%;
+    img{
+        width:400px;
+    }
+
+}
+@media(max-width:576px){
+    img{
+        width:70%;
+    margin:auto;
+    margin-top:50px;
+    
+    }
 }
 `
 const LogoText = styled.div `
@@ -42,6 +54,13 @@ font-size: 36px;
 line-height: 42px;
 margin-bottom:79px;
 color:#3CC5D1;
+@media(max-width:576px){
+    font-size: 30px;
+line-height:36px;
+    margin-bottom:50px;
+    
+  
+}
 `
 const Content = styled.div`
   @media (min-width: 1200px) {

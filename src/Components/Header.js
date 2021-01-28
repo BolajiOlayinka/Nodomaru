@@ -267,7 +267,7 @@ const StyledNav = styled(Nav)`
     left: 0;
     right: 0;
     background: rgb(0, 0, 0, 0.9);
-    z-index: 1;
+    z-index: 5;
     width: 100%;
     padding-top: 80px;
     li {

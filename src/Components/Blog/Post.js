@@ -31,7 +31,6 @@ export default function Post(props) {
             </LeftSection>
 
             <RightSection>
-             
               <PostTitle>
                 {renderHTML(currentPosts.props.post.title.rendered)}
               </PostTitle>
@@ -49,18 +48,17 @@ export default function Post(props) {
                   <p>
                     <StyledFontAwesome icon={faUserCircle} />
                     {
-                        currentPosts.props.post["_embedded"]["author"]["0"][
-                          "name"
-                        ]
-                      }
+                      currentPosts.props.post["_embedded"]["author"]["0"][
+                        "name"
+                      ]
+                    }
                   </p>
                 </Team>
-               
+
                 {/* {(currentPosts.props.post["_embedded"]["wp:term"][1]===undefined || (currentPosts.props.post["_embedded"]["wp:term"][1]).length===0) ? (
                    <Btn>PR Team</Btn>
                 ):(<Btn>{currentPosts.props.post["_embedded"]["wp:term"]["1"]["0"]["name"]}</Btn>)} */}
-                  
-                
+
                 {/* <Btn>
                     {
                       currentPosts.props.post["_embedded"]["wp:term"]["0"]["0"][
@@ -70,13 +68,12 @@ export default function Post(props) {
                   </Btn> */}
               </RightSectionHead>
               <PostExcerpt>
-              {renderHTML(currentPosts.props.post.excerpt.rendered)}
+                {renderHTML(currentPosts.props.post.excerpt.rendered)}
               </PostExcerpt>
             </RightSection>
           </Row>
         </Container>
       </StyledLink>
-      
     </React.Fragment>
   );
 }
@@ -88,15 +85,27 @@ const StyledLink = styled(Link)`
 `;
 const Row = styled.div`
   display: flex;
-  height:300px;
-  margin-bottom:60px;
-  @media (max-width: 576px) {
+  height: 300px;
+  margin-bottom: 60px;
+  @media (max-width: 767.9px) {
     flex-direction: column;
+    height: 470px;
+  }
+  @media (max-width: 426px) {
+    height: 430px;
   }
 `;
 const Container = styled.div`
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  @media (max-width: 767.9px) {
+    width: 400px;
+    margin: auto;
+  }
+  @media (max-width: 425px) {
+    width: 95%;
+    margin: auto;
+  }
 `;
 const Date = styled.div`
   display: flex;
@@ -106,30 +115,30 @@ const Team = styled.div`
   padding-right: 11px;
 `;
 const LeftImg = styled.div`
- 
   img {
     width: 400px;
     height: 300px;
     overflow: hidden;
     text-align: center;
   }
-  @media (max-width: 768px) {
-    img {
-      width: 70%;
-      text-align: left;
-    }
-  }
+
   @media (max-width: 576px) {
     img {
       width: 100%;
       text-align: left;
     }
   }
+  @media (max-width: 426px) {
+    img {
+      width: 100%;
+      height: 200px;
+    }
+  }
 `;
 const RightSectionHead = styled.div`
   display: flex;
   align-items: center;
-  
+
   p {
     margin-bottom: 0px;
     font-size: 12px;
@@ -150,10 +159,20 @@ const RightSectionHead = styled.div`
 `;
 const LeftSection = styled.div`
   width: 400px;
-  margin-right:37px;
+  margin-right: 37px;
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 const RightSection = styled.div`
   width: 316px;
+  @media (max-width: 767.9px) {
+    width: 400px;
+  }
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 `;
 const StyledFontAwesome = styled(FontAwesomeIcon)`
   font-size: 24px;
@@ -170,11 +189,12 @@ const StyledFontAwesome = styled(FontAwesomeIcon)`
 // `;
 const PostTitle = styled.h3`
   font-weight: bold;
-font-size: 35px;
-line-height: 48px;
+  font-size: 35px;
+  line-height: 48px;
   margin-bottom: 0.25rem;
   margin-top: 0.25rem;
   @media only screen and (max-width: 768px) and (min-width: 576px) {
+    padding-top: 10px;
     font-size: 18px;
     line-height: 24px;
     font-weight: bold;
@@ -187,6 +207,10 @@ line-height: 48px;
 `;
 const PostExcerpt = styled.div`
   font-size: 16px;
-line-height: 20px;
+  line-height: 20px;
   font-weight: normal;
+  @media (max-width: 767.9px) {
+    flex-direction: column;
+    line-height: 24px;
+  }
 `;

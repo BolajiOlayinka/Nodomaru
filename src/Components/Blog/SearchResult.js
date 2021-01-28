@@ -10,7 +10,7 @@ import DayJS from "react-dayjs";
 // import Spinner from '../Spinner';
 export default function Post(props) {
   const currentPosts = { props };
-  // console.log(currentPosts) 
+  // console.log(currentPosts)
   return (
     <React.Fragment>
       <StyledLink to={`news/${currentPosts.props.post.id}`}>

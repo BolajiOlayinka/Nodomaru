@@ -8,10 +8,10 @@ import styled from "styled-components";
 import SearchResult from "./SearchResult";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import yellowicon from '../../assets/icon-yellow.svg';
-import BackgroundImage from '../../assets/bus.png';
- 
-export default class PostList extends Component { 
+import yellowicon from "../../assets/icon-yellow.svg";
+import BackgroundImage from "../../assets/bus.png";
+
+export default class PostList extends Component {
   constructor(props) {
     super();
     this.state = {
@@ -23,12 +23,9 @@ export default class PostList extends Component {
       activeSearchPage: 1,
       searchPostNumber: 0,
     };
-    
   }
- 
-  
+
   onChange = (e) => {
-    
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -37,7 +34,6 @@ export default class PostList extends Component {
   };
 
   handleSearchPage = (pageNumber) => {
-
     axios
       .get(
         `https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts?search=${this.state.postTitle}&_embed&page=${pageNumber}`
@@ -46,14 +42,13 @@ export default class PostList extends Component {
         this.setState({
           pageResult: res.data,
           activeSearchPage: pageNumber,
-          
         });
       })
       .catch((res) => {
         console.log(res);
       });
-      
-      // history.replace(`/news/search=${this.state.postTitle}/page=${pageNumber}`)
+
+    // history.replace(`/news/search=${this.state.postTitle}/page=${pageNumber}`)
   };
 
   findPost = (e) => {
@@ -77,9 +72,9 @@ export default class PostList extends Component {
     //   console.log(history);
     //   const params= new URLSearchParams(location.search);
     // const query = params.get('q')
-    // console.log(query) 
-    
-      // history.replace(`/news/?search=${this.state.postTitle}`)
+    // console.log(query)
+
+    // history.replace(`/news/?search=${this.state.postTitle}`)
   };
 
   handlePageChange = (pageNumber, pagedispatch) => {
@@ -89,139 +84,133 @@ export default class PostList extends Component {
     });
     this.setState({
       activePage: pageNumber,
-     
     });
     // history.push(`/news/page=${pageNumber}`)
   };
-
-
 
   render() {
     const NotFound = "Post Not Found";
     return (
       <React.Fragment>
-      <Content>        <StyledForm onSubmit={this.findPost}>
-          <SearchFlex>
-            <StyledInput
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Search Posts"
-              id="searchbutton"
-              name="postTitle"
-              value={this.state.postTitle}
-              onChange={this.onChange}
-              autocomplete="off"
-            />
-            <StyledButton type="submit">
-              <FontAwesomeIcon icon={faSearch} />
-            </StyledButton>
-          </SearchFlex>
-        </StyledForm>
-</Content>
-<LineWrapper>
-        <Line />
-        <img src={yellowicon} alt="Nodomaru Icon" />
-        <Line />
-      </LineWrapper>
-       
-<Content>
-        
-        {this.state.result.length === 0 || this.state.result === undefined ? (
-          <AppConsumer>
-            {(value) => {
-              const {
-                AllPost,
-                NumberOfPosts,
-                pagedispatch,
-                loadingPosts,
-              } = value;
-
-              if (
-                loadingPosts ||
-                AllPost === undefined ||
-                AllPost.length === 0
-              ) {
-                return <Spinner />;
-              } else {
-                return (
-                  <React.Fragment>
-                 
-                    {AllPost.AllPost.map((item) => (
-                      <Post key={item.id} post={item} />
-                    ))}
-
-                    <PaginationWrapper>
-                      <Pagination
-                        itemClass="page-item"
-                        linkClass="page-link"
-                        activePage={this.state.activePage}
-                        itemsCountPerPage={10}
-                        totalItemsCount={Number(NumberOfPosts)}
-                        pageRangeDisplayed={3}
-                        onChange={(page) => {
-                          this.handlePageChange(page, pagedispatch);
-                          this.scrollToTop();
-                        }}
-                      />
-                    </PaginationWrapper>
-                  </React.Fragment>
-                );
-              }
-            }}
-          </AppConsumer>
-        ) : this.state.postTitle && this.state.result === [] ? (
-          <h3>{NotFound}</h3>
-        ) : (
-          <React.Fragment>
-            {this.state.pageResult.length === 0 ||
-            this.state.pageResult === undefined ? (
-              <React.Fragment>
-                {this.state.result.map((item) => (
-                  <SearchResult key={item.id} post={item} />
-                ))}
-                <PaginationWrapper>
-                  <Pagination
-                    itemClass="page-item"
-                    linkClass="page-link"
-                    activePage={Number(this.state.activeSearchPage)}
-                    itemsCountPerPage={10}
-                    totalItemsCount={Number(this.state.searchPostNumber)}
-                    pageRangeDisplayed={3}
-                    onChange={(pageNumber) => {
-                      this.handleSearchPage(pageNumber);
-                     
-                      this.scrollToTop();
-                    }}
-                  />
-                </PaginationWrapper>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                {this.state.pageResult.map((item) => (
-                  <SearchResult key={item.id} post={item} />
-                ))}
-                <PaginationWrapper>
-                  <Pagination
-                    itemClass="page-item"
-                    linkClass="page-link"
-                    activePage={Number(this.state.activeSearchPage)}
-                    itemsCountPerPage={10}
-                    totalItemsCount={Number(this.state.searchPostNumber)}
-                    pageRangeDisplayed={3}
-                    onChange={(pageNumber) => {
-                      this.handleSearchPage(pageNumber);
-                      this.scrollToTop();
-                    }}
-                  />
-                </PaginationWrapper>
-              </React.Fragment>
-            )}
-          </React.Fragment>
-        )}
+        <Content>
+          <StyledForm onSubmit={this.findPost}>
+            <SearchFlex>
+              <StyledInput
+                type="text"
+                className="form-control form-control-lg"
+                placeholder="Search Posts"
+                id="searchbutton"
+                name="postTitle"
+                value={this.state.postTitle}
+                onChange={this.onChange}
+                autocomplete="off"
+              />
+              <StyledButton type="submit">
+                <FontAwesomeIcon icon={faSearch} />
+              </StyledButton>
+            </SearchFlex>
+          </StyledForm>
         </Content>
-        <Background>
+        <LineWrapper>
+          <Line />
+          <img src={yellowicon} alt="Nodomaru Icon" />
+          <Line />
+        </LineWrapper>
 
-</Background>
+        <Content>
+          {this.state.result.length === 0 || this.state.result === undefined ? (
+            <AppConsumer>
+              {(value) => {
+                const {
+                  AllPost,
+                  NumberOfPosts,
+                  pagedispatch,
+                  loadingPosts,
+                } = value;
+
+                if (
+                  loadingPosts ||
+                  AllPost === undefined ||
+                  AllPost.length === 0
+                ) {
+                  return <Spinner />;
+                } else {
+                  return (
+                    <React.Fragment>
+                      {AllPost.AllPost.map((item) => (
+                        <Post key={item.id} post={item} />
+                      ))}
+
+                      <PaginationWrapper>
+                        <Pagination
+                          itemClass="page-item"
+                          linkClass="page-link"
+                          activePage={this.state.activePage}
+                          itemsCountPerPage={10}
+                          totalItemsCount={Number(NumberOfPosts)}
+                          pageRangeDisplayed={3}
+                          onChange={(page) => {
+                            this.handlePageChange(page, pagedispatch);
+                            this.scrollToTop();
+                          }}
+                        />
+                      </PaginationWrapper>
+                    </React.Fragment>
+                  );
+                }
+              }}
+            </AppConsumer>
+          ) : this.state.postTitle && this.state.result === [] ? (
+            <h3>{NotFound}</h3>
+          ) : (
+            <React.Fragment>
+              {this.state.pageResult.length === 0 ||
+              this.state.pageResult === undefined ? (
+                <React.Fragment>
+                  {this.state.result.map((item) => (
+                    <SearchResult key={item.id} post={item} />
+                  ))}
+                  <PaginationWrapper>
+                    <Pagination
+                      itemClass="page-item"
+                      linkClass="page-link"
+                      activePage={Number(this.state.activeSearchPage)}
+                      itemsCountPerPage={10}
+                      totalItemsCount={Number(this.state.searchPostNumber)}
+                      pageRangeDisplayed={3}
+                      onChange={(pageNumber) => {
+                        this.handleSearchPage(pageNumber);
+
+                        this.scrollToTop();
+                      }}
+                    />
+                  </PaginationWrapper>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  {this.state.pageResult.map((item) => (
+                    <SearchResult key={item.id} post={item} />
+                  ))}
+                  <PaginationWrapper>
+                    <Pagination
+                      itemClass="page-item"
+                      linkClass="page-link"
+                      activePage={Number(this.state.activeSearchPage)}
+                      itemsCountPerPage={10}
+                      totalItemsCount={Number(this.state.searchPostNumber)}
+                      pageRangeDisplayed={3}
+                      onChange={(pageNumber) => {
+                        this.handleSearchPage(pageNumber);
+                        this.scrollToTop();
+                      }}
+                    />
+                  </PaginationWrapper>
+                </React.Fragment>
+              )}
+            </React.Fragment>
+          )}
+        </Content>
+        <Background></Background>
       </React.Fragment>
     );
   }
@@ -231,6 +220,7 @@ const SearchFlex = styled.div`
   border: 1px solid #373737;
   border-radius: 2px;
   padding-right: 12px;
+  margin: auto;
 `;
 const StyledInput = styled.input`
   width: 400px;
@@ -248,8 +238,12 @@ const StyledInput = styled.input`
     border: none;
     border-color: transparent;
   }
-
   @media (max-width: 576px) {
+    width: 360px;
+    margin: auto;
+  }
+
+  @media (max-width: 425px) {
     width: 250px;
     margin: auto;
     font-size: 12px;
@@ -268,6 +262,9 @@ const StyledForm = styled.form`
     width: 95%;
     margin: auto;
     text-align: center;
+  }
+  @media (max-width: 426px) {
+    margin-top: 50px;
   }
 `;
 const StyledButton = styled.button`
@@ -329,8 +326,8 @@ const LineWrapper = styled.div`
     width: 90%;
   }
   @media (max-width: 425px) {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 `;
 const Line = styled.hr`
@@ -354,17 +351,14 @@ const Line = styled.hr`
   }
 `;
 
-
 const Content = styled.div`
   @media (min-width: 1200px) {
     width: 752px;
     margin: auto;
-   
   }
   @media only screen and (max-width: 1199.9px) and (min-width: 769px) {
     width: 720px;
     margin: auto;
-    
   }
   @media only screen and (max-width: 768.9px) and (min-width: 375px) {
     padding-left: 15px;
@@ -372,11 +366,16 @@ const Content = styled.div`
     width: 100%;
     margin: auto;
   }
- 
+  @media (max-width: 426px) {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    margin: auto;
+  }
 `;
 
-const Background = styled.div `
-background:url(${BackgroundImage});
-height:600px;
-background-size:cover;
-`
+const Background = styled.div`
+  background: url(${BackgroundImage});
+  height: 600px;
+  background-size: cover;
+`;
