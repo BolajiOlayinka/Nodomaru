@@ -20,7 +20,7 @@ export default function Header() {
   const [logo, setLogo] = useState(Logo);
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
-  const [navcolor, setNavColor] =useState('white');
+  const [navcolor, setNavColor] =useState('black');
   const [activehome, setActiveHome]=useState('');
   const [activeservice, setActiveService]=useState('');
   const [activeabout, setActiveAbout]=useState('');
@@ -102,11 +102,11 @@ export default function Header() {
     }else{
       setActiveAbout("")
     }
-    if (window.pageYOffset > 0 && location.pathname==="/news" ) {
+    if (window.pageYOffset > 0 && (location.pathname==="/news" || location.pathnam==="/news/:id") ) {
       setActiveNews("5px solid black")
     }else{
-      
       setActiveNews("")
+      setLogo(BlueLogo)
       
   }
 }

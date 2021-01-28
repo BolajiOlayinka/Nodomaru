@@ -41,8 +41,7 @@ export default function About() {
               <AboutBody>About Our Company</AboutBody>
               <AboutHead>会社について</AboutHead>
               <AboutBody>
-                私はほか今にその安心人という事のために弱らますた。
-                ついに昨日に自覚国もはたしてその品評ですないまでを
+              社名の「のどまる」とは古語で「のどかになる」という意味です。一人でも多くのお客様の「のどまる人生」の実現に貢献致します。
               </AboutBody>
               <PlaySection>
                 <PlayButton onClick={toggle}>CEOからのメッセージ</PlayButton>
@@ -85,8 +84,7 @@ export default function About() {
           <SmallDivider></SmallDivider>
           <AboutHead>会社について</AboutHead>
           <AboutBody>
-            私はほか今にその安心人という事のために弱らますた。
-            ついに昨日に自覚国もはたしてその品評ですないまでを
+          社名の「のどまる」とは古語で「のどかになる」という意味です。一人でも多くのお客様の「のどまる人生」の実現に貢献致します。
           </AboutBody>
           <PlaySection>
             <PlayButton onClick={toggle}>CEOからのメッセージ</PlayButton>

@@ -247,9 +247,7 @@ const Service = styled.div`
   border: 11px solid white;
   padding: 39px 32px;
 
-  &.proximity {
-    scroll-snap-type: y proximity;
-  }
+  
   @media (max-width: 768px) {
     border-right: 0px solid white;
     border-left: 0px solid white;

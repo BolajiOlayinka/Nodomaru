@@ -5,10 +5,14 @@ import styled from "styled-components";
 import BannerImage from "../../assets/banner-6.jpg";
 import SmallBannerImage from "../../assets/banner-6a.jpg";
 import BannerImage2 from "../../assets/banner-7.jpg";
-// import BannerImage4 from "../../assets/banner-8b.png";
 import BannerImage3 from "../../assets/banner-8.jpg";
 import WhiteLogo from "../../assets/LogoWhite.png";
-import ServiceIcon from "../../assets/service-icon.svg";
+import Keys from "../../assets/keys.svg";
+import Percent from "../../assets/percent.svg";
+import Growth from "../../assets/growth.svg";
+import Secure from "../../assets/secure.svg";
+import Yen from "../../assets/yen.svg";
+import Chart from "../../assets/chart.svg";
 import { HashLink as Linker } from "react-router-hash-link";
 import blueicon from "../../assets/icon-blue.svg";
 import yellowicon from "../../assets/icon-yellow.svg";
@@ -69,31 +73,34 @@ export default function Service() {
       </EstateServicePoint>
       <ServiceUse>
         <UseCase>
-          <img src={ServiceIcon} alt="Service Icon" />
+          <img src={Keys} alt="Service Icon" />
           <UseButton>賃貸仲介「いえどき」</UseButton>
           <UseCaseBody>
-            「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+          「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
           </UseCaseBody>
         </UseCase>
 
         <UseCase>
-          <img src={ServiceIcon} alt="Service Icon" />
-          <UseButton>賃貸仲介「いえどき」</UseButton>
+          <img src={Percent} alt="Service Icon" />
+          <UseButton>居住用売買</UseButton>
           <UseCaseBody>
-            「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+          お客様の購入、売却、リフォームの希望に
+お応えします。
           </UseCaseBody>
         </UseCase>
 
         <UseCase>
-          <img src={ServiceIcon} alt="Service Icon" />
+          <img src={Growth} alt="Service Icon" />
           <UseButton>賃貸仲介「いえどき」</UseButton>
           <UseCaseBody>
-            「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+            「購入、売却、運用
+攻めるときも守るときも、最適なアドバイスをいたします。
+
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <ServiceButton to="/#contactform">取り合わせ</ServiceButton>
+        <ServiceButton to="/#contactform">お問い合わせ</ServiceButton>
       </ButtonContainer>
       <LineWrapper>
         <Line />
@@ -134,26 +141,26 @@ export default function Service() {
       </FinanceServicePoint>
       <ServiceUse>
         <UseCase>
-          <img src={ServiceIcon} alt="Service Icon" />
+          <img src={Secure} alt="Service Icon" />
           <FinancialUseButton>保険見直し</FinancialUseButton>
           <UseCaseBody>
-            本当に必要な保険は人によって違います。ファイナンシャルプランナーがフラットな立場から、最適なアドバイスをいたします。
+          本当に必要な保険は人によって違います。ファイナンシャルプランナーがフラットな立場から、最適なアドバイスをいたします。
           </UseCaseBody>
         </UseCase>
 
         <UseCase>
-          <img src={ServiceIcon} alt="Service Icon" />
+          <img src={Yen} alt="Service Icon" />
           <FinancialUseButton>資産運用</FinancialUseButton>
           <UseCaseBody>
-            老後資金、教育資金など「お金」にまつわる様々なお悩みについて、ファイナンシャルプランナーがご相談に応じます。
+          老後資金、教育資金など「お金」にまつわる様々なお悩みについて、ファイナンシャルプランナーがご相談に応じます。
           </UseCaseBody>
         </UseCase>
 
         <UseCase>
-          <img src={ServiceIcon} alt="Service Icon" />
+          <img src={Chart} alt="Service Icon" />
           <FinancialUseButton>各種セミナー</FinancialUseButton>
           <UseCaseBody>
-            保険や不動産のセミナーだけでなく、経営者や営業職の方向けに売り上げを上げるセミナーも開催しております。
+          保険や不動産のセミナーだけでなく、経営者や営業職の方向けに売り上げを上げるセミナーも開催しております。
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
