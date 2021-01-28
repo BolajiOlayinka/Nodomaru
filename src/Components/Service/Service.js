@@ -484,7 +484,7 @@ const UseCaseBody = styled.div`
   width: 184px;
   text-align: justify;
   margin: auto;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: black;

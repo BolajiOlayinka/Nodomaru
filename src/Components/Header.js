@@ -76,10 +76,10 @@ export default function Header() {
       setNavColor('black')
       
     } else {
-      setLogo(Logo);
+      setLogo(BlackLogo);
       setBackground("transparent");
       setBoxShadow("transparent");
-      setNavColor('white')
+      setNavColor('black')
     }
    
     }
@@ -106,7 +106,7 @@ export default function Header() {
       setActiveNews("5px solid black")
     }else{
       setActiveNews("")
-      setLogo(BlueLogo)
+     
       
   }
 }
