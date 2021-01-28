@@ -20,7 +20,7 @@ export default class News extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params);
-    axios.get(`http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts`)
+    axios.get(`https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts`)
       .then((responsee) => {
         //   console.log(responsee)
         this.setState({AllIDs:responsee.data})
@@ -29,13 +29,13 @@ export default class News extends Component {
       })
     axios
       .get(
-        `http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts/${this.props.match.params.id}`
+        `https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts/${this.props.match.params.id}`
       )
       .then((res) => {
         console.log(res);
         axios
           .get(
-            `http://ndmr.co.jp/blog/?rest_route=/wp/v2/media/${res.data.featured_media}`
+            `https://ndmr.co.jp/blog/?rest_route=/wp/v2/media/${res.data.featured_media}`
           )
           .then((response) => {
             // console.log(response)
@@ -46,7 +46,7 @@ export default class News extends Component {
           });
         axios
           .get(
-            `http://ndmr.co.jp/blog/?rest_route=/wp/v2/categories?post=${res.data.id}`
+            `https://ndmr.co.jp/blog/?rest_route=/wp/v2/categories?post=${res.data.id}`
           )
           .then((resp) => {
               console.log(resp)
@@ -56,7 +56,7 @@ export default class News extends Component {
             console.log(response.err);
           });
         axios
-          .get(`http://ndmr.co.jp/blog/?rest_route=/wp/v2/users/${res.data.author}`)
+          .get(`https://ndmr.co.jp/blog/?rest_route=/wp/v2/users/${res.data.author}`)
           .then((resp) => {
             this.setState({ author: resp.data });
           })
