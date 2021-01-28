@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import renderHTML from "react-render-html";
 import DayJS from "react-dayjs";
 import Featured from "../../assets/Featured.jpg";
+
 // import Spinner from '../Spinner';
 export default function Post(props) {
   const currentPosts = { props };
@@ -75,6 +76,7 @@ export default function Post(props) {
           </Row>
         </Container>
       </StyledLink>
+      
     </React.Fragment>
   );
 }
@@ -86,6 +88,8 @@ const StyledLink = styled(Link)`
 `;
 const Row = styled.div`
   display: flex;
+  height:300px;
+  margin-bottom:60px;
   @media (max-width: 576px) {
     flex-direction: column;
   }
@@ -157,13 +161,13 @@ const StyledFontAwesome = styled(FontAwesomeIcon)`
   vertical-align: middle;
   margin-top: -3px;
 `;
-const Btn = styled.div`
-  color: black;
-  background-color: transparent;
-  outline:0;
-  font-size: 12px;
-  margin-right: 11px;
-`;
+// const Btn = styled.div`
+//   color: black;
+//   background-color: transparent;
+//   outline:0;
+//   font-size: 12px;
+//   margin-right: 11px;
+// `;
 const PostTitle = styled.h3`
   font-weight: bold;
 font-size: 35px;

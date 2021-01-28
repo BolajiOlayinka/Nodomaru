@@ -8,7 +8,9 @@ import styled from "styled-components";
 import SearchResult from "./SearchResult";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
+import yellowicon from '../../assets/icon-yellow.svg';
+import BackgroundImage from '../../assets/bus.png';
+ 
 export default class PostList extends Component { 
   constructor(props) {
     super();
@@ -98,7 +100,7 @@ export default class PostList extends Component {
     const NotFound = "Post Not Found";
     return (
       <React.Fragment>
-        <StyledForm onSubmit={this.findPost}>
+      <Content>        <StyledForm onSubmit={this.findPost}>
           <SearchFlex>
             <StyledInput
               type="text"
@@ -115,10 +117,15 @@ export default class PostList extends Component {
             </StyledButton>
           </SearchFlex>
         </StyledForm>
-
-        <Divider />
-
-        <PostHeading>LATEST POSTS</PostHeading>
+</Content>
+<LineWrapper>
+        <Line />
+        <img src={yellowicon} alt="Nodomaru Icon" />
+        <Line />
+      </LineWrapper>
+       
+<Content>
+        
         {this.state.result.length === 0 || this.state.result === undefined ? (
           <AppConsumer>
             {(value) => {
@@ -211,6 +218,10 @@ export default class PostList extends Component {
             )}
           </React.Fragment>
         )}
+        </Content>
+        <Background>
+
+</Background>
       </React.Fragment>
     );
   }
@@ -248,7 +259,7 @@ const StyledForm = styled.form`
   display: flex;
   width: 400px;
   margin: auto;
-  margin-top: 13px;
+  margin-top: 70px;
   div {
     margin-bottom: 0px;
   }
@@ -302,18 +313,70 @@ const PaginationWrapper = styled.div`
     display: none;
   }
 `;
-const PostHeading = styled.h3`
-  padding-top: 15px;
-  margin-bottom: 0px;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 20px;
-  color: black;
-  padding-left: 15px;
-  padding-right: 15px;
+
+const LineWrapper = styled.div`
+  width: 1094px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  img {
+    width: 35px;
+  }
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+  @media (max-width: 425px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 `;
-const Divider = styled.hr`
-  background-color: var(--mainOrange);
-  margin-top: 20px;
-  margin-bottom: 20px;
+const Line = styled.hr`
+  border: 1px solid var(--mainYellow);
+  width: 508px;
+  @media (max-width: 1200px) {
+    width: 400px;
+  }
+  @media (max-width: 991px) {
+    width: 300px;
+  }
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+
+  @media (max-width: 576px) {
+    width: 150px;
+  }
+  @media (max-width: 425px) {
+    width: 120px;
+  }
 `;
+
+
+const Content = styled.div`
+  @media (min-width: 1200px) {
+    width: 752px;
+    margin: auto;
+   
+  }
+  @media only screen and (max-width: 1199.9px) and (min-width: 769px) {
+    width: 720px;
+    margin: auto;
+    
+  }
+  @media only screen and (max-width: 768.9px) and (min-width: 375px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    margin: auto;
+  }
+ 
+`;
+
+const Background = styled.div `
+background:url(${BackgroundImage});
+height:600px;
+background-size:cover;
+`

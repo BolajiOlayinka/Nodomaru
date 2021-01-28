@@ -10,7 +10,7 @@ import DayJS from "react-dayjs";
 // import Spinner from '../Spinner';
 export default function Post(props) {
   const currentPosts = { props };
-  // console.log(currentPosts)
+  // console.log(currentPosts) 
   return (
     <React.Fragment>
       <StyledLink to={`news/${currentPosts.props.post.id}`}>
@@ -50,20 +50,20 @@ export default function Post(props) {
                       }
                     </p>
                   </Team>
-                  <Btn>
+                  {/* <Btn>
                     {
                       currentPosts.props.post["_embedded"]["wp:term"]["1"]["0"][
                         "name"
                       ]
                     }
-                  </Btn>
-                  <Btn>
+                  </Btn> */}
+                  {/* <Btn>
                     {
                       currentPosts.props.post["_embedded"]["wp:term"]["0"]["0"][
                         "name"
                       ]
                     }
-                  </Btn>
+                  </Btn> */}
                 </RightSectionHead>
                 <PostTitle>
                   {renderHTML(currentPosts.props.post.title.rendered)}
@@ -145,14 +145,14 @@ const StyledFontAwesome = styled(FontAwesomeIcon)`
   vertical-align: middle;
   margin-top: -3px;
 `;
-const Btn = styled.div`
-  color: white;
-  background-color: #f8951d;
-  font-size: 12px;
-  padding: 0px 10px;
-  border-radius: 4px;
-  margin-right: 11px;
-`;
+// const Btn = styled.div`
+//   color: white;
+//   background-color: #f8951d;
+//   font-size: 12px;
+//   padding: 0px 10px;
+//   border-radius: 4px;
+//   margin-right: 11px;
+// `;
 const PostTitle = styled.h3`
   font-size: 24px;
   line-height: 32px;

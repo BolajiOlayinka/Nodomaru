@@ -18,9 +18,9 @@ export default class News extends Component {
       </LogoSection>
         <Content>
           <Carousel />
-     
+          </Content>
           <PostList />
-        </Content>
+        
       </React.Fragment>
     );
   }
@@ -30,7 +30,7 @@ width: 658px;
 text-align:center;
 margin:auto;
 img{
-    margin-top:79px;
+    margin-top:150px;
 }
 @media(max-width:768px){
     width:90%;
@@ -47,12 +47,12 @@ const Content = styled.div`
   @media (min-width: 1200px) {
     width: 752px;
     margin: auto;
-    padding-bottom: 273px;
+
   }
   @media only screen and (max-width: 1199.9px) and (min-width: 769px) {
     width: 720px;
     margin: auto;
-    padding-bottom: 30%;
+  
   }
   @media only screen and (max-width: 768.9px) and (min-width: 375px) {
     padding-left: 15px;

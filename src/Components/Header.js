@@ -1,9 +1,11 @@
-import React, {useState } from "react";
+import React, {useState,useEffect } from "react";
 import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import Logo from "../assets/icon.svg";
 import BlackLogo from "../assets/icon-black.svg";
-import { Link } from "react-router-dom";
+import BlueLogo from "../assets/icon-blue.svg";
+import YellowLogo from "../assets/icon-yellow.svg";
+import { Link,useLocation } from "react-router-dom";
 import { HashLink as Linker } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -19,23 +21,95 @@ export default function Header() {
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
   const [navcolor, setNavColor] =useState('white');
+  const [activehome, setActiveHome]=useState('');
+  const [activeservice, setActiveService]=useState('');
+  const [activeabout, setActiveAbout]=useState('');
+  const [activenews, setActiveNews]=useState('');
+
+ 
   // const [SmallBackground, setSmallBackground]=useState("black")
   const ScrollToTop = () => {
     animateScrollTo(0);
   };
+  const location = useLocation();
+  useEffect(()=>{
+    if(location.pathname==="/"){
+      setLogo(Logo)
+      setNavColor('black')
+      setActiveHome('5px solid black')
+      setActiveService('transparent')
+      setActiveAbout('transparent')
+      setActiveNews('transparent')
+    }else if(location.pathname==="/about"){
+      setLogo(Logo)
+      setActiveAbout('5px solid white')
+      setActiveHome('transparent')
+      setActiveService('transparent')
+      setActiveNews('transparent')
+      setNavColor('white')
+    }else if(location.pathname==="/service"){
+      setLogo(YellowLogo)
+      setActiveService('5px solid white')
+      setActiveHome('transparent')
+      setActiveAbout('transparent')
+      setActiveNews('transparent')
+      setNavColor('white')
+    }else if(location.pathname==="/news" || location.pathname==="/news/:id"){
+      setActiveNews('5px solid black')
+      setActiveHome('transparent')
+      setActiveAbout('transparent')
+      setActiveService('transparent')
+      setNavColor('black')
+      setLogo(BlueLogo)
+      
+    }else{
+      setLogo(Logo)
+      
+    }
+  },[location.pathname])
+
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
       setBackground("white");
       setLogo(BlackLogo);
       setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
       setNavColor('black')
+      
     } else {
       setLogo(Logo);
       setBackground("transparent");
       setBoxShadow("transparent");
       setNavColor('white')
     }
-  };
+   
+    }
+  
+  const ScrollActive = ()=>{
+    if (window.pageYOffset > 0 && location.pathname==="/service" ) {
+      setActiveService("5px solid black")
+    }else{
+      setActiveService("")
+    }
+    if (window.pageYOffset > 0 && location.pathname==="/" ) {
+      setActiveHome("5px solid black")
+   
+    }else{
+      setActiveHome("transparent")
+    }
+    if (window.pageYOffset > 0 && location.pathname==="/about" ) {
+      setActiveAbout("5px solid black")
+   
+    }else{
+      setActiveAbout("")
+    }
+    if (window.pageYOffset > 0 && location.pathname==="/news" ) {
+      setActiveNews("5px solid black")
+    }else{
+      
+      setActiveNews("")
+      
+  }
+}
   const fixedScroll = () => {
     if (window.pageYOffset >= 0) {
       setFixed("fixed");
@@ -47,6 +121,7 @@ export default function Header() {
   // console.log(window.innerWidth)
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("scroll", fixedScroll);
+  window.addEventListener("scroll", ScrollActive);
 
   const toggle = (e) => {
     setShowItem(!showItem, e);
@@ -69,18 +144,27 @@ export default function Header() {
           <SmallNav>
           <StyledNav navbar>
             <NavItem>
-              <StyledLink to="/" onClick={closeModal}>ニュース</StyledLink>
+              <StyledLink to="/" activehome={activehome} onClick={closeModal}>ニュース</StyledLink>
             </NavItem>
             <NavItem>
               <StyledContactLink to="/#contactform" onClick={closeModal}>お問い合わせ</StyledContactLink>
             </NavItem>
             <NavItem>
-              <StyledLink to ="/about" onClick={() => {closeModal(); ScrollToTop()}}>ABOUT</StyledLink>
+              <StyledLink to ="/about" activeabout={activeabout} onClick={() => {closeModal(); ScrollToTop()}}>ABOUT</StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink to ="/service" onClick={closeModal}>サービス</StyledLink>
+              <StyledLink to ="/service" activeservice={activeservice} onClick={closeModal}>サービス</StyledLink>
             </NavItem>
-            
+            <NavItem>
+              <StyledLink
+               to="/news"
+               navcolor={navcolor}
+               activenews={activenews}
+               onClick={() => {ScrollToTop()}}
+              >
+                ニュース
+              </StyledLink>
+            </NavItem>
           </StyledNav>
           </SmallNav>
         )}
@@ -96,12 +180,12 @@ export default function Header() {
         <LargeNav className="ml-auto">
           <StyledNav navbar>
             <NavItem>
-              <StyledLink navcolor={navcolor} to="/" onClick={() => {ScrollToTop()}}>
+              <StyledLink navcolor={navcolor} activehome={activehome}  to="/" onClick={() => {ScrollToTop()}}>
                 ニュース
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledContactLink  navcolor={navcolor} to ="/#contactform">
+              <StyledContactLink  navcolor={navcolor}  to ="/#contactform">
                 お問い合わせ
               </StyledContactLink>
             </NavItem>
@@ -110,6 +194,7 @@ export default function Header() {
                
                to="/about"
                navcolor={navcolor}
+               activeabout={activeabout}  
                onClick={() => {ScrollToTop()}}
               >
                 ABOUT
@@ -120,11 +205,23 @@ export default function Header() {
                
                to="/service"
                navcolor={navcolor}
+               activeservice={activeservice}
                onClick={() => {ScrollToTop()}}
               >
                 サービス
               </StyledLink>
             </NavItem>
+            <NavItem>
+              <StyledLink
+               to="/news"
+               navcolor={navcolor}
+               activenews={activenews}
+               onClick={() => {ScrollToTop()}}
+              >
+                ニュース
+              </StyledLink>
+            </NavItem>
+
           </StyledNav>
         </LargeNav>
       </StyledNavbar>
@@ -213,17 +310,19 @@ const StyledLink = styled(Link)`
   padding-bottom: 8px;
   font-weight: 400;
   font-size: 16px;
-
+  border-bottom:${(props)=>props.activehome} !important;
+  border-bottom:${(props)=>props.activeservice} !important;
+  border-bottom:${(props)=>props.activeabout} !important;
+  border-bottom:${(props)=>props.activenews} !important;
   :hover {
     color: var(--mainGreen);
     cursor: pointer;
     text-decoration: none;
 
-    border-bottom: 2px solid var(--mainGreen);
+ 
   }
   :active {
     color: var(--mainGreen);
-    border-bottom: 2px solid var(--mainGreen);
     transition: border-bottom 0.5s ease-in;
   }
 
@@ -255,17 +354,16 @@ const StyledContactLink = styled(Linker)`
   padding-bottom: 8px;
   font-weight: 400;
   font-size: 16px;
-
+ 
   :hover {
     color: var(--mainGreen);
     cursor: pointer;
     text-decoration: none;
 
-    border-bottom: 2px solid var(--mainGreen);
   }
   :active {
     color: var(--mainGreen);
-    border-bottom: 2px solid var(--mainGreen);
+   
     transition: border-bottom 0.5s ease-in;
   }
 
