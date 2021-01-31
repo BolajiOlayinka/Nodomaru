@@ -35,7 +35,7 @@ export default class News extends Component {
         `https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts/${this.props.match.params.id}`
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         axios
           .get(
             `https://ndmr.co.jp/blog/?rest_route=/wp/v2/media/${res.data.featured_media}`
@@ -49,7 +49,7 @@ export default class News extends Component {
           });
         axios
           .get(
-            `https://ndmr.co.jp/blog/?rest_route=/wp/v2/categories?post=${res.data.id}`
+            `https://ndmr.co.jp/blog/?rest_route=/wp/v2/categories&post=${res.data.id}`
           )
           .then((resp) => {
             console.log(resp);

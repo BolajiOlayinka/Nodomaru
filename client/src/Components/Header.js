@@ -1,11 +1,11 @@
-import React, {useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import Logo from "../assets/icon.svg";
 import BlackLogo from "../assets/icon-black.svg";
 import BlueLogo from "../assets/icon-blue.svg";
 import YellowLogo from "../assets/icon-yellow.svg";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HashLink as Linker } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -20,96 +20,87 @@ export default function Header() {
   const [logo, setLogo] = useState(Logo);
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
-  const [navcolor, setNavColor] =useState('black');
-  const [activehome, setActiveHome]=useState('');
-  const [activeservice, setActiveService]=useState('');
-  const [activeabout, setActiveAbout]=useState('');
-  const [activenews, setActiveNews]=useState('');
+  const [navcolor, setNavColor] = useState("black");
+  const [activeservice, setActiveService] = useState("");
+  const [activeabout, setActiveAbout] = useState("");
+  const [activenews, setActiveNews] = useState("");
 
- 
   // const [SmallBackground, setSmallBackground]=useState("black")
   const ScrollToTop = () => {
     animateScrollTo(0);
   };
   const location = useLocation();
-  useEffect(()=>{
-    if(location.pathname==="/"){
-      setLogo(Logo)
-      setNavColor('black')
-      setActiveHome('5px solid black')
-      setActiveService('transparent')
-      setActiveAbout('transparent')
-      setActiveNews('transparent')
-    }else if(location.pathname==="/about"){
-      setLogo(Logo)
-      setActiveAbout('5px solid white')
-      setActiveHome('transparent')
-      setActiveService('transparent')
-      setActiveNews('transparent')
-      setNavColor('white')
-    }else if(location.pathname==="/service"){
-      setLogo(YellowLogo)
-      setActiveService('5px solid white')
-      setActiveHome('transparent')
-      setActiveAbout('transparent')
-      setActiveNews('transparent')
-      setNavColor('white')
-    }else if(location.pathname==="/news" || location.pathname==="/news/:id"){
-      setActiveNews('5px solid black')
-      setActiveHome('transparent')
-      setActiveAbout('transparent')
-      setActiveService('transparent')
-      setNavColor('black')
-      setLogo(BlueLogo)
-      
-    }else{
-      setLogo(Logo)
-      
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setLogo(Logo);
+      setNavColor("black");
+
+      setActiveService("transparent");
+      setActiveAbout("transparent");
+      setActiveNews("transparent");
+    } else if (location.pathname === "/about") {
+      setLogo(Logo);
+      setActiveAbout("5px solid white");
+
+      setActiveService("transparent");
+      setActiveNews("transparent");
+      setNavColor("white");
+    } else if (location.pathname === "/service") {
+      setLogo(YellowLogo);
+      setActiveService("5px solid white");
+
+      setActiveAbout("transparent");
+      setActiveNews("transparent");
+      setNavColor("white");
+    } else if (
+      location.pathname === "/news" ||
+      location.pathname === "/news/:id"
+    ) {
+      setActiveNews("5px solid black");
+
+      setActiveAbout("transparent");
+      setActiveService("transparent");
+      setNavColor("black");
+      setLogo(BlueLogo);
+    } else {
+      setLogo(Logo);
     }
-  },[location.pathname])
+  }, [location.pathname]);
 
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
       setBackground("white");
       setLogo(BlackLogo);
       setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
-      setNavColor('black')
-      
+      setNavColor("black");
     } else {
       setLogo(BlackLogo);
       setBackground("transparent");
       setBoxShadow("transparent");
-      setNavColor('black')
+      setNavColor("black");
     }
-   
+  };
+
+  const ScrollActive = () => {
+    if (window.pageYOffset > 0 && location.pathname === "/service") {
+      setActiveService("5px solid black");
+    } else {
+      setActiveService("");
     }
-  
-  const ScrollActive = ()=>{
-    if (window.pageYOffset > 0 && location.pathname==="/service" ) {
-      setActiveService("5px solid black")
-    }else{
-      setActiveService("")
+    if (window.pageYOffset > 0 && location.pathname === "/about") {
+      setActiveAbout("5px solid black");
+    } else {
+      setActiveAbout("");
     }
-    if (window.pageYOffset > 0 && location.pathname==="/" ) {
-      setActiveHome("5px solid black")
-   
-    }else{
-      setActiveHome("transparent")
+    if (
+      window.pageYOffset > 0 &&
+      (location.pathname === "/news" || location.pathname === "/news/:id")
+    ) {
+      setActiveNews("5px solid black");
+    } else {
+      setActiveNews("");
     }
-    if (window.pageYOffset > 0 && location.pathname==="/about" ) {
-      setActiveAbout("5px solid black")
-   
-    }else{
-      setActiveAbout("")
-    }
-    if (window.pageYOffset > 0 && (location.pathname==="/news" || location.pathnam==="/news/:id") ) {
-      setActiveNews("5px solid black")
-    }else{
-      setActiveNews("")
-     
-      
-  }
-}
+  };
   const fixedScroll = () => {
     if (window.pageYOffset >= 0) {
       setFixed("fixed");
@@ -117,7 +108,7 @@ export default function Header() {
       setFixed("initial");
     }
   };
- 
+
   // console.log(window.innerWidth)
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("scroll", fixedScroll);
@@ -128,13 +119,12 @@ export default function Header() {
     setShowIcon(!showIcon, e);
   };
 
-  const closeModal = ()=>{
-    setShowItem(false)
-  }
+  const closeModal = () => {
+    setShowItem(false);
+  };
   return (
     <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
       <StyledNavbar expand="md">
-        
         <LogoContainer>
           <Link to="/">
             <img src={logo} alt="Digitrad Logo" />
@@ -142,86 +132,96 @@ export default function Header() {
         </LogoContainer>
         {showItem && (
           <SmallNav>
-          <StyledNav navbar>
-            <NavItem>
-              <StyledLink to="/" activehome={activehome} onClick={closeModal}>ニュース</StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledContactLink to="/#contactform" onClick={closeModal}>お問い合わせ</StyledContactLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink to ="/about" activeabout={activeabout} onClick={() => {closeModal(); ScrollToTop()}}>ABOUT</StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink to ="/service" activeservice={activeservice} onClick={closeModal}>サービス</StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-               to="/news"
-               navcolor={navcolor}
-               activenews={activenews}
-               onClick={() => {ScrollToTop()}}
-              >
-                ニュース
-              </StyledLink>
-            </NavItem>
-          </StyledNav>
+            <StyledNav navbar>
+              <NavItem>
+                <StyledLink
+                  to="/news"
+                  activenews={activenews}
+                  onClick={closeModal}
+                >
+                  ニュース
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledContactLink to="/#contactform" onClick={closeModal}>
+                  お問い合わせ
+                </StyledContactLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink
+                  to="/about"
+                  activeabout={activeabout}
+                  onClick={() => {
+                    closeModal();
+                    ScrollToTop();
+                  }}
+                >
+                  ABOUT
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink
+                  to="/service"
+                  activeservice={activeservice}
+                  onClick={closeModal}
+                >
+                  サービス
+                </StyledLink>
+              </NavItem>
+            </StyledNav>
           </SmallNav>
         )}
         <div onClick={toggle}>
           {showIcon ? (
-            <StyledFontAwesome icon={faBars} navcolor={navcolor}/>
+            <StyledFontAwesome icon={faBars} navcolor={navcolor} />
           ) : (
-            <StyledFontCancel icon={faTimesCircle} navcolor={navcolor}/>
+            <StyledFontCancel icon={faTimesCircle} navcolor={navcolor} />
           )}
         </div>
 
-       
         <LargeNav className="ml-auto">
           <StyledNav navbar>
             <NavItem>
-              <StyledLink navcolor={navcolor} activehome={activehome}  to="/" onClick={() => {ScrollToTop()}}>
+              <StyledLink
+                navcolor={navcolor}
+                activenews={activenews}
+                to="/news"
+                onClick={() => {
+                  ScrollToTop();
+                }}
+              >
                 ニュース
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledContactLink  navcolor={navcolor}  to ="/#contactform">
+              <StyledContactLink navcolor={navcolor} to="/#contactform">
                 お問い合わせ
               </StyledContactLink>
             </NavItem>
             <NavItem>
               <StyledLink
-               
-               to="/about"
-               navcolor={navcolor}
-               activeabout={activeabout}  
-               onClick={() => {ScrollToTop()}}
+                to="/about"
+                navcolor={navcolor}
+                activeabout={activeabout}
+                onClick={() => {
+                  ScrollToTop();
+                }}
               >
                 ABOUT
               </StyledLink>
             </NavItem>
             <NavItem>
               <StyledLink
-               
-               to="/service"
-               navcolor={navcolor}
-               activeservice={activeservice}
-               onClick={() => {ScrollToTop()}}
+                to="/service"
+                navcolor={navcolor}
+                activeservice={activeservice}
+                onClick={() => {
+                  ScrollToTop();
+                }}
               >
                 サービス
               </StyledLink>
             </NavItem>
-            <NavItem>
-              <StyledLink
-               to="/news"
-               navcolor={navcolor}
-               activenews={activenews}
-               onClick={() => {ScrollToTop()}}
-              >
-                ニュース
-              </StyledLink>
-            </NavItem>
-
           </StyledNav>
         </LargeNav>
       </StyledNavbar>
@@ -242,10 +242,9 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  ${'' /* @media(max-width:576px){
+  ${"" /* @media(max-width:576px){
     width:90%;
   } */}
- 
 `;
 const LogoContainer = styled.div`
   img {
@@ -254,7 +253,7 @@ const LogoContainer = styled.div`
   }
   @media (max-width: 576px) {
     z-index: 2;
-    ${'' /* padding-right:20px; */}
+    ${"" /* padding-right:20px; */}
   }
 `;
 const StyledNav = styled(Nav)`
@@ -286,7 +285,7 @@ const StyledNavbar = styled(Navbar)`
     width: 1117px;
     margin: auto;
     padding-left: 20px;
-    padding-right:20px;
+    padding-right: 20px;
 
     ${"" /* -ms-ime-width:1200px; */}
   }
@@ -310,16 +309,14 @@ const StyledLink = styled(Link)`
   padding-bottom: 8px;
   font-weight: 400;
   font-size: 16px;
-  border-bottom:${(props)=>props.activehome} !important;
-  border-bottom:${(props)=>props.activeservice} !important;
-  border-bottom:${(props)=>props.activeabout} !important;
-  border-bottom:${(props)=>props.activenews} !important;
+  border-bottom: ${(props) => props.activehome} !important;
+  border-bottom: ${(props) => props.activeservice} !important;
+  border-bottom: ${(props) => props.activeabout} !important;
+  border-bottom: ${(props) => props.activenews} !important;
   :hover {
     color: var(--mainGreen);
     cursor: pointer;
     text-decoration: none;
-
- 
   }
   :active {
     color: var(--mainGreen);
@@ -334,9 +331,9 @@ const StyledLink = styled(Link)`
     font-size: 13px;
     line-height: 32px;
     padding-left: 0.5em;
-    position:relative;
-z-index: 10;
-color:white;
+    position: relative;
+    z-index: 10;
+    color: white;
     :hover {
       border-bottom: 0px;
     }
@@ -354,16 +351,15 @@ const StyledContactLink = styled(Linker)`
   padding-bottom: 8px;
   font-weight: 400;
   font-size: 16px;
- 
+
   :hover {
     color: var(--mainGreen);
     cursor: pointer;
     text-decoration: none;
-
   }
   :active {
     color: var(--mainGreen);
-   
+
     transition: border-bottom 0.5s ease-in;
   }
 
@@ -375,9 +371,9 @@ const StyledContactLink = styled(Linker)`
     font-size: 13px;
     line-height: 32px;
     padding-left: 0.5em;
-    position:relative;
-z-index: 10;
-color:white;
+    position: relative;
+    z-index: 10;
+    color: white;
     :hover {
       border-bottom: 0px;
     }
@@ -394,11 +390,11 @@ const LargeNav = styled.div`
     display: none;
   }
 `;
-const SmallNav = styled.div `
-@media(min-width:768px){
-  display:none;
-}
-`
+const SmallNav = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
 const StyledFontAwesome = styled(FontAwesomeIcon)`
   color: ${(props) => props.navcolor} !important;
   font-size: 20px;
@@ -414,7 +410,7 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
   color: white;
   margin-top: 18px;
   font-size: 24px;
-  right:28px;
+  right: 28px;
   @media (min-width: 768px) {
     display: none;
   }

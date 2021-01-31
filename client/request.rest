@@ -7,3 +7,6 @@
 # GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/categories
 
 # GET https://ndmr.co.jp/blog/?rest_route=/wp/v2/search=lorem
+# https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&search=lorem
+
+# https://ndmr.co.jp/blog/?rest_route=/wp/v2/categories&post=15

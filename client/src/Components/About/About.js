@@ -304,6 +304,7 @@ const SectionConnector = styled.div`
   height: 311px;
   position: absolute;
   margin-top: 30px;
+  z-index:2;
   @media (max-width: 768px) {
     display: none;
   }
@@ -389,7 +390,7 @@ const StyledPlayIcon = styled(FontAwesomeIcon)`
 const AdoptSection = styled.div`
   ${'' /* background: url(${AdoptBanner}); */}
   position: relative; 
-  z-index: -5;
+  z-index: 1;
   position:relative;
   height: 603px;
   text-align: center;
@@ -414,7 +415,6 @@ const AdoptSection = styled.div`
 `;
 const GenBackground = styled.div`
 position:relative;
-z-index:-99;
   background: url(${GeneralBanner});
   width: 100%;
   background-size: cover;
@@ -429,7 +429,7 @@ position:absolute;
 bottom:28px;
 width:140px;
 margin:auto;
-z-index:1;
+z-index:2;
   background-color: var(--mainYellow);
   padding: 9px 25px;
   font-size: 18px;

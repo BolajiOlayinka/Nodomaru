@@ -36,9 +36,10 @@ export default class PostList extends Component {
   handleSearchPage = (pageNumber) => {
     axios
       .get(
-        `https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts?search=${this.state.postTitle}&_embed&page=${pageNumber}`
+        `https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&search=${this.state.postTitle}&_embed&page=${pageNumber}`
       )
       .then((res) => {
+        console.log(res)
         this.setState({
           pageResult: res.data,
           activeSearchPage: pageNumber,
@@ -55,7 +56,7 @@ export default class PostList extends Component {
     e.preventDefault();
     axios
       .get(
-        `https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts?search=${this.state.postTitle}&_embed`,
+        `https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&search=${this.state.postTitle}&_embed`,
         {},
         this.setState({ loading: false })
       )

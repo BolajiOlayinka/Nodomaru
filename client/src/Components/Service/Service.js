@@ -16,7 +16,7 @@ import Chart from "../../assets/chart.svg";
 import { HashLink as Linker } from "react-router-hash-link";
 import blueicon from "../../assets/icon-blue.svg";
 import yellowicon from "../../assets/icon-yellow.svg";
-import Smalldisplay from "../../assets/banner-7a.jpg";
+import Smalldisplay from "../../assets/banner-7c.jpg";
 import Smalldisplaytwo from "../../assets/banner-8a.jpg";
 
 export default function Service() {
@@ -342,12 +342,7 @@ const BannerConnector = styled.div`
   background: url(${BannerImage2});
   background-size: cover;
   height: 400px;
-  ${'' /* @media(min-width:2000px){
-    height:600px;
-  }
-  @media(min-width:2500px){
-    height:700px;
-  } */}
+ 
   @media (max-width: 768px) {
     height: 300px;
   }
@@ -363,12 +358,7 @@ const Connector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
-  ${'' /* @media(min-width:2500px){
-    margin-top:580px;
-  }
-  @media(min-width:2000px){
-    margin-top:430px;
-  } */}
+  
 
   @media (max-width: 768px) {
     height: 210px;
@@ -388,17 +378,23 @@ const PreHeading = styled.div`
   font-size: 24px;
   line-height: 28px;
   letter-spacing: 0.4em;
-  height: 46px;
+  
+  ${'' /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.3em;
+    width:80%;
+    margin:auto;
+    padding-bottom:11px;
   }
   @media (max-width: 426px) {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0.4em;
-    height: 46px;
+    padding-bottom:11px;
+    width:100%;
+    ${'' /* height: 46px; */}
   }
 `;
 const Heading = styled.div`
@@ -406,22 +402,27 @@ const Heading = styled.div`
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.4em;
-  height: 46px;
+  
+  padding-top:11px;
+  ${'' /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 30px;
     line-height: 32px;
     letter-spacing: 0.3em;
+    width:80%;
+    margin:auto;
   }
   @media (max-width: 426px) {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.425em;
-    height: 46px;
+    ${'' /* height: 46px; */}
     margin-bottom: 20px;
+    width:100%;
   }
 `;
 const ServiceUse = styled.div`
-  margin-top: 48px;
+  
   display: flex;
   width: 864px;
   margin-left: auto;
@@ -435,9 +436,6 @@ const ServiceUse = styled.div`
     margin: auto;
     flex-direction: column;
   }
-  @media(max-width:576px){
-    margin-top:30px;
-  }
   @media (max-width: 426px) {
     width: 90%;
     margin: auto;
@@ -447,12 +445,18 @@ const UseCase = styled.div`
   width: 230px;
   text-align: center;
   img {
-    width: 100px;
-    margin-bottom: 31px;
+    width: 150px;
+    margin-bottom: 40px;
+    margin-top:40px;
   }
   @media (max-width: 768px) {
     width: 400px;
     margin-bottom: 20px;
+    img{
+      width:100px;
+      margin-bottom: 31px;
+    margin-top:31px;
+    }
   }
   @media (max-width: 426px) {
     margin-bottom: 20px;
@@ -460,8 +464,9 @@ const UseCase = styled.div`
     margin: auto;
 
     img {
-      margin: auto;
-      margin-bottom: 31px;
+      width:100px; 
+     margin-bottom:31px;
+    margin-top:0px;
     }
   }
 `;
@@ -703,17 +708,23 @@ const FinancePreHeading = styled.div`
   font-size: 24px;
   line-height: 28px;
   letter-spacing: 0.4em;
-  height: 46px;
+padding-bottom:11px;
+
+  ${'' /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.3em;
+    padding-bottom:11px;
+    width:80%;
+margin:auto;
   }
   @media (max-width: 426px) {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0.4em;
-    height: 96px;
+    width:100%;
+    ${'' /* height: 96px; */}
   }
 `;
 const FinanceHeading = styled.div`
@@ -721,18 +732,24 @@ const FinanceHeading = styled.div`
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.4em;
-  height: 46px;
+  
+  ${'' /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 30px;
     line-height: 32px;
     letter-spacing: 0.3em;
+    width:80%;
+    margin:auto;
+    padding-top:11px;
   }
   @media (max-width: 426px) {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.425em;
-    height: 46px;
+    ${'' /* height: 46px; */}
     margin-bottom: 20px;
+    width:100%;
+    
   }
 `;
 const FinanceButton = styled(Linker)`

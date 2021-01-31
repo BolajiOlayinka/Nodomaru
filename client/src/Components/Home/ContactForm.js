@@ -118,6 +118,7 @@ const StyledLabel = styled.label`
 text-align:left!important;
 margin-right:auto!important;
 width:90%;
+display:none;
 @media(min-width:768px){
   display:none;
 }
@@ -142,22 +143,17 @@ const StyledInput = styled.input`
     border:1px solid black;
      outline:0;
  }
- ::-webkit-input-placeholder 
+ ::placeholder {
   color: #c4c4c4;
   padding-left:25px;
-
+  padding-top:15px;
 }
-
-:-ms-input-placeholder 
+@media(max-width:576px){
+  ::placeholder {
   color: #c4c4c4;
-  padding-left:25px;
- 
+  padding-left:15px;
+  padding-top:15px;
 }
-
-::placeholder {
-  color: #c4c4c4;
-  padding-left:25px;
-  
 }
 `;
 const StyledTextArea = styled.textarea `
@@ -171,19 +167,20 @@ const StyledTextArea = styled.textarea `
     width:90%;
     margin:auto;
   }
-  ::-webkit-input-placeholder 
-  color: #c4c4c4;
-  padding-left:25px;
-}
-
-:-ms-input-placeholder 
-  color: #c4c4c4;
-  padding-left:25px;
+ 
 }
 
 ::placeholder {
   color: #c4c4c4;
   padding-left:25px;
+  padding-top:15px;
+}
+@media(max-width:576px){
+  ::placeholder {
+  color: #c4c4c4;
+  padding-left:15px;
+  padding-top:15px;
+}
 }
 `
 const Required = styled.div `
