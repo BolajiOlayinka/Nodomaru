@@ -1,5 +1,4 @@
 import React from "react";
-
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarWeek } from "@fortawesome/free-solid-svg-icons";
@@ -14,7 +13,7 @@ export default function Post(props) {
   const currentPosts = { props };
   const media = currentPosts.props.post["_embedded"]["wp:featuredmedia"];
 
-  console.log(currentPosts);
+  // console.log(currentPosts);
   return (
     <React.Fragment>
       <StyledLink to={`news/${currentPosts.props.post.id}`}>
@@ -89,7 +88,7 @@ const Row = styled.div`
   margin-bottom: 60px;
   @media (max-width: 767.9px) {
     flex-direction: column;
-    height: 470px;
+    height: 530px;
   }
   @media (max-width: 426px) {
     height: 430px;
@@ -115,22 +114,26 @@ const Team = styled.div`
   padding-right: 11px;
 `;
 const LeftImg = styled.div`
+width:400px;
+overflow:hidden;
   img {
-    width: 400px;
+   
     height: 300px;
     overflow: hidden;
     text-align: center;
   }
 
   @media (max-width: 576px) {
+width:100%;
+overflow:hidden;
     img {
-      width: 100%;
+      width:100%;
       text-align: left;
     }
   }
   @media (max-width: 426px) {
     img {
-      width: 100%;
+      width:100%;
       height: 200px;
     }
   }

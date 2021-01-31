@@ -1,15 +1,13 @@
-import React, { useState,useEffect } from "react";
-import Map from './MapContent';
+import React, { useState, useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
 import BannerImage from "../../assets/banner-3.jpg";
 import SmallBanner from "../../assets/banner-3a.jpg";
 import LargeBanner from "../../assets/banner-3b.jpg";
-import AdoptBanner from "../../assets/banner-4.jpg";
+// import AdoptBanner from "../../assets/banner-4.jpg";
 import GeneralBanner from "../../assets/banner-5.jpg";
 import YelloLogo from "../../assets/yellow-logo.svg";
-// import Map from "../../assets/officemap.png"
 import { Link } from "react-router-dom";
 import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -41,7 +39,7 @@ export default function About() {
               <AboutBody>About Our Company</AboutBody>
               <AboutHead>会社について</AboutHead>
               <AboutBody>
-              社名の「のどまる」とは古語で「のどかになる」という意味です。一人でも多くのお客様の「のどまる人生」の実現に貢献致します。
+                社名の「のどまる」とは古語で「のどかになる」という意味です。一人でも多くのお客様の「のどまる人生」の実現に貢献致します。
               </AboutBody>
               <PlaySection>
                 <PlayButton onClick={toggle}>CEOからのメッセージ</PlayButton>
@@ -49,7 +47,7 @@ export default function About() {
               </PlaySection>
             </Right>
             <Modal isOpen={modal} toggle={toggle}>
-              <ModalHeader toggle={toggle}></ModalHeader>
+              <ModalHeader toggle={toggle} ></ModalHeader>
               <ModalBody>
                 <div
                   className="video"
@@ -69,7 +67,7 @@ export default function About() {
                       width: "100%",
                       height: "100%",
                     }}
-                    src="https://www.youtube.com/embed/TnR9O-d8nhY?autoplay=1&mute=1"
+                    src="https://www.youtube.com/embed/HuwiV5yt_AY?autoplay=1&mute=1autoplay=1&mute=1"
                     frameBorder="0"
                   />
                 </div>
@@ -84,7 +82,7 @@ export default function About() {
           <SmallDivider></SmallDivider>
           <AboutHead>会社について</AboutHead>
           <AboutBody>
-          社名の「のどまる」とは古語で「のどかになる」という意味です。一人でも多くのお客様の「のどまる人生」の実現に貢献致します。
+            社名の「のどまる」とは古語で「のどかになる」という意味です。一人でも多くのお客様の「のどまる人生」の実現に貢献致します。
           </AboutBody>
           <PlaySection>
             <PlayButton onClick={toggle}>CEOからのメッセージ</PlayButton>
@@ -111,7 +109,7 @@ export default function About() {
                     width: "100%",
                     height: "100%",
                   }}
-                  src="https://www.youtube.com/embed/TnR9O-d8nhY?autoplay=1&mute=1"
+                  src="https://www.youtube.com/embed/HuwiV5yt_AY?autoplay=1&mute=1"
                   frameBorder="0"
                 />
               </div>
@@ -121,6 +119,10 @@ export default function About() {
       </SmallAboutDesc>
       <GenBackground>
         <AdoptSection>
+        <iframe frameborder="0" title="youtube" height="100%" width="100%"
+    src="https://www.youtube.com/embed/Lwcv6jRZu-U?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=Lwcv6jRZu-U&iv_load_policy=3&modestbranding=1" allowfullscreen="" 
+    style={{position:"absolute",top:"0", left:"0"}}>
+  </iframe>
           <AdoptButton to="/#contactform">現在採用中</AdoptButton>
         </AdoptSection>
         <SectionThree>
@@ -144,8 +146,19 @@ export default function About() {
         </SmallCompanyInfo>
         <MapSection>
           <MapContainer>
-          <Map/>
+            {/* <Map/> */}
             {/* <img src={Map} alt="Nodomaru Map" /> */}
+            <iframe
+              title="googlemap"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.171881740766!2d139.71961071461334!3d35.648136639394934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b0d7d5345b5%3A0x40894ad4ad64e0f7!2z44OQ44Or44OT44K-44OzMjLnlarppKg!5e0!3m2!1sen!2sng!4v1612022562675!5m2!1sen!2sng"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style={{ border: 0 }}
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
           </MapContainer>
           <AddressContainer>
             <AddressHeader>Company Information</AddressHeader>
@@ -177,9 +190,8 @@ const Banner = styled.div`
   height: 796px;
   @media (min-width: 2000px) {
     background: url(${LargeBanner});
-  
   }
- 
+
   @media (max-width: 991px) {
     height: 618px;
   }
@@ -188,7 +200,6 @@ const Banner = styled.div`
     background-size: cover;
     height: 796px;
   }
- 
 `;
 const Container = styled.div`
   width: 100%;
@@ -220,8 +231,8 @@ const Left = styled.div`
   @media (max-width: 768px) {
     margin: auto;
   }
-  @media(max-width:426px){
-    padding-top:400px;
+  @media (max-width: 426px) {
+    padding-top: 400px;
   }
 `;
 const LeftText = styled.div`
@@ -233,7 +244,6 @@ const LeftText = styled.div`
     font-size: 18px;
     line-height: 25px;
     font-weight: normal;
-    
   }
 `;
 const Right = styled.div`
@@ -278,7 +288,7 @@ const SmallHeading = styled.div`
   @media (max-width: 426px) {
     font-size: 36px;
     line-height: 42px;
-    width:186px;
+    width: 186px;
   }
 `;
 const SmallDivider = styled.div`
@@ -302,14 +312,14 @@ const AboutHead = styled.div`
   font-weight: bold;
   font-size: 48px;
   line-height: 56px;
-  height:56px;
+  height: 56px;
   margin-top: 7px;
   margin-bottom: 7px;
   @media (max-width: 426px) {
     font-size: 36px;
     line-height: 42px;
-    height:42px;
-    font-weight:normal;
+    height: 42px;
+    font-weight: normal;
   }
 `;
 const AboutBody = styled.div`
@@ -317,22 +327,15 @@ const AboutBody = styled.div`
   font-size: 18px;
   line-height: 21px;
 
-  :first-child{
-    font-weight:bold;
-   
+  :first-child {
+    font-weight: bold;
   }
-  @media(max-width:576px){
-    
-      width:80%;
-    
+  @media (max-width: 576px) {
+    width: 80%;
   }
-  @media(max-width:426px){
-    
-    width:262px;
-  
-}
-  
- 
+  @media (max-width: 426px) {
+    width: 262px;
+  }
 `;
 const PlaySection = styled.div`
   display: flex;
@@ -342,17 +345,18 @@ const PlaySection = styled.div`
     margin-top: 13px;
   }
 `;
+
 const PlayButton = styled.button`
   color: black;
   outline: 0;
   border: transparent;
   font-size: 18px;
-  font-weight:normal;
+  font-weight: normal;
   line-height: 21px;
   border-radius: 5px;
   width: 228px;
   height: 39px;
-  
+
   background-color: var(--mainYellow);
   opacity: 1 !important;
   :active {
@@ -366,7 +370,7 @@ const PlayButton = styled.button`
     -moz-outline-style: none;
   }
   @media (min-width: 1200px) {
-    ${'' /* margin-right: auto; */}
+    ${"" /* margin-right: auto; */}
   }
   @media (max-width: 1199px) {
     padding: 10px 24px;
@@ -383,32 +387,49 @@ const StyledPlayIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
 `;
 const AdoptSection = styled.div`
-  background: url(${AdoptBanner});
-  height: 400px;
+  ${'' /* background: url(${AdoptBanner}); */}
+  position: relative; 
+  z-index: -5;
+  position:relative;
+  height: 603px;
   text-align: center;
   padding-top: 333px;
+  display:flex;
+  justify-content:center;
+  @media(max-width:1199px){
+    display:none;
+  }
   @media (min-width: 1200px) {
     width: 1200px;
     margin: auto;
   }
-  ${'' /* @media (min-width: 1600px) {
+  ${
+    "" /* @media (min-width: 1600px) {
     background: url(${LargeAdoptBanner});
-  } */}
-  @media(max-width:576px){
-    display:none;
+  } */
+  }
+  @media(max-width:576px) {
+    display: none;
   }
 `;
 const GenBackground = styled.div`
+position:relative;
+z-index:-99;
   background: url(${GeneralBanner});
   width: 100%;
   background-size: cover;
   padding-top: 11px;
   padding-bottom: 92px;
-  @media(max-width:576px){
-    padding-top:0px;
+  @media (max-width: 576px) {
+    padding-top: 0px;
   }
 `;
 const AdoptButton = styled(Link)`
+position:absolute;
+bottom:28px;
+width:140px;
+margin:auto;
+z-index:1;
   background-color: var(--mainYellow);
   padding: 9px 25px;
   font-size: 18px;
@@ -432,8 +453,8 @@ const SectionThree = styled.div`
   @media (max-width: 991px) {
     flex-direction: column;
   }
-  @media(max-width:576px){
-    margin-top:0px!important;
+  @media (max-width: 576px) {
+    margin-top: 0px !important;
   }
 `;
 const SmallCompanyInfo = styled.div`
@@ -452,18 +473,18 @@ const SmallCompanyInfo = styled.div`
   @media (max-width: 576px) {
     width: 90%;
     margin: auto;
-    margin-top:50%;
-    margin-bottom:10px;
+    margin-top: 50%;
+    margin-bottom: 10px;
   }
   @media (max-width: 425px) {
     width: 320px;
-    margin-top:150px;
-    margin-bottom:20px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  @media(max-width:375px){
-margin-top:80px;
+  @media (max-width: 375px) {
+    margin-top: 80px;
   }
 `;
 const MapSection = styled.div`
@@ -501,25 +522,25 @@ const MapContainer = styled.div`
 
   img {
     width: 100%;
-    ${'' /* height: 391px; */}
+    ${"" /* height: 391px; */}
   }
   @media (max-width: 576px) {
     width: 100%;
   }
-  @media(min-width:991px){
-    img{
-      height:391px;
+  @media (min-width: 991px) {
+    img {
+      height: 391px;
     }
   }
 `;
 const AddressContainer = styled.div`
   ${"" /* width: 465px; */}
   padding-left:26px;
-  
+
   font-size: 18px;
   line-height: 21px;
-  div{
-    padding-bottom:2px;
+  div {
+    padding-bottom: 2px;
   }
   @media (max-width: 991px) {
     display: none;
@@ -563,10 +584,10 @@ const Divider = styled.div`
     width: 90%;
   }
   @media (max-width: 426px) {
-    height:10px;
+    height: 10px;
     width: 320px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom:360px;
+    margin-bottom: 360px;
   }
 `;

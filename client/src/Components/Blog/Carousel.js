@@ -4,6 +4,7 @@ import { AppConsumer } from "../../Context";
 import styled from "styled-components";
 import Spinner from "../Spinner";
 import renderHTML from "react-render-html";
+import Featured from "../../assets/Featured.jpg";
 
 export default function Carousel(props) {
   const image = [];
@@ -31,6 +32,11 @@ export default function Carousel(props) {
             return <Spinner />;
           } else {
             AllPost.AllPost.slice(0, 3).map((carouselImage) => {
+              if ((carouselImage["_embedded"]["wp:featuredmedia"]) === undefined || !(carouselImage["_embedded"]["wp:featuredmedia"] )){
+                  return (
+                    image.push(Featured)
+                  )
+              }else{
               return (
                 image.push(
                   carouselImage["_embedded"]["wp:featuredmedia"]["0"][
@@ -39,7 +45,7 @@ export default function Carousel(props) {
                 ),
                 header.push(carouselImage["title"]["rendered"])
               );
-            });
+            }});
           }
 
           const items = [
@@ -141,8 +147,8 @@ const Wrapper = styled.div`
   }
   @media (min-width: 1200px) {
     .carousel-item img {
-      height: 400px;
-      overflow: hidden;
+      ${'' /* height: 400px;
+      overflow: hidden; */}
     }
   }
   @media (max-width: 1199px) {

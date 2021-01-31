@@ -20,6 +20,7 @@ export default class News extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params);
+    window.scrollTo(0, 0);
     axios
       .get(`https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts`)
       .then((responsee) => {
