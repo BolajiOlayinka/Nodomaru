@@ -74,6 +74,7 @@ const Card =styled.div `
       width:80%;
       ${'' /* height:40px; */}
       font-weight: bold;
+      margin-top:36px;
 font-size: 14px;
 margin-bottom:17px!important;
     }

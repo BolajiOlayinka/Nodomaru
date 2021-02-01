@@ -422,6 +422,7 @@ position:relative;
   padding-bottom: 92px;
   @media (max-width: 576px) {
     padding-top: 0px;
+    
   }
 `;
 const AdoptButton = styled(Link)`
@@ -588,6 +589,7 @@ const Divider = styled.div`
     width: 320px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 360px;
+    margin-top:45px!important;
+    margin-bottom: 52px;
   }
 `;

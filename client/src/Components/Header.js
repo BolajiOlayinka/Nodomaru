@@ -121,6 +121,7 @@ export default function Header() {
 
   const closeModal = () => {
     setShowItem(false);
+    setShowIcon(true)
   };
   return (
     <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>

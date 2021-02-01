@@ -113,6 +113,7 @@ export default function Home() {
           </BetterServiceSubText>
           <Divider />
           <NewsHeading>Company News</NewsHeading>
+          <SmallNewsHeading>ニュース</SmallNewsHeading>
           <Posts />
           <ReadMoreButton to="/news">Read More Posts</ReadMoreButton>
         </Container>
@@ -541,6 +542,7 @@ const BetterServiceSubText = styled.div`
     width: 100%;
     font-size: 16px;
     line-height: 19px;
+    padding-top:5px;
   }
   @media (max-width: 576px) {
     width: 100%;
@@ -562,7 +564,22 @@ const NewsHeading = styled.div`
   foint-weight: 400;
   margin: auto;
   text-align: center;
+  @media(max-width:576.1px){
+  display:none;
+}
 `;
+const SmallNewsHeading = styled.div `
+ width: 222px;
+  height: 50px;
+  font-size: 36px;
+line-height: 42px;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+@media(min-width:576px){
+  display:none;
+}
+`
 
 const ReadMoreButton = styled(Link)`
   width: 500px;
