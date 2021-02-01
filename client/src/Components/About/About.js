@@ -6,7 +6,7 @@ import BannerImage from "../../assets/banner-3.jpg";
 import SmallBanner from "../../assets/banner-3a.jpg";
 import LargeBanner from "../../assets/banner-3b.jpg";
 // import AdoptBanner from "../../assets/banner-4.jpg";
-import GeneralBanner from "../../assets/banner-5.jpg";
+import GeneralBanner from "../../assets/banner-5.png";
 import YelloLogo from "../../assets/yellow-logo.svg";
 import { Link } from "react-router-dom";
 import Slider from "./Slider";

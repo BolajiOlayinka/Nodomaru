@@ -466,9 +466,18 @@ const UseCase = styled.div`
     img {
       width:100px; 
      margin-bottom:31px;
-    margin-top:0px;
+    margin-top:31px;
+    
     }
+    :nth-child(1){
+      img{
+        margin-top:0px;
+      }
+      
+    }
+   
   }
+  
 `;
 const UseButton = styled.div`
   width: 230px;
@@ -493,6 +502,9 @@ const UseCaseBody = styled.div`
   font-size: 18px;
   line-height: 21px;
   color: black;
+  @media(max-width:768px){
+  width:200px;
+  }
 `;
 const ButtonContainer = styled.div`
   width: 100%;
