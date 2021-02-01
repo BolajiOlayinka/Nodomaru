@@ -8,9 +8,8 @@ export default function ServicePostList() {
     <React.Fragment>
       <AppConsumer>
         {(value) => {
-          console.log(value)
           const { AllPost } = value;
-          
+
           if (AllPost === undefined || AllPost.length === 0) {
             return <Spinner />;
           } else {

@@ -283,7 +283,7 @@ const LeftEstate = styled.div`
 const RightEstate = styled.div`
   border-left: 1px solid #3cc5d1;
   padding-left: 45px;
-  width: 718px;
+  width: 730px;
   @media (max-width: 1200px) {
     padding-left: 35px;
   }

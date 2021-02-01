@@ -156,6 +156,7 @@ const Banner = styled.div`
     background: url(${BannerImage});
     border-right: 0px;
     border-left: 0px;
+    border-top:0px;
   }
 `;
 const LogoContainer = styled.div`

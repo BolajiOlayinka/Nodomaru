@@ -17,7 +17,7 @@ export default function Header() {
   const [background, setBackground] = useState("transparent");
   const [boxshadow, setBoxShadow] = useState("transparent");
   const [fixed, setFixed] = useState("fixed");
-  const [logo, setLogo] = useState(Logo);
+  const [logo, setLogo] = useState(BlackLogo);
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
   const [navcolor, setNavColor] = useState("black");
@@ -128,7 +128,7 @@ export default function Header() {
       <StyledNavbar expand="md">
         <LogoContainer>
           <Link to="/">
-            <img src={logo} alt="Digitrad Logo" />
+            <img src={logo} alt="Nodomaru Logo" />
           </Link>
         </LogoContainer>
         {showItem && (
@@ -243,9 +243,10 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  ${"" /* @media(max-width:576px){
-    width:90%;
-  } */}
+  @media(max-width:768px){
+    padding-top:0.2em;
+    padding-bottom:0.2em;
+  } 
 `;
 const LogoContainer = styled.div`
   img {
@@ -253,7 +254,7 @@ const LogoContainer = styled.div`
     height: 48px;
   }
   @media (max-width: 576px) {
-    z-index: 2;
+    z-index: 10;
     ${"" /* padding-right:20px; */}
   }
 `;
@@ -269,7 +270,7 @@ const StyledNav = styled(Nav)`
     background: rgb(0, 0, 0, 0.9);
     z-index: 5;
     width: 100%;
-    padding-top: 80px;
+    ${'' /* padding-top: 80px; */}
     li {
       padding: 4px;
       padding-left: 20px;

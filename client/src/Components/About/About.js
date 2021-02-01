@@ -5,7 +5,7 @@ import styled from "styled-components";
 import BannerImage from "../../assets/banner-3.jpg";
 import SmallBanner from "../../assets/banner-3a.jpg";
 import LargeBanner from "../../assets/banner-3b.jpg";
-// import AdoptBanner from "../../assets/banner-4.jpg";
+import AdoptBanner from "../../assets/banner-4.jpg";
 import GeneralBanner from "../../assets/banner-5.png";
 import YelloLogo from "../../assets/yellow-logo.svg";
 import { Link } from "react-router-dom";
@@ -13,18 +13,26 @@ import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Offline, Online } from "react-detect-offline";
 
 export default function About() {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
+
+  
   useEffect(() => {
     Aos.init(
       {
         duration: 1200,
       },
       []
+    
     );
   });
+
+  // window.addEventListener('offline', () => console.log('came offline'));
+
+
   return (
     <React.Fragment>
       <Banner>
@@ -119,10 +127,16 @@ export default function About() {
       </SmallAboutDesc>
       <GenBackground>
         <AdoptSection>
-        <iframe frameborder="0" title="youtube" height="100%" width="100%"
-    src="https://www.youtube.com/embed/Lwcv6jRZu-U?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=Lwcv6jRZu-U&iv_load_policy=3&modestbranding=1" allowfullscreen="" 
+        <Online>
+        <iframe frameBorder="0" title="youtube" height="100%" width="100%"
+    src="https://www.youtube.com/embed/Lwcv6jRZu-U?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=Lwcv6jRZu-U&iv_load_policy=3&modestbranding=1" allowFullScreen="" 
     style={{position:"absolute",top:"0", left:"0"}}>
   </iframe>
+        </Online>
+        <Offline>
+            <img src={AdoptBanner} alt="Offline Nodomaru Banner"/>
+        </Offline>
+        
           <AdoptButton to="/#contactform">現在採用中</AdoptButton>
         </AdoptSection>
         <SectionThree>
@@ -153,11 +167,11 @@ export default function About() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.171881740766!2d139.71961071461334!3d35.648136639394934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b0d7d5345b5%3A0x40894ad4ad64e0f7!2z44OQ44Or44OT44K-44OzMjLnlarppKg!5e0!3m2!1sen!2sng!4v1612022562675!5m2!1sen!2sng"
               width="100%"
               height="100%"
-              frameborder="0"
+              frameBorder="0"
               style={{ border: 0 }}
-              allowfullscreen=""
+              allowFullScreen=""
               aria-hidden="false"
-              tabindex="0"
+              tabIndex="0"
             ></iframe>
           </MapContainer>
           <AddressContainer>
@@ -391,12 +405,17 @@ const AdoptSection = styled.div`
   ${'' /* background: url(${AdoptBanner}); */}
   position: relative; 
   z-index: 1;
-  position:relative;
   height: 603px;
   text-align: center;
   padding-top: 333px;
   display:flex;
   justify-content:center;
+  overflow:hidden;
+  img{
+    margin-top:-333px;
+    z-index:1;
+  
+  }
   @media(max-width:1199px){
     display:none;
   }
