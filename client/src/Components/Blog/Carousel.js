@@ -27,10 +27,13 @@ export default function Carousel(props) {
       <AppConsumer>
         {(value) => {
           const { AllPost } = value;
+            console.log(AllPost)
 
-          if (AllPost === undefined || AllPost.length === 0) {
+          if (AllPost === undefined || !AllPost || (AllPost).length===0) {
             return <Spinner />;
-          } else {
+          } else if(AllPost.AllPost.length < 3){
+            return <Spinner />;
+          }else {
             AllPost.AllPost.slice(0, 3).map((carouselImage) => {
               if ((carouselImage["_embedded"]["wp:featuredmedia"]) === undefined || !(carouselImage["_embedded"]["wp:featuredmedia"] )){
                   return (

@@ -9,6 +9,7 @@ import Logo from "../../assets/blue-logo.svg";
 import renderHTML from "react-render-html";
 import DayJS from "react-dayjs";
 import BackgroundImage from "../../assets/bus.png";
+import Featured from "../../assets/Featured.jpg";
 
 export default class News extends Component {
   state = {
@@ -76,6 +77,7 @@ export default class News extends Component {
   }
   render() {
     const { postDetails, media, category, author } = this.state;
+    console.log(media)
     // console.log(this.state.IDArray)
 
     return (
@@ -90,7 +92,10 @@ export default class News extends Component {
           </div>
         ) : (
           <Content>
-            <ImageHead src={media} alt="Featured" />
+          {media.length ? (
+            <ImageHead src={media} alt="Featured Image" />
+          ): (<ImageHead src={Featured} alt="Featured Image"/>)}
+            
 
             <ImageSub>
               <DisplayLeft>

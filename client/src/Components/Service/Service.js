@@ -165,7 +165,7 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <FinanceButton to="/#contactform">取り合わせ</FinanceButton>
+        <FinanceButton to="/#contactform">お問い合わせ</FinanceButton>
       </ButtonContainer>
       <FinanceLineWrapper>
         <FinanceLine />

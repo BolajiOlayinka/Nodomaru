@@ -34,7 +34,7 @@ export default function Home() {
           <LogoContainer>
             <img src={WhiteLogo} alt="Nodomaru Logo" />
             <LogoSubText>事業を通じてのどまる社会を創る</LogoSubText>
-            <LogoButton href="/" target="_blank" referrer="noreferrer">
+            <LogoButton href="/service" target="_blank" referrer="noreferrer">
               詳しく
             </LogoButton>
           </LogoContainer>
