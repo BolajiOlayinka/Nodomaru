@@ -1,41 +1,62 @@
 {
   "name": "nodomaru",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "backend": "nodemon server.js",
-    "frontend": "npm run front --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/standage-jp/nodomaru.git"
-  },
-  "author": "Bolaji Olayinka",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/standage-jp/nodomaru/issues"
-  },
-  "homepage": "https://github.com/standage-jp/nodomaru#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@formatjs/intl-numberformat": "^5.6.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
     "animated-scroll-to": "^2.0.12",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
-    "express": "^4.17.1",
-    "history": "^5.0.0",
+    "aos": "^2.3.4",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "dayjs": "^1.10.4",
     "i": "^0.3.6",
-    "nodemailer": "^6.4.14",
-    "nodemailer-smtp-transport": "^2.7.4",
-    "npm": "^6.14.8",
-    "query-string": "^6.13.6",
-    "react-js-pagination": "^3.0.3"
+    "is-reachable": "^5.0.0",
+    "jquery": "^3.5.1",
+    "npm": "^6.14.11",
+    "react": "^17.0.1",
+    "react-animations": "^1.0.0",
+    "react-dayjs": "^0.2.1",
+    "react-detect-offline": "^2.4.1",
+    "react-dom": "^17.0.1",
+    "react-google-maps": "^9.4.5",
+    "react-js-pagination": "^3.0.3",
+    "react-owl-carousel": "^2.3.1",
+    "react-render-html": "^0.6.0",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.3.1",
+    "react-scripts": "4.0.1",
+    "react-scroll-jacker": "^1.8.4",
+    "reactstrap": "^8.9.0",
+    "styled-components": "^5.2.1",
+    "web-vitals": "^0.2.4"
   },
-  "devDependencies": {
-    "concurrently": "^5.3.0",
-    "nodemon": "^2.0.5"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

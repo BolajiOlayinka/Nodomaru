@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import Logo from "../assets/icon.svg";
 import BlackLogo from "../assets/icon-black.svg";
-import BlueLogo from "../assets/icon-blue.svg";
-import YellowLogo from "../assets/icon-yellow.svg";
+// import BlueLogo from "../assets/icon-blue.svg";
+// import YellowLogo from "../assets/icon-yellow.svg";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink as Linker } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +17,7 @@ export default function Header() {
   const [background, setBackground] = useState("transparent");
   const [boxshadow, setBoxShadow] = useState("transparent");
   const [fixed, setFixed] = useState("fixed");
-  const [logo, setLogo] = useState(BlackLogo);
+  const [logo, setLogo] = useState(Logo);
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
   const [navcolor, setNavColor] = useState("black");
@@ -46,25 +46,26 @@ export default function Header() {
       setActiveNews("transparent");
       setNavColor("white");
     } else if (location.pathname === "/service") {
-      setLogo(YellowLogo);
+      setLogo(Logo);
       setActiveService("5px solid white");
 
       setActiveAbout("transparent");
       setActiveNews("transparent");
       setNavColor("white");
     } else if (
-      location.pathname === "/news" ||
-      location.pathname === "/news/:id"
-    ) {
+      location.pathname === "/news") {
       setActiveNews("5px solid black");
-
       setActiveAbout("transparent");
       setActiveService("transparent");
       setNavColor("black");
-      setLogo(BlueLogo);
-    } else {
-      setLogo(Logo);
-    }
+      setLogo(BlackLogo);
+    } else if (location.pathname === "/news/:id") {
+      setActiveNews("5px solid black");
+      setActiveAbout("transparent");
+      setActiveService("transparent");
+      setNavColor("black");
+      setLogo(BlackLogo);
+    } 
   }, [location.pathname]);
 
   const handleScroll = () => {
@@ -73,11 +74,20 @@ export default function Header() {
       setLogo(BlackLogo);
       setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
       setNavColor("black");
-    } else {
+    } else if( window.pageYOffset === 0 && location.pathname==="/news"){
       setLogo(BlackLogo);
+      setNavColor("black");
+    }else if( window.pageYOffset === 0 && location.pathname==="/"){
+      setLogo(Logo);
+      setNavColor("black");
+    } else if( window.pageYOffset === 0 && location.pathname==="/news/:id"){
+      setLogo(BlackLogo);
+      setNavColor("black");
+    } else {
+      setLogo(Logo);
       setBackground("transparent");
       setBoxShadow("transparent");
-      setNavColor("black");
+      setNavColor("white");
     }
   };
 

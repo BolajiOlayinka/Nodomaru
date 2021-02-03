@@ -36,11 +36,15 @@ export default function Service() {
             <div>
               <img src={WhiteLogo} alt="Nodomaru Logo" />
               <div>サービス案内</div>
+              <SectionWrapper id="sectionOne">
+              <Section to="/service/#sectionOne">不動産</Section>
+              <Section to="/service/#sectionTwo">FP コンサルティング</Section>
+              </SectionWrapper>
             </div>
           </BannerContent>
         </Container>
       </Banner>
-      <Container>
+      <Container >
         <RealEstateWrapper>
           <LeftEstate>不動産</LeftEstate>
           <SmallDisplay>
@@ -99,8 +103,8 @@ export default function Service() {
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
-      <ButtonContainer>
-        <ServiceButton to="/#contactform">お問い合わせ</ServiceButton>
+      <ButtonContainer >
+        <ServiceButton to="/#contactform" id="sectionTwo">お問い合わせ</ServiceButton>
       </ButtonContainer>
       <LineWrapper>
         <Line />
@@ -197,6 +201,29 @@ const Banner = styled.div`
     background: url(${SmallBannerImage});
   }
 `;
+const SectionWrapper = styled.div `
+display:flex;
+width:396px;
+justify-content:space-between;
+margin:auto;
+margin-top:12px;
+`
+const Section = styled(Linker)`
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
+color: #FFFFFF;
+border:1px solid white;
+width:182px;
+height:37px;
+border-radius:4px;
+display:flex;
+align-items:center;
+justify-content:center;
+:hover{
+  color:black;
+}
+`
 const BannerContent = styled.div`
   display: flex;
   align-items: center;

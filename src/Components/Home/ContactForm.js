@@ -8,12 +8,14 @@ export default class ContactForm extends Component {
   constructor(value){
     super()
     this.state = {
-      name: "",
+      name:"",
       companyname:"",
-      emailaddress:"",
-      confirmemail: "",
+      email:"",
+      confirmemail:"",
       phonenumber:"",
-      content: "",
+      message:"",
+      isSubmitted:false,
+      error:false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.submitContact = this.submitContact.bind(this);
@@ -21,69 +23,87 @@ export default class ContactForm extends Component {
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
-
-  async submitContact(e) {
-    // const {cart}=this.props.value;
-    e.preventDefault();
-    console.log(this.state);
-
-    const { name,companyname, emailaddress, phonenumber,confirmemail,content} = this.state;
-    await axios.post("/api/contactForm", {
-      name,
-      companyname,
-      emailaddress,
-      confirmemail,
-      content,
-      phonenumber
-    });
-  }
   resetForm = () => {
     const form = {
       name:"",
       companyname:"",
+      email:"",
       emailaddress: "",
       confirmemail:"",
-      content: "",
+      message: "",
       phonenumber:""
     };
 
     this.setState(form);
   };
 
+  
+  submitContact=(e)=> {
+    e.preventDefault();
+   
+    const { name, companyname, email, confirmemail, phonenumber,message} = this.state;
+    const formData = new FormData();
+    formData.append("your-name", name);
+    formData.append("your-company", companyname);
+    formData.append("your-email", email);
+    formData.append("your-confirmemail", confirmemail);
+    formData.append("your-phonenumber", phonenumber);
+    formData.append("your-message", message);
+    console.log(this.state);
+    axios.post("https://ndmr.co.jp/blog/index.php?rest_route=/contact-form-7/v1/contact-forms/39/feedback",formData)
+    .then(res=>{
+      this.setState({
+        isSubmitted:true,
+        error:false,
+      })
+      console.log(res)
+      if(res.data.status==="mail_sent"){
+        this.resetForm()
+      }
+    }).catch(err=>{
+          this.setState({
+            error:true,
+            isSubmitted:false
+      })
+      console.log(err)
+        });
+  }
+  
   render(){
-    const { name, companyname, emailaddress, phonenumber,confirmemail,content } = this.state;
+    
+    const { name, companyname, email, confirmemail, phonenumber,message} = this.state;
     return (
       <React.Fragment>
         <Wrapper>
           <StyledForm onSubmit={this.submitContact}>
           <StyledFormGroup>
           <StyledLabel htmlFor="name">お名前*</StyledLabel>
-          <StyledInput type="text" placeholder="お名前*" required name="name" id="name" value={name} onChange={this.handleChange("name")} label="Input One"/> <br/>
+          <StyledInput type="text" placeholder="お名前*" required name="name" id="name" value={name} onChange={this.handleChange("name")}/> <br/>
           </StyledFormGroup>
             
             <StyledFormGroup>
             <StyledLabel htmlFor="business name">貴社名</StyledLabel>
-            <StyledInput type="text" placeholder="貴社名" name="name" id="bname" value={companyname} onChange={this.handleChange("companyname")} label="Input Two"/> <br/>
+            <StyledInput type="text" placeholder="貴社名" name="name" id="bname" value={companyname} onChange={this.handleChange("companyname")}/> <br/>
             </StyledFormGroup>
 
             <StyledFormGroup>
             <StyledLabel htmlFor="email">メールアドレス*</StyledLabel>
-            <StyledInput type="email" placeholder="メールアドレス*" required name="email" id="email" value={emailaddress} onChange={this.handleChange("emailaddress")} label="Input Three"/> <br/>
+            <StyledInput type="email" placeholder="メールアドレス*" required name="email" id="email" value={email} onChange={this.handleChange("email")}/> <br/>
             </StyledFormGroup>
            
             <StyledFormGroup>
             <StyledLabel htmlFor="confirm email">メールアドレス(確認用)*	</StyledLabel>
-            <StyledInput type="email" placeholder="メールアドレス(確認用)*" name="email" id="cfemail" value={confirmemail} onChange={this.handleChange("confirmemail")} label="Input Four"/><br/>
+            <StyledInput type="email" placeholder="メールアドレス(確認用)*" name="cfemail" id="cfemail" value={confirmemail} onChange={this.handleChange("confirmemail")}/><br/>
             </StyledFormGroup>
 
             <StyledFormGroup>
             <StyledLabel htmlFor="phone number">電話番号*	</StyledLabel>
-            <StyledInput type="number" placeholder="電話番号*	" name="phonenumber" id="phonenumber" value={phonenumber} onChange={this.handleChange("phonenumber")} label="Input Five"/><br/>
+            <StyledInput type="number" placeholder="電話番号*	" name="phonenumber" id="phonenumber" value={phonenumber} onChange={this.handleChange("phonenumber")}/><br/>
             </StyledFormGroup>
 
             <StyledFormGroup>
             <StyledLabel htmlFor="name">お問い合わせ内容	</StyledLabel>
-            <StyledTextArea type="text" placeholder="お問い合わせ内容" required name="message" id="message" value={content} onChange={this.handleChange("content")} label="Input six"/>
+            <StyledTextArea type="text" placeholder="お問い合わせ内容" required name="-ve-your-subject" id="m-ve-your-subject" value={message} onChange={this.handleChange("message")}/>
             </StyledFormGroup>
 
            
@@ -92,6 +112,8 @@ export default class ContactForm extends Component {
             <Required>*必須項目に入力してください</Required>
             <Submit type="submit" value="送信"/>
           </StyledForm>
+          {this.state.isSubmitted && <SuccessMessage>FORM SUBMITTED SUCCESSFULLY</SuccessMessage>}
+          {this.state.error && <ErrorMessage>FORM NOT SUBMITTED</ErrorMessage>}
         </Wrapper>
       </React.Fragment>
     );
@@ -188,7 +210,7 @@ font-size: 10px;
 line-height: 24px;
 color:black;
 text-align:left;
-
+height:26px;
 @media(max-width:991px){
   width:90%;
   margin:auto;
@@ -203,9 +225,20 @@ width:86px;
 height:40px;
 border-color:transparent;
 outline:0;
-margin-top:22px;
 border-radius:4px;
 :hover{
     color:black;
 }
+`
+
+const SuccessMessage = styled.div `
+color:green;
+font-size:16px;
+margin-bottom:0px;
+`
+
+const ErrorMessage = styled.div `
+color:red;
+font-size:16px;
+margin-bottom:0px;
 `

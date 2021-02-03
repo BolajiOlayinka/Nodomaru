@@ -10,7 +10,3 @@
 # https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&search=lorem
 
 # https://ndmr.co.jp/blog/?rest_route=/wp/v2/categories&post=15
-
-# POST https://ndmr.co.jp/blog/index.php?rest_route=/contact-form-7/v1/contact-forms/39/feedback
-
-# https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&_embed

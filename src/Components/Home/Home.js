@@ -115,9 +115,9 @@ export default function Home() {
           <NewsHeading>Company News</NewsHeading>
           <SmallNewsHeading>ニュース</SmallNewsHeading>
           <Posts />
-          <ReadMoreButton to="/news">Read More Posts</ReadMoreButton>
+          <ReadMoreButton to="/news" id="contactform">Read More Posts</ReadMoreButton>
         </Container>
-        <ContactUsSection id="contactform">
+        <ContactUsSection >
           <ContactHeading>お問い合わせ</ContactHeading>
           <ContactTel>Tel : 03-6456-4538</ContactTel>
           <ContactInfo>問い合わせメールアドレス：info@ndmr.co.jp</ContactInfo>
