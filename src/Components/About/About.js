@@ -8,6 +8,7 @@ import LargeBanner from "../../assets/banner-3b.jpg";
 import AdoptBanner from "../../assets/banner-4.jpg";
 import GeneralBanner from "../../assets/banner-5.png";
 import YelloLogo from "../../assets/yellow-logo.svg";
+import MapImage from "../../assets/officemap.png";
 import { Link } from "react-router-dom";
 import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,19 +20,18 @@ export default function About() {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     Aos.init(
       {
         duration: 1200,
       },
       []
-    
     );
   });
-
-  // window.addEventListener('offline', () => console.log('came offline'));
-
 
   return (
     <React.Fragment>
@@ -55,7 +55,7 @@ export default function About() {
               </PlaySection>
             </Right>
             <Modal isOpen={modal} toggle={toggle}>
-              <ModalHeader toggle={toggle} ></ModalHeader>
+              <ModalHeader toggle={toggle}></ModalHeader>
               <ModalBody>
                 <div
                   className="video"
@@ -127,16 +127,21 @@ export default function About() {
       </SmallAboutDesc>
       <GenBackground>
         <AdoptSection>
-        <Online>
-        <iframe frameBorder="0" title="youtube" height="100%" width="100%"
-    src="https://www.youtube.com/embed/Lwcv6jRZu-U?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=Lwcv6jRZu-U&iv_load_policy=3&modestbranding=1" allowFullScreen="" 
-    style={{position:"absolute",top:"0", left:"0"}}>
-  </iframe>
-        </Online>
-        <Offline>
-            <img src={AdoptBanner} alt="Offline Nodomaru Banner"/>
-        </Offline>
-        
+          <Online>
+            <iframe
+              frameBorder="0"
+              title="youtube"
+              height="100%"
+              width="100%"
+              src="https://www.youtube.com/embed/Lwcv6jRZu-U?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=Lwcv6jRZu-U&iv_load_policy=3&modestbranding=1"
+              allowFullScreen=""
+              style={{ position: "absolute", top: "0", left: "0" }}
+            ></iframe>
+          </Online>
+          <Offline>
+            <img src={AdoptBanner} alt="Offline Nodomaru Banner" />
+          </Offline>
+
           <AdoptButton to="/#contactform">現在採用中</AdoptButton>
         </AdoptSection>
         <SectionThree>
@@ -160,19 +165,22 @@ export default function About() {
         </SmallCompanyInfo>
         <MapSection>
           <MapContainer>
-            {/* <Map/> */}
-            {/* <img src={Map} alt="Nodomaru Map" /> */}
-            <iframe
-              title="googlemap"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.171881740766!2d139.71961071461334!3d35.648136639394934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b0d7d5345b5%3A0x40894ad4ad64e0f7!2z44OQ44Or44OT44K-44OzMjLnlarppKg!5e0!3m2!1sen!2sng!4v1612022562675!5m2!1sen!2sng"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              aria-hidden="false"
-              tabIndex="0"
-            ></iframe>
+            <Offline>
+              <img src={MapImage} alt="Nodomaru Map" />
+            </Offline>
+            <Online>
+              <iframe
+                title="googlemap"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.171881740766!2d139.71961071461334!3d35.648136639394934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b0d7d5345b5%3A0x40894ad4ad64e0f7!2z44OQ44Or44OT44K-44OzMjLnlarppKg!5e0!3m2!1sen!2sng!4v1612022562675!5m2!1sen!2sng"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                aria-hidden="false"
+                tabIndex="0"
+              ></iframe>
+            </Online>
           </MapContainer>
           <AddressContainer>
             <AddressHeader>Company Information</AddressHeader>
@@ -212,7 +220,7 @@ const Banner = styled.div`
   @media (max-width: 576px) {
     background: url(${SmallBanner});
     background-size: cover;
-    height: 796px;
+    height: 629px;
   }
 `;
 const Container = styled.div`
@@ -235,6 +243,9 @@ const AboutArea = styled.div`
     height: 71px;
     align-items: center;
     margin: auto;
+    padding-top: 458px;
+
+    ${"" /* padding-bottom:99px; */}
   }
 `;
 const Left = styled.div`
@@ -245,9 +256,9 @@ const Left = styled.div`
   @media (max-width: 768px) {
     margin: auto;
   }
-  @media (max-width: 426px) {
+  ${"" /* @media (max-width: 426px) {
     padding-top: 400px;
-  }
+  } */}
 `;
 const LeftText = styled.div`
   font-size: 24px;
@@ -318,7 +329,7 @@ const SectionConnector = styled.div`
   height: 311px;
   position: absolute;
   margin-top: 30px;
-  z-index:2;
+  z-index: 2;
   @media (max-width: 768px) {
     display: none;
   }
@@ -402,22 +413,21 @@ const StyledPlayIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
 `;
 const AdoptSection = styled.div`
-  ${'' /* background: url(${AdoptBanner}); */}
-  position: relative; 
+  ${"" /* background: url(${AdoptBanner}); */}
+  position: relative;
   z-index: 1;
   height: 603px;
   text-align: center;
   padding-top: 333px;
-  display:flex;
-  justify-content:center;
-  overflow:hidden;
-  img{
-    margin-top:-333px;
-    z-index:1;
-  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  img {
+    margin-top: -333px;
+    z-index: 1;
   }
-  @media(max-width:1199px){
-    display:none;
+  @media (max-width: 1199px) {
+    display: none;
   }
   @media (min-width: 1200px) {
     width: 1200px;
@@ -433,7 +443,7 @@ const AdoptSection = styled.div`
   }
 `;
 const GenBackground = styled.div`
-position:relative;
+  position: relative;
   background: url(${GeneralBanner});
   width: 100%;
   background-size: cover;
@@ -441,15 +451,14 @@ position:relative;
   padding-bottom: 92px;
   @media (max-width: 576px) {
     padding-top: 0px;
-    
   }
 `;
 const AdoptButton = styled(Link)`
-position:absolute;
-bottom:28px;
-width:140px;
-margin:auto;
-z-index:2;
+  position: absolute;
+  bottom: 28px;
+  width: 140px;
+  margin: auto;
+  z-index: 2;
   background-color: var(--mainYellow);
   padding: 9px 25px;
   font-size: 18px;
@@ -608,7 +617,7 @@ const Divider = styled.div`
     width: 320px;
     margin-left: auto;
     margin-right: auto;
-    margin-top:45px!important;
+    margin-top: 45px !important;
     margin-bottom: 52px;
   }
 `;

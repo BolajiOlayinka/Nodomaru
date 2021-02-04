@@ -56,6 +56,7 @@ export default function Home() {
           </ServiceBody>
         </Container>
       </Service>
+
       <Container>
         <ServiceTypes>
           <RealEstateWrapper>
@@ -115,9 +116,11 @@ export default function Home() {
           <NewsHeading>Company News</NewsHeading>
           <SmallNewsHeading>ニュース</SmallNewsHeading>
           <Posts />
-          <ReadMoreButton to="/news" id="contactform">Read More Posts</ReadMoreButton>
+          <ReadMoreButton to="/news" id="contactform">
+            Read More Posts
+          </ReadMoreButton>
         </Container>
-        <ContactUsSection >
+        <ContactUsSection>
           <ContactHeading>お問い合わせ</ContactHeading>
           <ContactTel>Tel : 03-6456-4538</ContactTel>
           <ContactInfo>問い合わせメールアドレス：info@ndmr.co.jp</ContactInfo>
@@ -156,7 +159,7 @@ const Banner = styled.div`
     background: url(${BannerImage});
     border-right: 0px;
     border-left: 0px;
-    border-top:0px;
+    border-top: 0px;
   }
 `;
 const LogoContainer = styled.div`
@@ -249,7 +252,6 @@ const Service = styled.div`
   border: 11px solid white;
   padding: 39px 32px;
 
-  
   @media (max-width: 768px) {
     border-right: 0px solid white;
     border-left: 0px solid white;
@@ -543,7 +545,7 @@ const BetterServiceSubText = styled.div`
     width: 100%;
     font-size: 16px;
     line-height: 19px;
-    padding-top:5px;
+    padding-top: 5px;
   }
   @media (max-width: 576px) {
     width: 100%;
@@ -565,22 +567,22 @@ const NewsHeading = styled.div`
   foint-weight: 400;
   margin: auto;
   text-align: center;
-  @media(max-width:576.1px){
-  display:none;
-}
+  @media (max-width: 576.1px) {
+    display: none;
+  }
 `;
-const SmallNewsHeading = styled.div `
- width: 222px;
+const SmallNewsHeading = styled.div`
+  width: 222px;
   height: 50px;
   font-size: 36px;
-line-height: 42px;
+  line-height: 42px;
   font-weight: bold;
   margin: auto;
   text-align: center;
-@media(min-width:576px){
-  display:none;
-}
-`
+  @media (min-width: 576px) {
+    display: none;
+  }
+`;
 
 const ReadMoreButton = styled(Link)`
   width: 500px;

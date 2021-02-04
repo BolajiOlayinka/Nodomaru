@@ -20,6 +20,11 @@ import Smalldisplay from "../../assets/banner-7c.jpg";
 import Smalldisplaytwo from "../../assets/banner-8a.jpg";
 
 export default function Service() {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   useEffect(() => {
     Aos.init(
       {
@@ -104,9 +109,9 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer >
-        <ServiceButton to="/#contactform" id="sectionTwo">お問い合わせ</ServiceButton>
+        <ServiceButton to="/#contactform" >お問い合わせ</ServiceButton>
       </ButtonContainer>
-      <LineWrapper>
+      <LineWrapper id="sectionTwo">
         <Line />
         <img src={blueicon} alt="Nodomaru Icon" />
         <Line />
@@ -207,6 +212,9 @@ width:396px;
 justify-content:space-between;
 margin:auto;
 margin-top:12px;
+@media(max-width:426px){
+  display:none;
+}
 `
 const Section = styled(Linker)`
 font-weight: bold;

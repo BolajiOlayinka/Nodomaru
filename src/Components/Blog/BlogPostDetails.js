@@ -53,7 +53,7 @@ export default class News extends Component {
             `https://ndmr.co.jp/blog/?rest_route=/wp/v2/categories&post=${res.data.id}`
           )
           .then((resp) => {
-            console.log(resp);
+            // console.log(resp);
             this.setState({ category: resp.data["0"] });
           })
           .catch((response) => {
@@ -77,7 +77,7 @@ export default class News extends Component {
   }
   render() {
     const { postDetails, media, category, author } = this.state;
-    console.log(media)
+    // console.log(media)
     // console.log(this.state.IDArray)
 
     return (
@@ -106,11 +106,11 @@ export default class News extends Component {
 
                 <p>
                   <StyledFontAwesome icon={faUserCircle} />
-                  PR Team
+                  {author.name}
                 </p>
               </DisplayLeft>
               <DisplayRight>
-                <CeoBtn>{author.name}</CeoBtn>
+                {/* <CeoBtn></CeoBtn> */}
                 <EventsBtn>{category.name}</EventsBtn>
               </DisplayRight>
             </ImageSub>
@@ -209,23 +209,27 @@ const StyledFontAwesome = styled(FontAwesomeIcon)`
   padding-right: 10px;
   vertical-align: middle;
   margin-top: -3px;
+  @media(max-width:375px){
+    padding-right:5px;
+    font-size:20px;
+  }
 `;
 const DisplayRight = styled.div`
   display: flex;
   margin-left: auto;
 `;
-const CeoBtn = styled.div`
-  color: black;
-  border: 1px solid black;
-  background-color: transparent;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 0px 12px;
-  margin-right: 11px;
-  @media (max-width: 576px) {
-    display: none;
-  }
-`;
+// const CeoBtn = styled.div`
+//   color: black;
+//   border: 1px solid black;
+//   background-color: transparent;
+//   font-size: 12px;
+//   font-weight: 700;
+//   padding: 0px 12px;
+//   margin-right: 11px;
+//   @media (max-width: 576px) {
+//     display: none;
+//   }
+// `;
 const EventsBtn = styled.div`
   color: black;
   border: 1px solid black;
@@ -233,9 +237,9 @@ const EventsBtn = styled.div`
   font-size: 12px;
   font-weight: 700;
   padding: 0px 12px;
-  @media (max-width: 576px) {
+  ${'' /* @media (max-width: 576px) {
     display: none;
-  }
+  } */}
 `;
 const ArticleHead = styled.h3`
   font-weight: bold;

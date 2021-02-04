@@ -3,25 +3,12 @@ import { UncontrolledCarousel } from "reactstrap";
 import { AppConsumer } from "../../Context";
 import styled from "styled-components";
 import Spinner from "../Spinner";
-import renderHTML from "react-render-html";
 import Featured from "../../assets/Featured.jpg";
 
 export default function Carousel(props) {
   const image = [];
-  const header = [];
-  const truncate = (str, length, ending) => {
-    if (length == null) {
-      length = 30;
-    }
-    if (ending == null) {
-      ending = "...";
-    }
-    if (str.length > length) {
-      return str.substring(0, length - ending.length) + ending;
-    } else {
-      return str;
-    }
-  };
+
+  
   return (
     <React.Fragment>
       <AppConsumer>
@@ -29,25 +16,26 @@ export default function Carousel(props) {
           const { AllPost } = value;
             console.log(AllPost)
 
-          if (AllPost === undefined || !AllPost || (AllPost).length===0) {
+          if (AllPost === undefined || !AllPost || AllPost.length===0 || !AllPost.AllPost) {
             return <Spinner />;
-          } else if(AllPost.AllPost.length < 3){
+          } else if(AllPost.length > 0 && AllPost.AllPost.length < 3){
             return <Spinner />;
-          }else {
+          }
+          else {
             AllPost.AllPost.slice(0, 3).map((carouselImage) => {
               if ((carouselImage["_embedded"]["wp:featuredmedia"]) === undefined || !(carouselImage["_embedded"]["wp:featuredmedia"] )){
                   return (
                     image.push(Featured)
                   )
               }else{
-              return (
+                return(
                 image.push(
                   carouselImage["_embedded"]["wp:featuredmedia"]["0"][
                     "source_url"
                   ]
-                ),
-                header.push(carouselImage["title"]["rendered"])
-              );
+                )
+                );
+              
             }});
           }
 
@@ -56,7 +44,7 @@ export default function Carousel(props) {
               src: image[0],
               altText: "slide1",
               captionText: "Hello",
-              header: truncate(renderHTML(header[0])),
+              header: "",
               key: "1",
               caption: "Slide 1",
             },
@@ -64,7 +52,7 @@ export default function Carousel(props) {
               src: image[1],
               altText: "slide2",
               captionText: "Hello",
-              header: truncate(renderHTML(header[1])),
+             
               key: "2",
               caption: "Slide 2",
             },
@@ -72,7 +60,7 @@ export default function Carousel(props) {
               src: image[2],
               altText: "slide3",
               captionText: "Hello",
-              header: truncate(renderHTML(header[2])),
+              
               key: "3",
               caption: "Slide 3",
             },
@@ -127,6 +115,7 @@ const Wrapper = styled.div`
     left: 43px !important;
   }
   .carousel-caption h3 {
+    display:none;
     font-size: 38px;
     line-height: 46px;
     height: 100px;
