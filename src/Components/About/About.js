@@ -19,6 +19,8 @@ import { Offline, Online } from "react-detect-offline";
 export default function About() {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
+  const [smallmodal, setSmallModal] = useState(false);
+  const smalltoggle = () => setSmallModal(!smallmodal);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -75,7 +77,7 @@ export default function About() {
                       width: "100%",
                       height: "100%",
                     }}
-                    src="https://www.youtube.com/embed/HuwiV5yt_AY?autoplay=1&mute=1autoplay=1&mute=1"
+                    src="https://www.youtube.com/embed/HuwiV5yt_AY?modestbranding=1&showinfo=0&fs=0&autoplay=1&mute=0"
                     frameBorder="0"
                   />
                 </div>
@@ -93,11 +95,11 @@ export default function About() {
             社名の「のどまる」とは古語で「のどかになる」という意味です。一人でも多くのお客様の「のどまる人生」の実現に貢献致します。
           </AboutBody>
           <PlaySection>
-            <PlayButton onClick={toggle}>CEOからのメッセージ</PlayButton>
+            <PlayButton onClick={smalltoggle}>CEOからのメッセージ</PlayButton>
           </PlaySection>
 
-          <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}></ModalHeader>
+          <Modal isOpen={smallmodal} smalltoggle={smalltoggle}>
+            <ModalHeader smalltoggle={smalltoggle}></ModalHeader>
             <ModalBody>
               <div
                 className="video"
@@ -117,7 +119,7 @@ export default function About() {
                     width: "100%",
                     height: "100%",
                   }}
-                  src="https://www.youtube.com/embed/HuwiV5yt_AY?autoplay=1&mute=1"
+                  src="https://www.youtube.com/embed/HuwiV5yt_AY?modestbranding=1&showinfo=0&fs=0autoplay=1&mute=1"
                   frameBorder="0"
                 />
               </div>
@@ -133,7 +135,7 @@ export default function About() {
               title="youtube"
               height="100%"
               width="100%"
-              src="https://www.youtube.com/embed/Lwcv6jRZu-U?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=Lwcv6jRZu-U&iv_load_policy=3&modestbranding=1"
+              src="https://www.youtube.com/embed/Lwcv6jRZu-U?autoplay=1&mute=1&controls=0&showinfo=0&fs=0&autohide=1&loop=1&playlist=Lwcv6jRZu-U&iv_load_policy=3&modestbranding=1"
               allowFullScreen=""
               style={{ position: "absolute", top: "0", left: "0" }}
             ></iframe>

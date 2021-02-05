@@ -56,3 +56,13 @@ input[type=number]::-webkit-outer-spin-button {
   outline: 0;
 }
 
+body.modal-open .modal {
+  display: flex !important;
+  height: 100%!important;
+} 
+
+body.modal-open .modal .modal-dialog {
+  margin: auto;
+  width:100%;
+}
+
