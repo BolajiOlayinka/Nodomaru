@@ -219,7 +219,7 @@ height:26px;
 `
 const Submit = styled.input `
 background-color:var(--lightBlue);
-padding:9px 25px 9px 25px;
+${'' /* padding:9px 25px 9px 25px; */}
 color:white;
 width:86px;
 height:40px;

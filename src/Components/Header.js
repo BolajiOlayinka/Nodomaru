@@ -34,10 +34,10 @@ export default function Header() {
     if (location.pathname === "/") {
       setLogo(Logo);
       setNavColor("black");
-
       setActiveService("transparent");
       setActiveAbout("transparent");
       setActiveNews("transparent");
+      setBoxShadow("transparent");
     } else if (location.pathname === "/about") {
       setLogo(Logo);
       setActiveAbout("5px solid white");
@@ -80,6 +80,8 @@ export default function Header() {
     }else if( window.pageYOffset === 0 && location.pathname==="/"){
       setLogo(Logo);
       setNavColor("black");
+      setBackground("transparent");
+      setBoxShadow("transparent");
     } else if( window.pageYOffset === 0 && location.pathname==="/news/:id"){
       setLogo(BlackLogo);
       setNavColor("black");
@@ -137,7 +139,7 @@ export default function Header() {
     <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
       <StyledNavbar expand="md">
         <LogoContainer>
-          <Link to="/">
+          <Link to="/" onClick={() => {ScrollToTop()}}>
             <img src={logo} alt="Nodomaru Logo" />
           </Link>
         </LogoContainer>

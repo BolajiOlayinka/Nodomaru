@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     Aos.init(
       {
-        duration: 1200,
+        duration: 3000,
       },
       []
     );
@@ -44,7 +44,7 @@ export default function Home() {
         </Container>
       </Banner>
       <Service>
-        <Container>
+        <ServiceContainer>
           <NodomaruHeading>Nodomaruとは</NodomaruHeading>
           <HeadingUnderline data-aos="fade-right"></HeadingUnderline>
           <ServiceHeading>私たちのサービス</ServiceHeading>
@@ -54,7 +54,7 @@ export default function Home() {
             精神的な幸福と経済的な両立」と定義します。弊社は一人でも多
             くのお客様の「のどまる人生」の実現に貢献致します。
           </ServiceBody>
-        </Container>
+        </ServiceContainer>
       </Service>
 
       <Container>
@@ -131,6 +131,7 @@ export default function Home() {
   );
 }
 const Wrapper = styled.div``;
+
 const Container = styled.div`
   width: 100%;
   margin: auto;
@@ -212,25 +213,29 @@ const PalmContainer = styled.div`
   top: 0;
   margin-top: 296px;
   width: 95%;
+  padding-right: 126px;
   img {
     height: 728px;
     width: 320px;
-    margin-right: 126px;
+    
   }
   @media (min-width: 1200px) {
     width: 1200px;
   }
   @media (min-width: 991px) and (max-width: 1199px) {
+    padding-right:0px;
     img {
       margin-right: 36px;
     }
   }
   @media (max-width: 990.9px) {
+    padding-right:0px;
     img {
       margin-right: 0px;
     }
   }
   @media (max-width: 768px) {
+    padding-right:0px;
     img {
       width: 260px;
       height: 598px;
@@ -239,6 +244,7 @@ const PalmContainer = styled.div`
   @media (max-width: 425px) {
     width: 100%;
     margin-top: 385px;
+    padding-right:0px;
     img {
       width: 226px;
       height: 444px;
@@ -246,11 +252,20 @@ const PalmContainer = styled.div`
     }
   }
 `;
+const ServiceContainer = styled.div`
+  width: 100%;
+  margin: auto;
+  padding: 39px 32px;
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin: auto;
+  }
+`;
 const Service = styled.div`
   background-color: var(--lightBlue);
   border-top-width: 0px !important;
   border: 11px solid white;
-  padding: 39px 32px;
+  
 
   @media (max-width: 768px) {
     border-right: 0px solid white;
@@ -325,7 +340,14 @@ const ServiceTypes = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-`;
+  @media (min-width:1200px){
+width:1200px;
+margin:auto;
+justify-content:space-around;
+}
+`
+;
+
 const SmallServiceTypes = styled.div`
   @media (min-width: 991px) {
     display: none;
@@ -340,6 +362,11 @@ const RealEstateWrapper = styled.div`
   border-top-width: 0px !important;
   border-right-width: 0px !important;
   padding-top: 312px;
+  @media(min-width:1200px){
+    border: 0px !important;
+    border-bottom-width: 11px solid white;
+    width:582px;
+  }
   @media (max-width: 991px) {
     display: none;
   }
@@ -494,6 +521,11 @@ const FinancialPlanWrapper = styled.div`
   border: 11px solid white;
   border-top-width: 0px !important;
   padding-top: 312px;
+  @media(min-width:1200px){
+    border: 0px !important;
+    border-bottom-width: 11px solid white;
+    width:582px;
+  }
   @media (max-width: 991px) {
     display: none;
   }
