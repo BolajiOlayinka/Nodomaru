@@ -77,7 +77,7 @@ export default function About() {
                       width: "100%",
                       height: "100%",
                     }}
-                    src="https://www.youtube.com/embed/HuwiV5yt_AY?modestbranding=1&showinfo=0&fs=0&autoplay=1&mute=0"
+                    src="https://www.youtube.com/embed/HuwiV5yt_AY?modestbranding=1&showinfo=0&fs=0&autoplay=1&mute=0&playlist=HuwiV5yt_AY"
                     frameBorder="0"
                   />
                 </div>
@@ -119,7 +119,7 @@ export default function About() {
                     width: "100%",
                     height: "100%",
                   }}
-                  src="https://www.youtube.com/embed/HuwiV5yt_AY?modestbranding=1&showinfo=0&fs=0autoplay=1&mute=1"
+                  src="https://www.youtube.com/embed/HuwiV5yt_AY?modestbranding=1&showinfo=0&fs=0&autoplay=1&mute=0&playlist=HuwiV5yt_A"
                   frameBorder="0"
                 />
               </div>
@@ -236,7 +236,7 @@ const Container = styled.div`
 const AboutArea = styled.div`
   padding-top: 478px;
   display: flex;
-  align-items: center;
+  ${'' /* align-items: center; */}
   @media (max-width: 991px) {
     padding-top: 300px;
   }
@@ -252,10 +252,12 @@ const AboutArea = styled.div`
 `;
 const Left = styled.div`
   margin-left: 116px;
+  padding-top:66px;
   @media (max-width: 991px) {
     margin-left: 26px;
   }
   @media (max-width: 768px) {
+    padding-top:0px;
     margin: auto;
   }
   ${"" /* @media (max-width: 426px) {
@@ -301,7 +303,8 @@ const SmallAboutDesc = styled.div`
   }
 `;
 const DescWrapper = styled.div`
-  width: 400px;
+  width: 350px;
+
   margin: auto;
   @media (max-width: 425px) {
     width: 270px;
