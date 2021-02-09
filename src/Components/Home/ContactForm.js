@@ -2,7 +2,8 @@ import React,{Component} from "react";
 import styled from "styled-components";
 import axios from 'axios';
 import {FormGroup} from 'reactstrap'; 
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default class ContactForm extends Component {
   constructor(value){
@@ -68,6 +69,14 @@ export default class ContactForm extends Component {
       console.log(err)
         });
   }
+  componentDidMount(){
+    Aos.init(
+      {
+        duration: 1200,
+      },
+      []
+    );
+  }
   
   render(){
     
@@ -112,8 +121,9 @@ export default class ContactForm extends Component {
             <Required>*必須項目に入力してください</Required>
             <Submit type="submit" value="送信"/>
           </StyledForm>
-          {this.state.isSubmitted && <SuccessMessage>FORM SUBMITTED SUCCESSFULLY</SuccessMessage>}
-          {this.state.error && <ErrorMessage>FORM NOT SUBMITTED</ErrorMessage>}
+          {/* <SuccessMessage data-aos="slide-up">フォームの送信が完了しました</SuccessMessage> */}
+          {this.state.isSubmitted && <SuccessMessage data-aos="slide-up">フォームの送信が完了しました</SuccessMessage>}
+          {this.state.error && <ErrorMessage data-aos="slide-up">FORM NOT SUBMITTED</ErrorMessage>}
         </Wrapper>
       </React.Fragment>
     );
@@ -226,19 +236,38 @@ height:40px;
 border-color:transparent;
 outline:0;
 border-radius:4px;
+margin-bottom:30px;
 :hover{
     color:black;
 }
 `
 
 const SuccessMessage = styled.div `
-color:green;
-font-size:16px;
+color:#0FC100;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
 margin-bottom:0px;
+width:302px;
+border:1px solid #0FC100;
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
 `
 
 const ErrorMessage = styled.div `
 color:red;
-font-size:16px;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
 margin-bottom:0px;
+width:302px;
+border:1px solid red
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
 `

@@ -70,7 +70,7 @@ line-height: 21px;
    line-height:21px;
 }
 @media(max-width:360px){
-font-size:17px;
+    font-size:16px;
 }
 `
 const FooterContent = styled.div `
@@ -141,6 +141,9 @@ padding-left:64px;
    :first-child{
        padding-left:0px;
    }
+}
+@media(max-width:360px){
+    font-size:16px;
 }
 
 `
