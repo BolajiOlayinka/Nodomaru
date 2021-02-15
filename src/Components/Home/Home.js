@@ -34,7 +34,7 @@ export default function Home() {
           <LogoContainer>
             <img src={WhiteLogo} alt="Nodomaru Logo" />
             <LogoSubText>事業を通じてのどまる社会を創る</LogoSubText>
-            <LogoButton href="/service" target="_blank" referrer="noreferrer">
+            <LogoButton href="/service">
               詳しく
             </LogoButton>
           </LogoContainer>
@@ -76,7 +76,7 @@ export default function Home() {
                 <img src={LogoWhite} alt="Nodomaru Logo" />
               </LeftDivider>
               <RightDivider>
-                Financial Planning & Consulting FP コンサルティング
+                Financial Planning & Consulting <br/> FP コンサルティング
               </RightDivider>
             </FinancialPlanDivider>
           </FinancialPlanWrapper>
@@ -94,7 +94,7 @@ export default function Home() {
           </SmallEstateWrapper>
           <SmallFinancialWrapper>
             <LeftFinance>
-              Financial Planning & Consulting <br />
+              Financial Planning & Consulting
               <h3>コンサルティング</h3>
               <SmallLogoLeft>
                 <img src={LogoWhite} alt="Nodomaru Logo Icon" />
@@ -116,7 +116,7 @@ export default function Home() {
           <NewsHeading>Company News</NewsHeading>
           <SmallNewsHeading>ニュース</SmallNewsHeading>
           <Posts />
-          <ReadMoreButton to="/news" id="contactform">
+          <ReadMoreButton to="/news" className="contactform" id="contactform">
             Read More Posts
           </ReadMoreButton>
         </Container>
@@ -501,13 +501,13 @@ const RealEstateDivider = styled.div`
 `;
 const LeftDivider = styled.div`
   padding-right: 16px;
-  padding-left: 15px;
+  ${'' /* padding-left: 15px; */}
   img {
     width: 35px;
   }
 `;
 const RightDivider = styled.div`
-  font-weight: bold;
+ 
   font-size: 20px;
   line-height: 23px;
   font-weight: bold;

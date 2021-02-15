@@ -21,28 +21,18 @@ export default function HomePost(props) {
   };
   return (
     <React.Fragment>
-     
-        <Container>
-          
-          <Card>
-          
-          <PostCard to={`/news/${currentPosts.props.post.id}`}>
-            <NewsWrapper>
-              <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
-              <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
-              {truncate(renderHTML(currentPosts.props.post.title.rendered))}
-              HELLO HELLO 
-              </NewsPostHeading>
-              </NewsWrapper>
-            
-            </PostCard>
-            </Card>
-          
-          
-        </Container>
-        
-        
-      
+      <Container>
+        <Card>
+        <PostCard to={`/news/${currentPosts.props.post.id}`}>
+          <NewsWrapper>
+            <New className="col-xl-2 col-lg-2 col-md-2 col-2">New</New>
+            <NewsPostHeading className="col-xl-10 col-lg-10 col-md-10 col-10">
+            {truncate(renderHTML(currentPosts.props.post.title.rendered))}
+            </NewsPostHeading>
+            </NewsWrapper>
+          </PostCard>
+          </Card>
+      </Container>
     </React.Fragment>
   );
 }

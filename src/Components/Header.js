@@ -29,6 +29,9 @@ export default function Header() {
   const ScrollToTop = () => {
     animateScrollTo(0);
   };
+  const ScrollToContact = () => {
+    animateScrollTo(document.querySelector(".contactform"));
+  };
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === "/") {
@@ -52,14 +55,7 @@ export default function Header() {
       setActiveAbout("transparent");
       setActiveNews("transparent");
       setNavColor("white");
-    } else if (
-      location.pathname === "/news") {
-      setActiveNews("5px solid black");
-      setActiveAbout("transparent");
-      setActiveService("transparent");
-      setNavColor("black");
-      setLogo(BlackLogo);
-    } else if (location.pathname === "/news/:id") {
+    } else if (location.pathname.split("/")[1] === "news") {
       setActiveNews("5px solid black");
       setActiveAbout("transparent");
       setActiveService("transparent");
@@ -74,17 +70,15 @@ export default function Header() {
       setLogo(BlackLogo);
       setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
       setNavColor("black");
-    } else if( window.pageYOffset === 0 && location.pathname==="/news"){
+    } else if( window.pageYOffset === 0 && location.pathname.split("/")[1] === "news") {
       setLogo(BlackLogo);
       setNavColor("black");
+      setBoxShadow("transparent");
     }else if( window.pageYOffset === 0 && location.pathname==="/"){
       setLogo(Logo);
       setNavColor("black");
       setBackground("transparent");
       setBoxShadow("transparent");
-    } else if( window.pageYOffset === 0 && location.pathname==="/news/:id"){
-      setLogo(BlackLogo);
-      setNavColor("black");
     } else {
       setLogo(Logo);
       setBackground("transparent");
@@ -156,7 +150,7 @@ export default function Header() {
                 </StyledLink>
               </NavItem>
               <NavItem>
-                <StyledContactLink to="/#contactform" onClick={closeModal}>
+                <StyledContactLink to="/" onClick={()=>{closeModal(); ScrollToContact()}}>
                   お問い合わせ
                 </StyledContactLink>
               </NavItem>
@@ -207,7 +201,7 @@ export default function Header() {
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledContactLink navcolor={navcolor} to="/#contactform">
+              <StyledContactLink navcolor={navcolor} to="/#contactform" onClick={() => {ScrollToContact()}}>
                 お問い合わせ
               </StyledContactLink>
             </NavItem>

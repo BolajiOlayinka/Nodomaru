@@ -56,7 +56,7 @@ export default function About() {
                 <StyledPlayIcon icon={faPlayCircle} onClick={toggle} />
               </PlaySection>
             </Right>
-            <Modal isOpen={modal} toggle={toggle}>
+            <StyledModal isOpen={modal} toggle={toggle}>
               <ModalHeader toggle={toggle}></ModalHeader>
               <ModalBody>
                 <div
@@ -82,7 +82,7 @@ export default function About() {
                   />
                 </div>
               </ModalBody>
-            </Modal>
+            </StyledModal>
           </AboutArea>
         </Container>
       </Banner>
@@ -98,8 +98,8 @@ export default function About() {
             <PlayButton onClick={smalltoggle}>CEOからのメッセージ</PlayButton>
           </PlaySection>
 
-          <Modal isOpen={smallmodal} smalltoggle={smalltoggle}>
-            <ModalHeader smalltoggle={smalltoggle}></ModalHeader>
+          <StyledModal isOpen={smallmodal} toggle={smalltoggle}>
+            <ModalHeader toggle={smalltoggle}></ModalHeader>
             <ModalBody>
               <div
                 className="video"
@@ -124,7 +124,7 @@ export default function About() {
                 />
               </div>
             </ModalBody>
-          </Modal>
+          </StyledModal>
         </DescWrapper>
       </SmallAboutDesc>
       <GenBackground>
@@ -624,5 +624,24 @@ const Divider = styled.div`
     margin-right: auto;
     margin-top: 45px !important;
     margin-bottom: 52px;
+  }
+`;
+
+
+const StyledModal = styled(Modal)`
+  min-width: 90%;
+  min-height: auto;
+  .modal-body {
+    padding: 0;
+  }
+  .modal-header {
+    background: black;
+    border-bottom: 1px solid black;
+  }
+  .modal-content {
+    background: transparent;
+  }
+  .close {
+    color: white !important;
   }
 `;

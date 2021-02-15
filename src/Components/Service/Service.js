@@ -199,6 +199,8 @@ const Banner = styled.div`
   background-repeat: no-repeat;
   height: 270px;
   display: flex;
+  border-bottom:5px solid var(--lightBlue);
+
   @media(min-width:2000px){
     height:400px;
   }
@@ -213,24 +215,38 @@ justify-content:space-between;
 margin:auto;
 margin-top:12px;
 @media(max-width:426px){
-  display:none;
-}
+    width:293px;
+    margin:auto;
+     margin-top:14px;
+    
+   }
+
 `
 const Section = styled(Linker)`
-font-weight: bold;
-font-size: 14px;
-line-height: 19px;
-color: #FFFFFF;
-border:1px solid white;
-width:182px;
-height:37px;
-border-radius:4px;
-display:flex;
-align-items:center;
-justify-content:center;
-:hover{
-  color:black;
-}
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FFFFFF;
+  border: 1px solid white;
+  width: 182px;
+  height: 37px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.8);
+    transition: all 0.2s;
+    color: white !important;
+    text-decoration: none;
+  }
+  @media(max-width:426px){
+
+   :first-child{
+     width:100px;
+   }
+    
+  }
 `
 const BannerContent = styled.div`
   display: flex;
