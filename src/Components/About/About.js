@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import { Offline, Online } from "react-detect-offline";
+import animateScrollTo from "animated-scroll-to";
 
 export default function About() {
   const [modal, setModal] = useState(false);
@@ -23,7 +24,7 @@ export default function About() {
   const smalltoggle = () => setSmallModal(!smallmodal);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    animateScrollTo(0, 0);
   }, []);
 
   useEffect(() => {

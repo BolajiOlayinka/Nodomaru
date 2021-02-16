@@ -3,10 +3,11 @@ import styled from "styled-components";
 import Carousel from "./Carousel";
 import PostList from "./PostList";
 import Logo from "../../assets/blue-logo.svg";
+import animateScrollTo from "animated-scroll-to";
 
 export default class News extends Component {
   componentDidMount = () => {
-    window.scrollTo(0, 0);
+    animateScrollTo(0, 0);
   };
   render() {
     return (

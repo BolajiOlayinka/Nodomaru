@@ -29,6 +29,7 @@ export default function Header() {
   const ScrollToTop = () => {
     animateScrollTo(0);
   };
+  
   const ScrollToContact = () => {
     animateScrollTo(document.querySelector(".contactform"));
   };
@@ -150,7 +151,7 @@ export default function Header() {
                 </StyledLink>
               </NavItem>
               <NavItem>
-                <StyledContactLink to="/" onClick={()=>{closeModal(); ScrollToContact()}}>
+                <StyledContactLink to="/#contactform" onClick={()=>{closeModal(); ScrollToContact()}}>
                   お問い合わせ
                 </StyledContactLink>
               </NavItem>

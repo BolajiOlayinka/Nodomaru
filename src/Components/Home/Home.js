@@ -14,6 +14,8 @@ import SmallFinance from "../../assets/image-3.jpg";
 import LogoWhite from "../../assets/icon.svg";
 import Divider from "./Divider";
 import { Link } from "react-router-dom";
+import { HashLink as Linker } from "react-router-hash-link";
+import animateScrollTo from "animated-scroll-to";
 
 import Posts from "./HomePostList";
 import Form from "./ContactForm";
@@ -27,6 +29,12 @@ export default function Home() {
       []
     );
   });
+  const ScrollToSectionOne = () => {
+    animateScrollTo(document.querySelector(".sectionOne"));
+  };
+  const ScrollToSectionTwo = () => {
+    animateScrollTo(document.querySelector(".sectionTwo"));
+  };
   return (
     <Wrapper>
       <Banner>
@@ -34,11 +42,12 @@ export default function Home() {
           <LogoContainer>
             <img src={WhiteLogo} alt="Nodomaru Logo" />
             <LogoSubText>事業を通じてのどまる社会を創る</LogoSubText>
-            <LogoButton href="/service">
+            <LogoButton href="/service" id="#trigger-up">
               詳しく
             </LogoButton>
           </LogoContainer>
-          <PalmContainer data-aos="slide-up">
+          <PalmContainer  data-aos-anchor="#trigger-up"
+     data-aos-anchor-placement="top-top" data-aos="fade-up">
             <img src={PalmTree} alt="Nodomaru PalmTree" />
           </PalmContainer>
         </Container>
@@ -59,7 +68,7 @@ export default function Home() {
 
       <Container>
         <ServiceTypes>
-          <RealEstateWrapper>
+          <RealEstateWrapper to="/service/#sectionOne" onClick={ScrollToSectionOne}>
             <RealEstateDivider>
               <LeftDivider>
                 <img src={LogoWhite} alt="Nodomaru Logo" />
@@ -70,7 +79,7 @@ export default function Home() {
               </RightDivider>
             </RealEstateDivider>
           </RealEstateWrapper>
-          <FinancialPlanWrapper>
+          <FinancialPlanWrapper to="/service/#sectionTwo" onClick={ScrollToSectionTwo}>
             <FinancialPlanDivider>
               <LeftDivider>
                 <img src={LogoWhite} alt="Nodomaru Logo" />
@@ -84,7 +93,7 @@ export default function Home() {
         <SmallServiceTypes>
           <SmallEstateWrapper>
             <LeftEstate></LeftEstate>
-            <RightEstate>
+            <RightEstate to="/service/#sectionOne" onClick={ScrollToSectionOne}>
               Real Estate <br />
               不動産
               <SmallLogoRight>
@@ -93,7 +102,7 @@ export default function Home() {
             </RightEstate>
           </SmallEstateWrapper>
           <SmallFinancialWrapper>
-            <LeftFinance>
+            <LeftFinance to="/service/#sectionTwo" onClick={ScrollToSectionTwo}>
               Financial Planning & Consulting
               <h3>コンサルティング</h3>
               <SmallLogoLeft>
@@ -353,7 +362,7 @@ const SmallServiceTypes = styled.div`
     display: none;
   }
 `;
-const RealEstateWrapper = styled.div`
+const RealEstateWrapper = styled(Linker)`
   background: url(${RealEstate});
   height: 430px;
   width: 50%;
@@ -369,6 +378,9 @@ const RealEstateWrapper = styled.div`
   }
   @media (max-width: 991px) {
     display: none;
+  }
+  :hover{
+    text-decoration:none;
   }
 `;
 const LeftEstate = styled.div`
@@ -386,7 +398,7 @@ const LeftEstate = styled.div`
     height: 160px;
   }
 `;
-const RightEstate = styled.div`
+const RightEstate = styled(Linker)`
   width: 50%;
   background-color: var(--mainYellow);
   height: 260px;
@@ -412,6 +424,9 @@ const RightEstate = styled.div`
   @media (max-width: 374.9px) {
     font-size: 16px;
     line-height: 19px;
+  }
+  :hover{
+    text-decoration:none;
   }
 `;
 const SmallLogoRight = styled.div`
@@ -443,6 +458,7 @@ const RightFinance = styled.div`
   background-size: cover;
   border-right: 11px solid white;
   border-top: 11px solid white;
+  color:white;
   @media (max-width: 768px) {
     height: 220px;
     border-top: 11px solid white;
@@ -453,7 +469,7 @@ const RightFinance = styled.div`
     height: 160px;
   }
 `;
-const LeftFinance = styled.div`
+const LeftFinance = styled(Linker)`
   width: 50%;
   ${"" /* height:260px; */}
   background-color: var(--mainYellow);
@@ -489,6 +505,9 @@ const LeftFinance = styled.div`
   @media (max-width: 374.9px) {
     font-size: 16px;
   }
+  :hover{
+    text-decoration:none;
+  }
 `;
 
 const RealEstateDivider = styled.div`
@@ -498,6 +517,9 @@ const RealEstateDivider = styled.div`
   height: 78px;
   width: 385px;
   padding: 18px 15px 18px 15px;
+  color:black;
+
+  
 `;
 const LeftDivider = styled.div`
   padding-right: 16px;
@@ -511,9 +533,12 @@ const RightDivider = styled.div`
   font-size: 20px;
   line-height: 23px;
   font-weight: bold;
+  :hover{
+    text-decoration:none;
+  }
 `;
 
-const FinancialPlanWrapper = styled.div`
+const FinancialPlanWrapper = styled(Linker)`
   background: url(${FinancialPlan});
   background-size: cover;
   height: 430px;
@@ -529,6 +554,9 @@ const FinancialPlanWrapper = styled.div`
   @media (max-width: 991px) {
     display: none;
   }
+  :hover{
+    text-decoration:none;
+  }
 `;
 
 const FinancialPlanDivider = styled.div`
@@ -537,8 +565,12 @@ const FinancialPlanDivider = styled.div`
   height: 78px;
   width: 385px;
   padding: 18px 15px 18px 15px;
+  color:black;
   @media (min-width: 768px) and (max-width: 991px) {
     width: 100%;
+  }
+  :hover{
+    text-decoration:none;
   }
 `;
 const BetterServiceHeading = styled.div`

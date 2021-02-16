@@ -18,12 +18,23 @@ import blueicon from "../../assets/icon-blue.svg";
 import yellowicon from "../../assets/icon-yellow.svg";
 import Smalldisplay from "../../assets/banner-7c.jpg";
 import Smalldisplaytwo from "../../assets/banner-8a.jpg";
+import animateScrollTo from "animated-scroll-to";
 
 export default function Service() {
   
   useEffect(() => {
     window.scrollTo(0, 0);
   },[]);
+  const ScrollToSectionOne = () => {
+    animateScrollTo(document.querySelector(".sectionOne"));
+  };
+  const ScrollToSectionTwo = () => {
+    animateScrollTo(document.querySelector(".sectionTwo"));
+  };
+  const ScrollToContact = () => {
+    animateScrollTo(document.querySelector(".contactform"));
+  };
+
 
   useEffect(() => {
     Aos.init(
@@ -41,9 +52,9 @@ export default function Service() {
             <div>
               <img src={WhiteLogo} alt="Nodomaru Logo" />
               <div>サービス案内</div>
-              <SectionWrapper id="sectionOne">
-              <Section to="/service/#sectionOne">不動産</Section>
-              <Section to="/service/#sectionTwo">FP コンサルティング</Section>
+              <SectionWrapper id="sectionOne" className="sectionOne" >
+              <Section to="/service/#sectionOne" onClick={ScrollToSectionOne()}>不動産</Section>
+              <Section to="/service/#sectionTwo" onClick={ScrollToSectionTwo()}>FP コンサルティング</Section>
               </SectionWrapper>
             </div>
           </BannerContent>
@@ -109,9 +120,9 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer >
-        <ServiceButton to="/#contactform" >お問い合わせ</ServiceButton>
+        <ServiceButton to="/#contactform" onClick={ScrollToContact}>お問い合わせ</ServiceButton>
       </ButtonContainer>
-      <LineWrapper id="sectionTwo">
+      <LineWrapper id="sectionTwo" className="sectionTwo">
         <Line />
         <img src={blueicon} alt="Nodomaru Icon" />
         <Line />
@@ -174,7 +185,7 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <FinanceButton to="/#contactform">お問い合わせ</FinanceButton>
+        <FinanceButton to="/#contactform" onClick={ScrollToContact}>お問い合わせ</FinanceButton>
       </ButtonContainer>
       <FinanceLineWrapper>
         <FinanceLine />
