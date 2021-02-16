@@ -640,7 +640,7 @@ const StyledModal = styled(Modal)`
     border-bottom: 1px solid black;
   }
   .modal-content {
-    background: transparent;
+    background: black;
   }
   .close {
     color: white !important;
