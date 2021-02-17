@@ -7,7 +7,7 @@ import animateScrollTo from "animated-scroll-to";
 
 export default class News extends Component {
   componentDidMount = () => {
-    animateScrollTo(0, 0);
+    animateScrollTo(0);
   };
   render() {
     return (

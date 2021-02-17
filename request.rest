@@ -1,9 +1,14 @@
-# GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts
+# GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts/11
 
 # GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&_embed
 
 # GET http://ndmr.co.jp/blog/index.php?rest_route=/wp/v2/media/11
 
-# GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/categories?post=11
+# GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/categories
 
-# GET http://ndmr.co.jp/blog/?rest_route=/wp/v2/tags?post=1
+# GET https://ndmr.co.jp/blog/?rest_route=/wp/v2/search=lorem
+# https://ndmr.co.jp/blog/?rest_route=/wp/v2/posts&search=lorem
+
+# https://ndmr.co.jp/blog/?rest_route=/wp/v2/categories&post=15
+
+GET https://ndmr.co.jp/blog/?rest_route=/wp/v2/media

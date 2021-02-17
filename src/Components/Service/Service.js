@@ -23,7 +23,7 @@ import animateScrollTo from "animated-scroll-to";
 export default function Service() {
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    animateScrollTo(0);
   },[]);
   const ScrollToSectionOne = () => {
     animateScrollTo(document.querySelector(".sectionOne"));

@@ -24,7 +24,7 @@ export default function About() {
   const smalltoggle = () => setSmallModal(!smallmodal);
 
   useEffect(() => {
-    animateScrollTo(0, 0);
+    animateScrollTo(0);
   }, []);
 
   useEffect(() => {
@@ -422,7 +422,7 @@ const AdoptSection = styled.div`
   ${"" /* background: url(${AdoptBanner}); */}
   position: relative;
   z-index: 1;
-  height: 603px;
+  height:601px;
   text-align: center;
   padding-top: 333px;
   display: flex;
@@ -431,6 +431,10 @@ const AdoptSection = styled.div`
   img {
     margin-top: -333px;
     z-index: 1;
+  }
+  iframe{
+    background-color:transparent!important;
+    width:1200px;
   }
   @media (max-width: 1199px) {
     display: none;

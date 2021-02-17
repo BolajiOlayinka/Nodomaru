@@ -1,31 +1,43 @@
-import React from "react";
-import { UncontrolledCarousel } from "reactstrap";
+import React, { useState } from 'react';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
 import { AppConsumer } from "../../Context";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 import Spinner from "../Spinner";
-import Featured from "../../assets/Featured.jpg";
+import FeaturedOne from "../../assets/Featured.jpg";
+import FeaturedTwo from "../../assets/FeaturedTwo.jpg";
+import FeaturedThree from "../../assets/FeaturedThree.jpg";
 
-export default function Carousel(props) {
+
+export default function Example (props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
   const image = [];
-
-  
+  const objectID=[]
   return (
     <React.Fragment>
       <AppConsumer>
         {(value) => {
           const { AllPost } = value;
-            console.log(AllPost)
-
+            
           if (AllPost === undefined || !AllPost || AllPost.length===0 || !AllPost.AllPost) {
             return <Spinner />;
           } else if(AllPost.length > 0 && AllPost.AllPost.length < 3){
             return <Spinner />;
           }
-          else {
-            AllPost.AllPost.slice(0, 3).map((carouselImage) => {
+          else { AllPost.AllPost.slice(0, 3).map((carouselImage) => {
+              objectID.push(carouselImage["id"]);
               if ((carouselImage["_embedded"]["wp:featuredmedia"]) === undefined || !(carouselImage["_embedded"]["wp:featuredmedia"] )){
-                  return (
-                    image.push(Featured)
+                  return (               
+                    image.push(FeaturedOne),
+                    image.push(FeaturedTwo),
+                    image.push(FeaturedThree)
                   )
               }else{
                 return(
@@ -38,47 +50,86 @@ export default function Carousel(props) {
               
             }});
           }
+           const items = [
+             {
+               src: image[0],
+               altText: "slide1",
+               captionText: "Hello",
+               header: "",
+               key: objectID[0],
+               caption: "Slide 1",
 
-          const items = [
-            {
-              src: image[0],
-              altText: "slide1",
-              captionText: "Hello",
-              header: "",
-              key: "1",
-              caption: "Slide 1",
-            },
-            {
-              src: image[1],
-              altText: "slide2",
-              captionText: "Hello",
-             
-              key: "2",
-              caption: "Slide 2",
-            },
-            {
-              src: image[2],
-              altText: "slide3",
-              captionText: "Hello",
-              
-              key: "3",
-              caption: "Slide 3",
-            },
-          ];
-          return (
-            <React.Fragment>
-              <Wrapper>
-                <UncontrolledCarousel items={items} />
-              </Wrapper>
-            </React.Fragment>
-          );
-        }}
-      </AppConsumer>
-    </React.Fragment>
+             },
+             {
+               src: image[1],
+               altText: "slide2",
+               captionText: "Hello",
+               header: "",
+               key: objectID[1],
+               caption: "Slide 2",
+             },
+             {
+               src: image[2],
+               altText: "slide3",
+               captionText: "Hello",
+               header: "",
+               key: objectID[2],
+               caption: "Slide 3",
+               
+             },
+           ];
+         
+      const next = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+      setActiveIndex(nextIndex);
+    }
+  
+    const previous = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+      setActiveIndex(nextIndex);
+    }
+  
+    const goToIndex = (newIndex) => {
+      if (animating) return;
+      setActiveIndex(newIndex);
+    }
+  const slides = items.map((item) => {
+    return (
+      
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.key}
+      >
+      <Link to={`news/${item.key}`}>
+        <img src={item.src} alt={item.altText} />
+        </Link>
+        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+      </CarouselItem>
+      
+    );
+  });
+
+  return (
+    <Wrapper
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+    >
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      {slides}
+      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+    </Wrapper>
   );
-}
+}}
+</AppConsumer>
+</React.Fragment>
+  )}
 
-const Wrapper = styled.div`
+const Wrapper = styled(Carousel)`
   .carousel-inner {
     z-index: 0;
   }
@@ -162,4 +213,4 @@ const Wrapper = styled.div`
       overflow: hidden;
     }
   }
-`;
+ `;

@@ -138,10 +138,11 @@ export default class PostList extends Component {
                 } else {
                   return (
                     <React.Fragment>
+                    
                       {AllPost.AllPost.map((item) => (
                         <Post key={item.id} post={item} />
                       ))}
-
+                 
                       <PaginationWrapper>
                         <Pagination
                           itemClass="page-item"
