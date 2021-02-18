@@ -384,7 +384,7 @@ const RealEstateWrapper = styled(Linker)`
   }
 `;
 const LeftEstate = styled.div`
-  width: 50%;
+  width: 52%;
   height: 260px;
   background: url(${SmallRightEstate});
   background-size: cover;
@@ -399,7 +399,7 @@ const LeftEstate = styled.div`
   }
 `;
 const RightEstate = styled(Linker)`
-  width: 50%;
+  width: 48%;
   background-color: var(--mainYellow);
   height: 260px;
   padding: 20px;
@@ -410,6 +410,7 @@ const RightEstate = styled(Linker)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color:black;
   @media (max-width: 768px) {
     height: 220px;
     font-size: 24px;
@@ -427,6 +428,7 @@ const RightEstate = styled(Linker)`
   }
   :hover{
     text-decoration:none;
+    color:black;
   }
 `;
 const SmallLogoRight = styled.div`
@@ -452,7 +454,7 @@ const SmallFinancialWrapper = styled.div`
   display: flex;
 `;
 const RightFinance = styled.div`
-  width: 50%;
+  width: 48%;
   height: 260px;
   background: url(${SmallFinance});
   background-size: cover;
@@ -470,10 +472,11 @@ const RightFinance = styled.div`
   }
 `;
 const LeftFinance = styled(Linker)`
-  width: 50%;
+  width: 52%;
   ${"" /* height:260px; */}
   background-color: var(--mainYellow);
   padding: 20px;
+  
   font-size: 32px;
   line-height: 38px;
   font-weight: bold;
@@ -482,7 +485,7 @@ const LeftFinance = styled(Linker)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  color:black;
   @media (max-width: 768px) {
     height: 220px;
     font-size: 24px;
@@ -496,14 +499,20 @@ const LeftFinance = styled(Linker)`
     line-height: 23px;
     height: 160px;
     padding-right: 0px;
+    font-weight:700;
+    
     h3 {
       font-size: 18px;
-      margin-bottom: 0px;
+      margin-bottom: 10px;
       line-height: 21px;
+      width:169px;
+      font-weight:700;
+      
     }
   }
   @media (max-width: 374.9px) {
     font-size: 16px;
+    font-weight:700;
   }
   :hover{
     text-decoration:none;
