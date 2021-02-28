@@ -280,7 +280,7 @@ const Right = styled.div`
   background-color: rgba(255, 255, 255, 0.75);
   padding: 10px 20px 20px 20px;
   width: 332px;
-  height: 288px;
+  // height: 288px;
   margin-left: auto;
   margin-right: 65px;
   @media (max-width: 991px) {
@@ -344,7 +344,7 @@ const AboutHead = styled.div`
   font-weight: bold;
   font-size: 48px;
   line-height: 56px;
-  height: 56px;
+  // height: 56px;
   margin-top: 7px;
   margin-bottom: 7px;
   @media (max-width: 426px) {
