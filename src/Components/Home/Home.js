@@ -119,7 +119,7 @@ export default function Home() {
             BUILDING BUSINESS FOR A BETTER SOCIETY
           </BetterServiceHeading>
           <BetterServiceSubText>
-            私はほか今にその安心人という事のために弱らますた。
+          のどまる社会実現に向けた私達の日々の活動
           </BetterServiceSubText>
           <Divider />
           <NewsHeading>Company News</NewsHeading>
@@ -186,7 +186,7 @@ const LogoContainer = styled.div`
 `;
 const LogoSubText = styled.div`
   width: 583px;
-  height: 69px;
+  // height: 69px;
   font-weight: normal;
   font-size: 36px;
   line-height: 49px;
@@ -200,7 +200,7 @@ const LogoSubText = styled.div`
   }
   @media (max-width: 576px) {
     width: 220px;
-    height: 20px;
+    // height: 20px;
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 177px;
@@ -283,7 +283,7 @@ const Service = styled.div`
 `;
 const ServiceHeading = styled.div`
   width: 465px;
-  height: 54px;
+  // height: 54px;
   font-size: 48px;
   line-height: 56px;
   font-weight: bold;
@@ -304,7 +304,7 @@ const NodomaruHeading = styled.div`
   line-height: 56px;
   color: #ffffff;
   font-weight: 400;
-  height: 54px;
+  // height: 54px;
   @media (max-width: 576px) {
     width: 260px;
     font-size: 36px;
@@ -610,6 +610,7 @@ const BetterServiceSubText = styled.div`
   font-size: 24px;
   line-height: 33px;
   font-weight: 400;
+  text-align:center;
   @media (max-width: 768px) {
     width: 80%;
     text-align: center;

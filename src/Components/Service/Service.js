@@ -366,7 +366,7 @@ const RightEstateHead = styled.div`
   font-weight: 300;
   font-size: 36px;
   line-height: 49px;
-  height: 59px;
+  // height: 59px;
   @media (max-width: 991px) {
     font-size: 28px;
   }
