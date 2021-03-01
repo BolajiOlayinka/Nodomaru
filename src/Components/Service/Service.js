@@ -23,14 +23,14 @@ import animateScrollTo from "animated-scroll-to";
 export default function Service() {
   
   useEffect(() => {
+    const {hash} = window.location;
+    console.log(hash);
+    if (hash) {
+      animateScrollTo(document.querySelector(hash.replace("#", ".")));
+      return;
+    }
     animateScrollTo(0);
-  },[]);
-  const ScrollToSectionOne = () => {
-    animateScrollTo(document.querySelector(".sectionOne"));
-  };
-  const ScrollToSectionTwo = () => {
-    animateScrollTo(document.querySelector(".sectionTwo"));
-  };
+  });
   const ScrollToContact = () => {
     animateScrollTo(document.querySelector(".contactform"));
   };
@@ -53,8 +53,8 @@ export default function Service() {
               <img src={WhiteLogo} alt="Nodomaru Logo" />
               <div>サービス案内</div>
               <SectionWrapper id="sectionOne" className="sectionOne" >
-              <Section to="/service/#sectionOne" onClick={ScrollToSectionOne()}>不動産</Section>
-              <Section to="/service/#sectionTwo" onClick={ScrollToSectionTwo()}>FP コンサルティング</Section>
+              <Section to="/service/#sectionOne">不動産</Section>
+              <Section to="/service/#sectionTwo">FP コンサルティング</Section>
               </SectionWrapper>
             </div>
           </BannerContent>
