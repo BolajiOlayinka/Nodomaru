@@ -8,6 +8,7 @@ import WhiteLogo from "../../assets/LogoWhite.png";
 import PalmTree from "../../assets/PalmTree.png";
 import RealEstate from "../../assets/image-1.jpg";
 import FinancialPlan from "../../assets/image-2.jpg";
+import CareerConsulting from "../../assets/image-5.jpg";
 import BeachImage from "../../assets/banner-2.png";
 import SmallRightEstate from "../../assets/image-4.jpg";
 import SmallFinance from "../../assets/image-3.jpg";
@@ -79,7 +80,17 @@ export default function Home() {
               </RightDivider>
             </RealEstateDivider>
           </RealEstateWrapper>
-          <FinancialPlanWrapper to="/service/#sectionTwo" onClick={ScrollToSectionTwo}>
+          <CareerPlanWrapper to="/service/#sectionTwo" onClick={ScrollToSectionTwo}>
+            <CareerPlanDivider>
+              <LeftDivider>
+                <img src={LogoWhite} alt="Nodomaru Logo" />
+              </LeftDivider>
+              <RightDivider>
+                Financial Planning & Consulting <br/> FP コンサルティング
+              </RightDivider>
+            </CareerPlanDivider>
+          </CareerPlanWrapper>
+          <FinancialPlanWrapper to="/service/#sectionThree" onClick={ScrollToSectionTwo}>
             <FinancialPlanDivider>
               <LeftDivider>
                 <img src={LogoWhite} alt="Nodomaru Logo" />
@@ -101,7 +112,27 @@ export default function Home() {
               </SmallLogoRight>
             </RightEstate>
           </SmallEstateWrapper>
-          <SmallFinancialWrapper>
+          <SmallEstateWrapper>
+            <LeftEstate></LeftEstate>
+            <RightEstate to="/service/#sectionTwo" onClick={ScrollToSectionOne}>
+              Real Estate <br />
+              不動産
+              <SmallLogoRight>
+                <img src={LogoWhite} alt="Nodomaru Logo Icon" />
+              </SmallLogoRight>
+            </RightEstate>
+          </SmallEstateWrapper>
+          <SmallEstateWrapper>
+            <LeftEstate></LeftEstate>
+            <RightEstate to="/service/#sectionThree" onClick={ScrollToSectionOne}>
+              Real Estate <br />
+              不動産
+              <SmallLogoRight>
+                <img src={LogoWhite} alt="Nodomaru Logo Icon" />
+              </SmallLogoRight>
+            </RightEstate>
+          </SmallEstateWrapper>
+          {/* <SmallFinancialWrapper>
             <LeftFinance to="/service/#sectionTwo" onClick={ScrollToSectionTwo}>
               Financial Planning & Consulting
               <h3>コンサルティング</h3>
@@ -110,7 +141,7 @@ export default function Home() {
               </SmallLogoLeft>
             </LeftFinance>
             <RightFinance></RightFinance>
-          </SmallFinancialWrapper>
+          </SmallFinancialWrapper> */}
         </SmallServiceTypes>
       </Container>
       <HomeNews>
@@ -211,7 +242,8 @@ const LogoButton = styled.a`
   height: 30px;
   padding: 9px 25px 9px 25px;
   background-color: var(--mainYellow);
-  color: white;
+  color: black;
+  font-size:18px;
   text-decoration: none;
   position: relative;
   z-index: 1;
@@ -348,11 +380,11 @@ const ServiceBody = styled.div`
 const ServiceTypes = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 1178px;
   @media (min-width:1200px){
-width:1200px;
+width: 1178px;
 margin:auto;
-justify-content:space-around;
+justify-content:space-between;
 }
 `
 ;
@@ -365,16 +397,11 @@ const SmallServiceTypes = styled.div`
 const RealEstateWrapper = styled(Linker)`
   background: url(${RealEstate});
   height: 430px;
-  width: 50%;
+  width: 382px;
   background-size: cover;
-  border: 10px solid white;
-  border-top-width: 0px !important;
-  border-right-width: 0px !important;
   padding-top: 312px;
   @media(min-width:1200px){
-    border: 0px !important;
-    border-bottom-width: 11px solid white;
-    width:582px;
+    width: 382px;
   }
   @media (max-width: 991px) {
     display: none;
@@ -439,92 +466,91 @@ const SmallLogoRight = styled.div`
     height: 35px;
   }
 `;
-const SmallLogoLeft = styled.div`
-  text-align: left;
-  position: relative;
-  img {
-    width: 35px;
-    height: 35px;
-  }
-`;
+// const SmallLogoLeft = styled.div`
+//   text-align: left;
+//   position: relative;
+//   img {
+//     width: 35px;
+//     height: 35px;
+//   }
+// `;
 const SmallEstateWrapper = styled.div`
   display: flex;
 `;
-const SmallFinancialWrapper = styled.div`
-  display: flex;
-`;
-const RightFinance = styled.div`
-  width: 48%;
-  height: 260px;
-  background: url(${SmallFinance});
-  background-size: cover;
-  border-right: 11px solid white;
-  border-top: 11px solid white;
-  color:white;
-  @media (max-width: 768px) {
-    height: 220px;
-    border-top: 11px solid white;
-    border-right: 0px solid white;
-    border-left: 0px solid white;
-  }
-  @media (max-width: 576px) {
-    height: 160px;
-  }
-`;
-const LeftFinance = styled(Linker)`
-  width: 52%;
-  ${"" /* height:260px; */}
-  background-color: var(--mainYellow);
-  padding: 20px;
+// const SmallFinancialWrapper = styled.div`
+//   display: flex;
+// `;
+// const RightFinance = styled.div`
+//   width: 48%;
+//   height: 260px;
+//   background: url(${SmallFinance});
+//   background-size: cover;
+//   border-right: 11px solid white;
+//   border-top: 11px solid white;
+//   color:white;
+//   @media (max-width: 768px) {
+//     height: 220px;
+//     border-top: 11px solid white;
+//     border-right: 0px solid white;
+//     border-left: 0px solid white;
+//   }
+//   @media (max-width: 576px) {
+//     height: 160px;
+//   }
+// `;
+// const LeftFinance = styled(Linker)`
+//   width: 52%;
+//   background-color: var(--mainYellow);
+//   padding: 20px;
   
-  font-size: 32px;
-  line-height: 38px;
-  font-weight: bold;
-  border-left: 11px solid white;
-  border-top: 11px solid white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color:black;
-  @media (max-width: 768px) {
-    height: 220px;
-    font-size: 24px;
-    line-height: 28px;
-    border-top: 11px solid white;
-    border-right: 0px solid white;
-    border-left: 0px solid white;
-  }
-  @media (max-width: 576px) {
-    font-size: 20px;
-    line-height: 23px;
-    height: 160px;
-    padding-right: 0px;
-    font-weight:700;
+//   font-size: 32px;
+//   line-height: 38px;
+//   font-weight: bold;
+//   border-left: 11px solid white;
+//   border-top: 11px solid white;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   color:black;
+//   @media (max-width: 768px) {
+//     height: 220px;
+//     font-size: 24px;
+//     line-height: 28px;
+//     border-top: 11px solid white;
+//     border-right: 0px solid white;
+//     border-left: 0px solid white;
+//   }
+//   @media (max-width: 576px) {
+//     font-size: 20px;
+//     line-height: 23px;
+//     height: 160px;
+//     padding-right: 0px;
+//     font-weight:700;
     
-    h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      line-height: 21px;
-      width:169px;
-      font-weight:700;
+//     h3 {
+//       font-size: 18px;
+//       margin-bottom: 10px;
+//       line-height: 21px;
+//       width:169px;
+//       font-weight:700;
       
-    }
-  }
-  @media (max-width: 374.9px) {
-    font-size: 16px;
-    font-weight:700;
-  }
-  :hover{
-    text-decoration:none;
-  }
-`;
+//     }
+//   }
+//   @media (max-width: 374.9px) {
+//     font-size: 16px;
+//     font-weight:700;
+//   }
+//   :hover{
+//     text-decoration:none;
+//   }
+// `;
 
 const RealEstateDivider = styled.div`
   background-color: var(--mainYellow);
   display: flex;
   align-items: center;
   height: 78px;
-  width: 385px;
+  width: 100%;
   padding: 18px 15px 18px 15px;
   color:black;
 
@@ -532,7 +558,6 @@ const RealEstateDivider = styled.div`
 `;
 const LeftDivider = styled.div`
   padding-right: 16px;
-  ${'' /* padding-left: 15px; */}
   img {
     width: 35px;
   }
@@ -551,14 +576,10 @@ const FinancialPlanWrapper = styled(Linker)`
   background: url(${FinancialPlan});
   background-size: cover;
   height: 430px;
-  width: 50%;
-  border: 11px solid white;
-  border-top-width: 0px !important;
+  width: 382px;
   padding-top: 312px;
   @media(min-width:1200px){
-    border: 0px !important;
-    border-bottom-width: 11px solid white;
-    width:582px;
+    width:382px;
   }
   @media (max-width: 991px) {
     display: none;
@@ -572,7 +593,38 @@ const FinancialPlanDivider = styled.div`
   background-color: var(--mainYellow);
   display: flex;
   height: 78px;
-  width: 385px;
+  width: 100%;
+  padding: 18px 15px 18px 15px;
+  color:black;
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 100%;
+  }
+  :hover{
+    text-decoration:none;
+  }
+`;
+const CareerPlanWrapper = styled(Linker)`
+  background: url(${CareerConsulting});
+  background-size: cover;
+  height: 430px;
+  width: 382px;
+  padding-top: 312px;
+  @media(min-width:1200px){
+    width:382px;
+  }
+  @media (max-width: 991px) {
+    display: none;
+  }
+  :hover{
+    text-decoration:none;
+  }
+`;
+
+const CareerPlanDivider = styled.div`
+  background-color: var(--mainYellow);
+  display: flex;
+  height: 78px;
+  width: 100%;
   padding: 18px 15px 18px 15px;
   color:black;
   @media (min-width: 768px) and (max-width: 991px) {
