@@ -567,17 +567,42 @@ const RightConsult = styled(Linker)`
   }
   h4{
     font-weight: bold;
-font-size: 20px;
-line-height: 23px;
-margin-bottom:0px;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom:0px;
+    @media(min-width:768px){
+      font-size:45px;
+      line-height:54px;
+    }
+    @media(min-width:576px){
+      width:131px;
+      font-size:35px;
+      line-height:45px;
+    }
+    @media(max-width:576px){
+      width:131px;
+      font-size:20px;
+      line-height:23px;
+    }
   }
   h5 {
     font-weight: bold;
-font-size: 12px;
-line-height: 14px;
-   
+    font-size:24px;
+    line-height:31px;
+    @media(min-width:768px){
+      font-size:32px;
+      line-height:40px;
+    }
+    @media(max-width:767.9px){
+      font-size:23px;
+    line-height:31px;
+    }
+    @media(max-width:576px){
+      width:131px;
+      font-size:12px;
+      line-height:14px;
+    }
   }
-  
  
 `;
 const RightFinance = styled(Linker)`
@@ -615,15 +640,43 @@ const RightFinance = styled(Linker)`
   }
   h4{
     font-weight: bold;
-font-size: 14px;
-line-height: 16px;
-margin-bottom:0px;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom:0px;
+    @media(min-width:768px){
+      font-size:36px;
+      line-height:60px;
+    }
+    @media(max-width:767.9px){
+      font-size:24px;
+      line-height:31px;
+    }
+    @media(max-width:575.9px){
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom:0px;
+      width:130px;
+    }
   }
   h5 {
     font-weight: bold;
-    font-size: 18px;
-    line-height: 21px;
-   
+    font-size:24px;
+    line-height:31px;
+    @media(min-width:768px){
+      font-size:45px;
+      line-height:54px;
+    }
+    @media(min-width:576px){
+      font-size:28px;
+      line-height:36px;
+    }
+    @media(max-width:575.9px){
+      width:163px;
+      font-size: 18px;
+      line-height: 21px;
+      
+    }
   }
   
  

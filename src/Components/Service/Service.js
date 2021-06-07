@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
@@ -6,6 +6,7 @@ import BannerImage from "../../assets/banner-6.jpg";
 import SmallBannerImage from "../../assets/banner-6a.jpg";
 import BannerImage2 from "../../assets/banner-7.jpg";
 import BannerImage3 from "../../assets/banner-8.jpg";
+import BannerImage4 from "../../assets/banner-9.jpg";
 import WhiteLogo from "../../assets/LogoWhite.png";
 import Keys from "../../assets/keys.svg";
 import Percent from "../../assets/percent.svg";
@@ -13,28 +14,34 @@ import Growth from "../../assets/growth.svg";
 import Secure from "../../assets/secure.svg";
 import Yen from "../../assets/yen.svg";
 import Chart from "../../assets/chart.svg";
+import Find from "../../assets/find.svg";
+import Message from "../../assets/message.svg";
+import Share from "../../assets/share.svg";
 import { HashLink as Linker } from "react-router-hash-link";
 import blueicon from "../../assets/icon-blue.svg";
 import yellowicon from "../../assets/icon-yellow.svg";
+import blackicon from "../../assets/icon-black.svg";
 import Smalldisplay from "../../assets/banner-7c.jpg";
 import Smalldisplaytwo from "../../assets/banner-8a.jpg";
+import Smalldisplaythree from "../../assets/banner-9a.jpg";
 import animateScrollTo from "animated-scroll-to";
 
 export default function Service() {
-  
   useEffect(() => {
     animateScrollTo(0);
-  },[]);
+  }, []);
   const ScrollToSectionOne = () => {
     animateScrollTo(document.querySelector(".sectionOne"));
   };
   const ScrollToSectionTwo = () => {
     animateScrollTo(document.querySelector(".sectionTwo"));
   };
+  const ScrollToSectionThree = () => {
+    animateScrollTo(document.querySelector(".sectionThree"));
+  };
   const ScrollToContact = () => {
     animateScrollTo(document.querySelector(".contactform"));
   };
-
 
   useEffect(() => {
     Aos.init(
@@ -52,15 +59,31 @@ export default function Service() {
             <div>
               <img src={WhiteLogo} alt="Nodomaru Logo" />
               <div>サービス案内</div>
-              <SectionWrapper id="sectionOne" className="sectionOne" >
-              <Section to="/service/#sectionOne" onClick={ScrollToSectionOne()}>不動産</Section>
-              <Section to="/service/#sectionTwo" onClick={ScrollToSectionTwo()}>FP コンサルティング</Section>
+              <SectionWrapper id="sectionOne" className="sectionOne">
+                <Section
+                  to="/service/#sectionOne"
+                  onClick={ScrollToSectionOne()}
+                >
+                  不動産
+                </Section>
+                <Section
+                  to="/service/#sectionTwo"
+                  onClick={ScrollToSectionTwo()}
+                >
+                  転職コンサルティング
+                </Section>
+                <Section
+                  to="/service/#sectionThree"
+                  onClick={ScrollToSectionThree()}
+                >
+                  FP コンサルティング
+                </Section>
               </SectionWrapper>
             </div>
           </BannerContent>
         </Container>
       </Banner>
-      <Container >
+      <Container>
         <RealEstateWrapper>
           <LeftEstate>不動産</LeftEstate>
           <SmallDisplay>
@@ -78,13 +101,13 @@ export default function Service() {
           </RightEstate>
         </RealEstateWrapper>
       </Container>
-      
-        <Container>
+
+      <Container>
         <BannerConnector>
           <Connector data-aos="slide-up"></Connector>
-          </BannerConnector>
-        </Container>
-      
+        </BannerConnector>
+      </Container>
+
       <EstateServicePoint>
         <Container>
           <PreHeading>REAL ESTATE</PreHeading>
@@ -96,7 +119,7 @@ export default function Service() {
           <img src={Keys} alt="Service Icon" />
           <UseButton>賃貸仲介「いえどき」</UseButton>
           <UseCaseBody>
-          「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
+            「いえどき」は、都内に４店舗を構えるブランドマンション、シリーズマンションを主に扱う賃貸仲介ブランドです。
           </UseCaseBody>
         </UseCase>
 
@@ -104,8 +127,7 @@ export default function Service() {
           <img src={Percent} alt="Service Icon" />
           <UseButton>居住用売買</UseButton>
           <UseCaseBody>
-          お客様の購入、売却、リフォームの希望に
-お応えします。
+            お客様の購入、売却、リフォームの希望に お応えします。
           </UseCaseBody>
         </UseCase>
 
@@ -114,13 +136,14 @@ export default function Service() {
           <UseButton>賃貸仲介「いえどき」</UseButton>
           <UseCaseBody>
             「購入、売却、運用
-攻めるときも守るときも、最適なアドバイスをいたします。
-
+            攻めるときも守るときも、最適なアドバイスをいたします。
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
-      <ButtonContainer >
-        <ServiceButton to="/#contactform" onClick={ScrollToContact}>お問い合わせ</ServiceButton>
+      <ButtonContainer>
+        <ServiceButton to="/#contactform" onClick={ScrollToContact}>
+          お問い合わせ
+        </ServiceButton>
       </ButtonContainer>
       <LineWrapper id="sectionTwo" className="sectionTwo">
         <Line />
@@ -128,10 +151,83 @@ export default function Service() {
         <Line />
       </LineWrapper>
 
+      {/* Consult Section */}
+      <Container>
+        <FinanceWrapper>
+          <LeftConsult>
+          転職 <br />
+          コンサルティング
+          </LeftConsult>
+          <SmallDisplay>
+            <img src={Smalldisplaythree} alt="Nodomaru display" />
+          </SmallDisplay>
+          <RightConsult>
+            <RightFinanceHead>あなたの人生に寄り添った仕事選びを</RightFinanceHead>
+            <RightFinanceBody>
+            多様性の時代の中、誰もが「のどまる人生」を実現する社会を目指し、一人一人の多様な生き方、働き方をサポートします。一人のコンサルタントが、企業への人材ニーズの
+ヒアリングおよび転職希望者に対する転職サポートを担当するため、ミスマッチを
+防ぎ、あなたの人生に寄り添ったコンサルティングが可能になります。
+            </RightFinanceBody>
+          </RightConsult>
+        </FinanceWrapper>
+      </Container>
+      <Container>
+        <ConsultBanner>
+          <ConsultConnector data-aos="slide-up"></ConsultConnector>
+        </ConsultBanner>
+      </Container>
+
+      <FinanceServicePoint>
+        <Container>
+          <FinancePreHeading>CAREER CONSULTATION</FinancePreHeading>
+          <FinanceHeading>OUR KEY SERVICE POINTS</FinanceHeading>
+        </Container>
+      </FinanceServicePoint>
+      <ServiceUse>
+        <UseCase>
+          <img src={Find} alt="Service Icon" />
+          <ConsultUseButton>リクルーティングアドバイザー</ConsultUseButton>
+          <UseCaseBody>
+          企業様ごとの採用課題に対して、ニーズに合わせた人材をご紹介致します。
+
+          </UseCaseBody>
+        </UseCase>
+
+        <UseCase>
+          <img src={Message} alt="Service Icon" />
+          <ConsultUseButton>キャリアアドバイザー</ConsultUseButton>
+          <UseCaseBody>
+            老後資金、教育資金など「お金」にまつわる様々なお悩みについて、ファイナンシャルプランナーがご相談に応じます。
+          </UseCaseBody>
+        </UseCase>
+
+        <UseCase>
+          <img src={Share} alt="Service Icon" />
+          <ConsultUseButton>マッチング</ConsultUseButton>
+          <UseCaseBody>
+          求人企業と求職者との最適なマッチングを実現させ、社会全体の雇用問題を解決します。
+          </UseCaseBody>
+        </UseCase>
+      </ServiceUse>
+      <ButtonContainer>
+        <ConsultButton to="/#contactform" onClick={ScrollToContact}>
+          お問い合わせ
+        </ConsultButton>
+      </ButtonContainer>
+      <FinanceLineWrapper>
+        <ConsultLine />
+        <img src={blackicon} alt="Nodomaru Icon" />
+        <ConsultLine />
+      </FinanceLineWrapper>
+
+
       {/* Finance Section */}
       <Container>
         <FinanceWrapper>
-          <LeftFinance>FP <br/>コンサルティング</LeftFinance>
+          <LeftFinance>
+            FP <br />
+            コンサルティング
+          </LeftFinance>
           <SmallDisplay>
             <img src={Smalldisplaytwo} alt="Nodomaru display" />
           </SmallDisplay>
@@ -146,13 +242,12 @@ export default function Service() {
           </RightFinance>
         </FinanceWrapper>
       </Container>
-     
-        <Container>
+      <Container>
         <FinanceBanner>
           <FinanceConnector data-aos="slide-up"></FinanceConnector>
-          </FinanceBanner>
-        </Container>
-      
+        </FinanceBanner>
+      </Container>
+
       <FinanceServicePoint>
         <Container>
           <FinancePreHeading>FINANCIAL PLANNING & CONSULTING</FinancePreHeading>
@@ -164,7 +259,7 @@ export default function Service() {
           <img src={Secure} alt="Service Icon" />
           <FinancialUseButton>保険見直し</FinancialUseButton>
           <UseCaseBody>
-          本当に必要な保険は人によって違います。ファイナンシャルプランナーがフラットな立場から、最適なアドバイスをいたします。
+            本当に必要な保険は人によって違います。ファイナンシャルプランナーがフラットな立場から、最適なアドバイスをいたします。
           </UseCaseBody>
         </UseCase>
 
@@ -172,7 +267,7 @@ export default function Service() {
           <img src={Yen} alt="Service Icon" />
           <FinancialUseButton>資産運用</FinancialUseButton>
           <UseCaseBody>
-          老後資金、教育資金など「お金」にまつわる様々なお悩みについて、ファイナンシャルプランナーがご相談に応じます。
+            老後資金、教育資金など「お金」にまつわる様々なお悩みについて、ファイナンシャルプランナーがご相談に応じます。
           </UseCaseBody>
         </UseCase>
 
@@ -180,12 +275,14 @@ export default function Service() {
           <img src={Chart} alt="Service Icon" />
           <FinancialUseButton>各種セミナー</FinancialUseButton>
           <UseCaseBody>
-          保険や不動産のセミナーだけでなく、経営者や営業職の方向けに売り上げを上げるセミナーも開催しております。
+            保険や不動産のセミナーだけでなく、経営者や営業職の方向けに売り上げを上げるセミナーも開催しております。
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <FinanceButton to="/#contactform" onClick={ScrollToContact}>お問い合わせ</FinanceButton>
+        <FinanceButton to="/#contactform" onClick={ScrollToContact}>
+          お問い合わせ
+        </FinanceButton>
       </ButtonContainer>
       <FinanceLineWrapper>
         <FinanceLine />
@@ -210,34 +307,32 @@ const Banner = styled.div`
   background-repeat: no-repeat;
   height: 270px;
   display: flex;
-  border-bottom:5px solid var(--lightBlue);
+  border-bottom: 5px solid var(--lightBlue);
 
-  @media(min-width:2000px){
-    height:400px;
+  @media (min-width: 2000px) {
+    height: 400px;
   }
   @media (max-width: 576px) {
     background: url(${SmallBannerImage});
   }
 `;
-const SectionWrapper = styled.div `
-display:flex;
-width:396px;
-justify-content:space-between;
-margin:auto;
-margin-top:12px;
-@media(max-width:426px){
-    width:293px;
-    margin:auto;
-     margin-top:14px;
-    
-   }
-
-`
+const SectionWrapper = styled.div`
+  display: flex;
+  width: 596px;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 12px;
+  @media (max-width: 768px) {
+    width: 310px;
+    margin: auto;
+    margin-top: 14px;
+  }
+`;
 const Section = styled(Linker)`
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 1px solid white;
   width: 182px;
   height: 37px;
@@ -251,14 +346,14 @@ const Section = styled(Linker)`
     color: white !important;
     text-decoration: none;
   }
-  @media(max-width:426px){
-
-   :first-child{
-     width:100px;
-   }
-    
+  @media (max-width: 768px) {
+    font-size:10px;
+    width:119px;
+    :first-child {
+      width: 50px;
+    }
   }
-`
+`;
 const BannerContent = styled.div`
   display: flex;
   align-items: center;
@@ -357,7 +452,7 @@ const RightEstate = styled.div`
     padding-left: 25px;
   }
   @media (max-width: 576px) {
-    width:100%;
+    width: 100%;
     padding: 0px;
     border: transparent;
   }
@@ -404,14 +499,13 @@ const BannerConnector = styled.div`
   background: url(${BannerImage2});
   background-size: cover;
   height: 400px;
- 
+
   @media (max-width: 768px) {
     height: 300px;
   }
   @media (max-width: 576px) {
     display: none;
   }
-
 `;
 const Connector = styled.div`
   background-color: #3cc5d1;
@@ -420,7 +514,6 @@ const Connector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
-  
 
   @media (max-width: 768px) {
     height: 210px;
@@ -440,23 +533,23 @@ const PreHeading = styled.div`
   font-size: 24px;
   line-height: 28px;
   letter-spacing: 0.4em;
-  
-  ${'' /* height: 46px; */}
+
+  ${"" /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.3em;
-    width:80%;
-    margin:auto;
-    padding-bottom:11px;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 11px;
   }
   @media (max-width: 426px) {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0.4em;
-    padding-bottom:11px;
-    width:100%;
-    ${'' /* height: 46px; */}
+    padding-bottom: 11px;
+    width: 100%;
+    ${"" /* height: 46px; */}
   }
 `;
 const Heading = styled.div`
@@ -464,27 +557,26 @@ const Heading = styled.div`
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.4em;
-  
-  padding-top:11px;
-  ${'' /* height: 46px; */}
+
+  padding-top: 11px;
+  ${"" /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 30px;
     line-height: 32px;
     letter-spacing: 0.3em;
-    width:80%;
-    margin:auto;
+    width: 80%;
+    margin: auto;
   }
   @media (max-width: 426px) {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.425em;
-    ${'' /* height: 46px; */}
+    ${"" /* height: 46px; */}
     margin-bottom: 20px;
-    width:100%;
+    width: 100%;
   }
 `;
 const ServiceUse = styled.div`
-  
   display: flex;
   width: 864px;
   margin-left: auto;
@@ -509,15 +601,15 @@ const UseCase = styled.div`
   img {
     width: 150px;
     margin-bottom: 40px;
-    margin-top:40px;
+    margin-top: 40px;
   }
   @media (max-width: 768px) {
     width: 400px;
     margin-bottom: 20px;
-    img{
-      width:100px;
+    img {
+      width: 100px;
       margin-bottom: 31px;
-    margin-top:31px;
+      margin-top: 31px;
     }
   }
   @media (max-width: 426px) {
@@ -526,20 +618,16 @@ const UseCase = styled.div`
     margin: auto;
 
     img {
-      width:100px; 
-     margin-bottom:31px;
-    margin-top:31px;
-    
+      width: 100px;
+      margin-bottom: 31px;
+      margin-top: 31px;
     }
-    :nth-child(1){
-      img{
-        margin-top:0px;
+    :nth-child(1) {
+      img {
+        margin-top: 0px;
       }
-      
     }
-   
   }
-  
 `;
 const UseButton = styled.div`
   width: 230px;
@@ -564,8 +652,8 @@ const UseCaseBody = styled.div`
   font-size: 18px;
   line-height: 21px;
   color: black;
-  @media(max-width:768px){
-  width:200px;
+  @media (max-width: 768px) {
+    width: 200px;
   }
 `;
 const ButtonContainer = styled.div`
@@ -668,11 +756,13 @@ const LeftFinance = styled.div`
     line-height: 32px;
   }
   @media (max-width: 576px) {
-    font-size: 55px;
-    line-height: 75px;
+    font-size: 35px;
+    font-weight:bold;
+    line-height: 48px;
     padding-top: 20px;
     padding-bottom: 20px;
-    text-align:center;
+    text-align: center;
+    width:330px;
   }
 `;
 const RightFinance = styled.div`
@@ -692,7 +782,7 @@ const RightFinance = styled.div`
   @media (max-width: 576px) {
     padding: 0px;
     border: transparent;
-    width:100%;
+    width: 100%;
   }
 `;
 const RightFinanceHead = styled.div`
@@ -715,7 +805,7 @@ const RightFinanceHead = styled.div`
     margin: auto;
     height: 100%;
     padding-top: 20px;
-    text-align:center;
+    text-align: center;
   }
 `;
 const RightFinanceBody = styled.div`
@@ -737,19 +827,21 @@ const FinanceBanner = styled.div`
   background: url(${BannerImage3});
   background-size: cover;
   height: 400px;
- 
+
   @media (max-width: 768px) {
     height: 300px;
   }
   @media (max-width: 576px) {
     display: none;
   }
-  ${'' /* @media(min-width:2000px){
+  ${
+    "" /* @media(min-width:2000px){
     height:600px;
   }
   @media(min-width:2500px){
     height:700px;
-  } */}
+  } */
+  }
 `;
 const FinanceConnector = styled.div`
   background-color: var(--mainYellow);
@@ -758,12 +850,7 @@ const FinanceConnector = styled.div`
   width: 20px;
   height: 311px;
   left: 117px;
-  ${'' /* @media(min-width:2500px){
-    margin-top:580px;
   }
-  @media(min-width:2000px){
-    margin-top:430px;
-  } */}
   @media (max-width: 768px) {
     height: 210px;
     left: 10%;
@@ -782,23 +869,23 @@ const FinancePreHeading = styled.div`
   font-size: 24px;
   line-height: 28px;
   letter-spacing: 0.4em;
-padding-bottom:11px;
+  padding-bottom: 11px;
 
-  ${'' /* height: 46px; */}
+  ${"" /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.3em;
-    padding-bottom:11px;
-    width:80%;
-margin:auto;
+    padding-bottom: 11px;
+    width: 80%;
+    margin: auto;
   }
   @media (max-width: 426px) {
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0.4em;
-    width:100%;
-    ${'' /* height: 96px; */}
+    width: 100%;
+    ${"" /* height: 96px; */}
   }
 `;
 const FinanceHeading = styled.div`
@@ -806,24 +893,23 @@ const FinanceHeading = styled.div`
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.4em;
-  
-  ${'' /* height: 46px; */}
+
+  ${"" /* height: 46px; */}
   @media (max-width: 768px) {
     font-size: 30px;
     line-height: 32px;
     letter-spacing: 0.3em;
-    width:80%;
-    margin:auto;
-    padding-top:11px;
+    width: 80%;
+    margin: auto;
+    padding-top: 11px;
   }
   @media (max-width: 426px) {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.425em;
-    ${'' /* height: 46px; */}
+    ${"" /* height: 46px; */}
     margin-bottom: 20px;
-    width:100%;
-    
+    width: 100%;
   }
 `;
 const FinanceButton = styled(Linker)`
@@ -876,6 +962,132 @@ const FinanceLineWrapper = styled.div`
 `;
 const FinanceLine = styled.hr`
   border: 1px solid var(--mainYellow);
+  width: 508px;
+  @media (max-width: 1200px) {
+    width: 400px;
+  }
+  @media (max-width: 991px) {
+    width: 300px;
+  }
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+  @media (max-width: 576px) {
+    width: 150px;
+  }
+  @media (max-width: 425px) {
+    width: 120px;
+  }
+`;
+const LeftConsult = styled.div`
+  padding-right: 45px;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 48px;
+  width: 190px;
+  @media (max-width: 1200px) {
+    padding-right: 35px;
+    font-size: 40px;
+    line-height: 60px;
+    width: 200px;
+  }
+  @media (max-width: 991px) {
+    width: 250px;
+  }
+  @media (max-width: 768px) {
+    padding-right: 25px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @media (max-width: 576px) {
+    font-size: 35px;
+line-height: 48px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width:350px;
+  }
+`;
+const RightConsult = styled.div`
+  border-left: 1px solid black;
+  padding-left: 45px;
+  width: 718px;
+  @media (max-width: 1200px) {
+    padding-left: 35px;
+  }
+  @media (max-width: 991px) {
+    width: 760px;
+  }
+  @media (max-width: 768px) {
+    width: 570px;
+    padding-left: 25px;
+  }
+  @media (max-width: 576px) {
+    padding: 0px;
+    border: transparent;
+    width: 100%;
+  }
+`;
+const ConsultConnector = styled.div`
+  background-color: black;
+  position: absolute;
+  margin-top: 173px;
+  width: 20px;
+  height: 311px;
+  left: 117px;
+  }
+  @media (max-width: 768px) {
+    height: 210px;
+    left: 10%;
+  }
+`;
+const ConsultBanner = styled.div`
+  background: url(${BannerImage4});
+  background-size: cover;
+  height: 400px;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+  @media (max-width: 576px) {
+    display: none;
+  }
+  ${
+    "" /* @media(min-width:2000px){
+    height:600px;
+  }
+  @media(min-width:2500px){
+    height:700px;
+  } */
+  }
+`;
+const ConsultUseButton = styled.div`
+  width: 230px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 31px;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    margin: auto;
+    margin-bottom: 31px;
+  }
+`;
+const ConsultButton = styled(Linker)`
+  width: 140px;
+  height: 45px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 12px 25px 12px 25px;
+`;
+const ConsultLine = styled.hr`
+  border: 1px solid black;
   width: 508px;
   @media (max-width: 1200px) {
     width: 400px;
