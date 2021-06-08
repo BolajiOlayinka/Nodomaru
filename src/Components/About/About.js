@@ -153,17 +153,18 @@ export default function About() {
         <SmallCompanyInfo>
           <AddressHeader>Company Information</AddressHeader>
           <div>名称 - 株式会社Nodomaru (英語表記 Nodomaru Co.,Ltd)</div>
-          <div>設立 - 2019年1月18日</div>
-          <div>代表者 - 向仲 駿</div>
-          <div>所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
-          <div>Tel : 03-6456-4538</div>
-          <div>FAX : 03-6456-4537</div>
-          <Desc>
-            事業内容
-            <li>不動産事業</li>
-            <li>FPコンサルティング業</li>
-            <li>人材紹介業</li>
-            <li>クラウドファンディング事業</li>
+            <div>設立 - 2019年1月18日</div>
+            <div>代表者：向仲 駿</div>
+            <div> 宅地建物取引業免許番号：東京都知事（1）第104535号 <br/>有料職業紹介事業許可番号：13-ユ-313195</div>
+            <div className="address-spacing">所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
+            <div>Tel : 03-6456-4538</div>
+            <div>FAX : 03-6456-4537</div>
+            <Desc>
+              事業内容
+              <li>不動産事業</li>
+              <li>人材紹介業</li>
+              <li>FPコンサルティング業</li>
+              <li>クラウドファンディング事業</li>
           </Desc>
         </SmallCompanyInfo>
         <MapSection>
@@ -189,15 +190,16 @@ export default function About() {
             <AddressHeader>Company Information</AddressHeader>
             <div>名称 - 株式会社Nodomaru (英語表記 Nodomaru Co.,Ltd)</div>
             <div>設立 - 2019年1月18日</div>
-            <div>代表者 - 向仲 駿</div>
-            <div>所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
+            <div>代表者：向仲 駿</div>
+            <div> 宅地建物取引業免許番号：東京都知事（1）第104535号 <br/> 有料職業紹介事業許可番号：13-ユ-313195</div>
+            <div className="address-spacing">所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
             <div>Tel : 03-6456-4538</div>
             <div>FAX : 03-6456-4537</div>
             <Desc>
               事業内容
               <li>不動産事業</li>
-              <li>FPコンサルティング業</li>
               <li>人材紹介業</li>
+              <li>FPコンサルティング業</li>
               <li>クラウドファンディング事業</li>
             </Desc>
           </AddressContainer>
@@ -525,6 +527,9 @@ const SmallCompanyInfo = styled.div`
   @media (max-width: 375px) {
     margin-top: 80px;
   }
+  .address-spacing{
+    padding-top:14px;
+  }
 `;
 const MapSection = styled.div`
   background-color: white;
@@ -583,6 +588,9 @@ const AddressContainer = styled.div`
   }
   @media (max-width: 991px) {
     display: none;
+  }
+  .address-spacing{
+    padding-top:14px;
   }
 `;
 const AddressHeader = styled.div`
