@@ -15,12 +15,12 @@ export default function Footer() {
                     <FooterLinks to="/">
                     お問い合わせ
                     </FooterLinks>
-                    {/* <FooterLinks to="/">
+                    <FooterLinks to="/">
                     個人情報保護方針
                     </FooterLinks>
                     <FooterLinks to ="/">
                     規約と条件
-                    </FooterLinks> */}
+                    </FooterLinks>
                 </FooterRight>
             </FooterContent>
             </Container>
