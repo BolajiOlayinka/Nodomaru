@@ -27,17 +27,17 @@ import Smalldisplaythree from "../../assets/banner-9a.jpg";
 import animateScrollTo from "animated-scroll-to";
 
 export default function Service() {
-  useEffect(() => {
-    animateScrollTo(0);
-  }, []);
+  // useEffect(() => {
+  //   animateScrollTo(0);
+  // }, []);
   const ScrollToSectionOne = () => {
-    animateScrollTo(document.querySelector(".sectionOne"));
+    animateScrollTo(document.querySelector(".SectionOne"));
   };
   const ScrollToSectionTwo = () => {
-    animateScrollTo(document.querySelector(".sectionTwo"));
+    animateScrollTo(document.querySelector(".SectionTwo"));
   };
   const ScrollToSectionThree = () => {
-    animateScrollTo(document.querySelector(".sectionThree"));
+    animateScrollTo(document.querySelector(".SectionThree"));
   };
   const ScrollToContact = () => {
     animateScrollTo(document.querySelector(".contactform"));
@@ -59,22 +59,30 @@ export default function Service() {
             <div>
               <img src={WhiteLogo} alt="Nodomaru Logo" />
               <div>サービス案内</div>
-              <SectionWrapper id="sectionOne" className="sectionOne">
+              <SectionWrapper id="realestate" >
                 <Section
-                  to="/service/#sectionOne"
-                  onClick={ScrollToSectionOne()}
+                  
+                  onClick={() => {
+                    ScrollToSectionOne();
+                  }}
+                  
                 >
                   不動産
                 </Section>
                 <Section
-                  to="/service/#sectionTwo"
-                  onClick={ScrollToSectionTwo()}
+                 
+                 onClick={() => {
+                  ScrollToSectionTwo();
+                }}
+                
                 >
                   転職コンサルティング
                 </Section>
-                <Section
-                  to="/service/#sectionThree"
-                  onClick={ScrollToSectionThree()}
+                <Section className="SectionOne"
+                  onClick={() => {
+                    ScrollToSectionThree();
+                  }}
+                  
                 >
                   FP コンサルティング
                 </Section>
@@ -145,7 +153,7 @@ export default function Service() {
           お問い合わせ
         </ServiceButton>
       </ButtonContainer>
-      <LineWrapper id="sectionTwo" className="sectionTwo">
+      <LineWrapper id="careerconsult" className="SectionTwo">
         <Line />
         <img src={blueicon} alt="Nodomaru Icon" />
         <Line />
@@ -155,18 +163,20 @@ export default function Service() {
       <Container>
         <FinanceWrapper>
           <LeftConsult>
-          転職 <br />
-          コンサルティング
+            転職 <br />
+            コンサルティング
           </LeftConsult>
           <SmallDisplay>
             <img src={Smalldisplaythree} alt="Nodomaru display" />
           </SmallDisplay>
           <RightConsult>
-            <RightFinanceHead>あなたの人生に寄り添った仕事選びを</RightFinanceHead>
+            <RightFinanceHead>
+              あなたの人生に寄り添った仕事選びを
+            </RightFinanceHead>
             <RightFinanceBody>
-            多様性の時代の中、誰もが「のどまる人生」を実現する社会を目指し、一人一人の多様な生き方、働き方をサポートします。一人のコンサルタントが、企業への人材ニーズの
-ヒアリングおよび転職希望者に対する転職サポートを担当するため、ミスマッチを
-防ぎ、あなたの人生に寄り添ったコンサルティングが可能になります。
+              多様性の時代の中、誰もが「のどまる人生」を実現する社会を目指し、一人一人の多様な生き方、働き方をサポートします。一人のコンサルタントが、企業への人材ニーズの
+              ヒアリングおよび転職希望者に対する転職サポートを担当するため、ミスマッチを
+              防ぎ、あなたの人生に寄り添ったコンサルティングが可能になります。
             </RightFinanceBody>
           </RightConsult>
         </FinanceWrapper>
@@ -188,8 +198,7 @@ export default function Service() {
           <img src={Find} alt="Service Icon" />
           <ConsultUseButton>リクルーティングアドバイザー</ConsultUseButton>
           <UseCaseBody>
-          企業様ごとの採用課題に対して、ニーズに合わせた人材をご紹介致します。
-
+            企業様ごとの採用課題に対して、ニーズに合わせた人材をご紹介致します。
           </UseCaseBody>
         </UseCase>
 
@@ -205,7 +214,7 @@ export default function Service() {
           <img src={Share} alt="Service Icon" />
           <ConsultUseButton>マッチング</ConsultUseButton>
           <UseCaseBody>
-          求人企業と求職者との最適なマッチングを実現させ、社会全体の雇用問題を解決します。
+            求人企業と求職者との最適なマッチングを実現させ、社会全体の雇用問題を解決します。
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
@@ -215,11 +224,10 @@ export default function Service() {
         </ConsultButton>
       </ButtonContainer>
       <FinanceLineWrapper>
-        <ConsultLine />
+        <ConsultLine id="financeplan" className="SectionThree" />
         <img src={blackicon} alt="Nodomaru Icon" />
         <ConsultLine />
       </FinanceLineWrapper>
-
 
       {/* Finance Section */}
       <Container>
@@ -347,8 +355,8 @@ const Section = styled(Linker)`
     text-decoration: none;
   }
   @media (max-width: 768px) {
-    font-size:10px;
-    width:119px;
+    font-size: 10px;
+    width: 119px;
     :first-child {
       width: 50px;
     }
@@ -757,12 +765,12 @@ const LeftFinance = styled.div`
   }
   @media (max-width: 576px) {
     font-size: 35px;
-    font-weight:bold;
+    font-weight: bold;
     line-height: 48px;
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    width:330px;
+    width: 330px;
   }
 `;
 const RightFinance = styled.div`
@@ -1001,11 +1009,11 @@ const LeftConsult = styled.div`
   }
   @media (max-width: 576px) {
     font-size: 35px;
-line-height: 48px;
+    line-height: 48px;
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    width:350px;
+    width: 350px;
   }
 `;
 const RightConsult = styled.div`

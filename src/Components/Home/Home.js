@@ -17,7 +17,7 @@ import LogoWhite from "../../assets/icon.svg";
 import Divider from "./Divider";
 import { Link } from "react-router-dom";
 import { HashLink as Linker } from "react-router-hash-link";
-import animateScrollTo from "animated-scroll-to";
+// import animateScrollTo from "animated-scroll-to";
 
 import Posts from "./HomePostList";
 import Form from "./ContactForm";
@@ -31,12 +31,17 @@ export default function Home() {
       []
     );
   });
-  const ScrollToSectionOne = () => {
-    animateScrollTo(document.querySelector(".sectionOne"));
-  };
-  const ScrollToSectionTwo = () => {
-    animateScrollTo(document.querySelector(".sectionTwo"));
-  };
+  // const ScrollToSectionOne = () => {
+  //   animateScrollTo(document.querySelector(".sectionOne"));
+  // };
+  // const ScrollToSectionTwo = () => {
+  //   animateScrollTo(document.querySelector(".sectionTwo"));
+  // };
+  // const ScrollToSectionThree = () => {
+  //   animateScrollTo(document.querySelector(".sectionThree"));
+  // };
+
+  
   return (
     <Wrapper>
       <Banner>
@@ -74,8 +79,8 @@ export default function Home() {
       <Container>
         <ServiceTypes>
           <RealEstateWrapper
-            to="/service/#sectionOne"
-            onClick={ScrollToSectionOne}
+            to="/service/#realestate"
+            // onClick={ScrollToSectionOne}
           >
             <RealEstateDivider>
               <LeftDivider>
@@ -88,8 +93,8 @@ export default function Home() {
             </RealEstateDivider>
           </RealEstateWrapper>
           <CareerPlanWrapper
-            to="/service/#sectionTwo"
-            onClick={ScrollToSectionTwo}
+            to="/service/#careerconsult"
+            // onClick={ScrollToSectionTwo}
           >
             <CareerPlanDivider>
               <LeftDivider>
@@ -101,8 +106,8 @@ export default function Home() {
             </CareerPlanDivider>
           </CareerPlanWrapper>
           <FinancialPlanWrapper
-            to="/service/#sectionThree"
-            onClick={ScrollToSectionTwo}
+            to="/service/#financeplan"
+            // onClick={ScrollToSectionThree}
           >
             <FinancialPlanDivider>
               <LeftDivider>
@@ -117,7 +122,7 @@ export default function Home() {
         <SmallServiceTypes>
           <SmallEstateWrapper>
             <LeftEstate></LeftEstate>
-            <RightEstate to="/service/#sectionOne" onClick={ScrollToSectionOne}>
+            <RightEstate to="/service/#realestate" >
               
                 <h4>Real Estate</h4>
                 <h5>不動産</h5>
@@ -129,7 +134,7 @@ export default function Home() {
           </SmallEstateWrapper>
           <SmallonsultingWrapper>
             <LeftConsult></LeftConsult>
-            <RightConsult to="/service/#sectionTwo" onClick={ScrollToSectionOne} className="consult-text">
+            <RightConsult to="/service/#careerconsult" className="consult-text">
               <h4>Career Consulting </h4>
                 <h5>転職コンサルティング</h5>
               <SmallLogoRight>
@@ -140,8 +145,8 @@ export default function Home() {
           <SmallFinancialWrapper>
             <LeftFinance></LeftFinance>
             <RightFinance
-              to="/service/#sectionThree"
-              onClick={ScrollToSectionOne}
+              to="/service/#financeplan"
+              
               >
                 <h4>Financial Planning & Consulting </h4>
                 <h5>コンサルティング</h5>
