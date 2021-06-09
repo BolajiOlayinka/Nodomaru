@@ -9,7 +9,7 @@ import AdoptBanner from "../../assets/banner-4.jpg";
 import GeneralBanner from "../../assets/banner-5.png";
 import YelloLogo from "../../assets/yellow-logo.svg";
 import MapImage from "../../assets/officemap.png";
-import { Link } from "react-router-dom";
+import { HashLink as Linker } from "react-router-hash-link";
 import Slider from "./Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +35,9 @@ export default function About() {
       []
     );
   });
-
+  const ScrollToContact = () => {
+    animateScrollTo(document.querySelector(".contactform"));
+  };
   return (
     <React.Fragment>
       <Banner>
@@ -145,7 +147,7 @@ export default function About() {
             <img src={AdoptBanner} alt="Offline Nodomaru Banner" />
           </Offline>
 
-          <AdoptButton to="/#contactform">現在採用中</AdoptButton>
+          <AdoptButton to="/#contactform" onClick={() => {ScrollToContact()}}>現在採用中</AdoptButton>
         </AdoptSection>
         <SectionThree>
           <Slider />
@@ -465,7 +467,7 @@ const GenBackground = styled.div`
     padding-top: 0px;
   }
 `;
-const AdoptButton = styled(Link)`
+const AdoptButton = styled(Linker)`
   position: absolute;
   bottom: 28px;
   width: 140px;

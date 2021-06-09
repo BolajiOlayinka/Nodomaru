@@ -120,7 +120,7 @@ color:white;
 padding-left:64px;
 :hover{
     text-decoration:none;
-    volor:var(--lightBlue);
+    color:black;
 }
 @media(max-width:991px){
     font-size:14px;

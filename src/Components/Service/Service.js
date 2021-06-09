@@ -149,7 +149,9 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <ServiceButton to="/#contactform">
+        <ServiceButton to="/#contactform" onClick={() => {
+                    ScrollToContact();
+                  }}>
           お問い合わせ
         </ServiceButton>
       </ButtonContainer>
