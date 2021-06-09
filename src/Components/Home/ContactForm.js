@@ -95,7 +95,7 @@ export default class ContactForm extends Component {
             <StyledInput type="text" placeholder="貴社名" name="name" id="bname" value={companyname} onChange={this.handleChange("companyname")}/> <br/>
             </StyledFormGroup>
 
-            <StyledFormGroup>
+            <StyledFormGroup x>
             <StyledLabel htmlFor="email">メールアドレス*</StyledLabel>
             <StyledInput type="email" placeholder="メールアドレス*" required name="email" id="email" value={email} onChange={this.handleChange("email")}/> <br/>
             </StyledFormGroup>

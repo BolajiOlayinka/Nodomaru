@@ -49,7 +49,7 @@ export default function Home() {
           <LogoContainer>
             <img src={WhiteLogo} alt="Nodomaru Logo" />
             <LogoSubText>事業を通じてのどまる社会を創る</LogoSubText>
-            <LogoButton href="/service" id="#trigger-up">
+            <LogoButton href="/about" id="#trigger-up">
               詳しく
             </LogoButton>
           </LogoContainer>
@@ -70,7 +70,7 @@ export default function Home() {
           <ServiceBody>
             「のどまる」とは古語で「のどかになる」という意味です。現代では様々な生き方が提示されており、多様性の時代を迎えています。
             そのような社会の中で、弊社は現代の「のどまる」を「
-            精神的な幸福と経済的な両立」と定義します。弊社は一人でも多
+            精神的幸福と経済的自立の両立」と定義します。弊社は一人でも多
             くのお客様の「のどまる人生」の実現に貢献致します。
           </ServiceBody>
         </ServiceContainer>
@@ -185,7 +185,7 @@ export default function Home() {
           </ReadMoreButton>
         </Container>
         <ContactUsSection>
-          <ContactHeading>お問い合わせ</ContactHeading>
+          <ContactHeading >お問い合わせ</ContactHeading>
           <ContactTel>Tel : 03-6456-4538</ContactTel>
           <ContactInfo>問い合わせメールアドレス：info@ndmr.co.jp</ContactInfo>
           <Form />
