@@ -336,7 +336,7 @@ const Service = styled.div`
   }
 `;
 const ServiceHeading = styled.div`
-  width: 465px;
+  // width: 465px;
   // height: 54px;
   font-size: 48px;
   line-height: 56px;
@@ -346,7 +346,7 @@ const ServiceHeading = styled.div`
     font-size: 36px;
   }
   @media (max-width: 576px) {
-    width: 192px;
+    // width: 192px;
     height: 20px;
     font-size: 24px;
     line-height: 29px;

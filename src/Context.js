@@ -27,7 +27,7 @@ const AppProvider = ({ children }) => {
       })
       .then((res) => {
         setLoadingPosts(false);
-        console.log(res);
+        // console.log(res);
         setAllPost({ AllPost: res.data });
         setNumberofpages(res.headers["x-wp-totalpages"]);
         setNumberofPosts(res.headers["x-wp-total"]);
