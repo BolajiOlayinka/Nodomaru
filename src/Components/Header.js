@@ -27,7 +27,7 @@ export default function Header() {
 
   // const [SmallBackground, setSmallBackground]=useState("black")
   const ScrollToTop = () => {
-    animateScrollTo(0,0);
+    animateScrollTo(0);
   };
   
   const ScrollToContact = () => {
