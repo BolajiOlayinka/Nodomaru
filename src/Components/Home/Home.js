@@ -156,16 +156,6 @@ export default function Home() {
               </SmallLogoRight>
             </RightFinance>
           </SmallFinancialWrapper>
-          {/* <SmallFinancialWrapper>
-            <LeftFinance to="/service/#sectionTwo" onClick={ScrollToSectionTwo}>
-              Financial Planning & Consulting
-              <h3>コンサルティング</h3>
-              <SmallLogoLeft>
-                <img src={LogoWhite} alt="Nodomaru Logo Icon" />
-              </SmallLogoLeft>
-            </LeftFinance>
-            <RightFinance></RightFinance>
-          </SmallFinancialWrapper> */}
         </SmallServiceTypes>
       </Container>
       <HomeNews>
@@ -694,14 +684,7 @@ const SmallLogoRight = styled.div`
     height: 35px;
   }
 `;
-// const SmallLogoLeft = styled.div`
-//   text-align: left;
-//   position: relative;
-//   img {
-//     width: 35px;
-//     height: 35px;
-//   }
-// `;
+
 const SmallEstateWrapper = styled.div`
   display: flex;
 `;
@@ -713,74 +696,6 @@ const SmallFinancialWrapper = styled.div`
   display: flex;
   margin-top: 10px;
 `;
-
-// const SmallFinancialWrapper = styled.div`
-//   display: flex;
-// `;
-// const RightFinance = styled.div`
-//   width: 48%;
-//   height: 260px;
-//   background: url(${SmallFinance});
-//   background-size: cover;
-//   border-right: 11px solid white;
-//   border-top: 11px solid white;
-//   color:white;
-//   @media (max-width: 768px) {
-//     height: 220px;
-//     border-top: 11px solid white;
-//     border-right: 0px solid white;
-//     border-left: 0px solid white;
-//   }
-//   @media (max-width: 576px) {
-//     height: 160px;
-//   }
-// `;
-// const LeftFinance = styled(Linker)`
-//   width: 52%;
-//   background-color: var(--mainYellow);
-//   padding: 20px;
-
-//   font-size: 32px;
-//   line-height: 38px;
-//   font-weight: bold;
-//   border-left: 11px solid white;
-//   border-top: 11px solid white;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   color:black;
-//   @media (max-width: 768px) {
-//     height: 220px;
-//     font-size: 24px;
-//     line-height: 28px;
-//     border-top: 11px solid white;
-//     border-right: 0px solid white;
-//     border-left: 0px solid white;
-//   }
-//   @media (max-width: 576px) {
-//     font-size: 20px;
-//     line-height: 23px;
-//     height: 160px;
-//     padding-right: 0px;
-//     font-weight:700;
-
-//     h3 {
-//       font-size: 18px;
-//       margin-bottom: 10px;
-//       line-height: 21px;
-//       width:169px;
-//       font-weight:700;
-
-//     }
-//   }
-//   @media (max-width: 374.9px) {
-//     font-size: 16px;
-//     font-weight:700;
-//   }
-//   :hover{
-//     text-decoration:none;
-//   }
-// `;
 
 const RealEstateDivider = styled.div`
   background-color: var(--mainYellow);

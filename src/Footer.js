@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 export default function Footer() {
     const copyDate = new Date().getFullYear();
@@ -11,7 +11,7 @@ export default function Footer() {
                 <Copyright>
                 株式会社Nodomaru, Copyright &copy; {copyDate}
                 </Copyright>
-                <FooterRight>
+                {/* <FooterRight>
                     <FooterLinks to="/">
                     お問い合わせ
                     </FooterLinks>
@@ -21,7 +21,7 @@ export default function Footer() {
                     <FooterLinks to ="/">
                     規約と条件
                     </FooterLinks>
-                </FooterRight>
+                </FooterRight> */}
             </FooterContent>
             </Container>
         </Wrapper>
@@ -103,47 +103,47 @@ height:60px;
 
 }
 `
-const FooterRight = styled.div `
-margin-left:auto;
-@media(max-width:576px){
-    margin-left:0px;
-}
-@media(max-width:576px){
+// const FooterRight = styled.div `
+// margin-left:auto;
+// @media(max-width:576px){
+//     margin-left:0px;
+// }
+// @media(max-width:576px){
    
-   padding-top:15px;
-}
-`
-const FooterLinks = styled(Link) `
-font-size: 18px;
-line-height: 25px;
-color:white;
-padding-left:64px;
-:hover{
-    text-decoration:none;
-    color:black;
-}
-@media(max-width:991px){
-    font-size:14px;
-    padding-left:40px;
-}
-@media(max-width:768px){
-    font-size:12px;
-    padding-left:20px;
+//    padding-top:15px;
+// }
+// `
+// const FooterLinks = styled(Link) `
+// font-size: 18px;
+// line-height: 25px;
+// color:white;
+// padding-left:64px;
+// :hover{
+//     text-decoration:none;
+//     color:black;
+// }
+// @media(max-width:991px){
+//     font-size:14px;
+//     padding-left:40px;
+// }
+// @media(max-width:768px){
+//     font-size:12px;
+//     padding-left:20px;
     
-}
-@media(max-width:576px){
-    font-size:18px;
-   line-height:21px;
-}
-@media(max-width:576px){
-    font-size:14px;
-    padding-left:10px;
-   :first-child{
-       padding-left:0px;
-   }
-}
-@media(max-width:360px){
-    font-size:16px;
-}
+// }
+// @media(max-width:576px){
+//     font-size:18px;
+//    line-height:21px;
+// }
+// @media(max-width:576px){
+//     font-size:14px;
+//     padding-left:10px;
+//    :first-child{
+//        padding-left:0px;
+//    }
+// }
+// @media(max-width:360px){
+//     font-size:16px;
+// }
 
-`
+// `
