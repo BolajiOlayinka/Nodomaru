@@ -336,7 +336,7 @@ const SectionWrapper = styled.div`
     margin-top: 14px;
   }
 `;
-const Section = styled(Linker)`
+const Section = styled.div`
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
@@ -353,6 +353,7 @@ const Section = styled(Linker)`
     transition: all 0.2s;
     color: white !important;
     text-decoration: none;
+    cursor:pointer;
   }
   @media (max-width: 768px) {
     font-size: 10px;

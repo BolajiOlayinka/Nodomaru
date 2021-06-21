@@ -605,6 +605,7 @@ const RightFinance = styled(Linker)`
   background-color: var(--mainYellow);
   height: 260px;
   padding: 20px;
+  padding-bottom:11px;
   font-size: 32px;
   line-height: 38px;
   font-weight: bold;
@@ -639,10 +640,10 @@ const RightFinance = styled(Linker)`
     line-height: 28px;
     margin-bottom:0px;
     @media(min-width:768px){
-      font-size:36px;
-      line-height:60px;
+      font-size:30px;
+      line-height:40px;
     }
-    @media(max-width:767.9px){
+    @media(max-width:768px){
       font-size:24px;
       line-height:31px;
     }
@@ -676,6 +677,7 @@ const RightFinance = styled(Linker)`
   
  
 `;
+
 const SmallLogoRight = styled.div`
   text-align: right;
   position: relative;
