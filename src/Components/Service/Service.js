@@ -172,9 +172,9 @@ export default function Service() {
             <img src={Smalldisplaythree} alt="Nodomaru display" />
           </SmallDisplay>
           <RightConsult>
-            <RightFinanceHead>
+            <RightConsultHead>
               あなたの人生に寄り添った仕事選びを
-            </RightFinanceHead>
+            </RightConsultHead>
             <RightFinanceBody>
               多様性の時代の中、誰もが「のどまる人生」を実現する社会を目指し、一人一人の多様な生き方、働き方をサポートします。一人のコンサルタントが、企業への人材ニーズのヒアリングおよび転職希望者に対する転職サポートを担当するため、ミスマッチを防ぎ、あなたの人生に寄り添ったコンサルティングが可能になります。
             </RightFinanceBody>
@@ -197,24 +197,24 @@ export default function Service() {
         <UseCase>
           <img src={Find} alt="Service Icon" />
           <ConsultUseButton>リクルーティングアドバイザー</ConsultUseButton>
-          <UseCaseBody>
+          <UseCaseConsultBody>
             企業様ごとの採用課題に対して、ニーズに合わせた人材をご紹介致します。
-          </UseCaseBody>
+          </UseCaseConsultBody>
         </UseCase>
 
         <UseCase>
           <img src={Message} alt="Service Icon" />
           <ConsultUseButton>キャリアアドバイザー</ConsultUseButton>
-          <UseCaseBody>
-            老後資金、教育資金など「お金」にまつわる様々なお悩みについて、ファイナンシャルプランナーがご相談に応じます。
-          </UseCaseBody>
+          <UseCaseConsultBody>
+          まずは求職者の『人生』に真摯に向き合い、キャリアアドバイザーがじっくり時間をかけ転職をサポートします。
+          </UseCaseConsultBody>
         </UseCase>
 
         <UseCase>
           <img src={Share} alt="Service Icon" />
           <ConsultUseButton>マッチング</ConsultUseButton>
           <UseCaseBody>
-            求人企業と求職者との最適なマッチングを実現させ、社会全体の雇用問題を解決します。
+          求人企業と求職者との最適なマッチングを実現させ、社会全体の雇用問題を解決します。
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
@@ -282,7 +282,7 @@ export default function Service() {
         <UseCase>
           <img src={Chart} alt="Service Icon" />
           <FinancialUseButton>各種セミナー</FinancialUseButton>
-          <UseCaseBody>
+          <UseCaseBody >
             保険や不動産のセミナーだけでなく、経営者や営業職の方向けに売り上げを上げるセミナーも開催しております。
           </UseCaseBody>
         </UseCase>
@@ -597,6 +597,7 @@ const ServiceUse = styled.div`
     width: 400px;
     margin: auto;
     flex-direction: column;
+   
   }
   @media (max-width: 426px) {
     width: 90%;
@@ -619,6 +620,7 @@ const UseCase = styled.div`
       margin-bottom: 31px;
       margin-top: 31px;
     }
+    
   }
   @media (max-width: 426px) {
     margin-bottom: 20px;
@@ -635,6 +637,7 @@ const UseCase = styled.div`
         margin-top: 0px;
       }
     }
+   
   }
 `;
 const UseButton = styled.div`
@@ -662,6 +665,18 @@ const UseCaseBody = styled.div`
   color: black;
   @media (max-width: 768px) {
     width: 200px;
+  }
+`;
+const UseCaseConsultBody = styled.div`
+  width: 184px;
+  text-align: justify;
+  margin: auto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: black;
+  @media (max-width: 768px) {
+    width: 235px;
   }
 `;
 const ButtonContainer = styled.div`
@@ -810,6 +825,38 @@ const RightFinanceHead = styled.div`
     font-size: 35px;
     line-height: 48px;
     width: 289px;
+    margin: auto;
+    height: 100%;
+    padding-top: 20px;
+    text-align: center;
+  }
+`;
+const RightConsultHead = styled.div`
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 49px;
+  height: 59px;
+  @media (max-width: 991px) {
+    font-size: 28px;
+  }
+  @media (max-width: 768px) {
+    font-size: 22px;
+    line-height: 32px;
+    height: 40px;
+  }
+  @media (max-width: 576px) {
+    font-size: 35px;
+    line-height: 48px;
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    padding-top: 20px;
+    text-align: center;
+  }
+  @media (max-width: 426px) {
+    font-size: 32px;
+    line-height: 44px;
+    width: 95%;
     margin: auto;
     height: 100%;
     padding-top: 20px;

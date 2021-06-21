@@ -149,7 +149,7 @@ export default function Home() {
               
               >
                 <h4>Financial Planning & Consulting </h4>
-                <h5>コンサルティング</h5>
+                <h5 className="subheadconsult">FP <br/>コンサルティング</h5>
               
               <SmallLogoRight>
                 <img src={LogoWhite} alt="Nodomaru Logo Icon" />
