@@ -232,8 +232,8 @@ const ThreePreHeader = styled.div`
 const ThreeHeader = styled.div`
   font-size: 48px;
   line-height: 56px;
+  font-family: "Roboto", sans-serif;
   color: black;
-  font-weight: bold;
   padding-bottom: 18px;
   width: 428px;
   span {
