@@ -31,17 +31,6 @@ export default function Home() {
       []
     );
   });
-  // const ScrollToSectionOne = () => {
-  //   animateScrollTo(document.querySelector(".sectionOne"));
-  // };
-  // const ScrollToSectionTwo = () => {
-  //   animateScrollTo(document.querySelector(".sectionTwo"));
-  // };
-  // const ScrollToSectionThree = () => {
-  //   animateScrollTo(document.querySelector(".sectionThree"));
-  // };
-
-  
   return (
     <Wrapper>
       <Banner>
@@ -743,6 +732,7 @@ const FinancialPlanWrapper = styled(Linker)`
 const FinancialPlanDivider = styled.div`
   background-color: var(--mainYellow);
   display: flex;
+  align-items:center;
   height: 78px;
   width: 100%;
   padding: 18px 15px 18px 15px;
@@ -774,6 +764,7 @@ const CareerPlanWrapper = styled(Linker)`
 const CareerPlanDivider = styled.div`
   background-color: var(--mainYellow);
   display: flex;
+  align-items:center;
   height: 78px;
   width: 100%;
   padding: 18px 15px 18px 15px;

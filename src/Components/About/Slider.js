@@ -31,7 +31,7 @@ export default function Client() {
             </ThreeHeader>
             <ThreeDivider></ThreeDivider>
           <SliderText>
-            オフィスは広尾駅から徒歩5分の場所にあり、日当たりがよく、緑あふれる居心地のいい空間です。現在みんなで作っている会社であり、社長に対して新規事業の提案や相談ができるチャンスもあります。。
+          オフィスは広尾駅から徒歩5分の場所にあり、日当たりがよく、緑あふれる居心地のいい空間です。現在みんなで作っている会社であり、社長に対して新規事業の提案や相談ができるチャンスもあります。
           </SliderText>
           <QuoteName>AKINA</QuoteName>
           </ContentWrapper>
@@ -107,7 +107,7 @@ export default function Client() {
             </ThreeHeader>
             <ThreeDivider></ThreeDivider>
           <SliderText>
-            オフィスは広尾駅から徒歩5分の場所にあり、日当たりがよく、緑あふれる居心地のいい空間です。現在みんなで作っている会社であり、社長に対して新規事業の提案や相談ができるチャンスもあります。。
+          オフィスは広尾駅から徒歩5分の場所にあり、日当たりがよく、緑あふれる居心地のいい空間です。現在みんなで作っている会社であり、社長に対して新規事業の提案や相談ができるチャンスもあります。
           </SliderText>
           <QuoteName>AKINA</QuoteName>
           </ContentWrapper>
@@ -207,6 +207,7 @@ const SliderText = styled.div`
   @media (max-width: 425px) {
     font-size: 16px;
     line-height:19px;
+    
   }
 `;
 const QuoteName = styled.div`
@@ -246,11 +247,14 @@ const ThreeHeader = styled.div`
       width:400px;
   }
   @media(max-width:426px){
+    font-family: 'Roboto', sans-serif;
       font-size:36px;
       line-height:42px;
     width:292px;
     font-weight:normal;
-    
+    span {
+      font-weight: 200;
+    }
   }
 `;
 const ThreeDivider = styled.div`
