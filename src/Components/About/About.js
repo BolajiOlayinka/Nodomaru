@@ -147,7 +147,14 @@ export default function About() {
             <img src={AdoptBanner} alt="Offline Nodomaru Banner" />
           </Offline>
 
-          <AdoptButton to="/#contactform" onClick={() => {ScrollToContact()}}>現在採用中</AdoptButton>
+          <AdoptButton
+            to="/#contactform"
+            onClick={() => {
+              ScrollToContact();
+            }}
+          >
+            現在採用中
+          </AdoptButton>
         </AdoptSection>
         <SectionThree>
           <Slider />
@@ -155,18 +162,24 @@ export default function About() {
         <SmallCompanyInfo>
           <AddressHeader>Company Information</AddressHeader>
           <div>名称 - 株式会社Nodomaru (英語表記 Nodomaru Co.,Ltd)</div>
-            <div>設立 - 2019年1月18日</div>
-            <div>代表者：向仲 駿</div>
-            <div> 宅地建物取引業免許番号：東京都知事（1）第104535号 <br/>有料職業紹介事業許可番号：13-ユ-313195</div>
-            <div className="address-spacing">所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
-            <div>Tel : 03-6456-4538</div>
-            <div>FAX : 03-6456-4537</div>
-            <Desc>
-              事業内容
-              <li>不動産事業</li>
-              <li>人材紹介業</li>
-              <li>FPコンサルティング業</li>
-              <li>クラウドファンディング事業</li>
+          <div>設立 - 2019年1月18日</div>
+          <div>代表者：向仲 駿</div>
+          <div>
+            {" "}
+            宅地建物取引業免許番号：東京都知事（1）第104535号 <br />
+            有料職業紹介事業許可番号：13-ユ-313195
+          </div>
+          <div className="address-spacing">
+            所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F
+          </div>
+          <div>Tel : 03-6456-4538</div>
+          <div>FAX : 03-6456-4537</div>
+          <Desc>
+            事業内容
+            <li>不動産事業</li>
+            <li>人材紹介業</li>
+            <li>FPコンサルティング業</li>
+            <li>クラウドファンディング事業</li>
           </Desc>
         </SmallCompanyInfo>
         <MapSection>
@@ -193,8 +206,14 @@ export default function About() {
             <div>名称 - 株式会社Nodomaru (英語表記 Nodomaru Co.,Ltd)</div>
             <div>設立 - 2019年1月18日</div>
             <div>代表者：向仲 駿</div>
-            <div> 宅地建物取引業免許番号：東京都知事（1）第104535号 <br/> 有料職業紹介事業許可番号：13-ユ-313195</div>
-            <div className="address-spacing">所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F</div>
+            <div>
+              {" "}
+              宅地建物取引業免許番号：東京都知事（1）第104535号 <br />{" "}
+              有料職業紹介事業許可番号：13-ユ-313195
+            </div>
+            <div className="address-spacing">
+              所在地 - 渋谷区広尾5-8-11 バルビゾン22ビル 7F
+            </div>
             <div>Tel : 03-6456-4538</div>
             <div>FAX : 03-6456-4537</div>
             <Desc>
@@ -241,7 +260,7 @@ const Container = styled.div`
 const AboutArea = styled.div`
   padding-top: 478px;
   display: flex;
-  ${'' /* align-items: center; */}
+  ${"" /* align-items: center; */}
   @media (max-width: 991px) {
     padding-top: 300px;
   }
@@ -257,17 +276,19 @@ const AboutArea = styled.div`
 `;
 const Left = styled.div`
   margin-left: 116px;
-  padding-top:66px;
+  padding-top: 66px;
   @media (max-width: 991px) {
     margin-left: 26px;
   }
   @media (max-width: 768px) {
-    padding-top:0px;
+    padding-top: 0px;
     margin: auto;
   }
-  ${"" /* @media (max-width: 426px) {
+  ${
+    "" /* @media (max-width: 426px) {
     padding-top: 400px;
-  } */}
+  } */
+  }
 `;
 const LeftText = styled.div`
   font-size: 24px;
@@ -426,7 +447,7 @@ const AdoptSection = styled.div`
   ${"" /* background: url(${AdoptBanner}); */}
   position: relative;
   z-index: 1;
-  height:601px;
+  height: 601px;
   text-align: center;
   padding-top: 333px;
   display: flex;
@@ -436,9 +457,9 @@ const AdoptSection = styled.div`
     margin-top: -333px;
     z-index: 1;
   }
-  iframe{
-    background-color:transparent!important;
-    width:1200px;
+  iframe {
+    background-color: transparent !important;
+    width: 1200px;
   }
   @media (max-width: 1199px) {
     display: none;
@@ -529,8 +550,8 @@ const SmallCompanyInfo = styled.div`
   @media (max-width: 375px) {
     margin-top: 80px;
   }
-  .address-spacing{
-    padding-top:14px;
+  .address-spacing {
+    padding-top: 14px;
   }
 `;
 const MapSection = styled.div`
@@ -591,8 +612,8 @@ const AddressContainer = styled.div`
   @media (max-width: 991px) {
     display: none;
   }
-  .address-spacing{
-    padding-top:14px;
+  .address-spacing {
+    padding-top: 14px;
   }
 `;
 const AddressHeader = styled.div`
@@ -641,7 +662,6 @@ const Divider = styled.div`
     margin-bottom: 52px;
   }
 `;
-
 
 const StyledModal = styled(Modal)`
   min-width: 90%;

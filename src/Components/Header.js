@@ -29,7 +29,7 @@ export default function Header() {
   const ScrollToTop = () => {
     animateScrollTo(0);
   };
-  
+
   const ScrollToContact = () => {
     animateScrollTo(document.querySelector(".contactform"));
   };
@@ -62,7 +62,7 @@ export default function Header() {
       setActiveService("transparent");
       setNavColor("black");
       setLogo(BlackLogo);
-    } 
+    }
   }, [location.pathname]);
 
   const handleScroll = () => {
@@ -71,11 +71,14 @@ export default function Header() {
       setLogo(BlackLogo);
       setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
       setNavColor("black");
-    } else if( window.pageYOffset === 0 && location.pathname.split("/")[1] === "news") {
+    } else if (
+      window.pageYOffset === 0 &&
+      location.pathname.split("/")[1] === "news"
+    ) {
       setLogo(BlackLogo);
       setNavColor("black");
       setBoxShadow("transparent");
-    }else if( window.pageYOffset === 0 && location.pathname==="/"){
+    } else if (window.pageYOffset === 0 && location.pathname === "/") {
       setLogo(Logo);
       setNavColor("black");
       setBackground("transparent");
@@ -128,13 +131,18 @@ export default function Header() {
 
   const closeModal = () => {
     setShowItem(false);
-    setShowIcon(true)
+    setShowIcon(true);
   };
   return (
     <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
       <StyledNavbar expand="md">
         <LogoContainer>
-          <Link to="/" onClick={() => {ScrollToTop()}}>
+          <Link
+            to="/"
+            onClick={() => {
+              ScrollToTop();
+            }}
+          >
             <img src={logo} alt="Nodomaru Logo" />
           </Link>
         </LogoContainer>
@@ -151,7 +159,13 @@ export default function Header() {
                 </StyledLink>
               </NavItem>
               <NavItem>
-                <StyledContactLink to="/#contactform" onClick={()=>{closeModal(); ScrollToContact()}}>
+                <StyledContactLink
+                  to="/#contactform"
+                  onClick={() => {
+                    closeModal();
+                    ScrollToContact();
+                  }}
+                >
                   お問い合わせ
                 </StyledContactLink>
               </NavItem>
@@ -202,7 +216,13 @@ export default function Header() {
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledContactLink navcolor={navcolor} to="/#contactform" onClick={() => {ScrollToContact()}}>
+              <StyledContactLink
+                navcolor={navcolor}
+                to="/#contactform"
+                onClick={() => {
+                  ScrollToContact();
+                }}
+              >
                 お問い合わせ
               </StyledContactLink>
             </NavItem>
@@ -250,10 +270,10 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  @media(max-width:768px){
-    padding-top:0.2em;
-    padding-bottom:0.2em;
-  } 
+  @media (max-width: 768px) {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
 `;
 const LogoContainer = styled.div`
   img {
@@ -277,7 +297,7 @@ const StyledNav = styled(Nav)`
     background: rgb(0, 0, 0, 0.9);
     z-index: 5;
     width: 100%;
-    ${'' /* padding-top: 80px; */}
+    ${"" /* padding-top: 80px; */}
     li {
       padding: 4px;
       padding-left: 20px;

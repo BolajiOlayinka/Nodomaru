@@ -59,30 +59,26 @@ export default function Service() {
             <div>
               <img src={WhiteLogo} alt="Nodomaru Logo" />
               <div>サービス案内</div>
-              <SectionWrapper id="realestate" >
+              <SectionWrapper id="realestate">
                 <Section
-                  
                   onClick={() => {
                     ScrollToSectionOne();
                   }}
-                  
                 >
                   不動産
                 </Section>
                 <Section
-                 
-                 onClick={() => {
-                  ScrollToSectionTwo();
-                }}
-                
+                  onClick={() => {
+                    ScrollToSectionTwo();
+                  }}
                 >
                   転職コンサルティング
                 </Section>
-                <Section className="SectionOne"
+                <Section
+                  className="SectionOne"
                   onClick={() => {
                     ScrollToSectionThree();
                   }}
-                  
                 >
                   FP コンサルティング
                 </Section>
@@ -149,9 +145,12 @@ export default function Service() {
         </UseCase>
       </ServiceUse>
       <ButtonContainer>
-        <ServiceButton to="/#contactform" onClick={() => {
-                    ScrollToContact();
-                  }}>
+        <ServiceButton
+          to="/#contactform"
+          onClick={() => {
+            ScrollToContact();
+          }}
+        >
           お問い合わせ
         </ServiceButton>
       </ButtonContainer>
@@ -206,7 +205,7 @@ export default function Service() {
           <img src={Message} alt="Service Icon" />
           <ConsultUseButton>キャリアアドバイザー</ConsultUseButton>
           <UseCaseConsultBody>
-          まずは求職者の『人生』に真摯に向き合い、キャリアアドバイザーがじっくり時間をかけ転職をサポートします。
+            まずは求職者の『人生』に真摯に向き合い、キャリアアドバイザーがじっくり時間をかけ転職をサポートします。
           </UseCaseConsultBody>
         </UseCase>
 
@@ -214,7 +213,7 @@ export default function Service() {
           <img src={Share} alt="Service Icon" />
           <ConsultUseButton>マッチング</ConsultUseButton>
           <UseCaseBody>
-          求人企業と求職者との最適なマッチングを実現させ、社会全体の雇用問題を解決します。
+            求人企業と求職者との最適なマッチングを実現させ、社会全体の雇用問題を解決します。
           </UseCaseBody>
         </UseCase>
       </ServiceUse>
@@ -282,7 +281,7 @@ export default function Service() {
         <UseCase>
           <img src={Chart} alt="Service Icon" />
           <FinancialUseButton>各種セミナー</FinancialUseButton>
-          <UseCaseBody >
+          <UseCaseBody>
             保険や不動産のセミナーだけでなく、経営者や営業職の方向けに売り上げを上げるセミナーも開催しております。
           </UseCaseBody>
         </UseCase>
@@ -353,7 +352,7 @@ const Section = styled.div`
     transition: all 0.2s;
     color: white !important;
     text-decoration: none;
-    cursor:pointer;
+    cursor: pointer;
   }
   @media (max-width: 768px) {
     font-size: 10px;
@@ -598,7 +597,6 @@ const ServiceUse = styled.div`
     width: 400px;
     margin: auto;
     flex-direction: column;
-   
   }
   @media (max-width: 426px) {
     width: 90%;
@@ -621,7 +619,6 @@ const UseCase = styled.div`
       margin-bottom: 31px;
       margin-top: 31px;
     }
-    
   }
   @media (max-width: 426px) {
     margin-bottom: 20px;
@@ -638,7 +635,6 @@ const UseCase = styled.div`
         margin-top: 0px;
       }
     }
-   
   }
 `;
 const UseButton = styled.div`

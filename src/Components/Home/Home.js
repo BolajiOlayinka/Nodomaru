@@ -111,11 +111,10 @@ export default function Home() {
         <SmallServiceTypes>
           <SmallEstateWrapper>
             <LeftEstate></LeftEstate>
-            <RightEstate to="/service/#realestate" >
-              
-                <h4>Real Estate</h4>
-                <h5>不動産</h5>
-              
+            <RightEstate to="/service/#realestate">
+              <h4>Real Estate</h4>
+              <h5>不動産</h5>
+
               <SmallLogoRight>
                 <img src={LogoWhite} alt="Nodomaru Logo Icon" />
               </SmallLogoRight>
@@ -125,7 +124,7 @@ export default function Home() {
             <LeftConsult></LeftConsult>
             <RightConsult to="/service/#careerconsult" className="consult-text">
               <h4>Career Consulting </h4>
-                <h5>転職コンサルティング</h5>
+              <h5>転職コンサルティング</h5>
               <SmallLogoRight>
                 <img src={LogoWhite} alt="Nodomaru Logo Icon" />
               </SmallLogoRight>
@@ -133,13 +132,13 @@ export default function Home() {
           </SmallonsultingWrapper>
           <SmallFinancialWrapper>
             <LeftFinance></LeftFinance>
-            <RightFinance
-              to="/service/#financeplan"
-              
-              >
-                <h4>Financial Planning & Consulting </h4>
-                <h5 className="subheadconsult">FP <br/>コンサルティング</h5>
-              
+            <RightFinance to="/service/#financeplan">
+              <h4>Financial Planning & Consulting </h4>
+              <h5 className="subheadconsult">
+                FP <br />
+                コンサルティング
+              </h5>
+
               <SmallLogoRight>
                 <img src={LogoWhite} alt="Nodomaru Logo Icon" />
               </SmallLogoRight>
@@ -164,7 +163,7 @@ export default function Home() {
           </ReadMoreButton>
         </Container>
         <ContactUsSection>
-          <ContactHeading >お問い合わせ</ContactHeading>
+          <ContactHeading>お問い合わせ</ContactHeading>
           <ContactTel>Tel : 03-6456-4538</ContactTel>
           <ContactInfo>問い合わせメールアドレス：info@ndmr.co.jp</ContactInfo>
           <Form />
@@ -486,35 +485,33 @@ const RightEstate = styled(Linker)`
     text-decoration: none;
     color: black;
   }
-  h4{
+  h4 {
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-    margin-bottom:0px;
-    @media(min-width:768px){
-      font-size:45px;
-      line-height:54px;
+    margin-bottom: 0px;
+    @media (min-width: 768px) {
+      font-size: 45px;
+      line-height: 54px;
     }
-    @media(min-width:576px){
-      font-size:36px;
-      line-height:45px;
+    @media (min-width: 576px) {
+      font-size: 36px;
+      line-height: 45px;
     }
   }
   h5 {
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-    @media(min-width:768px){
-      font-size:45px;
-      line-height:54px;
+    @media (min-width: 768px) {
+      font-size: 45px;
+      line-height: 54px;
     }
-    @media(min-width:576px){
-      font-size:36px;
-      line-height:45px;
+    @media (min-width: 576px) {
+      font-size: 36px;
+      line-height: 45px;
     }
   }
-  
- 
 `;
 const RightConsult = styled(Linker)`
   width: 48%;
@@ -549,52 +546,51 @@ const RightConsult = styled(Linker)`
     text-decoration: none;
     color: black;
   }
-  h4{
+  h4 {
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-    margin-bottom:0px;
-    @media(min-width:768px){
-      font-size:45px;
-      line-height:54px;
+    margin-bottom: 0px;
+    @media (min-width: 768px) {
+      font-size: 45px;
+      line-height: 54px;
     }
-    @media(min-width:576px){
-      width:131px;
-      font-size:35px;
-      line-height:45px;
+    @media (min-width: 576px) {
+      width: 131px;
+      font-size: 35px;
+      line-height: 45px;
     }
-    @media(max-width:576px){
-      width:131px;
-      font-size:20px;
-      line-height:23px;
+    @media (max-width: 576px) {
+      width: 131px;
+      font-size: 20px;
+      line-height: 23px;
     }
   }
   h5 {
     font-weight: bold;
-    font-size:24px;
-    line-height:31px;
-    @media(min-width:768px){
-      font-size:32px;
-      line-height:40px;
+    font-size: 24px;
+    line-height: 31px;
+    @media (min-width: 768px) {
+      font-size: 32px;
+      line-height: 40px;
     }
-    @media(max-width:767.9px){
-      font-size:23px;
-    line-height:31px;
+    @media (max-width: 767.9px) {
+      font-size: 23px;
+      line-height: 31px;
     }
-    @media(max-width:576px){
-      width:131px;
-      font-size:12px;
-      line-height:14px;
+    @media (max-width: 576px) {
+      width: 131px;
+      font-size: 12px;
+      line-height: 14px;
     }
   }
- 
 `;
 const RightFinance = styled(Linker)`
   width: 48%;
   background-color: var(--mainYellow);
   height: 260px;
   padding: 20px;
-  padding-bottom:11px;
+  padding-bottom: 11px;
   font-size: 32px;
   line-height: 38px;
   font-weight: bold;
@@ -623,48 +619,45 @@ const RightFinance = styled(Linker)`
     text-decoration: none;
     color: black;
   }
-  h4{
+  h4 {
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-    margin-bottom:0px;
-    @media(min-width:768px){
-      font-size:30px;
-      line-height:40px;
+    margin-bottom: 0px;
+    @media (min-width: 768px) {
+      font-size: 30px;
+      line-height: 40px;
     }
-    @media(max-width:768px){
-      font-size:24px;
-      line-height:31px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 31px;
     }
-    @media(max-width:575.9px){
+    @media (max-width: 575.9px) {
       font-weight: bold;
       font-size: 14px;
       line-height: 16px;
-      margin-bottom:0px;
-      width:130px;
+      margin-bottom: 0px;
+      width: 130px;
     }
   }
   h5 {
     font-weight: bold;
-    font-size:24px;
-    line-height:31px;
-    @media(min-width:768px){
-      font-size:45px;
-      line-height:54px;
+    font-size: 24px;
+    line-height: 31px;
+    @media (min-width: 768px) {
+      font-size: 45px;
+      line-height: 54px;
     }
-    @media(min-width:576px){
-      font-size:28px;
-      line-height:36px;
+    @media (min-width: 576px) {
+      font-size: 28px;
+      line-height: 36px;
     }
-    @media(max-width:575.9px){
-      width:163px;
+    @media (max-width: 575.9px) {
+      width: 163px;
       font-size: 18px;
       line-height: 21px;
-      
     }
   }
-  
- 
 `;
 
 const SmallLogoRight = styled.div`
@@ -732,7 +725,7 @@ const FinancialPlanWrapper = styled(Linker)`
 const FinancialPlanDivider = styled.div`
   background-color: var(--mainYellow);
   display: flex;
-  align-items:center;
+  align-items: center;
   height: 78px;
   width: 100%;
   padding: 18px 15px 18px 15px;
@@ -764,7 +757,7 @@ const CareerPlanWrapper = styled(Linker)`
 const CareerPlanDivider = styled.div`
   background-color: var(--mainYellow);
   display: flex;
-  align-items:center;
+  align-items: center;
   height: 78px;
   width: 100%;
   padding: 18px 15px 18px 15px;
